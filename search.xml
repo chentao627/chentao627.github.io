@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C语言调用matlab引擎</title>
+    <url>/2020/05/17/C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>这一个博客的设置过程</title>
     <url>/2020/05/16/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0-%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。下面是“阅读更多”的分页。</p>
+    <content><![CDATA[<p>利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。<br>下面是“阅读更多”的分页。</p>
 <a id="more"></a>
 
 <h1 id="基本的安装与配置"><a href="#基本的安装与配置" class="headerlink" title="基本的安装与配置"></a>基本的安装与配置</h1><h2 id="Nodejs的安装"><a href="#Nodejs的安装" class="headerlink" title="Nodejs的安装"></a>Nodejs的安装</h2><h2 id="Git-for-windows的安装"><a href="#Git-for-windows的安装" class="headerlink" title="Git for windows的安装"></a>Git for windows的安装</h2><h2 id="Hexo的安装与配置"><a href="#Hexo的安装与配置" class="headerlink" title="Hexo的安装与配置"></a>Hexo的安装与配置</h2><p>Hexo的安装便需要用到npm install命令。可以在Hexo官网上看到给出了一个npm安装命令：<br><a href="https://sm.ms/image/Jn9EOMGSBUHZ2cQ" target="_blank"><img src="https://i.loli.net/2020/05/17/Jn9EOMGSBUHZ2cQ.png" ></a><br>直接把它复制到进入博客路径的cmd中执行即可。</p>
 <h2 id="Sublime的安装与配置"><a href="#Sublime的安装与配置" class="headerlink" title="Sublime的安装与配置"></a>Sublime的安装与配置</h2><p>通过各种手段下载到sunlime安装包并安装打开后，直接把Hexo文件夹中的博客文件夹拖入sublime界面即可：<br><a href="https://sm.ms/image/wIOUtJscSWajBou" target="_blank"><img src="https://i.loli.net/2020/05/17/wIOUtJscSWajBou.png" ></a></p>
-<h2 id="主题的安装"><a href="#主题的安装" class="headerlink" title="主题的安装"></a>主题的安装</h2><h1 id="Hexo的应用"><a href="#Hexo的应用" class="headerlink" title="Hexo的应用"></a>Hexo的应用</h1><h2 id="菜单栏的设置及新页面的创立"><a href="#菜单栏的设置及新页面的创立" class="headerlink" title="菜单栏的设置及新页面的创立"></a>菜单栏的设置及新页面的创立</h2><h2 id="Tag、Categories的设置"><a href="#Tag、Categories的设置" class="headerlink" title="Tag、Categories的设置"></a>Tag、Categories的设置</h2><h2 id="Update设置"><a href="#Update设置" class="headerlink" title="Update设置"></a>Update设置</h2><h2 id="文字、图片的插入及相关API"><a href="#文字、图片的插入及相关API" class="headerlink" title="文字、图片的插入及相关API"></a>文字、图片的插入及相关API</h2><p>文字的插入直接在头部代码下方打字即可。超链接的设置代码如下：</p>
+<h2 id="主题的安装"><a href="#主题的安装" class="headerlink" title="主题的安装"></a>主题的安装</h2><p>主题的安装可以直接从github上克隆下来。当然也可以下载主题的压缩包，把它丢到路径&lt;Hexo\blogname\themes&gt;中即可。然后便是按照所选安装包的教程在主_congfig.yml中进行一些代码的配置。</p>
+<h1 id="Hexo的应用"><a href="#Hexo的应用" class="headerlink" title="Hexo的应用"></a>Hexo的应用</h1><h2 id="菜单栏的设置及新页面的创立"><a href="#菜单栏的设置及新页面的创立" class="headerlink" title="菜单栏的设置及新页面的创立"></a>菜单栏的设置及新页面的创立</h2><h2 id="Tag、Categories的设置"><a href="#Tag、Categories的设置" class="headerlink" title="Tag、Categories的设置"></a>Tag、Categories的设置</h2><h2 id="Update设置"><a href="#Update设置" class="headerlink" title="Update设置"></a>Update设置</h2><h2 id="创建一篇新文章"><a href="#创建一篇新文章" class="headerlink" title="创建一篇新文章"></a>创建一篇新文章</h2><p>创建新文章可直接在博客路径的cmd中执行以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt; <span class="comment">#可以不加方括号与尖括号</span></span><br></pre></td></tr></table></figure>
+<p>其中layout有三种默认布局，即：post、page、draft。它们分别对应路径’sorce_posts’、’source’、’source_drafts’。</p>
+<h2 id="文字、图片的插入及相关API"><a href="#文字、图片的插入及相关API" class="headerlink" title="文字、图片的插入及相关API"></a>文字、图片的插入及相关API</h2><p>文字的插入直接在头部代码下方打字即可。超链接的设置代码如下：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Writing](https://hexo.io/docs/writing.html) <span class="comment">#这样便形成了一个名字为“Writing”，指向网址为https://hexo.io/docs/writing.html的超链接</span></span><br></pre></td></tr></table></figure>
 <p>有关数学公式的插入，<br>【待完善】</p>
 <p>下面大致说一说在文章种对图片的插入。</p>
