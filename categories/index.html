@@ -46,8 +46,24 @@
       <section class="outer">
   
     <h1 class="page-type-title">分类</h1>
-    <!-- <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE/">博客设置</a></li></ul> -->
+    <!-- <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/">专业学科</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%A7%91%E7%9B%AE/">信号与系统科目</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE/">博客设置</a></li></ul> -->
     <ul class="category-list">
+      
+         
+          <a class="category-list-link" href="/categories/专业学科/" title="专业学科">
+            <li class="category-list-item">
+            专业学科<i>1</i>
+            </li>
+          </a>
+        
+      
+         
+          <a class="category-list-link" href="/categories/专业学科/信号与系统科目/" title="信号与系统科目">
+            <li class="category-list-item">
+            信号与系统科目<i>1</i>
+            </li>
+          </a>
+        
       
          
           <a class="category-list-link" href="/categories/博客设置/" title="博客设置">
@@ -339,6 +355,30 @@
 </script>
 
 <!-- MathJax -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
 
 <!-- Katex -->
 

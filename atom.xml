@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chentao627.github.io/"/>
-  <updated>2020-05-17T13:01:52.388Z</updated>
+  <updated>2020-05-19T12:01:22.204Z</updated>
   <id>https://chentao627.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>信号与系统的梳理</title>
+    <link href="https://chentao627.github.io/2020/05/19/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A2%B3%E7%90%86/"/>
+    <id>https://chentao627.github.io/2020/05/19/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A2%B3%E7%90%86/</id>
+    <published>2020-05-19T10:13:04.000Z</published>
+    <updated>2020-05-19T12:01:22.204Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。&lt;br&gt;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="专业学科" scheme="https://chentao627.github.io/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/"/>
+    
+      <category term="信号与系统科目" scheme="https://chentao627.github.io/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%A7%91%E7%9B%AE/"/>
+    
+    
+      <category term="信息论" scheme="https://chentao627.github.io/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/"/>
+    
+      <category term="信号与系统" scheme="https://chentao627.github.io/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>C语言调用matlab引擎</title>
@@ -36,11 +61,11 @@
     <link href="https://chentao627.github.io/2020/05/16/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0-%E6%B5%8B%E8%AF%95/"/>
     <id>https://chentao627.github.io/2020/05/16/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0-%E6%B5%8B%E8%AF%95/</id>
     <published>2020-05-15T16:00:00.000Z</published>
-    <updated>2020-05-18T07:18:52.027Z</updated>
+    <updated>2020-05-19T12:00:36.045Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。&lt;br&gt;下面是“阅读更多”的分页。&lt;/p&gt;
+      &lt;p&gt;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。&lt;br&gt;下面是“阅读更多”的分页。&lt;br&gt;
     
     </summary>
     
