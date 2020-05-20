@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.3k</span>
+            <span class="post-count">1.9k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">5 分钟</span>
+            <span class="post-count">7 分钟</span>
         </span>
     </span>
 </div>
@@ -115,12 +115,12 @@
 <h3 id="单位冲激信号与单位阶跃信号"><a href="#单位冲激信号与单位阶跃信号" class="headerlink" title="单位冲激信号与单位阶跃信号"></a>单位冲激信号与单位阶跃信号</h3><p>在梳理卷积计算方法前，首先要引入的便是关于单位冲激信号的计算性质：</p>
 <script type="math/tex; mode=display">x(t)\delta(t)=x(0)\delta(t)</script><script type="math/tex; mode=display">x(t)\ast\delta(t-t_0)=x(t-t_0)</script><p>即信号x(t)与单位冲激信号的乘积，相当于在单位冲激信号脉冲处的采样，与单位冲激信号的卷积相当于时间谱象、频谱上的搬移。</p>
 <p>单位冲激信号经过LTI系统后的输出称为单位冲激响应，用h(t)表示：</p>
-<script type="math/tex; mode=display">\delta(t)\longleftrightarrow^{LTI} h(t)</script><p>单位信号冲激信号的孪生兄弟单位阶跃信号经过LTI系统后的输出称为单位阶跃响应，用s(t)表示：</p>
-<script type="math/tex; mode=display">u(t)\ast \delta(t) \longleftrightarrow^{LTI} s(t)=u(t)\ast h(t)</script><p>通过卷积积分可以求得$h(t)$与$s(t)$的关系：</p>
+<script type="math/tex; mode=display">\delta(t)\stackrel{FT}\longleftrightarrow h(t)</script><p>单位信号冲激信号的孪生兄弟单位阶跃信号经过LTI系统后的输出称为单位阶跃响应，用s(t)表示：</p>
+<script type="math/tex; mode=display">u(t)\ast \delta(t) \stackrel{FT}\longleftrightarrow s(t)=u(t)\ast h(t)</script><p>通过卷积积分可以求得$h(t)$与$s(t)$的关系：</p>
 <script type="math/tex; mode=display">s'(t)=h(t)</script><h3 id="卷积积分与卷积和"><a href="#卷积积分与卷积和" class="headerlink" title="卷积积分与卷积和"></a>卷积积分与卷积和</h3><p>同理，一个连续时间x(t)信号同单位冲激信号$\delta(t)$相卷后经过LTI系统后的输出也是类似的：</p>
-<script type="math/tex; mode=display">\int_{-\infty}^{+\infty} x(\tau)\delta(t-\tau){\rm d}\tau  \longleftrightarrow^{LTI}  \int_{-\infty}^{+\infty} x(\tau)h(t-\tau){\rm d}\tau</script><p>对于离散时间信号亦是如此：</p>
-<script type="math/tex; mode=display">\sum_{k=-\infty}^{+\infty} x[k]\delta[n-k]  \longleftrightarrow^{LTI}  \sum_{k=-\infty}^{+\infty} x[k]h[n-k]</script><p>然后将二者符号化表示，即简写为：</p>
-<script type="math/tex; mode=display">x(t)=x(t)\ast\delta(t)    \longleftrightarrow^{LTI}    y(t)=x(t)\ast h(t)</script><script type="math/tex; mode=display">x[t]=x[t]\ast\delta[t]    \longleftrightarrow^{LTI}    y[t]=x[t]\ast h[t]</script><p>这种“捆绑后销售”策略使我们可以让我们求到原信号与$\delta(t)$卷积后经过LTI系统的输出。我们也直接称这样的输出为原信号经过LTI系统的输出，因为前面关于单位冲激信号的计算性质中已经说明，任一信号与单位冲激信号的卷积为其本身。<br>之后便是离散时间信号的卷积和计算，与连续时间信号的卷积积分计算<br>【略，待补充】</p>
+<script type="math/tex; mode=display">\int_{-\infty}^{+\infty} x(\tau)\delta(t-\tau){\rm d}\tau  \stackrel{FT}\longleftrightarrow  \int_{-\infty}^{+\infty} x(\tau)h(t-\tau){\rm d}\tau</script><p>对于离散时间信号亦是如此：</p>
+<script type="math/tex; mode=display">\sum_{k=-\infty}^{+\infty} x[k]\delta[n-k]  \stackrel{FT}\longleftrightarrow  \sum_{k=-\infty}^{+\infty} x[k]h[n-k]</script><p>然后将二者符号化表示，即简写为：</p>
+<script type="math/tex; mode=display">x(t)=x(t)\ast\delta(t)    \stackrel{FT}\longleftrightarrow    y(t)=x(t)\ast h(t)</script><script type="math/tex; mode=display">x[t]=x[t]\ast\delta[t]    \stackrel{FT}\longleftrightarrow    y[t]=x[t]\ast h[t]</script><p>这种“捆绑后销售”策略使我们可以让我们求到原信号与$\delta(t)$卷积后经过LTI系统的输出。我们也直接称这样的输出为原信号经过LTI系统的输出，因为前面关于单位冲激信号的计算性质中已经说明，任一信号与单位冲激信号的卷积为其本身。<br>之后便是离散时间信号的卷积和计算，与连续时间信号的卷积积分计算<br>【略，待补充】</p>
 <h3 id="卷积运算间的三则运算以及LTI系统的5大特性"><a href="#卷积运算间的三则运算以及LTI系统的5大特性" class="headerlink" title="卷积运算间的三则运算以及LTI系统的5大特性"></a>卷积运算间的三则运算以及LTI系统的5大特性</h3><p>讨论完卷积的具体运算后，下面便是卷积运算之间的三则运算法则，分别是交换律、分配律、结合律：</p>
 <script type="math/tex; mode=display">x(t)\ast h(t)=h(t)\ast x(t)</script><script type="math/tex; mode=display">x(t)\ast (h_1(t)+h_2(t))=x(t)\ast h_1(t)+x(t)\ast h_2(t)</script><script type="math/tex; mode=display">(x(t)\ast h_1(t))\ast h_2(t)=x(t)\ast (h_1(t)\ast h_2(t))</script><p>接着便需要讨论LTI系统的5大特性，即：无记忆性、可逆性、时不变性、因果性、稳定性<br>【略，待补充】</p>
 <h3 id="线性常系数微分、差分方程来描述LTI系统"><a href="#线性常系数微分、差分方程来描述LTI系统" class="headerlink" title="线性常系数微分、差分方程来描述LTI系统"></a>线性常系数微分、差分方程来描述LTI系统</h3><p>【略，待补充】</p>
@@ -133,7 +133,31 @@
 <h2 id="连续时间傅里叶变换"><a href="#连续时间傅里叶变换" class="headerlink" title="连续时间傅里叶变换"></a>连续时间傅里叶变换</h2><p>傅里叶级数将周期信号从时域上转变到了频谱上分析；为了对非周期信号$x(t)$进行频域分析，故由周期信号$\widetilde{x}(t)$为切入点使其$T\rightarrow\infty$，这样一来便可以从极限的傅里叶级数角度分析非周期信号的频域了。<br>傅里叶变换的正变换可以由傅里叶级数求$a_k$的分析式得到：</p>
 <script type="math/tex; mode=display">a_k={1 \over T}\int_{-T\over2}^{T\over2} \widetilde{x}(t)e^{-jk\omega_0t}{\rm d}t,{\bf 取积分部分}T\rightarrow\infty \Rightarrow X(j\omega)=\int_{-\infty}^{+\infty}x(t)e^{-j\omega t}{\rm d}t</script><p>傅里叶变换的逆变换可以由傅里叶级数求$x(t)$的综合式得到：</p>
 <script type="math/tex; mode=display">x(t)={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega)e^{j\omega t}{\rm d}\omega</script><h3 id="傅里叶变换的收敛、狄里赫利条件"><a href="#傅里叶变换的收敛、狄里赫利条件" class="headerlink" title="傅里叶变换的收敛、狄里赫利条件"></a>傅里叶变换的收敛、狄里赫利条件</h3><p>【略，待补充】</p>
-<h3 id="需要记忆的连续时间傅里叶变换对"><a href="#需要记忆的连续时间傅里叶变换对" class="headerlink" title="需要记忆的连续时间傅里叶变换对"></a>需要记忆的连续时间傅里叶变换对</h3>
+<h3 id="需要记忆的连续时间傅里叶变换对"><a href="#需要记忆的连续时间傅里叶变换对" class="headerlink" title="需要记忆的连续时间傅里叶变换对"></a>需要记忆的连续时间傅里叶变换对</h3><ol>
+<li>因果负实指数自然底数信号的傅里叶正变换<script type="math/tex; mode=display">e^{-at}u(t)\stackrel{FT}\longleftrightarrow {1 \over {a+j\omega}}</script></li>
+<li>反因果正实指数自然底数信号的傅里叶正变换<script type="math/tex; mode=display">e^{at}u(-t)\stackrel{FT}\longleftrightarrow {1 \over {a-j\omega}}</script></li>
+<li>绝对值实指数自然底数信号的傅里叶变换<script type="math/tex; mode=display">e^{-a|t|}\stackrel{FT}\longleftrightarrow {2a \over {a^2+\omega^2}}</script></li>
+<li>符号函数的傅里叶正变换<script type="math/tex; mode=display">sign(t)=\lim_{a\rightarrow 0}[sign(t)e^{-a|t|}]\stackrel{FT}\longleftrightarrow {2 \over j\omega}</script></li>
+<li>(常考)时域非周期对称门信号的傅里叶正变换<script type="math/tex; mode=display">x(t)=
+\begin{cases}
+0& {t=0}\\\\
+1& {t\neq0}
+\end{cases} \stackrel{FT}\longleftrightarrow 2T_1{\sin{\omega T_1} \over \omega T_1}=2T_1 Sa(\omega T_1)</script></li>
+<li>(常考)频域非周期对称门信号的傅里叶逆变换<script type="math/tex; mode=display">X(j\omega)=
+\begin{cases}
+0& {\omega=0}\\\\
+1& {\omega\neq0}
+\end{cases} \stackrel{FT}\longleftrightarrow {\sin{Wt} \over \pi t}</script></li>
+<li>单位冲激信号的傅里叶正变换<script type="math/tex; mode=display">\delta(t)\stackrel{FT}\longleftrightarrow 1</script></li>
+<li>常值信号的傅里叶正变换（直接用对偶性换过来）<script type="math/tex; mode=display">1\stackrel{FT}\longleftrightarrow 2\pi\delta(\omega)</script></li>
+<li>时移单位冲激信号的傅里叶正变换(傅里叶变换的时移性质求得)<script type="math/tex; mode=display">\delta(t-t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega_0}</script></li>
+<li>纯虚指数信号的傅里叶正变换(对的，由于前辈们天才的数学推导，将傅里叶变换的应用范围扩展到了周期信号)<script type="math/tex; mode=display">e^{jk\omega_0 t}\stackrel{FT}\longleftrightarrow 2\pi\delta(\omega-k\omega_0)</script></li>
+<li>傅里叶级数的傅里叶变换<script type="math/tex; mode=display">\sum_{k=-\infty}^{+\infty}a_ke^{jk\omega_0 t}\stackrel{FT}\longleftrightarrow \sum_{k=-\infty}^{+\infty}a_k2\pi\delta(\omega-k\omega_0)</script></li>
+<li>余弦函数的傅里叶变换<script type="math/tex; mode=display">\cos(\omega_0 t)\stackrel{FT}\longleftrightarrow \pi\delta(\omega+\omega_0)+\pi\delta(\omega-\omega_0)</script></li>
+<li>正弦函数的傅里叶变换<script type="math/tex; mode=display">\sin(\omega_0 t)\stackrel{FT}\longleftrightarrow j\pi\delta(\omega+\omega_0)-j\pi\delta(\omega-\omega_0)</script></li>
+<li>单位冲激串的傅里叶变换(先转换到傅里叶级数表示形式，单位冲激串傅里叶系数$a_k={1 \over T}$，再利用纯虚指数信号的变换[10]得到)<script type="math/tex; mode=display">\sum_{k=-\infty}^{+\infty}\delta(t-kT)\stackrel{FT}\longleftrightarrow {1 \over T}\sum_{k=-\infty}^{+\infty}2\pi\delta(\omega-k\omega_0)</script>最常用到的傅里叶变换对大致就是这些。在下列傅里叶变换的性质中，对偶性这一点处又会出现一系列新的变换对。</li>
+</ol>
+<h3 id="傅里叶变换的性质"><a href="#傅里叶变换的性质" class="headerlink" title="傅里叶变换的性质"></a>傅里叶变换的性质</h3>
       
       <!-- reward -->
       
@@ -683,6 +707,22 @@
 
     
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>
