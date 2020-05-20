@@ -280,11 +280,11 @@
 <script>
   try {
     var typed = new Typed("#subtitle", {
-      strings: ['千里之行，始于足下', '更喜岷山千里雪，三军过后尽开颜', ''],
+      strings: ['不积跬步,无以至千里', '更喜岷山千里雪，三军过后尽开颜', '古今多少事，都付笑谈中'],
       startDelay: 5,
       typeSpeed: 200,
       loop: true,
-      backSpeed: 100,
+      backSpeed: 80,
       showCursor: true
     });
   } catch (err) {
@@ -509,6 +509,22 @@
 
     
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>

@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.2k</span>
+            <span class="post-count">1.3k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4 分钟</span>
+            <span class="post-count">5 分钟</span>
         </span>
     </span>
 </div>
@@ -125,7 +125,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">更改为</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
 <p>第五步，在/theme/XXX主题目录下的config.yml文件中打开mathjax：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;bash</span><br><span class="line">mathjax:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure><br>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure><br>注意别忘掉了空格。<br>日后每篇文章地header中加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure></p>
 <p>然后便可以开怀地在博客上输入公式啦~<br>数学公式示例：<br>它渲染出来是这样的一个效果：</p>
-<script type="math/tex; mode=display">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script><script type="math/tex; mode=display">sqrt()</script><h3 id="图片的插入"><a href="#图片的插入" class="headerlink" title="图片的插入"></a>图片的插入</h3><p>下面大致说一说在文章种对图片的插入。</p>
+<script type="math/tex; mode=display">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script><script type="math/tex; mode=display">sqrt()</script><script type="math/tex; mode=display">\hat{a}, \acute{a},\grave{a},\breve{a},\bar{a},\widetilde{A},\check{a},\tilde{a},\dot{a},\ddot{a},\vec{a},\widehat{a}</script><script type="math/tex; mode=display">[\bf 转换字体]</script><h3 id="图片的插入"><a href="#图片的插入" class="headerlink" title="图片的插入"></a>图片的插入</h3><p>下面大致说一说在文章种对图片的插入。</p>
 <p>此处使用的是SM.MS直接生成的HTML链接插入的图片：</p>
 <p><div  align="center">
 <a href="https://sm.ms/image/CkHa1Lftqg8VI56" target="_blank"><img src="https://i.loli.net/2020/05/17/CkHa1Lftqg8VI56.png" ></a>
@@ -442,11 +442,11 @@
 <script>
   try {
     var typed = new Typed("#subtitle", {
-      strings: ['千里之行，始于足下', '更喜岷山千里雪，三军过后尽开颜', ''],
+      strings: ['不积跬步,无以至千里', '更喜岷山千里雪，三军过后尽开颜', '古今多少事，都付笑谈中'],
       startDelay: 5,
       typeSpeed: 200,
       loop: true,
-      backSpeed: 100,
+      backSpeed: 80,
       showCursor: true
     });
   } catch (err) {
@@ -688,6 +688,22 @@
 
     
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>
