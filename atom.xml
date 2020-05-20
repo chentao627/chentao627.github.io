@@ -46,12 +46,16 @@
     <link href="https://chentao627.github.io/2020/05/17/C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/"/>
     <id>https://chentao627.github.io/2020/05/17/C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/</id>
     <published>2020-05-17T13:01:15.000Z</published>
-    <updated>2020-05-20T03:02:54.390Z</updated>
+    <updated>2020-05-20T04:33:31.862Z</updated>
     
     <summary type="html">
     
+      &lt;h1 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h1&gt;&lt;p&gt;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？&lt;br&gt;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。&lt;br&gt;
+    
     </summary>
     
+    
+      <category term="C/C++语言" scheme="https://chentao627.github.io/categories/C-C-%E8%AF%AD%E8%A8%80/"/>
     
     
       <category term="C/C++" scheme="https://chentao627.github.io/tags/C-C/"/>
