@@ -1,50 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>这一个博客的设置过程</title>
-    <url>/2020/05/16/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0-%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。<br>下面是“阅读更多”的分页。<br><a id="more"></a></p>
-<h1 id="基本的安装与配置"><a href="#基本的安装与配置" class="headerlink" title="基本的安装与配置"></a>基本的安装与配置</h1><h2 id="Nodejs的安装"><a href="#Nodejs的安装" class="headerlink" title="Nodejs的安装"></a>Nodejs的安装</h2><h2 id="Git-for-windows的安装"><a href="#Git-for-windows的安装" class="headerlink" title="Git for windows的安装"></a>Git for windows的安装</h2><h2 id="Hexo的安装与配置"><a href="#Hexo的安装与配置" class="headerlink" title="Hexo的安装与配置"></a>Hexo的安装与配置</h2><p>Hexo的安装便需要用到npm install命令。可以在Hexo官网上看到给出了一个npm安装命令：<br><a href="https://sm.ms/image/Jn9EOMGSBUHZ2cQ" target="_blank"><img src="https://i.loli.net/2020/05/17/Jn9EOMGSBUHZ2cQ.png" ></a><br>直接把它复制到进入博客路径的cmd中执行即可。</p>
-<h2 id="Sublime的安装与配置"><a href="#Sublime的安装与配置" class="headerlink" title="Sublime的安装与配置"></a>Sublime的安装与配置</h2><p>通过各种手段下载到sunlime安装包并安装打开后，直接把Hexo文件夹中的博客文件夹拖入sublime界面即可：<br><a href="https://sm.ms/image/wIOUtJscSWajBou" target="_blank"><img src="https://i.loli.net/2020/05/17/wIOUtJscSWajBou.png" ></a></p>
-<h2 id="主题的安装"><a href="#主题的安装" class="headerlink" title="主题的安装"></a>主题的安装</h2><p>主题的安装可以直接从github上克隆下来。当然也可以下载主题的压缩包，把它丢到路径<Hexo\blogname\themes>中即可。然后便是按照所选安装包的教程在主_congfig.yml中进行一些代码的配置。</p>
-<h1 id="Hexo的应用"><a href="#Hexo的应用" class="headerlink" title="Hexo的应用"></a>Hexo的应用</h1><h2 id="菜单栏的设置及新页面的创立"><a href="#菜单栏的设置及新页面的创立" class="headerlink" title="菜单栏的设置及新页面的创立"></a>菜单栏的设置及新页面的创立</h2><h2 id="Tag、Categories的设置"><a href="#Tag、Categories的设置" class="headerlink" title="Tag、Categories的设置"></a>Tag、Categories的设置</h2><h2 id="Update设置"><a href="#Update设置" class="headerlink" title="Update设置"></a>Update设置</h2><h2 id="创建一篇新文章"><a href="#创建一篇新文章" class="headerlink" title="创建一篇新文章"></a>创建一篇新文章</h2><p>创建新文章可直接在博客路径的cmd中执行以下代码：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt; <span class="comment">#不加方括号与尖括号</span></span><br></pre></td></tr></table></figure><br>其中layout有三种默认布局，即：post、page、draft。它们分别对应路径’sorce_posts’、’source’、’source_drafts’。</p>
-<h2 id="文字、数学公式、图片的插入及相关API"><a href="#文字、数学公式、图片的插入及相关API" class="headerlink" title="文字、数学公式、图片的插入及相关API"></a>文字、数学公式、图片的插入及相关API</h2><h3 id="文字的插入"><a href="#文字的插入" class="headerlink" title="文字的插入"></a>文字的插入</h3><p>文字的插入直接在头部代码下方打字即可。超链接的设置代码如下：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Writing](https://hexo.io/docs/writing.html) <span class="comment">#这样便形成了一个名字为“Writing”，指向网址为https://hexo.io/docs/writing.html的超链接</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="数学公式mathjax引擎的配置与输入"><a href="#数学公式mathjax引擎的配置与输入" class="headerlink" title="数学公式mathjax引擎的配置与输入"></a>数学公式mathjax引擎的配置与输入</h3><p>有关数学公式的插入，这里使用的是mathjax插件。一共有5个步骤。<br>第一步，首先需要在博客文件夹中使用npm install命令卸载原始的marked渲染引擎（不支持mathjax），然后安装上hexo-renderer-kramed引擎：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></p>
-<p>第二步，更改文件配置，打开/node_modules/hexo-renderer-kramed/lib/renderer.js，将这一段代码：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line"><span class="keyword">function</span> formatText(text) &#123;</span><br><span class="line">    // Fit kramed<span class="string">'s rule: $$ + \1 + $$</span></span><br><span class="line"><span class="string">    return text.replace(/`\$(.*?)\$`/g, '</span>$$$$<span class="variable">$1</span>$$$$<span class="string">');</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure><br>更改为直接返回text，直接将源代码变为注释即可：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line"><span class="keyword">function</span> formatText(text) &#123;</span><br><span class="line">    <span class="built_in">return</span> text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>第三步，安装hexo-renderer-mathjax 包：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure></p>
-<p>打开/node_modules/hexo-renderer-mathjax/mathjax.html，将<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这段原始代码注释掉，更改为<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>第四步，由于LaTeX与markdown的语法有语义冲突，所以 hexo 默认的转义规则会将一些字符进行转义，所以我们需要对默认的规则进行修改.<br>打开/node_modules\kramed\lib\rules\inline.js，将<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()<span class="comment">#$+\-.!_&gt;])/,</span></span><br><span class="line">更改为</span><br><span class="line">escape: /^\\([`*\[\]()<span class="comment"># +\-.!_&gt;])/,</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">更改为</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
-<p>第五步，在/theme/XXX主题目录下的config.yml文件中打开mathjax：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;&#96;bash</span><br><span class="line">mathjax:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure><br>或者<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure><br>注意别忘掉了空格。<br>日后每篇文章地header中加上<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure></p>
-<p>然后便可以开怀地在博客上输入公式啦~<br>数学公式示例：<br>它渲染出来是这样的一个效果：</p>
-<script type="math/tex; mode=display">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script><script type="math/tex; mode=display">sqrt()</script><script type="math/tex; mode=display">\hat{a}, \acute{a},\grave{a},\breve{a},\bar{a},\widetilde{A},\check{a},\tilde{a},\dot{a},\ddot{a},\vec{a},\widehat{a}</script><script type="math/tex; mode=display">[\bf 转换字体]</script><script type="math/tex; mode=display">\stackrel{FT}\longleftrightarrow,箭头上加文字</script><script type="math/tex; mode=display">f(x)=
-\begin{cases}
-0& \text{x=0}\\\\
-1& \text{x!=0}
-\end{cases} 分段函数</script><script type="math/tex; mode=display">f(x)=
-\begin{cases}
-0& {x=0}\\\\
-1& {x\neq0}
-\end{cases}</script><h3 id="图片的插入"><a href="#图片的插入" class="headerlink" title="图片的插入"></a>图片的插入</h3><p>下面大致说一说在文章种对图片的插入。</p>
-<p>此处使用的是SM.MS直接生成的HTML链接插入的图片：</p>
-<p><div  align="center">
-<a href="https://sm.ms/image/CkHa1Lftqg8VI56" target="_blank"><img src="https://i.loli.net/2020/05/17/CkHa1Lftqg8VI56.png" ></a>
-</div><br>这里使用的是生成的Markdown链接插入的图片：</p>
-<p><img src="https://i.loli.net/2020/05/17/xMoGKF3edAh7Um8.png" alt="QQ截图20200516162849.png"><br>这2种插入图片的方式足够应付一般的写作了。</p>
-<h2 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h2><p>插件的安装最常用的办法便是使用npm install语法。在你的hexo目录下执行这样一句话<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure><br>这是下载安装一个可以上传本地图片的插件；npm install命令可以直接在所在目录下安装指定的插件，—save是后缀。</p>
-<h2 id="本地接口预览与上传服务器"><a href="#本地接口预览与上传服务器" class="headerlink" title="本地接口预览与上传服务器"></a>本地接口预览与上传服务器</h2><h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><p>本地静态网页的预览，直接可以通过cmd转到博客的文件夹中，执行代码：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s -p 5555 <span class="comment">#使用5555端口</span></span><br></pre></td></tr></table></figure><br>然后在网址地址栏中输入<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">localhost：5555</span><br></pre></td></tr></table></figure><br>即可访问本地静态网页。</p>
-<h3 id="上传服务器"><a href="#上传服务器" class="headerlink" title="上传服务器"></a>上传服务器</h3><p>此处暂时未在github中设置分支branch，而是直接推到master中。<br>在生成之前最好清理一下缓存：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment">#generate的简写</span></span><br></pre></td></tr></table></figure><br>直接在已进入博客文件夹路径的cmd中执行命令<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g <span class="comment">#generate的简写</span></span><br></pre></td></tr></table></figure><br>可以在本地执行生成静态网页，然后执行命令<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><br>即可把本地的内容推到github的仓库中，网页便上传了。</p>
-<h2 id="换电脑怎么办"><a href="#换电脑怎么办" class="headerlink" title="换电脑怎么办"></a>换电脑怎么办</h2><h2 id="域名的申请"><a href="#域名的申请" class="headerlink" title="域名的申请"></a>域名的申请</h2>]]></content>
+    <title>2020520随笔</title>
+    <url>/2020/05/20/2020520%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>博客设置</category>
+        <category>随笔</category>
       </categories>
       <tags>
-        <tag>博客代码设置</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
-    <title>C语言调用matlab引擎</title>
+    <title>利用C语言调用matlab引擎</title>
     <url>/2020/05/17/C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/</url>
     <content><![CDATA[<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？<br>于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。<br><a id="more"></a><br>本人在网上搜集到的调用matlab引擎的方法有二：</p>
 <ol>
@@ -73,7 +41,7 @@
     <title>信号与系统的梳理</title>
     <url>/2020/05/19/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A2%B3%E7%90%86/</url>
     <content><![CDATA[<p>整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。<br>其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。<br><a id="more"></a></p>
-<h1 id="前3个章节的梳理"><a href="#前3个章节的梳理" class="headerlink" title="前3个章节的梳理"></a>前3个章节的梳理</h1><h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>第二章首先学习的便是求信号在时域上的卷积。求卷积又分为离散时间信号的卷积和与连续时间信号的卷积积分。</p>
+<h1 id="前3个章节的梳理"><a href="#前3个章节的梳理" class="headerlink" title="前3个章节的梳理"></a>前3个章节的梳理</h1><h2 id="一、卷积"><a href="#一、卷积" class="headerlink" title="一、卷积"></a>一、卷积</h2><p>第二章首先学习的便是求信号在时域上的卷积。求卷积又分为离散时间信号的卷积和与连续时间信号的卷积积分。</p>
 <h3 id="单位冲激信号与单位阶跃信号"><a href="#单位冲激信号与单位阶跃信号" class="headerlink" title="单位冲激信号与单位阶跃信号"></a>单位冲激信号与单位阶跃信号</h3><p>在梳理卷积计算方法前，首先要引入的便是关于单位冲激信号的计算性质：</p>
 <script type="math/tex; mode=display">x(t)\delta(t)=x(0)\delta(t)</script><script type="math/tex; mode=display">x(t)\ast\delta(t-t_0)=x(t-t_0)</script><p>即信号x(t)与单位冲激信号的乘积，相当于在单位冲激信号脉冲处的采样，与单位冲激信号的卷积相当于时间谱象、频谱上的搬移。</p>
 <p>单位冲激信号经过LTI系统后的输出称为单位冲激响应，用h(t)表示：</p>
@@ -87,12 +55,12 @@
 <script type="math/tex; mode=display">x(t)\ast h(t)=h(t)\ast x(t)</script><script type="math/tex; mode=display">x(t)\ast (h_1(t)+h_2(t))=x(t)\ast h_1(t)+x(t)\ast h_2(t)</script><script type="math/tex; mode=display">(x(t)\ast h_1(t))\ast h_2(t)=x(t)\ast (h_1(t)\ast h_2(t))</script><p>接着便需要讨论LTI系统的5大特性，即：无记忆性、可逆性、时不变性、因果性、稳定性<br>【略，待补充】</p>
 <h3 id="线性常系数微分、差分方程来描述LTI系统"><a href="#线性常系数微分、差分方程来描述LTI系统" class="headerlink" title="线性常系数微分、差分方程来描述LTI系统"></a>线性常系数微分、差分方程来描述LTI系统</h3><p>【略，待补充】</p>
 <h3 id="单位冲激偶"><a href="#单位冲激偶" class="headerlink" title="单位冲激偶"></a>单位冲激偶</h3><p>【略，待补充】</p>
-<h2 id="周期信号的傅里叶级数表示"><a href="#周期信号的傅里叶级数表示" class="headerlink" title="周期信号的傅里叶级数表示"></a>周期信号的傅里叶级数表示</h2><h3 id="傅里叶级数公式"><a href="#傅里叶级数公式" class="headerlink" title="傅里叶级数公式"></a>傅里叶级数公式</h3><p>绝大多数周期信号都可以转换为傅里叶级数的形式来表示。<br>傅里叶级数的综合式与分析式如下：</p>
+<h2 id="二、周期信号的傅里叶级数表示"><a href="#二、周期信号的傅里叶级数表示" class="headerlink" title="二、周期信号的傅里叶级数表示"></a>二、周期信号的傅里叶级数表示</h2><h3 id="傅里叶级数公式"><a href="#傅里叶级数公式" class="headerlink" title="傅里叶级数公式"></a>傅里叶级数公式</h3><p>绝大多数周期信号都可以转换为傅里叶级数的形式来表示。<br>傅里叶级数的综合式与分析式如下：</p>
 <script type="math/tex; mode=display">x(t)=\sum_{k=-\infty}^{+\infty} a_k e^{jk\omega_0t}</script><script type="math/tex; mode=display">a_k={1 \over T} \int_T x(t)e^{-jk\omega_0t}{\rm d}t</script><p>其中$a_k$为傅里叶系数，也叫做$x(t)$的频谱系数，$k=0$时刻为原信号的直流分量。</p>
 <h3 id="傅里叶级数的收敛、狄里赫利条件"><a href="#傅里叶级数的收敛、狄里赫利条件" class="headerlink" title="傅里叶级数的收敛、狄里赫利条件"></a>傅里叶级数的收敛、狄里赫利条件</h3><p>【略，待补充】</p>
 <h3 id="连续时间傅里叶级数的七大性质、帕斯瓦尔定理、傅里叶级数的典型例子"><a href="#连续时间傅里叶级数的七大性质、帕斯瓦尔定理、傅里叶级数的典型例子" class="headerlink" title="连续时间傅里叶级数的七大性质、帕斯瓦尔定理、傅里叶级数的典型例子"></a>连续时间傅里叶级数的七大性质、帕斯瓦尔定理、傅里叶级数的典型例子</h3><p>线性性质、时移性质、时间反转性质、时域尺度变换性质、乘法性质、共轭与共轭对称性质、微分性质、帕斯瓦尔定理<br>【略，待补充】</p>
 <h3 id="指数周期信号、傅里叶级数通过LTI系统的响应"><a href="#指数周期信号、傅里叶级数通过LTI系统的响应" class="headerlink" title="指数周期信号、傅里叶级数通过LTI系统的响应"></a>指数周期信号、傅里叶级数通过LTI系统的响应</h3><h3 id="滤波"><a href="#滤波" class="headerlink" title="滤波"></a>滤波</h3><p>【略，待补充】</p>
-<h2 id="连续时间傅里叶变换"><a href="#连续时间傅里叶变换" class="headerlink" title="连续时间傅里叶变换"></a>连续时间傅里叶变换</h2><p>傅里叶级数将周期信号从时域上转变到了频谱上分析；为了对非周期信号$x(t)$进行频域分析，故由周期信号$\widetilde{x}(t)$为切入点使其$T\rightarrow\infty$，这样一来便可以从极限的傅里叶级数角度分析非周期信号的频域了。<br>傅里叶变换的正变换可以由傅里叶级数求$a_k$的分析式得到：</p>
+<h2 id="三、连续时间傅里叶变换"><a href="#三、连续时间傅里叶变换" class="headerlink" title="三、连续时间傅里叶变换"></a>三、连续时间傅里叶变换</h2><p>傅里叶级数将周期信号从时域上转变到了频谱上分析；为了对非周期信号$x(t)$进行频域分析，故由周期信号$\widetilde{x}(t)$为切入点使其$T\rightarrow\infty$，这样一来便可以从极限的傅里叶级数角度分析非周期信号的频域了。<br>傅里叶变换的正变换可以由傅里叶级数求$a_k$的分析式得到：</p>
 <script type="math/tex; mode=display">a_k={1 \over T}\int_{-T\over2}^{T\over2} \widetilde{x}(t)e^{-jk\omega_0t}{\rm d}t,{\bf 取积分部分}T\rightarrow\infty \Rightarrow X(j\omega)=\int_{-\infty}^{+\infty}x(t)e^{-j\omega t}{\rm d}t</script><p>傅里叶变换的逆变换可以由傅里叶级数求$x(t)$的综合式得到：</p>
 <script type="math/tex; mode=display">x(t)={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega)e^{j\omega t}{\rm d}\omega</script><h3 id="傅里叶变换的收敛、狄里赫利条件"><a href="#傅里叶变换的收敛、狄里赫利条件" class="headerlink" title="傅里叶变换的收敛、狄里赫利条件"></a>傅里叶变换的收敛、狄里赫利条件</h3><p>【略，待补充】</p>
 <h3 id="需要记忆的连续时间傅里叶变换对"><a href="#需要记忆的连续时间傅里叶变换对" class="headerlink" title="需要记忆的连续时间傅里叶变换对"></a>需要记忆的连续时间傅里叶变换对</h3><ol>
@@ -112,14 +80,34 @@
 \end{cases} \stackrel{FT}\longleftrightarrow {\sin{Wt} \over \pi t}</script></li>
 <li>单位冲激信号的傅里叶正变换<script type="math/tex; mode=display">\delta(t)\stackrel{FT}\longleftrightarrow 1</script></li>
 <li>常值信号的傅里叶正变换（直接用对偶性换过来）<script type="math/tex; mode=display">1\stackrel{FT}\longleftrightarrow 2\pi\delta(\omega)</script></li>
-<li>时移单位冲激信号的傅里叶正变换(傅里叶变换的时移性质求得)<script type="math/tex; mode=display">\delta(t-t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega_0}</script></li>
-<li>纯虚指数信号的傅里叶正变换(对的，由于前辈们天才的数学推导，将傅里叶变换的应用范围扩展到了周期信号)<script type="math/tex; mode=display">e^{jk\omega_0 t}\stackrel{FT}\longleftrightarrow 2\pi\delta(\omega-k\omega_0)</script></li>
+<li>时移单位冲激信号的傅里叶正变换（傅里叶变换的时移性质求得）<script type="math/tex; mode=display">\delta(t-t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega_0}</script></li>
+<li>纯虚指数信号的傅里叶正变换（对的，由于前辈们天才般的数学推导，将傅里叶变换的应用范围扩展到了周期信号）<script type="math/tex; mode=display">e^{jk\omega_0 t}\stackrel{FT}\longleftrightarrow 2\pi\delta(\omega-k\omega_0)</script></li>
 <li>傅里叶级数的傅里叶变换<script type="math/tex; mode=display">\sum_{k=-\infty}^{+\infty}a_ke^{jk\omega_0 t}\stackrel{FT}\longleftrightarrow \sum_{k=-\infty}^{+\infty}a_k2\pi\delta(\omega-k\omega_0)</script></li>
 <li>余弦函数的傅里叶变换<script type="math/tex; mode=display">\cos(\omega_0 t)\stackrel{FT}\longleftrightarrow \pi\delta(\omega+\omega_0)+\pi\delta(\omega-\omega_0)</script></li>
 <li>正弦函数的傅里叶变换<script type="math/tex; mode=display">\sin(\omega_0 t)\stackrel{FT}\longleftrightarrow j\pi\delta(\omega+\omega_0)-j\pi\delta(\omega-\omega_0)</script></li>
-<li>单位冲激串的傅里叶变换(先转换到傅里叶级数表示形式，单位冲激串傅里叶系数$a_k={1 \over T}$，再利用纯虚指数信号的变换[10]得到)<script type="math/tex; mode=display">\sum_{k=-\infty}^{+\infty}\delta(t-kT)\stackrel{FT}\longleftrightarrow {1 \over T}\sum_{k=-\infty}^{+\infty}2\pi\delta(\omega-k\omega_0)</script>最常用到的傅里叶变换对大致就是这些。在下列傅里叶变换的性质中，对偶性这一点处又会出现一系列新的变换对。</li>
+<li>单位冲激串的傅里叶变换（先转换到傅里叶级数表示形式，单位冲激串傅里叶系数$a_k={1 \over T}$，再利用纯虚指数信号的变换[10]得到）<script type="math/tex; mode=display">\sum_{k=-\infty}^{+\infty}\delta(t-kT)\stackrel{FT}\longleftrightarrow {1 \over T}\sum_{k=-\infty}^{+\infty}2\pi\delta(\omega-k\omega_0)</script></li>
+<li>单位冲激信号n阶微分的傅里叶变换<script type="math/tex; mode=display">{d^n \over dt^n}\delta(t)=\delta^{(n)}(t)\stackrel{FT}\longleftrightarrow (j\omega)^{(n)}</script></li>
+<li>风筝信号的傅里叶变换（先求导、再积分）</li>
 </ol>
-<h3 id="傅里叶变换的性质"><a href="#傅里叶变换的性质" class="headerlink" title="傅里叶变换的性质"></a>傅里叶变换的性质</h3>]]></content>
+<h3 id="傅里叶变换的性质（由时域到频域的傅里叶变换都是利用傅里叶逆变换公式取积分部分得到）"><a href="#傅里叶变换的性质（由时域到频域的傅里叶变换都是利用傅里叶逆变换公式取积分部分得到）" class="headerlink" title="傅里叶变换的性质（由时域到频域的傅里叶变换都是利用傅里叶逆变换公式取积分部分得到）"></a>傅里叶变换的性质（由时域到频域的傅里叶变换都是利用傅里叶逆变换公式取积分部分得到）</h3><ol>
+<li>线性<br>傅里叶变换的线性性与前面傅里叶级数类似，即满足：<script type="math/tex; mode=display">ax(t)+by(t)\stackrel{FT}\longleftrightarrow aX(j\omega)+bY(j\omega)</script>即可。</li>
+<li>（重点）时移特性<br>傅里叶变换的时移特性主要体现在系数的变化上，时域上的向右时移$t_0$对应频域上为$e^{-j\omega t_0}$<script type="math/tex; mode=display">x(t-t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega t_0}X(j\omega)</script><script type="math/tex; mode=display">x(-t+t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega t_0}X(-j\omega)</script>模值不改变，相位由$\angle H(j\omega)$变为$\angle H(j\omega)-\omega t_0$，($H(j\omega)$=$|H(j\omega)|\bullet e^{jk\angle H(j\omega)}$)<br>${\bf 第二个时移的具体推导：}$<script type="math/tex; mode=display">\begin{align}
+x(-t+t_0)
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\\
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\\
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{align}</script>取积分中间部分。</li>
+<li>（重点）共轭与共轭对称<script type="math/tex; mode=display">x^\ast (t)\stackrel{FT}\longleftrightarrow X^\ast (-j\omega)</script>一般而言，分析的信号都属于实信号。对于实信号还有：$x(t)=x^\ast (t)$，进而推出以下关系：<br>${\bf 实信号的傅里叶变换等于实信号的共轭傅里叶变换:}$<script type="math/tex; mode=display">X(j\omega)=X^\ast (-j\omega)</script>${\bf 傅里叶变换的实部为偶、虚部为奇:}$<br>${\bf 信号偶部对应傅里叶变换实部；信号奇部对应傅里叶变换虚部。从而可以独自按需求变换:}$<br>${\bf 实信号的傅里叶变换等于实信号的共轭傅里叶变换:}$    </li>
+<li>（常与单位冲激偶使用）微分、积分特性<br>微分傅里叶变换：<script type="math/tex; mode=display">x'(t)\stackrel{FT}\longleftrightarrow j\omega X(j\omega)</script>积分傅里叶变换：<script type="math/tex; mode=display">x^{-1}\stackrel{FT}\longleftrightarrow {1 \over j\omega}X(j\omega)+\pi X(0)\delta(\omega)</script></li>
+</ol>
+<ol>
+<li><p>频域与时域的尺度缩放</p>
+</li>
+<li><p>（重中之重）对偶性</p>
+</li>
+<li><p>帕斯瓦尔定理</p>
+</li>
+</ol>
+]]></content>
       <categories>
         <category>专业学科</category>
         <category>信号与系统科目</category>
@@ -127,6 +115,54 @@
       <tags>
         <tag>信息论</tag>
         <tag>信号与系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>这一个博客的设置过程</title>
+    <url>/2020/05/16/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0-%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。<br>下面是“阅读更多”的分页。<br><a id="more"></a></p>
+<h1 id="基本的安装与配置"><a href="#基本的安装与配置" class="headerlink" title="基本的安装与配置"></a>基本的安装与配置</h1><h2 id="Nodejs的安装"><a href="#Nodejs的安装" class="headerlink" title="Nodejs的安装"></a>Nodejs的安装</h2><h2 id="Git-for-windows的安装"><a href="#Git-for-windows的安装" class="headerlink" title="Git for windows的安装"></a>Git for windows的安装</h2><h2 id="Hexo的安装与配置"><a href="#Hexo的安装与配置" class="headerlink" title="Hexo的安装与配置"></a>Hexo的安装与配置</h2><p>Hexo的安装便需要用到npm install命令。可以在Hexo官网上看到给出了一个npm安装命令：<br><a href="https://sm.ms/image/Jn9EOMGSBUHZ2cQ" target="_blank"><img src="https://i.loli.net/2020/05/17/Jn9EOMGSBUHZ2cQ.png" ></a><br>直接把它复制到进入博客路径的cmd中执行即可。</p>
+<h2 id="Sublime的安装与配置"><a href="#Sublime的安装与配置" class="headerlink" title="Sublime的安装与配置"></a>Sublime的安装与配置</h2><p>通过各种手段下载到sunlime安装包并安装打开后，直接把Hexo文件夹中的博客文件夹拖入sublime界面即可：<br><a href="https://sm.ms/image/wIOUtJscSWajBou" target="_blank"><img src="https://i.loli.net/2020/05/17/wIOUtJscSWajBou.png" ></a></p>
+<h2 id="主题的安装"><a href="#主题的安装" class="headerlink" title="主题的安装"></a>主题的安装</h2><p>主题的安装可以直接从github上克隆下来。当然也可以下载主题的压缩包，把它丢到路径<Hexo\blogname\themes>中即可。然后便是按照所选安装包的教程在主_congfig.yml中进行一些代码的配置。</p>
+<h1 id="Hexo的应用"><a href="#Hexo的应用" class="headerlink" title="Hexo的应用"></a>Hexo的应用</h1><h2 id="菜单栏的设置及新页面的创立"><a href="#菜单栏的设置及新页面的创立" class="headerlink" title="菜单栏的设置及新页面的创立"></a>菜单栏的设置及新页面的创立</h2><h2 id="Tag、Categories的设置"><a href="#Tag、Categories的设置" class="headerlink" title="Tag、Categories的设置"></a>Tag、Categories的设置</h2><h2 id="Update设置"><a href="#Update设置" class="headerlink" title="Update设置"></a>Update设置</h2><h2 id="创建一篇新文章"><a href="#创建一篇新文章" class="headerlink" title="创建一篇新文章"></a>创建一篇新文章</h2><p>创建新文章可直接在博客路径的cmd中执行以下代码：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt; <span class="comment">#不加方括号与尖括号</span></span><br></pre></td></tr></table></figure><br>其中layout有三种默认布局，即：post、page、draft。它们分别对应路径’sorce_posts’、’source’、’source_drafts’。</p>
+<h2 id="文字、数学公式、图片的插入及相关API"><a href="#文字、数学公式、图片的插入及相关API" class="headerlink" title="文字、数学公式、图片的插入及相关API"></a>文字、数学公式、图片的插入及相关API</h2><h3 id="文字的插入、首行缩进"><a href="#文字的插入、首行缩进" class="headerlink" title="文字的插入、首行缩进"></a>文字的插入、首行缩进</h3><p>文字的插入直接在头部代码下方打字即可。超链接的设置代码如下：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Writing](https://hexo.io/docs/writing.html) <span class="comment">#这样便形成了一个名字为“Writing”，指向网址为https://hexo.io/docs/writing.html的超链接</span></span><br></pre></td></tr></table></figure><br>首行缩进可以使用空格的硬编码实现，只需在需要提行处输入下列代码即可：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&amp;nbsp;//这是半角空格（英文）</span><br><span class="line">&amp;emsp;//这是全角空格（中文）</span><br></pre></td></tr></table></figure><br>根据自己文章的语言需求放2个在前面即可。但似乎这种方法不太好用。</p>
+<h3 id="数学公式mathjax引擎的配置与输入"><a href="#数学公式mathjax引擎的配置与输入" class="headerlink" title="数学公式mathjax引擎的配置与输入"></a>数学公式mathjax引擎的配置与输入</h3><p>有关数学公式的插入，这里使用的是mathjax插件。一共有5个步骤。<br>第一步，首先需要在博客文件夹中使用npm install命令卸载原始的marked渲染引擎（不支持mathjax），然后安装上hexo-renderer-kramed引擎：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></p>
+<p>第二步，更改文件配置，打开/node_modules/hexo-renderer-kramed/lib/renderer.js，将这一段代码：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line"><span class="keyword">function</span> formatText(text) &#123;</span><br><span class="line">    // Fit kramed<span class="string">'s rule: $$ + \1 + $$</span></span><br><span class="line"><span class="string">    return text.replace(/`\$(.*?)\$`/g, '</span>$$$$<span class="variable">$1</span>$$$$<span class="string">');</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure><br>更改为直接返回text，直接将源代码变为注释即可：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line"><span class="keyword">function</span> formatText(text) &#123;</span><br><span class="line">    <span class="built_in">return</span> text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>第三步，安装hexo-renderer-mathjax 包：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure></p>
+<p>打开/node_modules/hexo-renderer-mathjax/mathjax.html，将<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这段原始代码注释掉，更改为<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>第四步，由于LaTeX与markdown的语法有语义冲突，所以 hexo 默认的转义规则会将一些字符进行转义，所以我们需要对默认的规则进行修改.<br>打开/node_modules\kramed\lib\rules\inline.js，将<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()<span class="comment">#$+\-.!_&gt;])/,</span></span><br><span class="line">更改为</span><br><span class="line">escape: /^\\([`*\[\]()<span class="comment"># +\-.!_&gt;])/,</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">更改为</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
+<p>第五步，在/theme/XXX主题目录下的config.yml文件中打开mathjax：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;&#96;bash</span><br><span class="line">mathjax:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure><br>或者<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure><br>注意别忘掉了空格。<br>日后每篇文章地header中加上<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure></p>
+<p>然后便可以开怀地在博客上输入公式啦~<br>数学公式示例：<br>它渲染出来是这样的一个效果：</p>
+<script type="math/tex; mode=display">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script><script type="math/tex; mode=display">sqrt()</script><script type="math/tex; mode=display">\hat{a}, \acute{a},\grave{a},\breve{a},\bar{a},\widetilde{A},\check{a},\tilde{a},\dot{a},\ddot{a},\vec{a},\widehat{a}</script><script type="math/tex; mode=display">[\bf 转换字体]</script><script type="math/tex; mode=display">\stackrel{FT}\longleftrightarrow,箭头上加文字</script><script type="math/tex; mode=display">f(x)=
+\begin{cases}
+0& \text{x=0}\\\\
+1& \text{x!=0}
+\end{cases} 分段函数</script><script type="math/tex; mode=display">f(x)=
+\begin{cases}
+0& {x=0}\\\\
+1& {x\neq0}
+\end{cases}</script><p>等式对其：</p>
+<script type="math/tex; mode=display">\begin{align}
+x(-t+t_0)
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\\
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\\
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{align}</script><h3 id="图片的插入"><a href="#图片的插入" class="headerlink" title="图片的插入"></a>图片的插入</h3><p>下面大致说一说在文章种对图片的插入。</p>
+<p>此处使用的是SM.MS直接生成的HTML链接插入的图片：</p>
+<p><div  align="center">
+<a href="https://sm.ms/image/CkHa1Lftqg8VI56" target="_blank"><img src="https://i.loli.net/2020/05/17/CkHa1Lftqg8VI56.png" ></a>
+</div><br>这里使用的是生成的Markdown链接插入的图片：</p>
+<p><img src="https://i.loli.net/2020/05/17/xMoGKF3edAh7Um8.png" alt="QQ截图20200516162849.png"><br>这2种插入图片的方式足够应付一般的写作了。</p>
+<h2 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h2><p>插件的安装最常用的办法便是使用npm install语法。在你的hexo目录下执行这样一句话<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure><br>这是下载安装一个可以上传本地图片的插件；npm install命令可以直接在所在目录下安装指定的插件，—save是后缀。</p>
+<h2 id="本地接口预览与上传服务器"><a href="#本地接口预览与上传服务器" class="headerlink" title="本地接口预览与上传服务器"></a>本地接口预览与上传服务器</h2><h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><p>本地静态网页的预览，直接可以通过cmd转到博客的文件夹中，执行代码：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s -p 5555 <span class="comment">#使用5555端口</span></span><br></pre></td></tr></table></figure><br>然后在网址地址栏中输入<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">localhost：5555</span><br></pre></td></tr></table></figure><br>即可访问本地静态网页。</p>
+<h3 id="上传服务器"><a href="#上传服务器" class="headerlink" title="上传服务器"></a>上传服务器</h3><p>此处暂时未在github中设置分支branch，而是直接推到master中。<br>在生成之前最好清理一下缓存：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment">#generate的简写</span></span><br></pre></td></tr></table></figure><br>直接在已进入博客文件夹路径的cmd中执行命令<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g <span class="comment">#generate的简写</span></span><br></pre></td></tr></table></figure><br>可以在本地执行生成静态网页，然后执行命令<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><br>即可把本地的内容推到github的仓库中，网页便上传了。</p>
+<h2 id="换电脑怎么办"><a href="#换电脑怎么办" class="headerlink" title="换电脑怎么办"></a>换电脑怎么办</h2><h2 id="域名的申请"><a href="#域名的申请" class="headerlink" title="域名的申请"></a>域名的申请</h2>]]></content>
+      <categories>
+        <category>博客设置</category>
+      </categories>
+      <tags>
+        <tag>博客代码设置</tag>
       </tags>
   </entry>
 </search>
