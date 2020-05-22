@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">2.4k</span>
+            <span class="post-count">2.9k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">10 分钟</span>
+            <span class="post-count">12 分钟</span>
         </span>
     </span>
 </div>
@@ -177,7 +177,21 @@ x(-t+t_0)
 <li><p>帕斯瓦尔定理</p>
 </li>
 </ol>
-
+<h1 id="后半部分的梳理"><a href="#后半部分的梳理" class="headerlink" title="后半部分的梳理"></a>后半部分的梳理</h1><h2 id="四、拉普拉斯变换"><a href="#四、拉普拉斯变换" class="headerlink" title="四、拉普拉斯变换"></a>四、拉普拉斯变换</h2><p>拉普拉斯变换将时域到频域的变换拓展到了针对非绝对可积信号的变换。拉普拉斯的正、逆变换公式如下：</p>
+<script type="math/tex; mode=display">X(s)=\int_{-\infty}^{+\infty}x(t)e^{-st}{\rm d}t, s=\sigma+j\omega</script><script type="math/tex; mode=display">x(t)={1 \over 2\pi}\int_{-\infty}^{+\infty}X(s)e^{st}{\rm d}s</script><p>拉普拉斯变换同样可以记作：</p>
+<script type="math/tex; mode=display">x(t)\stackrel{LT}\longleftrightarrow X(s), ROC</script><p>其中，ROC(Region of convergence)即收敛域，非常重要。拉普拉斯的正逆变换公式与傅里叶变换公式几乎一致，不同之处在于$s=\sigma+j\omega$。但需要警惕的是：${\bf 当且仅当拉普拉斯变换对的收敛域ROC在复平面上内含j\omega轴时，傅里叶变换才能在s=0+j\omega处与该处的拉普拉斯变换对应相等。}$</p>
+<h3 id="有理变换"><a href="#有理变换" class="headerlink" title="有理变换"></a>有理变换</h3><p>通常而言(非绝对)，拉普拉斯变换$X(s)$一般是以变量为$s$的多项式的比的形式出现的：</p>
+<script type="math/tex; mode=display">X(s)= {N(s) \over D(s)}，{\bf 其中N(s),D(s)都是关于s的多项式}</script><p>使分子等于0的根叫做$X(s)$的零点，使分母为0的根叫做$X(s)$的极点（Poles），后者相对来说更重要一些，画pole-zero plot一般也多参考后者。</p>
+<h3 id="ROC的八大性质"><a href="#ROC的八大性质" class="headerlink" title="ROC的八大性质"></a>ROC的八大性质</h3><ol>
+<li>$X(s)$的ROC在S平面内，由平行于$j\omega$轴的带状区域所组成<br>${\bf 也就是说ROC只与拉普拉斯自变量s的实部Re\{s\}=\sigma有关}$</li>
+<li>对于有理拉普拉斯变换而言，ROC内不包含任何的极点<br>${\bf “有理”限制了分母不能为0，即不存在s值使分母为0}$</li>
+<li>如果$x(t)$是持续时间有限的，并且是绝对可积的，那么其收敛域ROC就是整个平面<br>用数学表达式表示为：<script type="math/tex; mode=display">
+\begin{cases}
+x(t)=0& {t<T_1,t>T_2} \\\\
+\int_{T_1}^{T_2}x(t){\rm d}t < \infty& {T_1< t <T_2}
+\end{cases}</script>例如$u(t)-u(t-1)\stackrel{LT}\longleftrightarrow {1 \over s}[1-e^{-s}]$，当$s=0$时，极限存在，故不存在极点。</li>
+</ol>
+<h3 id="常见的拉普拉斯变换对"><a href="#常见的拉普拉斯变换对" class="headerlink" title="常见的拉普拉斯变换对"></a>常见的拉普拉斯变换对</h3>
       
       <!-- reward -->
       
@@ -490,7 +504,7 @@ x(-t+t_0)
 <script>
   try {
     var typed = new Typed("#subtitle", {
-      strings: ['不积跬步,无以至千里', '更喜岷山千里雪，三军过后尽开颜', '古今多少事，都付笑谈中'],
+      strings: ['天行健，君子以自强不息', '更喜岷山千里雪，三军过后尽开颜', '古今多少事，都付笑谈中'],
       startDelay: 5,
       typeSpeed: 200,
       loop: true,
