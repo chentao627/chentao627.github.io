@@ -178,7 +178,11 @@ x(-t+t_0)
 </li>
 </ol>
 <h1 id="后半部分的梳理"><a href="#后半部分的梳理" class="headerlink" title="后半部分的梳理"></a>后半部分的梳理</h1><h2 id="四、拉普拉斯变换"><a href="#四、拉普拉斯变换" class="headerlink" title="四、拉普拉斯变换"></a>四、拉普拉斯变换</h2><p>拉普拉斯变换将时域到频域的变换拓展到了针对非绝对可积信号的变换。拉普拉斯的正、逆变换公式如下：</p>
-<script type="math/tex; mode=display">X(s)=\int_{-\infty}^{+\infty}x(t)e^{-st}{\rm d}t, s=\sigma+j\omega</script><script type="math/tex; mode=display">x(t)={1 \over 2\pi}\int_{-\infty}^{+\infty}X(s)e^{st}{\rm d}s</script><p>拉普拉斯变换同样可以记作：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+X(s)=\int_{-\infty}^{+\infty}x(t)e^{-st}{\rm d}t& {s=\sigma+j\omega}\\\\
+x(t)={1 \over 2\pi}\int_{-\infty}^{+\infty}X(s)e^{st}{\rm d}s
+\end{cases}</script><p>正变换中，$x(t)$与$e^{-st}$由$g(t)=x(t)e^{-\sigma t}$与傅里叶正变换推导而来。<br>拉普拉斯变换同样可以记作：</p>
 <script type="math/tex; mode=display">x(t)\stackrel{LT}\longleftrightarrow X(s), ROC</script><p>其中，ROC(Region of convergence)即收敛域，非常重要。拉普拉斯的正逆变换公式与傅里叶变换公式几乎一致，不同之处在于$s=\sigma+j\omega$。但需要警惕的是：${\bf 当且仅当拉普拉斯变换对的收敛域ROC在复平面上内含j\omega轴时，傅里叶变换才能在s=0+j\omega处与该处的拉普拉斯变换对应相等。}$</p>
 <h3 id="有理变换"><a href="#有理变换" class="headerlink" title="有理变换"></a>有理变换</h3><p>通常而言(非绝对)，拉普拉斯变换$X(s)$一般是以变量为$s$的多项式的比的形式出现的：</p>
 <script type="math/tex; mode=display">X(s)= {N(s) \over D(s)}，{\bf 其中N(s),D(s)都是关于s的多项式}</script><p>使分子等于0的根叫做$X(s)$的零点，使分母为0的根叫做$X(s)$的极点（Poles），后者相对来说更重要一些，画pole-zero plot一般也多参考后者。</p>
@@ -189,7 +193,12 @@ x(-t+t_0)
 \begin{cases}
 x(t)=0& {t<T_1,t>T_2} \\\\
 \int_{T_1}^{T_2}x(t){\rm d}t < \infty& {T_1< t <T_2}
-\end{cases}</script>例如$u(t)-u(t-1)\stackrel{LT}\longleftrightarrow {1 \over s}[1-e^{-s}]$，当$s=0$时，极限存在，故不存在极点。</li>
+\end{cases}</script>一旦满足上述条件，任何$e^{-\sigma t}$信号与之相乘都会是一个收敛的数。<br>例如$u(t)-u(t-1)\stackrel{LT}\longleftrightarrow {1 \over s}[1-e^{-s}]$，当$s=0$时，极限存在，故不存在极点。且它是一个持续时间有限、绝对可积的门信号，故其收敛域在整个平面。</li>
+<li>如果$x(t)$是右边信号，且s的实部这条线$Re{s}=\sigma_0$并位于ROC内，那么$Re{s}&gt;\sigma_0$的全部s都一定在ROC内</li>
+<li>如果$x(t)$是左边信号，且s的实部这条线$Re{s}=\sigma_0$并位于ROC内，那么$Re{s}&lt;\sigma_0$的全部s都一定在ROC内</li>
+<li>如果$x(t)$是双边信号，且s的实部这条线$Re{s}=\sigma_0$并位于ROC内，那么ROC便一定是由S平面内的一条带状区域组成，且$Re{s}=\sigma_0$一定位于该带中。一般而言，$\sigma_{Right}&lt;Re\{s\}&lt;\sigma_{Left}，(\sigma_{Right}&lt;\sigma_{Left})$<br>举例说明：双边带信号的拉普拉斯变换及其ROC情况<br>【暂略】</li>
+<li>如果$X(s)$是有理的，那么它的ROC是被极点所界定、且延申到无限远的。此外，如2.所言，$X(s)$的ROC内不包含任何极点。</li>
+<li>如果$X(s)$是有理的，那么：<br> 8.1 如果$x(t)$是右边信号，那么其ROC处于其最右边极点的右边；<br> 8.2 如果$x(t)$是左边信号，那么其ROC处于其最左边极点的左边。<br> 于是对于一个双边信号而言，其拉普拉斯变换则要讨论ROC的方向了。</li>
 </ol>
 <h3 id="常见的拉普拉斯变换对"><a href="#常见的拉普拉斯变换对" class="headerlink" title="常见的拉普拉斯变换对"></a>常见的拉普拉斯变换对</h3>
       
