@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chentao627.github.io/"/>
-  <updated>2020-05-22T02:52:04.291Z</updated>
+  <updated>2020-05-26T03:47:41.721Z</updated>
   <id>https://chentao627.github.io/</id>
   
   <author>
@@ -17,15 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>信号与系统Matlab笔记</title>
+    <link href="https://chentao627.github.io/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/"/>
+    <id>https://chentao627.github.io/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-05-26T00:58:38.000Z</published>
+    <updated>2020-05-26T03:47:41.721Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;Matlab中有关信号与系统问题的语法总结。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="专业学科" scheme="https://chentao627.github.io/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/"/>
+    
+      <category term="信号与系统科目" scheme="https://chentao627.github.io/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%A7%91%E7%9B%AE/"/>
+    
+    
+      <category term="-信号与系统 -Matlab" scheme="https://chentao627.github.io/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F-Matlab/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2020520随笔</title>
     <link href="https://chentao627.github.io/2020/05/20/2020520%E9%9A%8F%E7%AC%94/"/>
     <id>https://chentao627.github.io/2020/05/20/2020520%E9%9A%8F%E7%AC%94/</id>
     <published>2020-05-20T13:03:19.000Z</published>
-    <updated>2020-05-22T02:52:04.291Z</updated>
+    <updated>2020-05-26T03:35:44.796Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，但回过头来对照现实又会让人不禁觉得后背一凉。杜牧在《阿房宫赋》里面写道：“秦人不暇自哀，而后人哀之；后人哀之而不鉴之，亦使后人而复哀后人也”。阿房宫当年修没修起来我们不得而知，不过以前人之鉴为自己所诫还是挺有意义的。&lt;br&gt;
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，但回过头来对照现实又会让人不禁觉得后背一凉。杜牧在《阿房宫赋》里面写道：“秦人不暇自哀，而后人哀之；后人哀之而不鉴之，亦使后人而复哀后人也”。阿房宫当年修没修起来我们不得而知，不过以前人之鉴为自己所诫还是挺有意义的。&lt;br&gt;
     
     </summary>
     
@@ -42,7 +65,7 @@
     <link href="https://chentao627.github.io/2020/05/19/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A2%B3%E7%90%86/"/>
     <id>https://chentao627.github.io/2020/05/19/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A2%B3%E7%90%86/</id>
     <published>2020-05-19T10:13:04.000Z</published>
-    <updated>2020-05-25T13:42:01.611Z</updated>
+    <updated>2020-05-26T08:32:28.739Z</updated>
     
     <summary type="html">
     
@@ -67,11 +90,11 @@
     <link href="https://chentao627.github.io/2020/05/17/C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/"/>
     <id>https://chentao627.github.io/2020/05/17/C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/</id>
     <published>2020-05-17T13:01:15.000Z</published>
-    <updated>2020-05-20T13:00:49.119Z</updated>
+    <updated>2020-05-26T03:36:37.724Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h1&gt;&lt;p&gt;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？&lt;br&gt;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。&lt;br&gt;
+      &lt;h1 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h1&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。&lt;br&gt;
     
     </summary>
     
@@ -90,11 +113,11 @@
     <link href="https://chentao627.github.io/2020/05/16/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0-%E6%B5%8B%E8%AF%95/"/>
     <id>https://chentao627.github.io/2020/05/16/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0-%E6%B5%8B%E8%AF%95/</id>
     <published>2020-05-15T16:00:00.000Z</published>
-    <updated>2020-05-25T13:09:39.835Z</updated>
+    <updated>2020-05-26T08:14:44.387Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。&lt;br&gt;下面是“阅读更多”的分页。&lt;br&gt;
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。&lt;br&gt;下面是“阅读更多”的分页。&lt;br&gt;
     
     </summary>
     

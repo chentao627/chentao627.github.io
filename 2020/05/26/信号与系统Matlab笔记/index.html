@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    tags |  路
+    信号与系统Matlab笔记 |  路
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,13 +44,245 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
+  <article id="post-信号与系统Matlab笔记" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  信号与系统Matlab笔记
+</h1>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-05-26T00:58:38.000Z" itemprop="datePublished">2020-05-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/">专业学科</a> / <a class="article-category-link" href="/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%A7%91%E7%9B%AE/">信号与系统科目</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">924</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">3 分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <p>&ensp;&ensp;&ensp;&ensp;Matlab中有关信号与系统问题的语法总结。<br><a id="more"></a></p>
+<h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><ul>
+<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br>_例如1：画出$x[n]=2n,-3\leq n\leq 3$_</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n&#x3D;-3:3;</span><br><span class="line">x&#x3D;2*n;</span><br><span class="line">stem(n, x)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>subplot(m, n, P)</code>函数：该函数用来规划画布上图像放置的位置。其中，m、n用来将画布分割，m为行，n为列；而P代表取分割部分的第几块。<br>例如：<code>subplot(2,2,[1 3])</code>代表将画布分为2x2的4部分，并该函数对应的图像放在第1，3块处</p>
+</li>
+<li><code>grid on</code>函数：<code>grid on</code>为显示网格，相反，<code>grid off</code> 为关闭显示网格。</li>
+<li>点乘<code>.*</code>与一般乘法<code>*</code>：函数与函数相乘，例如$\sin(t)\sin(9t)$，一般是用点乘<code>.*</code>。点乘主要用于函数中元素的乘法（数组乘法array multiply）；而一般乘法则为矩阵乘法（Matrix multiply）。<br>_例如2：用图形表示连续调制波形$y=\sin(t)\sin(9t)$及其包络。_<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t&#x3D;(0:pi&#x2F;100:pi)&#39; % 长 度 为 101 的 时 间 采 样 列 向 量</span><br><span class="line">y1&#x3D;sin(t)*[1,-1]; %包络线函数值，是（101x2）的矩阵</span><br><span class="line">y2&#x3D;sin(t).*sin(9*t); %长度为101的调制波列向量</span><br><span class="line">t3&#x3D;pi*(0:9)&#x2F;9%在定义域区间均匀地取10个点</span><br><span class="line">y3&#x3D;sin(t3).*sin(9*t3);%算出该十个点的值</span><br><span class="line">plot(t,y1,&#39;r:&#39;,t,y2,&#39;b&#39;,t3,y3,&#39;bo&#39;)%画出函数图像，包络线图像，取点图像</span><br><span class="line">axis([0,pi,-1,1]) %控制画出的轴范围，前2参数为横轴；后2值为纵轴</span><br></pre></td></tr></table></figure></li>
+<li><p>单位脉冲序列$\delta[n]$与单位阶跃序列$u[n]$：可以综合使用<code>ones(1,\ n)</code>与<code>zeros(1,n)</code>来产生单位脉冲序列与代为阶跃序列。<br>其中<code>ones(1,\ n)</code>命令产生1行n列的1值；<code>zeros(1,n)</code>命令产生1行n列的0值。<br>_例如3：_</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n&#x3D;0: 32;</span><br><span class="line">x&#x3D;[zeros(1,5),1,zeros(1,27)];%一个x&#x3D;\delta(n-6)的单位冲激函数</span><br><span class="line">stem(n, x, &#39;fill&#39;);%以n为横坐标画出数据序列x</span><br><span class="line">filter(num ,den, x)函数：该函数主要是针对LTI系统设置。因果LTI系统的零状态响应，可以利用y&#x3D;filter(num,\ den,\ x)实现。</span><br><span class="line">&#x2F;&#x2F;其中，num为系统传递函数分子系数组成的行向量、den为系统传递函数分母系数组成的行向量、x为输入的离散序列、y为输出的离散序列且y与x的长度一样。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>syms</code>函数：用来创建一个符号表达式。可以理解为用来创建一个“变量”，创建后的变量可以直接写入函数中作为自变量使用。常用作创建连续时间信号<br>_例如4：_</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">syms t;%创建一个符号表达式，“变量t”</span><br><span class="line">syms T;</span><br><span class="line">f&#x3D;sin(2*pi*t&#x2F;T)%写出函数f，该函数包含待定变量t与T</span><br></pre></td></tr></table></figure></li>
+<li><code>x1=subs（f，T，5）</code>：该函数用于给自定义的符号表达式中的某个变量赋值，示例为将符号表达式f中的变量T赋值为5，并将该赋值后的符号表达式记为x1.</li>
+<li><code>ezplot（&lt;隐函数表达式&gt;,[x最小值，x最大值，y最小值，y最大值])</code>：该函数用来绘制只有单一自变量的symbolic expression，即直接绘制单一自变量的函数。</li>
+<li><code>int(F,x,a,b)</code>函数：该函数用来计算自己定义的符号表达式的积分。其中F为被积函数，x为自变量（可忽略），a为积分下限，b为积分上限。</li>
+</ul>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong>
+              本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://chentao627.github.io/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F-Matlab/" rel="tag">-信号与系统 -Matlab</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
   
-    <h1 class="page-type-title">标签</h1>
-    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F-Matlab/" rel="tag">-信号与系统 -Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/" rel="tag">信号与系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/" rel="tag">信息论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E4%BB%A3%E7%A0%81%E8%AE%BE%E7%BD%AE/" rel="tag">博客代码设置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
   
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/05/20/2020520%E9%9A%8F%E7%AC%94/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">2020520随笔</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+  
+  
+
+</article>
 </section>
-
-
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -213,6 +445,23 @@
 </script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
