@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    通信网络梳理 |  路
+    通信网络的框架梳理 |  路
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -52,7 +52,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  通信网络梳理
+  通信网络的框架梳理
 </h1>
  
 
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.3k</span>
+            <span class="post-count">2.2k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4 分钟</span>
+            <span class="post-count">8 分钟</span>
         </span>
     </span>
 </div>
@@ -110,21 +110,19 @@
       
 
       
-      <p>&ensp;&ensp;&ensp;&ensp;<del>通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。</del></p>
-<a id="more"></a>
-<p>&ensp;&ensp;&ensp;&ensp;好了不开玩笑了。整个通信网络体系自顶向下由5个层级构成：<strong>应用层、运输层、网络层、链路层、物理层</strong>。每一个layer里面都有各自对应的结构构造、数据包结构、通信协议、拥塞控制机制、甚至是错误错误控制机制。其中数据包单位（PDU，protocol data unit）自定向下分别为：<strong>Message、Segment（报文段）、datagram（数据报）、Frame（帧）、Bit（比特）</strong>；每一层的常见协议/传输方式自顶向下有：HTTP、FTP、DNS； TCP\UDP；VC、datagram(IP)；（Stop-and-Wait protocol、Sliding-Window Protocal、Piggybacking）流量控制协议、多路访问协议等等。<br>&ensp;&ensp;&ensp;&ensp;本文主要是以梳理串线为主，将通信网络中学到的内容整理起来，以供日后使用。</p>
+      <blockquote>
+<p>嵩云秦树久离居，双鲤迢迢一纸书。——李商隐《寄令狐郎中》</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;<del>通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。</del><br><a id="more"></a><br>&ensp;&ensp;&ensp;&ensp;好了不开玩笑了。整个通信网络体系自顶向下由5个层级构成：<strong>应用层、运输层、网络层、链路层、物理层</strong>。每一个layer里面都有各自对应的结构构造、数据包结构、通信协议、拥塞控制机制、甚至是错误错误控制机制。其中数据包单位（PDU，protocol data unit）自定向下分别为：<strong>Message、Segment（报文段）、datagram（数据报）、Frame（帧）、Bit（比特）</strong>；每一层的常见协议/传输方式自顶向下有：HTTP、FTP、DNS； TCP\UDP；VC、datagram(IP)；（Stop-and-Wait protocol、Sliding-Window Protocal、Piggybacking）流量控制协议、多路访问协议等等。<br>&ensp;&ensp;&ensp;&ensp;本文主要是以梳理串线为主，将通信网络中学到的内容整理起来，以供日后使用。</p>
 <h1 id="一、应用层"><a href="#一、应用层" class="headerlink" title="一、应用层"></a>一、应用层</h1><h1 id="二、运输层"><a href="#二、运输层" class="headerlink" title="二、运输层"></a>二、运输层</h1><h1 id="三、网络层"><a href="#三、网络层" class="headerlink" title="三、网络层"></a>三、网络层</h1><h1 id="四、链路层、局域网"><a href="#四、链路层、局域网" class="headerlink" title="四、链路层、局域网"></a>四、链路层、局域网</h1><h2 id="1-链路层的错误检测修复机制（Error-detection-amp-correction）"><a href="#1-链路层的错误检测修复机制（Error-detection-amp-correction）" class="headerlink" title="1.链路层的错误检测修复机制（Error detection &amp; correction）"></a>1.链路层的错误检测修复机制（Error detection &amp; correction）</h2><h3 id="错误检测"><a href="#错误检测" class="headerlink" title="错误检测"></a>错误检测</h3><h3 id="错误纠正（Automatic-repeat-request，ARQ）"><a href="#错误纠正（Automatic-repeat-request，ARQ）" class="headerlink" title="错误纠正（Automatic repeat request，ARQ）"></a>错误纠正（Automatic repeat request，ARQ）</h3><h2 id="2-多路访问协议（Multiple-access-protocol，MAC）"><a href="#2-多路访问协议（Multiple-access-protocol，MAC）" class="headerlink" title="2.多路访问协议（Multiple access protocol，MAC）"></a>2.多路访问协议（Multiple access protocol，MAC）</h2><p>&ensp;&ensp;&ensp;&ensp;一般而言，网络连接有2种方式：即<strong>点对点（point-to-point）、以及广播（broadcast）</strong>。不同以往的拨号上网，现在的网络连接通常都是broadcast（shared medium）方式，例如shared wire（eg：以太网）、shared wireless（eg：Wavelan）。使用广播手段便需要解决一个问题，因为任何时候只能接入一个用户，此时其余用户只能等待，如果两个及以上的用户同时进入，相当于2个及以上的节点同时传输帧，那么所有的节点都会同时接收到多个帧，那么此时传输的帧便在所有的接收方处发生<strong>碰撞（collide）</strong>。而多个用户都想同时接入进来，如何协调接入到单个信道中的用户？如何保证公平性？<br>&ensp;&ensp;&ensp;&ensp;MAC便是<strong>一种决定节点如何分享频道的分布式算法，例如节点何时可以传输。</strong></p>
 <ul>
-<li>理想MAC下的一些变量及先前假设（完全不可能做到，但就像数学建模一样，下面分析模型需要基于它）</li>
-</ul>
-<p>-$R$：节点的传输速率<br>-$\frac{R}{M}$：M个节点的平均传输速率<br>-假设没有特殊节点来协调传输<br>-假设没有时钟同步</p>
-<h3 id="A-信道划分协议（Channel-partitioning）"><a href="#A-信道划分协议（Channel-partitioning）" class="headerlink" title="A.信道划分协议（Channel partitioning）"></a>A.信道划分协议（Channel partitioning）</h3><p>&ensp;&ensp;&ensp;&ensp;基本原理为将带宽划分为许多子信道，每个子信道分给许多用户来使用。这是现有基站常用的方法。常见有：时分复用（time slots）、频分复用（frequency slots）、码分复用（code slots）、正交码分复用，空分复用。</p>
-<ul>
+<li>理想MAC下的一些变量及先前假设（完全不可能做到，但就像数学建模一样，下面分析模型需要基于它）<br>-$R$：节点的传输速率<br>-$\frac{R}{M}$：M个节点的平均传输速率<br>-假设没有特殊节点来协调传输<br>-假设没有时钟同步<h3 id="A-信道划分协议（Channel-partitioning）"><a href="#A-信道划分协议（Channel-partitioning）" class="headerlink" title="A.信道划分协议（Channel partitioning）"></a>A.信道划分协议（Channel partitioning）</h3>&ensp;&ensp;&ensp;&ensp;基本原理为将带宽划分为许多子信道，每个子信道分给许多用户来使用。这是现有基站常用的方法。常见有：时分复用（time slots）、频分复用（frequency slots）、码分复用（code slots）、正交码分复用，空分复用。</li>
 <li><p><strong>时分复用多路访问（Time Division Multiple Access，TDMA）</strong><br>缺点：有可能浪费子信道，因为信道对应的用户已经划分好；需要全网同步，难度极大</p>
 </li>
 <li><p><strong>频分复用多路访问（Frequency Division Multiple Access，FDMA）</strong><br>从频域上划分为多个信道。困难在于难以划分干净，因为实际滤波器有衰减带，可能发生码间干扰。广播电台通常用此法。</p>
 </li>
-<li><p><strong>码分复用多路访问（Code Division Multiple Access， CDMA）</strong><br>码分复用进行的相当于是对original signal的扩频：<br>$$encoded\ signal=(original\ data) \times (chipping\ sequence)$$<br>相当于把原始信号给掩盖了，属于抗干扰加密通信。</p>
+<li><p><strong>码分复用多路访问（Code Division Multiple Access， CDMA）</strong><br>码分复用进行的相当于是对original signal的扩频：</p>
+<script type="math/tex; mode=display">encoded\ signal=(original\ data) \times (chipping\ sequence)</script><p>相当于把原始信号给掩盖了，属于抗干扰加密通信。</p>
 </li>
 </ul>
 <h3 id="B-随机接入协议（Random-access-protocol）"><a href="#B-随机接入协议（Random-access-protocol）" class="headerlink" title="B.随机接入协议（Random access protocol）"></a>B.随机接入协议（Random access protocol）</h3><p>&ensp;&ensp;&ensp;&ensp;随机接入协议不分子信道，允许冲突，但有一个从冲突中恢复的机制。该协议的主要研究点在于如何检测是否发生冲突、以及如何从冲突中恢复。</p>
@@ -135,22 +133,37 @@
 </li>
 <li><p>操作<br>当一个节点得到一个帧，它会向下一个节点传输。当发生冲突时，节点会基于重传概率$p$向下一个节点进行重传，直到成功。因为如果同时全部重传，会再一次在接收端产生冲突，类似于对向骑自行车你往左我往右这样错误的避让方式一样。</p>
 </li>
-<li><p>效率<br>1个节点成功传输的概率为：$p(1-p)^{N-1}$，类似于伯努利分布<br>任何一个节点成功传输的概率：$Np(1-p)^{N-1}$<br>许多个节点的最大效率为$0.368\approx 37%$</p>
+<li><p>效率<br>1个节点成功传输的概率为：$p(1-p)^{N-1}$，类似于伯努利分布<br>任何一个节点成功传输的概率：$Np(1-p)^{N-1}$<br>许多个节点的最大效率为$0.368\approx 37\%$</p>
 </li>
 </ul>
 </li>
-<li><p><strong>ALOHA(没有p，检测到前一个time frame、后一个time frame没有传输便可以传)</strong></p>
+<li><p><strong>Pure ALOHA(没有p，检测到前一个time frame、后一个time frame没有传输便可以传)</strong></p>
 <ul>
-<li>效率<br>1个节点成功传输的概率：$p(1-p)^{N-1}(1-p)^{N-1}=p(1-p)^{2(N-1)}$<br>许多个节点最大效率为$0.18$</li>
+<li>效率<br>1个节点成功传输的概率：$p(1-p)^{N-1}(1-p)^{N-1}=p(1-p)^{2(N-1)}$<br>许多个节点最大效率为$0.18$<br><em>为什么吞吐量/Traffic Load图会随G增大而先大后小？刚开始负载小，信道空闲碰撞机会小成功机会大；一定程度后资源饱和，再增加反而会降低</em></li>
 </ul>
 </li>
-<li><p><strong>CSMA(Carrier Sense Multiple Access)</strong><br>在传输之前会感知链路上的传输情况，链路idle便传输、busy便推迟。</p>
+<li><p><strong>CSMA(Carrier Sense Multiple Access)</strong><br>在传输之前会感知链路上的传输情况，链路idle便传输、busy便推迟。<br>—— <strong>1-persistent CSMA</strong><br>&ensp;&ensp;&ensp;&ensp;其会在传输一个帧之前对频道进行监听，<strong>当频道忙时，等待直到idle</strong>；如果idle，则传输。如果冲突发生了，它会等待一个random time后重复该算法。<br>&ensp;&ensp;&ensp;&ensp;<strong>缺点</strong>：冲突依然可能发生，因为传播监听会有时延，一节点发送帧以后busy信号可能还没有传播到另一节点，另一节点检测到idle便也发送帧造成冲突；2个节点都可能同时发现频道idle，同时发送数据<br>—— <strong>Non-persistent CSMA</strong><br>&ensp;&ensp;&ensp;&ensp;其会在传输一个帧之前对频道进行监听，<strong>当频道忙时，等待一个random time然后重复该算法</strong>；如果idle，则传输。如果冲突发生了，它会等待一个random time后重复该算法。该算法结果是更高的频道利用率，但通常比1-persistent的时延更长。<br>—— <strong>P-persistent CSMA</strong><br>&ensp;&ensp;&ensp;&ensp;其会在传输一个帧之前对频道进行监听，<strong>如果idle，则以概率$p$的几率传输，$1-p$的概率等待到下一个slot</strong>。如果冲突发生了、或频道忙，它会等待下一个slot然后重复该算法。概率$p$可以取不同值，$p$越小，理论利用率越强，但延时更高。<br>下面是不同随机接入协议吞吐量-Traffic load关系图<br><img src="https://i.loli.net/2020/05/27/o6HzAVWaODkhYjF.jpg" alt="图片1.jpg"></p>
+<!--https://sm.ms/delete/glFdeEsMSoCjOUyp5WQ6RNTuLt-->
 </li>
-<li><p><strong>CSMA/CD(Collision Detection)</strong></p>
+<li><p><strong>CSMA/CD(Collision Detection)</strong><br><em>CSMA/CD为什么用于以太网而不能用于无线通信网络？由于无线收发报机为半双工模式，不能同时手收发。</em></p>
+<ul>
+<li>工作原理<br>如果medium是idle的，传输；如果是busy的，监听直到idle然后再传输；<strong>如果冲突发生，jam then cease transmission（发送一个能量很强的干扰阻塞信号，通知大家发生了冲突，停止发送）</strong>；jam发送后，等待一个random time再重复算法。<br>这样可以在发生冲突后立马停止传输，避免继续传输冲突帧导致信道资源浪费。</li>
+</ul>
 </li>
 </ul>
 <h3 id="C-轮流协议（Taking-turns-protocol）"><a href="#C-轮流协议（Taking-turns-protocol）" class="headerlink" title="C.轮流协议（Taking-turns protocol）"></a>C.轮流协议（Taking-turns protocol）</h3><p>&ensp;&ensp;&ensp;&ensp;节点轮流传输</p>
-<h2 id="3-链路层编址"><a href="#3-链路层编址" class="headerlink" title="3.链路层编址"></a>3.链路层编址</h2><h1 id="五、物理层"><a href="#五、物理层" class="headerlink" title="五、物理层"></a>五、物理层</h1>
+<ul>
+<li>“Taking Turns” MAC protocal（环网，拿到token的节点可以进行传输。传完了token给下一个）<br>两边讨好，结果不好用。</li>
+</ul>
+<h2 id="3-链路层编址"><a href="#3-链路层编址" class="headerlink" title="3.链路层编址"></a>3.链路层编址</h2><p>&ensp;&ensp;&ensp;&ensp;运输层有端口号，网络层有IP地址（只负责送到对应的IP子网，IP地址相当于住址，可以改变）。到了子网中则需要48bits的链路层编址MAC地址进行“最后一公里”的传输，MAC地址相当于身份证号，不变的。</p>
+<ul>
+<li><p><strong>ARP：Address Resolution Protocol</strong><br>  <em>在知道一节点的IP地址情况下，如何判断其MAC地址呢？—-每一个LAN上的IP节点都有一个<strong>ARP table</strong>，里面有IP地址及对应的MAC地址，以及TTL。<strong>类似于DNS，DNS建立了应用层URL与IP的关系，而ARP建立了IP与MAC的关系</strong></em></p>
+<ul>
+<li><strong>ARP-table的建立（实时更新，soft state，即插即用）</strong><br>如果A要向B送一个datagram，而B的MAC地址不在A的ARP表中。在A通过DNS知晓B的IP地址后，A便会向自身LAN中广播一个包含B的IP地址的ARP query packet。B收到后，通过unicast回复A自己的MAC地址。如果B不在该LAN中，则会通过路由器根据IP地址传输该query packet到B所在的LAN中。</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-以太网"><a href="#4-以太网" class="headerlink" title="4.以太网"></a>4.以太网</h2><h1 id="五、物理层"><a href="#五、物理层" class="headerlink" title="五、物理层"></a>五、物理层</h1>
       
       <!-- reward -->
       
