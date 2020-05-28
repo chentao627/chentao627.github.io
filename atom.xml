@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chentao627.github.io/"/>
-  <updated>2020-05-27T09:05:43.074Z</updated>
+  <updated>2020-05-28T09:54:55.933Z</updated>
   <id>https://chentao627.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://chentao627.github.io/2020/05/27/%E9%80%9A%E4%BF%A1%E7%BD%91%E7%BB%9C%E6%A2%B3%E7%90%86/"/>
     <id>https://chentao627.github.io/2020/05/27/%E9%80%9A%E4%BF%A1%E7%BD%91%E7%BB%9C%E6%A2%B3%E7%90%86/</id>
     <published>2020-05-27T01:25:26.000Z</published>
-    <updated>2020-05-27T09:05:43.074Z</updated>
+    <updated>2020-05-28T09:54:55.933Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
 &lt;p&gt;嵩云秦树久离居，双鲤迢迢一纸书。——李商隐《寄令狐郎中》&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&lt;del&gt;通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。&lt;/del&gt;&lt;br&gt;
+&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&lt;del&gt;通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。&lt;/del&gt;&lt;/p&gt;
     
     </summary>
     
@@ -47,13 +47,15 @@
     <link href="https://chentao627.github.io/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/"/>
     <id>https://chentao627.github.io/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/</id>
     <published>2020-05-26T00:58:38.000Z</published>
-    <updated>2020-05-27T03:20:11.217Z</updated>
+    <updated>2020-05-27T13:37:22.388Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;本文主要针对Matlab中有关信号与系统问题的函数及语法总结。&lt;/p&gt;
 &lt;h1 id=&quot;Lab-1&quot;&gt;&lt;a href=&quot;#Lab-1&quot; class=&quot;headerlink&quot; title=&quot;Lab 1&quot;&gt;&lt;/a&gt;Lab 1&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;stem(n, x)&lt;/code&gt;函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。&lt;br&gt;_例如1：画出$x[n]=2n,-3\leq n\leq 3$_&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;产生一串数字区间&lt;/strong&gt;：&lt;code&gt;n=-5:10&lt;/code&gt;产生了从-5~10的区间整数序列&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;stem(n, x)&lt;/code&gt;函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。&lt;br&gt;&lt;em&gt;例如1：画出$x[n]=2n,-3\leq n\leq 3$&lt;/em&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;n&amp;#x3D;-3:3;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;x&amp;#x3D;2*n;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;stem(n, x)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
@@ -77,7 +79,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，但回过头来对照现实又会让人不禁觉得后背一凉。杜牧在《阿房宫赋》里面写道：“秦人不暇自哀，而后人哀之；后人哀之而不鉴之，亦使后人而复哀后人也”。阿房宫当年修没修起来我们不得而知，不过以前人之鉴为自己所诫还是挺有意义的。&lt;br&gt;
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，但回过头来对照现实又会让人不禁觉得后背一凉。杜牧在《阿房宫赋》里面写道：“秦人不暇自哀，而后人哀之；后人哀之而不鉴之，亦使后人而复哀后人也”。阿房宫当年修没修起来我们不得而知，不过以前人之鉴为自己所诫还是挺有意义的。&lt;/p&gt;
     
     </summary>
     
@@ -101,7 +103,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;瀑布天落，半与银河争流，腾虹奔电，潈射万壑，此宇宙之奇诡也。——李白《秋于敬亭送从侄专游庐山序》&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。&lt;br&gt;
+&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。&lt;/p&gt;
     
     </summary>
     
@@ -126,7 +128,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h1&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。&lt;br&gt;
+      &lt;h1 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h1&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。&lt;/p&gt;
     
     </summary>
     
@@ -145,11 +147,11 @@
     <link href="https://chentao627.github.io/2020/05/16/Helloworld_%E5%8D%9A%E5%AE%A2%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/"/>
     <id>https://chentao627.github.io/2020/05/16/Helloworld_%E5%8D%9A%E5%AE%A2%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/</id>
     <published>2020-05-15T16:00:00.000Z</published>
-    <updated>2020-05-27T01:26:02.882Z</updated>
+    <updated>2020-05-28T09:40:42.989Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。&lt;br&gt;下面是“阅读更多”的分页。&lt;br&gt;
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。&lt;br&gt;下面是“阅读更多”的分页。&lt;/p&gt;
     
     </summary>
     
