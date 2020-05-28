@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1k</span>
+            <span class="post-count">1.2k</span>
         </span>
     </span>
 
@@ -141,7 +141,8 @@
 </ul>
 <p>-1&amp;,n=3\<br>3&amp;,n=4\<br>0&amp;,otherwise<br>\end{cases}$$<br>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></p>
 <ul>
-<li><code>conv(x,h)</code>函数：</li>
+<li><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和</li>
+<li><code>filter(b_k,a_k,x)</code>函数：输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<br>$$\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m]$$<br>上式在Malab中等价于：<br>$$\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]$$<br>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br><code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
 </ul>
 
       
