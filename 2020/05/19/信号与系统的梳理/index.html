@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">4.8k</span>
+            <span class="post-count">3.6k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">20 分钟</span>
+            <span class="post-count">15 分钟</span>
         </span>
     </span>
 </div>
@@ -113,48 +113,68 @@
       <blockquote>
 <p>瀑布天落，半与银河争流，腾虹奔电，潈射万壑，此宇宙之奇诡也。——李白《秋于敬亭送从侄专游庐山序》</p>
 </blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。<br>&ensp;&ensp;&ensp;&ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。</p>
-<a id="more"></a>
+<p>&ensp;&ensp;&ensp;&ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。<br>&ensp;&ensp;&ensp;&ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。<br><a id="more"></a></p>
 <h1 id="前3个章节的梳理"><a href="#前3个章节的梳理" class="headerlink" title="前3个章节的梳理"></a>前3个章节的梳理</h1><h2 id="一、卷积"><a href="#一、卷积" class="headerlink" title="一、卷积"></a>一、卷积</h2><p>&ensp;&ensp;&ensp;&ensp;第二章首先学习的便是求信号在时域上的卷积。求卷积又分为离散时间信号的卷积和与连续时间信号的卷积积分。</p>
-<h3 id="单位冲激信号与单位阶跃信号"><a href="#单位冲激信号与单位阶跃信号" class="headerlink" title="单位冲激信号与单位阶跃信号"></a>单位冲激信号与单位阶跃信号</h3><p>&ensp;&ensp;&ensp;&ensp;在梳理卷积计算方法前，首先要引入的便是关于单位冲激信号的计算性质：<br>$$x(t)\delta(t)=x(0)\delta(t)$$<br>$$x(t)\ast\delta(t-t_0)=x(t-t_0)$$<br>&ensp;&ensp;&ensp;&ensp;即信号x(t)与单位冲激信号的乘积，相当于在单位冲激信号脉冲处的采样，与单位冲激信号的卷积相当于时间谱象、频谱上的搬移。</p>
-<p>&ensp;&ensp;&ensp;&ensp;单位冲激信号经过LTI系统后的输出称为单位冲激响应，用h(t)表示：<br>$$\delta(t)\stackrel{FT}\longleftrightarrow h(t)$$<br>&ensp;&ensp;&ensp;&ensp;单位信号冲激信号的孪生兄弟单位阶跃信号经过LTI系统后的输出称为单位阶跃响应，用s(t)表示：<br>$$u(t)\ast \delta(t) \stackrel{FT}\longleftrightarrow s(t)=u(t)\ast h(t)$$<br>&ensp;&ensp;&ensp;&ensp;通过卷积积分可以求得$h(t)$与$s(t)$的关系：<br>$$s’(t)=h(t) $$</p>
-<h3 id="卷积积分与卷积和"><a href="#卷积积分与卷积和" class="headerlink" title="卷积积分与卷积和"></a>卷积积分与卷积和</h3><p>&ensp;&ensp;&ensp;&ensp;同理，一个连续时间x(t)信号同单位冲激信号$\delta(t)$相卷后经过LTI系统后的输出也是类似的：<br>$$\int_{-\infty}^{+\infty} x(\tau)\delta(t-\tau){\rm d}\tau  \stackrel{FT}\longleftrightarrow  \int_{-\infty}^{+\infty} x(\tau)h(t-\tau){\rm d}\tau $$<br>&ensp;&ensp;&ensp;&ensp;对于离散时间信号亦是如此：<br>$$\sum_{k=-\infty}^{+\infty} x[k]\delta[n-k]  \stackrel{FT}\longleftrightarrow  \sum_{k=-\infty}^{+\infty} x[k]h[n-k] $$<br>&ensp;&ensp;&ensp;&ensp;然后将二者符号化表示，即简写为：<br>$$x(t)=x(t)\ast\delta(t)    \stackrel{FT}\longleftrightarrow    y(t)=x(t)\ast h(t)$$<br>$$x[t]=x[t]\ast\delta[t]    \stackrel{FT}\longleftrightarrow    y[t]=x[t]\ast h[t]$$<br>&ensp;&ensp;&ensp;&ensp;这种“捆绑后销售”策略使我们可以让我们求到原信号与$\delta(t)$卷积后经过LTI系统的输出。我们也直接称这样的输出为原信号经过LTI系统的输出，因为前面关于单位冲激信号的计算性质中已经说明，任一信号与单位冲激信号的卷积为其本身。<br>&ensp;&ensp;&ensp;&ensp;之后便是离散时间信号的卷积和计算，与连续时间信号的卷积积分计算<br>【略，待补充】</p>
-<h3 id="卷积运算间的三则运算以及LTI系统的5大特性"><a href="#卷积运算间的三则运算以及LTI系统的5大特性" class="headerlink" title="卷积运算间的三则运算以及LTI系统的5大特性"></a>卷积运算间的三则运算以及LTI系统的5大特性</h3><p>&ensp;&ensp;&ensp;&ensp;讨论完卷积的具体运算后，下面便是卷积运算之间的三则运算法则，分别是交换律、分配律、结合律：<br>$$x(t)\ast h(t)=h(t)\ast x(t)$$<br>$$x(t)\ast (h_1(t)+h_2(t))=x(t)\ast h_1(t)+x(t)\ast h_2(t) $$<br>$$(x(t)\ast h_1(t))\ast h_2(t)=x(t)\ast (h_1(t)\ast h_2(t)) $$<br>&ensp;&ensp;&ensp;&ensp;接着便需要讨论LTI系统的5大特性，即：无记忆性、可逆性、时不变性、因果性、稳定性<br>【略，待补充】</p>
+<h3 id="单位冲激信号与单位阶跃信号"><a href="#单位冲激信号与单位阶跃信号" class="headerlink" title="单位冲激信号与单位阶跃信号"></a>单位冲激信号与单位阶跃信号</h3><p>&ensp;&ensp;&ensp;&ensp;在梳理卷积计算方法前，首先要引入的便是关于单位冲激信号的计算性质：</p>
+<script type="math/tex; mode=display">x(t)\delta(t)=x(0)\delta(t)</script><script type="math/tex; mode=display">x(t)\ast\delta(t-t_0)=x(t-t_0)</script><p>&ensp;&ensp;&ensp;&ensp;即信号x(t)与单位冲激信号的乘积，相当于在单位冲激信号脉冲处的采样，与单位冲激信号的卷积相当于时间谱象、频谱上的搬移。</p>
+<p>&ensp;&ensp;&ensp;&ensp;单位冲激信号经过LTI系统后的输出称为单位冲激响应，用h(t)表示：</p>
+<script type="math/tex; mode=display">\delta(t)\stackrel{FT}\longleftrightarrow h(t)</script><p>&ensp;&ensp;&ensp;&ensp;单位信号冲激信号的孪生兄弟单位阶跃信号经过LTI系统后的输出称为单位阶跃响应，用s(t)表示：</p>
+<script type="math/tex; mode=display">u(t)\ast \delta(t) \stackrel{FT}\longleftrightarrow s(t)=u(t)\ast h(t)</script><p>&ensp;&ensp;&ensp;&ensp;通过卷积积分可以求得$h(t)$与$s(t)$的关系：</p>
+<script type="math/tex; mode=display">s'(t)=h(t)</script><h3 id="卷积积分与卷积和"><a href="#卷积积分与卷积和" class="headerlink" title="卷积积分与卷积和"></a>卷积积分与卷积和</h3><p>&ensp;&ensp;&ensp;&ensp;同理，一个连续时间x(t)信号同单位冲激信号$\delta(t)$相卷后经过LTI系统后的输出也是类似的：</p>
+<script type="math/tex; mode=display">\int_{-\infty}^{+\infty} x(\tau)\delta(t-\tau){\rm d}\tau  \stackrel{FT}\longleftrightarrow  \int_{-\infty}^{+\infty} x(\tau)h(t-\tau){\rm d}\tau</script><p>&ensp;&ensp;&ensp;&ensp;对于离散时间信号亦是如此：</p>
+<script type="math/tex; mode=display">\sum_{k=-\infty}^{+\infty} x[k]\delta[n-k]  \stackrel{FT}\longleftrightarrow  \sum_{k=-\infty}^{+\infty} x[k]h[n-k]</script><p>&ensp;&ensp;&ensp;&ensp;然后将二者符号化表示，即简写为：</p>
+<script type="math/tex; mode=display">x(t)=x(t)\ast\delta(t)    \stackrel{FT}\longleftrightarrow    y(t)=x(t)\ast h(t)</script><script type="math/tex; mode=display">x[t]=x[t]\ast\delta[t]    \stackrel{FT}\longleftrightarrow    y[t]=x[t]\ast h[t]</script><p>&ensp;&ensp;&ensp;&ensp;这种“捆绑后销售”策略使我们可以让我们求到原信号与$\delta(t)$卷积后经过LTI系统的输出。我们也直接称这样的输出为原信号经过LTI系统的输出，因为前面关于单位冲激信号的计算性质中已经说明，任一信号与单位冲激信号的卷积为其本身。<br>&ensp;&ensp;&ensp;&ensp;之后便是离散时间信号的卷积和计算，与连续时间信号的卷积积分计算<br>【略，待补充】</p>
+<h3 id="卷积运算间的三则运算以及LTI系统的5大特性"><a href="#卷积运算间的三则运算以及LTI系统的5大特性" class="headerlink" title="卷积运算间的三则运算以及LTI系统的5大特性"></a>卷积运算间的三则运算以及LTI系统的5大特性</h3><p>&ensp;&ensp;&ensp;&ensp;讨论完卷积的具体运算后，下面便是卷积运算之间的三则运算法则，分别是交换律、分配律、结合律：</p>
+<script type="math/tex; mode=display">x(t)\ast h(t)=h(t)\ast x(t)</script><script type="math/tex; mode=display">x(t)\ast (h_1(t)+h_2(t))=x(t)\ast h_1(t)+x(t)\ast h_2(t)</script><script type="math/tex; mode=display">(x(t)\ast h_1(t))\ast h_2(t)=x(t)\ast (h_1(t)\ast h_2(t))</script><p>&ensp;&ensp;&ensp;&ensp;接着便需要讨论LTI系统的5大特性，即：无记忆性、可逆性、时不变性、因果性、稳定性<br>【略，待补充】</p>
 <h3 id="线性常系数微分、差分方程来描述LTI系统"><a href="#线性常系数微分、差分方程来描述LTI系统" class="headerlink" title="线性常系数微分、差分方程来描述LTI系统"></a>线性常系数微分、差分方程来描述LTI系统</h3><p>【略，待补充】</p>
 <h3 id="单位冲激偶"><a href="#单位冲激偶" class="headerlink" title="单位冲激偶"></a>单位冲激偶</h3><p>【略，待补充】</p>
 <h2 id="二、周期信号的傅里叶级数表示"><a href="#二、周期信号的傅里叶级数表示" class="headerlink" title="二、周期信号的傅里叶级数表示"></a>二、周期信号的傅里叶级数表示</h2><h3 id="傅里叶级数公式"><a href="#傅里叶级数公式" class="headerlink" title="傅里叶级数公式"></a>傅里叶级数公式</h3><p>&ensp;&ensp;&ensp;&ensp;绝大多数周期信号都可以转换为傅里叶级数的形式来表示。</p>
 <ul>
-<li>傅里叶级数的综合式与分析式如下：<br>$$x(t)=\sum_{k=-\infty}^{+\infty} a_k e^{jk\omega_0t}$$<br>$$a_k={1 \over T} \int_T x(t)e^{-jk\omega_0t}{\rm d}t$$<br>其中$a_k$为傅里叶系数，也叫做$x(t)$的频谱系数，$k=0$时刻为原信号的直流分量。</li>
+<li>傅里叶级数的综合式与分析式如下：<script type="math/tex; mode=display">x(t)=\sum_{k=-\infty}^{+\infty} a_k e^{jk\omega_0t}</script><script type="math/tex; mode=display">a_k={1 \over T} \int_T x(t)e^{-jk\omega_0t}{\rm d}t</script>其中$a_k$为傅里叶系数，也叫做$x(t)$的频谱系数，$k=0$时刻为原信号的直流分量。</li>
 </ul>
 <h3 id="傅里叶级数的收敛、狄里赫利条件"><a href="#傅里叶级数的收敛、狄里赫利条件" class="headerlink" title="傅里叶级数的收敛、狄里赫利条件"></a>傅里叶级数的收敛、狄里赫利条件</h3><p>【略，待补充】</p>
 <h3 id="连续时间傅里叶级数的七大性质、帕斯瓦尔定理、傅里叶级数的典型例子"><a href="#连续时间傅里叶级数的七大性质、帕斯瓦尔定理、傅里叶级数的典型例子" class="headerlink" title="连续时间傅里叶级数的七大性质、帕斯瓦尔定理、傅里叶级数的典型例子"></a>连续时间傅里叶级数的七大性质、帕斯瓦尔定理、傅里叶级数的典型例子</h3><p>&ensp;&ensp;&ensp;&ensp;线性性质、时移性质、时间反转性质、时域尺度变换性质、乘法性质、共轭与共轭对称性质、微分性质、帕斯瓦尔定理<br>【略，待补充】</p>
 <h3 id="指数周期信号、傅里叶级数通过LTI系统的响应"><a href="#指数周期信号、傅里叶级数通过LTI系统的响应" class="headerlink" title="指数周期信号、傅里叶级数通过LTI系统的响应"></a>指数周期信号、傅里叶级数通过LTI系统的响应</h3><h3 id="滤波"><a href="#滤波" class="headerlink" title="滤波"></a>滤波</h3><p>【略，待补充】</p>
-<h2 id="三、连续时间傅里叶变换"><a href="#三、连续时间傅里叶变换" class="headerlink" title="三、连续时间傅里叶变换"></a>三、连续时间傅里叶变换</h2><p>&ensp;&ensp;&ensp;&ensp;傅里叶级数将周期信号从时域上转变到了频谱上分析；为了对非周期信号$x(t)$进行频域分析，故由周期信号$\widetilde{x}(t)$为切入点使其$T\rightarrow\infty$，这样一来便可以从极限的傅里叶级数角度分析非周期信号的频域了。<br>&ensp;&ensp;&ensp;&ensp;傅里叶变换的正变换可以由傅里叶级数求$a_k$的分析式得到：<br>$$a_k={1 \over T}\int_{-T\over2}^{T\over2} \widetilde{x}(t)e^{-jk\omega_0t}{\rm d}t,{\bf 取积分部分}T\rightarrow\infty \Rightarrow X(j\omega)=\int_{-\infty}^{+\infty}x(t)e^{-j\omega t}{\rm d}t$$<br>&ensp;&ensp;&ensp;&ensp;傅里叶变换的逆变换可以由傅里叶级数求$x(t)$的综合式得到：<br>$$x(t)={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega)e^{j\omega t}{\rm d}\omega$$</p>
-<h3 id="傅里叶变换的收敛、狄里赫利条件"><a href="#傅里叶变换的收敛、狄里赫利条件" class="headerlink" title="傅里叶变换的收敛、狄里赫利条件"></a>傅里叶变换的收敛、狄里赫利条件</h3><p>【略，待补充】</p>
+<h2 id="三、连续时间傅里叶变换"><a href="#三、连续时间傅里叶变换" class="headerlink" title="三、连续时间傅里叶变换"></a>三、连续时间傅里叶变换</h2><p>&ensp;&ensp;&ensp;&ensp;傅里叶级数将周期信号从时域上转变到了频谱上分析；为了对非周期信号$x(t)$进行频域分析，故由周期信号$\widetilde{x}(t)$为切入点使其$T\rightarrow\infty$，这样一来便可以从极限的傅里叶级数角度分析非周期信号的频域了。<br>&ensp;&ensp;&ensp;&ensp;傅里叶变换的正变换可以由傅里叶级数求$a_k$的分析式得到：</p>
+<script type="math/tex; mode=display">a_k={1 \over T}\int_{-T\over2}^{T\over2} \widetilde{x}(t)e^{-jk\omega_0t}{\rm d}t,{\bf 取积分部分}T\rightarrow\infty \Rightarrow X(j\omega)=\int_{-\infty}^{+\infty}x(t)e^{-j\omega t}{\rm d}t</script><p>&ensp;&ensp;&ensp;&ensp;傅里叶变换的逆变换可以由傅里叶级数求$x(t)$的综合式得到：</p>
+<script type="math/tex; mode=display">x(t)={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega)e^{j\omega t}{\rm d}\omega</script><h3 id="傅里叶变换的收敛、狄里赫利条件"><a href="#傅里叶变换的收敛、狄里赫利条件" class="headerlink" title="傅里叶变换的收敛、狄里赫利条件"></a>傅里叶变换的收敛、狄里赫利条件</h3><p>【略，待补充】</p>
 <h3 id="需要记忆的连续时间傅里叶变换对"><a href="#需要记忆的连续时间傅里叶变换对" class="headerlink" title="需要记忆的连续时间傅里叶变换对"></a>需要记忆的连续时间傅里叶变换对</h3><ol>
-<li>因果负实指数自然底数信号的傅里叶正变换<br>$$e^{-at}u(t)\stackrel{FT}\longleftrightarrow {1 \over {a+j\omega}}$$</li>
-<li>反因果正实指数自然底数信号的傅里叶正变换<br>$$e^{at}u(-t)\stackrel{FT}\longleftrightarrow {1 \over {a-j\omega}}$$</li>
-<li>绝对值实指数自然底数信号的傅里叶变换<br>$$e^{-a|t|}\stackrel{FT}\longleftrightarrow {2a \over {a^2+\omega^2}}$$</li>
-<li>符号函数的傅里叶正变换<br>$$sign(t)=\lim_{a\rightarrow 0}[sign(t)e^{-a|t|}]\stackrel{FT}\longleftrightarrow {2 \over j\omega}$$</li>
-<li>(常考)时域非周期对称门信号的傅里叶正变换<br>$$x(t)=<br>\begin{cases}<br>0&amp; {t=0}\\<br>1&amp; {t\neq0}<br>\end{cases} \stackrel{FT}\longleftrightarrow 2T_1{\sin{\omega T_1} \over \omega T_1}=2T_1 Sa(\omega T_1)$$</li>
-<li>(常考)频域非周期对称门信号的傅里叶逆变换<br>$$X(j\omega)=<br>\begin{cases}<br>0&amp; {\omega=0}\\<br>1&amp; {\omega\neq0}<br>\end{cases} \stackrel{FT}\longleftrightarrow {\sin{Wt} \over \pi t}$$</li>
-<li>单位冲激信号的傅里叶正变换<br>$$\delta(t)\stackrel{FT}\longleftrightarrow 1$$</li>
-<li>常值信号的傅里叶正变换（直接用对偶性换过来）<br>$$1\stackrel{FT}\longleftrightarrow 2\pi\delta(\omega) $$</li>
-<li>时移单位冲激信号的傅里叶正变换（傅里叶变换的时移性质求得）<br>$$\delta(t-t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega_0} $$</li>
-<li>纯虚指数信号的傅里叶正变换（对的，由于前辈们天才般的数学推导，将傅里叶变换的应用范围扩展到了周期信号）<br>$$e^{jk\omega_0 t}\stackrel{FT}\longleftrightarrow 2\pi\delta(\omega-k\omega_0)$$</li>
-<li>傅里叶级数的傅里叶变换<br>$$\sum_{k=-\infty}^{+\infty}a_ke^{jk\omega_0 t}\stackrel{FT}\longleftrightarrow \sum_{k=-\infty}^{+\infty}a_k2\pi\delta(\omega-k\omega_0)$$</li>
-<li>余弦函数的傅里叶变换<br>$$\cos(\omega_0 t)\stackrel{FT}\longleftrightarrow \pi\delta(\omega+\omega_0)+\pi\delta(\omega-\omega_0)$$</li>
-<li>正弦函数的傅里叶变换<br>$$\sin(\omega_0 t)\stackrel{FT}\longleftrightarrow j\pi\delta(\omega+\omega_0)-j\pi\delta(\omega-\omega_0) $$</li>
-<li>单位冲激串的傅里叶变换（先转换到傅里叶级数表示形式，单位冲激串傅里叶系数$a_k={1 \over T}$，再利用纯虚指数信号的变换[10]得到）<br>$$\sum_{k=-\infty}^{+\infty}\delta(t-kT)\stackrel{FT}\longleftrightarrow {1 \over T}\sum_{k=-\infty}^{+\infty}2\pi\delta(\omega-k\omega_0) $$</li>
-<li>单位冲激信号n阶微分的傅里叶变换<br>$${d^n \over dt^n}\delta(t)=\delta^{(n)}(t)\stackrel{FT}\longleftrightarrow (j\omega)^{(n)}$$</li>
+<li>因果负实指数自然底数信号的傅里叶正变换<script type="math/tex; mode=display">e^{-at}u(t)\stackrel{FT}\longleftrightarrow {1 \over {a+j\omega}}</script></li>
+<li>反因果正实指数自然底数信号的傅里叶正变换<script type="math/tex; mode=display">e^{at}u(-t)\stackrel{FT}\longleftrightarrow {1 \over {a-j\omega}}</script></li>
+<li>绝对值实指数自然底数信号的傅里叶变换<script type="math/tex; mode=display">e^{-a|t|}\stackrel{FT}\longleftrightarrow {2a \over {a^2+\omega^2}}</script></li>
+<li>符号函数的傅里叶正变换<script type="math/tex; mode=display">sign(t)=\lim_{a\rightarrow 0}[sign(t)e^{-a|t|}]\stackrel{FT}\longleftrightarrow {2 \over j\omega}</script></li>
+<li>(常考)时域非周期对称门信号的傅里叶正变换<script type="math/tex; mode=display">x(t)=
+\begin{cases}
+0& {t=0}\\\\
+1& {t\neq0}
+\end{cases} \stackrel{FT}\longleftrightarrow 2T_1{\sin{\omega T_1} \over \omega T_1}=2T_1 Sa(\omega T_1)</script></li>
+<li>(常考)频域非周期对称门信号的傅里叶逆变换<script type="math/tex; mode=display">X(j\omega)=
+\begin{cases}
+0& {\omega=0}\\\\
+1& {\omega\neq0}
+\end{cases} \stackrel{FT}\longleftrightarrow {\sin{Wt} \over \pi t}</script></li>
+<li>单位冲激信号的傅里叶正变换<script type="math/tex; mode=display">\delta(t)\stackrel{FT}\longleftrightarrow 1</script></li>
+<li>常值信号的傅里叶正变换（直接用对偶性换过来）<script type="math/tex; mode=display">1\stackrel{FT}\longleftrightarrow 2\pi\delta(\omega)</script></li>
+<li>时移单位冲激信号的傅里叶正变换（傅里叶变换的时移性质求得）<script type="math/tex; mode=display">\delta(t-t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega_0}</script></li>
+<li>纯虚指数信号的傅里叶正变换（对的，由于前辈们天才般的数学推导，将傅里叶变换的应用范围扩展到了周期信号）<script type="math/tex; mode=display">e^{jk\omega_0 t}\stackrel{FT}\longleftrightarrow 2\pi\delta(\omega-k\omega_0)</script></li>
+<li>傅里叶级数的傅里叶变换<script type="math/tex; mode=display">\sum_{k=-\infty}^{+\infty}a_ke^{jk\omega_0 t}\stackrel{FT}\longleftrightarrow \sum_{k=-\infty}^{+\infty}a_k2\pi\delta(\omega-k\omega_0)</script></li>
+<li>余弦函数的傅里叶变换<script type="math/tex; mode=display">\cos(\omega_0 t)\stackrel{FT}\longleftrightarrow \pi\delta(\omega+\omega_0)+\pi\delta(\omega-\omega_0)</script></li>
+<li>正弦函数的傅里叶变换<script type="math/tex; mode=display">\sin(\omega_0 t)\stackrel{FT}\longleftrightarrow j\pi\delta(\omega+\omega_0)-j\pi\delta(\omega-\omega_0)</script></li>
+<li>单位冲激串的傅里叶变换（先转换到傅里叶级数表示形式，单位冲激串傅里叶系数$a_k={1 \over T}$，再利用纯虚指数信号的变换[10]得到）<script type="math/tex; mode=display">\sum_{k=-\infty}^{+\infty}\delta(t-kT)\stackrel{FT}\longleftrightarrow {1 \over T}\sum_{k=-\infty}^{+\infty}2\pi\delta(\omega-k\omega_0)</script></li>
+<li>单位冲激信号n阶微分的傅里叶变换<script type="math/tex; mode=display">{d^n \over dt^n}\delta(t)=\delta^{(n)}(t)\stackrel{FT}\longleftrightarrow (j\omega)^{(n)}</script></li>
 <li>风筝信号的傅里叶变换（先求导、再积分）</li>
 </ol>
 <h3 id="傅里叶变换的性质（由时域到频域的傅里叶变换都是利用傅里叶逆变换公式取积分部分得到）"><a href="#傅里叶变换的性质（由时域到频域的傅里叶变换都是利用傅里叶逆变换公式取积分部分得到）" class="headerlink" title="傅里叶变换的性质（由时域到频域的傅里叶变换都是利用傅里叶逆变换公式取积分部分得到）"></a>傅里叶变换的性质（由时域到频域的傅里叶变换都是利用傅里叶逆变换公式取积分部分得到）</h3><ol>
-<li>线性<br>傅里叶变换的线性性与前面傅里叶级数类似，即满足：<br>$$ax(t)+by(t)\stackrel{FT}\longleftrightarrow aX(j\omega)+bY(j\omega)$$<br>即可。</li>
-<li>（重点）时移特性<br>傅里叶变换的时移特性主要体现在系数的变化上，时域上的向右时移$t_0$对应频域上为$e^{-j\omega t_0}$<br>$$x(t-t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega t_0}X(j\omega) $$<br>$$x(-t+t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega t_0}X(-j\omega)$$<br>模值不改变，相位由$\angle H(j\omega)$变为$\angle H(j\omega)-\omega t_0$，($H(j\omega)$=$|H(j\omega)|\bullet e^{jk\angle H(j\omega)}$)</li>
+<li>线性<br>傅里叶变换的线性性与前面傅里叶级数类似，即满足：<script type="math/tex; mode=display">ax(t)+by(t)\stackrel{FT}\longleftrightarrow aX(j\omega)+bY(j\omega)</script>即可。</li>
+<li>（重点）时移特性<br>傅里叶变换的时移特性主要体现在系数的变化上，时域上的向右时移$t_0$对应频域上为$e^{-j\omega t_0}$<script type="math/tex; mode=display">x(t-t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega t_0}X(j\omega)</script><script type="math/tex; mode=display">x(-t+t_0)\stackrel{FT}\longleftrightarrow e^{-j\omega t_0}X(-j\omega)</script>模值不改变，相位由$\angle H(j\omega)$变为$\angle H(j\omega)-\omega t_0$，($H(j\omega)$=$|H(j\omega)|\bullet e^{jk\angle H(j\omega)}$)<br><em>第二个时移的具体推导</em>：<script type="math/tex; mode=display">\begin{cases}
+x(-t+t_0)
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\\
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\\
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{cases}</script>取积分中间部分。</li>
+<li>（重点）共轭与共轭对称<script type="math/tex; mode=display">x^\ast (t)\stackrel{FT}\longleftrightarrow X^\ast (-j\omega)</script>一般而言，分析的信号都属于实信号。对于实信号还有：$x(t)=x^\ast (t)$，进而推出以下关系：<br>${\bf 实信号的傅里叶变换等于实信号的共轭傅里叶变换:}$<script type="math/tex; mode=display">X(j\omega)=X^\ast (-j\omega)</script>${\bf 傅里叶变换的实部为偶、虚部为奇:}$<br>${\bf 信号偶部对应傅里叶变换实部；信号奇部对应傅里叶变换虚部。从而可以独自按需求变换:}$<br>${\bf 实信号的傅里叶变换等于实信号的共轭傅里叶变换:}$    </li>
+<li>（常与单位冲激偶使用）微分、积分特性<br>微分傅里叶变换：<script type="math/tex; mode=display">x'(t)\stackrel{FT}\longleftrightarrow j\omega X(j\omega)</script>积分傅里叶变换：<script type="math/tex; mode=display">x^{-1}\stackrel{FT}\longleftrightarrow {1 \over j\omega}X(j\omega)+\pi X(0)\delta(\omega)</script></li>
 </ol>
-<p><em>第二个时移的具体推导</em>：<br>$$\begin{cases}<br>x(-t+t_0)<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{cases}$$<br>取积分中间部分。<br>3. （重点）共轭与共轭对称<br>$$x^\ast (t)\stackrel{FT}\longleftrightarrow X^\ast (-j\omega) $$<br>一般而言，分析的信号都属于实信号。对于实信号还有：$x(t)=x^\ast (t)$，进而推出以下关系：<br>${\bf 实信号的傅里叶变换等于实信号的共轭傅里叶变换:}$<br>$$X(j\omega)=X^\ast (-j\omega) $$<br>${\bf 傅里叶变换的实部为偶、虚部为奇:}$<br>${\bf 信号偶部对应傅里叶变换实部；信号奇部对应傅里叶变换虚部。从而可以独自按需求变换:}$<br>${\bf 实信号的傅里叶变换等于实信号的共轭傅里叶变换:}$<br>4. （常与单位冲激偶使用）微分、积分特性<br>微分傅里叶变换：<br>$$x’(t)\stackrel{FT}\longleftrightarrow j\omega X(j\omega)$$<br>积分傅里叶变换：<br>$$x^{-1}\stackrel{FT}\longleftrightarrow {1 \over j\omega}X(j\omega)+\pi X(0)\delta(\omega)$$</p>
-<ol start="5">
+<ol>
 <li><p>频域与时域的尺度缩放</p>
 </li>
 <li><p>（重中之重）对偶性</p>
@@ -164,33 +184,53 @@
 </ol>
 <hr>
 <h1 id="后半部分的梳理"><a href="#后半部分的梳理" class="headerlink" title="后半部分的梳理"></a>后半部分的梳理</h1><h2 id="四、拉普拉斯变换"><a href="#四、拉普拉斯变换" class="headerlink" title="四、拉普拉斯变换"></a>四、拉普拉斯变换</h2><ul>
-<li>拉普拉斯变换将时域到频域的变换拓展到了针对非绝对可积信号的变换。拉普拉斯的正、逆变换公式如下：<br>$$<br>\begin{cases}<br>X(s)=\int_{-\infty}^{+\infty}x(t)e^{-st}{\rm d}t&amp; {s=\sigma+j\omega}\\<br>x(t)={1 \over 2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty}X(s)e^{st}{\rm d}s=\oint_c X(s)e^{st}{\rm d}s<br>\end{cases}<br>$$<br>正变换中，$x(t)$与$e^{-st}$由$g(t)=x(t)e^{-\sigma t}$与傅里叶正变换推导而来。<br>&ensp;&ensp;&ensp;&ensp;拉普拉斯变换同样可以记作：<br>$$x(t)\stackrel{LT}\longleftrightarrow X(s), ROC$$<br>&ensp;&ensp;&ensp;&ensp;其中，ROC(Region of convergence)即收敛域，非常重要。拉普拉斯的正逆变换公式与傅里叶变换公式几乎一致，不同之处在于$s=\sigma+j\omega$。但需要警惕的是：<strong>当且仅当拉普拉斯变换对的收敛域ROC在复平面上内含j\omega轴时，傅里叶变换才能在s=0+j\omega处与该处的拉普拉斯变换对应相等。</strong></li>
+<li>拉普拉斯变换将时域到频域的变换拓展到了针对非绝对可积信号的变换。拉普拉斯的正、逆变换公式如下：<script type="math/tex; mode=display">
+\begin{cases}
+X(s)=\int_{-\infty}^{+\infty}x(t)e^{-st}{\rm d}t& {s=\sigma+j\omega}\\\\
+x(t)={1 \over 2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty}X(s)e^{st}{\rm d}s=\oint_c X(s)e^{st}{\rm d}s
+\end{cases}</script>正变换中，$x(t)$与$e^{-st}$由$g(t)=x(t)e^{-\sigma t}$与傅里叶正变换推导而来。<br>&ensp;&ensp;&ensp;&ensp;拉普拉斯变换同样可以记作：<script type="math/tex; mode=display">x(t)\stackrel{LT}\longleftrightarrow X(s), ROC</script>&ensp;&ensp;&ensp;&ensp;其中，ROC(Region of convergence)即收敛域，非常重要。拉普拉斯的正逆变换公式与傅里叶变换公式几乎一致，不同之处在于$s=\sigma+j\omega$。但需要警惕的是：<strong>当且仅当拉普拉斯变换对的收敛域ROC在复平面上内含j\omega轴时，傅里叶变换才能在s=0+j\omega处与该处的拉普拉斯变换对应相等。</strong></li>
 </ul>
 <h3 id="ROC的八大性质"><a href="#ROC的八大性质" class="headerlink" title="ROC的八大性质"></a>ROC的八大性质</h3><ol>
-<li><strong>$X(s)$的ROC在S平面内，由平行于$j\omega$轴的带状区域所组成</strong></li>
+<li><strong>$X(s)$的ROC在S平面内，由平行于$j\omega$轴的带状区域所组成</strong><br><em>也就是说ROC只与拉普拉斯自变量s的实部$Re\{s\}=\sigma$有关</em></li>
+<li><strong>对于有理拉普拉斯变换而言，ROC内不包含任何的极点</strong><br><em>“有理”限制了分母不能为0，即不存在s值使分母为0</em></li>
+<li><strong>如果$x(t)$是持续时间有限的，并且是绝对可积的，那么其收敛域ROC就是整个平面</strong><br>用数学表达式表示为：<script type="math/tex; mode=display">
+\begin{cases}
+x(t)=0& {t<T_1,t>T_2} \\\\
+\int_{T_1}^{T_2}x(t){\rm d}t < \infty& {T_1< t <T_2}
+\end{cases}</script>一旦满足上述条件，任何$e^{-\sigma t}$信号与之相乘都会是一个收敛的数。<br>例如$u(t)-u(t-1)\stackrel{LT}\longleftrightarrow {1 \over s}[1-e^{-s}]$，当$s=0$时，极限存在，故不存在极点。且它是一个持续时间有限、绝对可积的门信号，故其收敛域在整个平面。</li>
+<li><strong>如果$x(t)$是右边信号，且s的实部这条线$Re{s}=\sigma_0$并位于ROC内，那么$Re{s}&gt;\sigma_0$的全部s都一定在ROC内</strong></li>
+<li><strong>如果$x(t)$是左边信号，且s的实部这条线$Re{s}=\sigma_0$并位于ROC内，那么$Re{s}&lt;\sigma_0$的全部s都一定在ROC内</strong></li>
+<li><strong>如果$x(t)$是双边信号，且s的实部这条线$Re{s}=\sigma_0$并位于ROC内，那么ROC便一定是由S平面内的一条带状区域组成，且$Re{s}=\sigma_0$一定位于该带中。一般而言，$\sigma_{Right}&lt;Re\{s\}&lt;\sigma_{Left}，(\sigma_{Right}&lt;\sigma_{Left})$</strong><br>举例说明：双边带信号的拉普拉斯变换及其ROC情况<br>【暂略】</li>
+<li><strong>如果$X(s)$是有理的，那么它的ROC是被极点所界定、且延申到无限远的。此外，如2.所言，$X(s)$的ROC内不包含任何极点。</strong></li>
+<li><strong>如果$X(s)$是有理的，那么：</strong><br> 8.1 如果$x(t)$是右边信号，那么其ROC处于其最右边极点的右边；<br> 8.2 如果$x(t)$是左边信号，那么其ROC处于其最左边极点的左边。<br> 于是对于一个双边信号而言，其拉普拉斯变换则要讨论ROC的方向了。</li>
 </ol>
-<p><em>也就是说ROC只与拉普拉斯自变量s的实部$Re{s}=\sigma$有关</em><br>2. <strong>对于有理拉普拉斯变换而言，ROC内不包含任何的极点</strong><br><em>“有理”限制了分母不能为0，即不存在s值使分母为0</em><br>3. <strong>如果$x(t)$是持续时间有限的，并且是绝对可积的，那么其收敛域ROC就是整个平面</strong><br>用数学表达式表示为：<br>$$<br>\begin{cases}<br>x(t)=0&amp; {t&lt;T_1,t&gt;T_2} \\<br>\int_{T_1}^{T_2}x(t){\rm d}t &lt; \infty&amp; {T_1&lt; t &lt;T_2}<br>\end{cases}<br>$$<br>一旦满足上述条件，任何$e^{-\sigma t}$信号与之相乘都会是一个收敛的数。<br>例如$u(t)-u(t-1)\stackrel{LT}\longleftrightarrow {1 \over s}[1-e^{-s}]$，当$s=0$时，极限存在，故不存在极点。且它是一个持续时间有限、绝对可积的门信号，故其收敛域在整个平面。<br>4. <strong>如果$x(t)$是右边信号，且s的实部这条线$Re{s}=\sigma_0$并位于ROC内，那么$Re{s}&gt;\sigma_0$的全部s都一定在ROC内</strong><br>5. <strong>如果$x(t)$是左边信号，且s的实部这条线$Re{s}=\sigma_0$并位于ROC内，那么$Re{s}&lt;\sigma_0$的全部s都一定在ROC内</strong><br>6. <strong>如果$x(t)$是双边信号，且s的实部这条线$Re{s}=\sigma_0$并位于ROC内，那么ROC便一定是由S平面内的一条带状区域组成，且$Re{s}=\sigma_0$一定位于该带中。一般而言，$\sigma_{Right}&lt;Re{s}&lt;\sigma_{Left}，(\sigma_{Right}&lt;\sigma_{Left})$</strong><br>举例说明：双边带信号的拉普拉斯变换及其ROC情况<br>【暂略】<br>7. <strong>如果$X(s)$是有理的，那么它的ROC是被极点所界定、且延申到无限远的。此外，如2.所言，$X(s)$的ROC内不包含任何极点。</strong><br>8. <strong>如果$X(s)$是有理的，那么：</strong><br>    8.1 如果$x(t)$是右边信号，那么其ROC处于其最右边极点的右边；<br>    8.2 如果$x(t)$是左边信号，那么其ROC处于其最左边极点的左边。<br>    于是对于一个双边信号而言，其拉普拉斯变换则要讨论ROC的方向了。</p>
-<h3 id="有理变换"><a href="#有理变换" class="headerlink" title="有理变换"></a>有理变换</h3><p>&ensp;&ensp;&ensp;&ensp;通常而言(非绝对)，拉普拉斯变换$X(s)$一般是以变量为$s$的多项式的比的形式出现的：<br>$$X(s)= {N(s) \over D(s)}，{\bf 其中N(s),D(s)都是关于s的多项式}$$<br>&ensp;&ensp;&ensp;&ensp;使分子等于0的根叫做$X(s)$的零点，使分母为0的根叫做$X(s)$的极点（Poles），后者相对来说更重要一些，画pole-zero plot一般也多参考后者。</p>
+<h3 id="有理变换"><a href="#有理变换" class="headerlink" title="有理变换"></a>有理变换</h3><p>&ensp;&ensp;&ensp;&ensp;通常而言(非绝对)，拉普拉斯变换$X(s)$一般是以变量为$s$的多项式的比的形式出现的：</p>
+<script type="math/tex; mode=display">X(s)= {N(s) \over D(s)}，{\bf 其中N(s),D(s)都是关于s的多项式}</script><p>&ensp;&ensp;&ensp;&ensp;使分子等于0的根叫做$X(s)$的零点，使分母为0的根叫做$X(s)$的极点（Poles），后者相对来说更重要一些，画pole-zero plot一般也多参考后者。</p>
 <ul>
 <li>有理分式的拉普拉斯逆变换<br>一般有理分式的拉普拉斯逆变换涉及3步骤：<strong>分式部分分解、根据极点讨论不同ROC情况、根据不同ROC确定左右信号并利用拉普拉斯变换对进行变换</strong></li>
 </ul>
 <h3 id="由零-极点图对傅里叶变换进行几何评估"><a href="#由零-极点图对傅里叶变换进行几何评估" class="headerlink" title="由零-极点图对傅里叶变换进行几何评估"></a>由零-极点图对傅里叶变换进行几何评估</h3><p>&ensp;&ensp;&ensp;&ensp;是的，没看错，这一节小节讲的便是以 <strong>$j\omega$轴在ROC内的拉普拉斯变换</strong> 为大前提，在不求出时域信号$x(t)$的情况下，对其相应的傅里叶变换的模值$|X(j\omega)|$与相位$\angle X(j\omega)$在s坐标轴上的几何分析。这一节一般与线性常系数微分方程系统的解$H(j\omega)$联系紧密，故一般参与变换分析的都是有理分式。</p>
 <ul>
-<li><strong>一般的零极点图分析方法</strong><br>被分析的傅里叶变换一般为有理分式：<br>$$X(j\omega)=\cfrac{b_0 \prod_{i=1}^M (j\omega -\beta_i)}{\prod_{j=1}^N (j\omega-\alpha_j)}$$<br>我们依然类似地记分子$j\omega-\beta_i=B_i e^{j\phi_i}$为零点向量,分母$j\omega-\alpha_i=A_je^{j\theta_j}$为极点向量.对于$M=N=1$的情况，此2个向量在S平面图上的表示如下：<br><img src="https://i.loli.net/2020/05/26/hrbTveIGHQlCYw4.png" alt="QQ截图20200526152810.png"><!--https://sm.ms/delete/Ns4YJTLEtjpMviV7uZhoRX2QFA这是图片的删除网址？-->
+<li><strong>一般的零极点图分析方法</strong><br>被分析的傅里叶变换一般为有理分式：<script type="math/tex; mode=display">X(j\omega)=\cfrac{b_0 \prod_{i=1}^M (j\omega -\beta_i)}{\prod_{j=1}^N (j\omega-\alpha_j)}</script>我们依然类似地记分子$j\omega-\beta_i=B_i e^{j\phi_i}$为零点向量,分母$j\omega-\alpha_i=A_je^{j\theta_j}$为极点向量.对于$M=N=1$的情况，此2个向量在S平面图上的表示如下：<br><img src="https://i.loli.net/2020/05/26/hrbTveIGHQlCYw4.png" alt="QQ截图20200526152810.png"><!--https://sm.ms/delete/Ns4YJTLEtjpMviV7uZhoRX2QFA这是图片的删除网址？-->
 更一般地，对于$M,N$任意的情况，便可对应平面上多个向量：<br><img src="https://i.loli.net/2020/05/26/kNl3o6WQuOve87r.png" alt="QQ截图20200526153254.png"><!--https://sm.ms/delete/sNYhEAiLDVfa7m9Q3HjTUgZbFc-->
-由模值、相位的计算法则可以得到<strong>模值、相位的计算式</strong>：<br>$$|X(j\omega)<em>0|=|b_0|\cfrac{\prod</em>{i=1}^M |\overrightarrow{j\omega -\beta_i|}}{\prod_{j=1}^N |\overrightarrow{j\omega-\alpha_j}|}$$<br>$$\angle X(j\omega_0)=\angle b_0+\sum_{i=1}^{M}\angle \overrightarrow{(j\omega_0-\beta_i)}-\sum_{j=1}^{N}\angle \overrightarrow{(j\omega_0-a_j)}$$<br>这样一来，便可以直接由向量线段的长短、夹角大小，直观地来判断模值、相位的变化情况了。</li>
+由模值、相位的计算法则可以得到<strong>模值、相位的计算式</strong>：<script type="math/tex; mode=display">|X(j\omega)_0|=|b_0|\cfrac{\prod_{i=1}^M |\overrightarrow{j\omega -\beta_i|}}{\prod_{j=1}^N |\overrightarrow{j\omega-\alpha_j}|}</script><script type="math/tex; mode=display">\angle X(j\omega_0)=\angle b_0+\sum_{i=1}^{M}\angle \overrightarrow{(j\omega_0-\beta_i)}-\sum_{j=1}^{N}\angle \overrightarrow{(j\omega_0-a_j)}</script>这样一来，便可以直接由向量线段的长短、夹角大小，直观地来判断模值、相位的变化情况了。</li>
 </ul>
 <ul>
-<li><p><strong>一阶系统的零极点图对相位、模值的分析</strong><br>一般的一阶线性常系数微分方程及其频域系统相应如下：<br>$$\tau \frac{dy(t)}{dt}+y(t)=x(t), H(j\omega)=\cfrac{\cfrac{1}{\tau}}{j\omega+\cfrac{1}{\tau}}$$<br>其系统相应对应的拉普拉斯变换为：<br>$$ H(s)=\cfrac{\cfrac{1}{\tau}}{s+\cfrac{1}{\tau}},Re{s}&gt;-\frac{1}{\tau}$$<br><del>为了防止考试时遇见这种拉普拉斯反变换一时算不出来，这里写出其对应的反变换及其系统阶跃相应：</del><br>$$h(t)=\frac{1}{\tau}e^{-\frac{1}{\tau}}u(t)$$<br>$$s(t)=[1-e^{-\frac{t}{\tau}}]u(t)$$<br>此处只有一条极点向量。在S平面上，画出$-\frac{1}{\tau}$到$j\omega$轴的任意一条有向线段，利用模值、相位的计算式可以容易地看出随着有向线段右端点在$j\omega$轴正上方移动，模值$|H(j\omega_0)|$在减小，相位也在减小。<br><img src="https://i.loli.net/2020/05/26/NYdVpmzy7bPAnO2.png" alt="QQ截图20200526154637.png"></p>
+<li><p><strong>一阶系统的零极点图对相位、模值的分析</strong><br>一般的一阶线性常系数微分方程及其频域系统相应如下：</p>
+<script type="math/tex; mode=display">\tau \frac{dy(t)}{dt}+y(t)=x(t), H(j\omega)=\cfrac{\cfrac{1}{\tau}}{j\omega+\cfrac{1}{\tau}}</script><p>其系统相应对应的拉普拉斯变换为：</p>
+<script type="math/tex; mode=display">H(s)=\cfrac{\cfrac{1}{\tau}}{s+\cfrac{1}{\tau}},Re\{s\}>-\frac{1}{\tau}</script><p><del>为了防止考试时遇见这种拉普拉斯反变换一时算不出来，这里写出其对应的反变换及其系统阶跃相应：</del></p>
+<script type="math/tex; mode=display">h(t)=\frac{1}{\tau}e^{-\frac{1}{\tau}}u(t)</script><script type="math/tex; mode=display">s(t)=[1-e^{-\frac{t}{\tau}}]u(t)</script><p>此处只有一条极点向量。在S平面上，画出$-\frac{1}{\tau}$到$j\omega$轴的任意一条有向线段，利用模值、相位的计算式可以容易地看出随着有向线段右端点在$j\omega$轴正上方移动，模值$|H(j\omega_0)|$在减小，相位也在减小。<br><img src="https://i.loli.net/2020/05/26/NYdVpmzy7bPAnO2.png" alt="QQ截图20200526154637.png"></p>
 <!--https://sm.ms/delete/jzFhxNQ1cv2fLrpT7uBPGdJUot-->
 </li>
-<li><p><strong>二阶系统的零极点图对相位、模值的分析</strong><br>一般的二阶线性常系数微分方程及其频域系统相应如下：<br>$$\frac{d^2y(t)}{dt^2}+2\xi \omega_n\frac{dy(t)}{dt}+\omega^2_ny(t) = \omega^2_nx(t)$$<br>其对应的系统冲激响应为：<br>$$H(s)=\cfrac{\omega^2_n}{s^2+2\xi\omega_n s+\omega^2_n}=\cfrac{\omega^2_n}{(s-c_1)(s-c_2)}, Re{s}&gt;max{Re{pole}}$$<br>此处为了公式简便，用$c_1,c_2$分别代表了分母中的$a_j$，它们分别是：<br>$$c_{1,2}=-\xi \omega_n\pm\omega_n\sqrt{\xi^2-1}$$<br>分析阻尼系数$\xi$，可以得到这幅图：<br><img src="https://i.loli.net/2020/05/26/iuHXI2KWRFVjYMm.png" alt="QQ截图20200526162303.png"></p>
+<li><p><strong>二阶系统的零极点图对相位、模值的分析</strong><br>一般的二阶线性常系数微分方程及其频域系统相应如下：</p>
+<script type="math/tex; mode=display">\frac{d^2y(t)}{dt^2}+2\xi \omega_n\frac{dy(t)}{dt}+\omega^2_ny(t) = \omega^2_nx(t)</script><p>其对应的系统冲激响应为：</p>
+<script type="math/tex; mode=display">H(s)=\cfrac{\omega^2_n}{s^2+2\xi\omega_n s+\omega^2_n}=\cfrac{\omega^2_n}{(s-c_1)(s-c_2)}, Re\{s\}>max\{Re\{pole\}\}</script><p>此处为了公式简便，用$c_1,c_2$分别代表了分母中的$a_j$，它们分别是：</p>
+<script type="math/tex; mode=display">c_{1,2}=-\xi \omega_n\pm\omega_n\sqrt{\xi^2-1}</script><p>分析阻尼系数$\xi$，可以得到这幅图：<br><img src="https://i.loli.net/2020/05/26/iuHXI2KWRFVjYMm.png" alt="QQ截图20200526162303.png"></p>
 <!--https://sm.ms/delete/as97UIz8t6YXynNqTlcK2oJVuv-->
-
 </li>
 </ul>
-<p><del>同理，此处夹杂私货，这玩意考试时现场计算绝对算不出来，其单位冲激响应如下：</del><br>$$M=\frac{\omega_n}{2\sqrt{\xi^2-1}}$$<br>$$h(t)=M[e^{c_1t}-e^{c_2t}]u(t)$$</p>
-<h3 id="拉普拉斯变换的性质"><a href="#拉普拉斯变换的性质" class="headerlink" title="拉普拉斯变换的性质"></a>拉普拉斯变换的性质</h3><ol>
+<p><del>同理，此处夹杂私货，这玩意考试时现场计算绝对算不出来，其单位冲激响应如下：</del></p>
+<script type="math/tex; mode=display">M=\frac{\omega_n}{2\sqrt{\xi^2-1}}</script><script type="math/tex; mode=display">h(t)=M[e^{c_1t}-e^{c_2t}]u(t)</script><h3 id="拉普拉斯变换的性质"><a href="#拉普拉斯变换的性质" class="headerlink" title="拉普拉斯变换的性质"></a>拉普拉斯变换的性质</h3><ol>
 <li><p>线性</p>
 </li>
 <li><p>时移特性</p>
@@ -213,13 +253,18 @@
 </li>
 </ol>
 <h3 id="常见的拉普拉斯变换对"><a href="#常见的拉普拉斯变换对" class="headerlink" title="常见的拉普拉斯变换对"></a>常见的拉普拉斯变换对</h3><ol>
-<li><strong>纯虚负指数因果信号的拉普拉斯变换</strong><br>$$e^{-at}u(t)\stackrel{LT}\longleftrightarrow {1 \over {s+a}}, Re{s}&gt;-a $$</li>
-<li><strong>纯虚负指数反因果信号的拉普拉斯变换</strong><br>$$-e^{-at}u(-t)\stackrel{LT}\longleftrightarrow {1 \over {s+a}}, Re{s}&lt;-a$$</li>
-<li><strong>纯虚指数因果信号加减组合的拉普拉斯变换（ROC取交集）</strong><br>$$3e^{-2t}u(t)-2e^{-t}u(t)\stackrel{LT}\longleftrightarrow<br>\begin{cases}<br>{3 \over {s+2}}&amp; {Re{s}&gt;-2} \\<br>{2 \over {s+1}}&amp; {Re{s}&gt;-1}<br>\end{cases}<br>={s+1 \over s^2+3s+2},Re{s}&gt;-1$$</li>
-<li><strong>单位阶跃信号的拉普拉斯变换（由纯负虚指数因果信号$a=0$得到）</strong><br>$$u(t)\stackrel{LT}\longleftrightarrow {1 \over s}, Re{s}&gt;0$$</li>
-<li><strong>余弦信号的拉普拉斯变换</strong><br>$$\cos(\omega_0 t)u(t)={1 \over 2}e^{j\omega_0 t}u(t)+{1 \over 2}e^{-j\omega_0 t}u(t)\stackrel{LT}\longleftrightarrow {s \over s^2+\omega_0^2},Re{s}&gt;Re{j\omega}=0 $$</li>
-<li><strong>正弦函数的拉普拉斯变换</strong><br>$$\sin(\omega_0 t)u(t)={1 \over 2j}e^{j\omega_0 t}u(t)-{1 \over 2j}e^{-j\omega_0 t}u(t)\stackrel{LT}\longleftrightarrow {\omega_0 \over s^2+\omega_0^2},Re{s}&gt;Re{j\omega}=0$$</li>
-<li><strong>单位冲激信号的拉普拉斯变换</strong><br>$$\delta\stackrel{LT}\longleftrightarrow 1,-\infty&lt;Re{s}&lt;+\infty $$</li>
+<li><strong>纯虚负指数因果信号的拉普拉斯变换</strong><script type="math/tex; mode=display">e^{-at}u(t)\stackrel{LT}\longleftrightarrow {1 \over {s+a}}, Re\{s\}>-a</script></li>
+<li><strong>纯虚负指数反因果信号的拉普拉斯变换</strong><script type="math/tex; mode=display">-e^{-at}u(-t)\stackrel{LT}\longleftrightarrow {1 \over {s+a}}, Re\{s\}<-a</script></li>
+<li><strong>纯虚指数因果信号加减组合的拉普拉斯变换（ROC取交集）</strong><script type="math/tex; mode=display">3e^{-2t}u(t)-2e^{-t}u(t)\stackrel{LT}\longleftrightarrow 
+\begin{cases}
+{3 \over {s+2}}& {Re\{s\}>-2} \\\\
+{2 \over {s+1}}& {Re\{s\}>-1}
+\end{cases}
+={s+1 \over s^2+3s+2},Re\{s\}>-1</script></li>
+<li><strong>单位阶跃信号的拉普拉斯变换（由纯负虚指数因果信号$a=0$得到）</strong><script type="math/tex; mode=display">u(t)\stackrel{LT}\longleftrightarrow {1 \over s}, Re\{s\}>0</script></li>
+<li><strong>余弦信号的拉普拉斯变换</strong><script type="math/tex; mode=display">\cos(\omega_0 t)u(t)={1 \over 2}e^{j\omega_0 t}u(t)+{1 \over 2}e^{-j\omega_0 t}u(t)\stackrel{LT}\longleftrightarrow {s \over s^2+\omega_0^2},Re\{s\}>Re\{j\omega\}=0</script></li>
+<li><strong>正弦函数的拉普拉斯变换</strong><script type="math/tex; mode=display">\sin(\omega_0 t)u(t)={1 \over 2j}e^{j\omega_0 t}u(t)-{1 \over 2j}e^{-j\omega_0 t}u(t)\stackrel{LT}\longleftrightarrow {\omega_0 \over s^2+\omega_0^2},Re\{s\}>Re\{j\omega\}=0</script></li>
+<li><strong>单位冲激信号的拉普拉斯变换</strong><script type="math/tex; mode=display">\delta\stackrel{LT}\longleftrightarrow 1,-\infty<Re\{s\}<+\infty</script></li>
 <li></li>
 </ol>
 <h3 id="利用拉普拉斯变换来分析、表征线性时不变系统"><a href="#利用拉普拉斯变换来分析、表征线性时不变系统" class="headerlink" title="利用拉普拉斯变换来分析、表征线性时不变系统"></a>利用拉普拉斯变换来分析、表征线性时不变系统</h3><ul>
@@ -787,22 +832,6 @@
 
     
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>
