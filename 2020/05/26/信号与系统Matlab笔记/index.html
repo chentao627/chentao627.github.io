@@ -140,7 +140,7 @@
 0&,otherwise
 \end{cases}</script>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></li>
 <li><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和</li>
-<li><code>filter(b_k,a_k,x)</code>函数：输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<script type="math/tex; mode=display">\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m]</script>上式在Malab中等价于：<script type="math/tex; mode=display">\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]</script>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br><code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
+<li><code>filter(b_k,a_k,x)</code>函数：输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<script type="math/tex; mode=display">\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m]</script>上式在Malab中等价于：<script type="math/tex; mode=display">\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]</script>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br>&ensp;&ensp;&ensp;&ensp;<code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
 </ul>
 
       
@@ -701,6 +701,22 @@
 
     
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>

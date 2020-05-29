@@ -27,126 +27,12 @@
       </tags>
   </entry>
   <entry>
-    <title>2020520随笔</title>
-    <url>/2020/05/20/2020520%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，但回过头来对照现实又会让人不禁觉得后背一凉。杜牧在《阿房宫赋》里面写道：“秦人不暇自哀，而后人哀之；后人哀之而不鉴之，亦使后人而复哀后人也”。阿房宫当年修没修起来我们不得而知，不过以前人之鉴为自己所诫还是挺有意义的。<br><a id="more"></a><br><a href="https://sm.ms/image/la2Hhnz4SEsD6g3" target="_blank"><img src="https://i.loli.net/2020/05/21/la2Hhnz4SEsD6g3.jpg" ></a></p>
-<p>下面是其中的一个桥段：(Humphry—H, Bernard—B)<br>H：如果你想暗示某个人不太适合某个位置…<br>B：那…要诋毁他？<br>H：第一步是要表示完全的支持。<br>B：Why？<br>H：你不想留下说人坏话的记录吧，你得显得像他得朋友！说到底，先得绕到人后面才能从背后捅刀子。<br>B：可詹森是个好人…，他极其诚实，又有能力。<br>H：太好了。这就进入了第二步。你列出他所有的优点，尤其是那些让他不称职的，大肆夸奖它们，到矫枉过正的地步。这是第三步。或者，更好的办法是，你把他的观点扁平化，给他们贴标签，就像你刚才说的。<br>B：emmm…比如说廉洁先生?<br>H：对!不过我想我们能做得更好。坐下吧，伯纳德~ 他不是常去教堂吗?<br>B：对，我记得他干过业余传教士，很久以前了。<br>H：太妙了!我们就用这点来对付他。<br>B：怎么做?<br>H：“多有魅力的人啊!有生以来就没树过敌!可他真能应付金融城里那些恶棍吗?”<br>B：詹姆逊很强硬的。<br>H：那就说他强硬过头了。这是第四步，列出他所有的缺陷。但要以为他开脱的口气，就像：“哦，有什么关系，不就是不服兵役嘛，我肯定…没人当真质疑他不爱国~”，或者：“我觉得大家批评他搞垮了他上一家公司的事并不完全公平~”<br>B：噢，这样说肯定奏效。<br>H：如果不奏效，总还可以暗示有别的丑闻。如果他单身，暗示他是同性恋。<br>B：如果他结婚了呢?<br>H：那就通奸。跟一个必须避讳的女士。比如皇室成员之类。或者电视女主播。<br>B：Errr……如果他显然婚姻幸福呢?<br>H：那就说他是极端的道学先生，或者酗酒，或者他正在接受精神治疗。伯纳德你看，运用之妙，存乎一心啊。好好学着，伯纳德~<br>B：对……<br>汉弗莱在剧中也算是一个老阴阳人了。</p>
-<p><br><br>\\<br>附英文对照：(Humphry—H, Bernard—B)<br>H：When you wish to suggest that sb is not the ideal choice…<br>B：You…rubbish them?<br>H：The first stage is to express absolute support.<br>B：Why？<br>H：You don’t want to say sb’s no good, you must be seen to be their friend! After all, it is necessary to get behind someone before you can stab them in the back.<br>B：But Alexander Jameson is good, He’s honest and efficient.<br>H：Excellent. That’s the second stage. You list all his praiseworthy qualities, especially those that make him unsuitable for the job. And you praise them to the point where they become a vice. That’s the third stage. Or, better still, you over-simplify his views by labelling them, as you just did.<br>B: You mean… Mr. Clean?<br>H: Yes! But i think we can do better than that. Do sit down, Bernard~ Well, isn’t he a churchgoer?<br>B: Yes, I believe he was once a lay preacher, a long time ago.<br>H: Splendid! We can certainly use that to against him.<br>B: How?<br>H: “What a charming man! has’t an enemy in the world! But, is he really up to dealing with some of those rogous in the City（金融城）?”<br>B: Jameson’s pretty tough.<br>H: Then we’ll say he’s too tough. And’s the 4th stage, you name all his bad points by defending and excusing them. You know, “Oh, it probably doesn’t matter that he was a conscientious objector. I’m sure…nobody is really questioned his patriotism.” or “I think the criticisms of him for bankrupting his last company weren’t entirely fair~”<br>B: Well that would certainly do it.<br>H: If doesn’t, you can always hint at a hidden scandal. If he is not married, hint at homosexuality.<br>B: If he is married?<br>H: Adultery. With a lady’s who’s beyond reproach. One of the royals, for instance. Or the television newsreader.<br>B: Heen…Ah, What if he’s obviously happily married?<br>H: Well then says he’s extremely puritanical or he drinks or he’s having  psychiatric treatment. Really Bernard, the possibilities are endless. Listen and learn, Bernard~<br>B: Yeah… </p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>这一个博客的设置过程</title>
-    <url>/2020/05/16/Helloworld_%E5%8D%9A%E5%AE%A2%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。<br>下面是“阅读更多”的分页。<br><a id="more"></a></p>
-<h1 id="一、基本的安装与配置"><a href="#一、基本的安装与配置" class="headerlink" title="一、基本的安装与配置"></a>一、基本的安装与配置</h1><h2 id="1-Nodejs的安装"><a href="#1-Nodejs的安装" class="headerlink" title="1.Nodejs的安装"></a>1.Nodejs的安装</h2><h2 id="2-Git-for-windows的安装"><a href="#2-Git-for-windows的安装" class="headerlink" title="2.Git for windows的安装"></a>2.Git for windows的安装</h2><h2 id="3-Hexo的安装"><a href="#3-Hexo的安装" class="headerlink" title="3.Hexo的安装"></a>3.Hexo的安装</h2><p>Hexo的安装便需要用到npm install命令。可以在Hexo官网上看到给出了一个npm安装命令：<br><a href="https://sm.ms/image/Jn9EOMGSBUHZ2cQ" target="_blank"><img src="https://i.loli.net/2020/05/17/Jn9EOMGSBUHZ2cQ.png" ></a><br>直接把它复制到进入博客路径的cmd中执行即可。</p>
-<h2 id="4-编译器的选择与安装"><a href="#4-编译器的选择与安装" class="headerlink" title="4.编译器的选择与安装"></a>4.编译器的选择与安装</h2><p>&ensp;&ensp;&ensp;&ensp;编译hexo博客文件的编译器可以任意选择，只要你愿意，文本文档都可以被当作编译器使用，来写出自己的文档。只不干出过像这种类似于在2020年使用bp传呼机传递消息的行为，意义实则不大。现有的轻量级编译器有Sublime、Atom（好像已经凉了）以及大名鼎鼎巨硬的 VS code。我最先安装的是sublime，但在感受过VSCode的沐浴之后，我只能说大厂的产品真香。<br>&ensp;&ensp;&ensp;&ensp;具体的安装方法依葫芦画瓢便是，安装好后将hexo文件夹下的博客文件夹拖入即可。</p>
-<h2 id="5-主题的安装"><a href="#5-主题的安装" class="headerlink" title="5.主题的安装"></a>5.主题的安装</h2><p>主题的安装可以直接从github上克隆下来。当然也可以下载主题的压缩包，把它丢到路径<Hexo\blogname\themes>中即可。然后便是按照所选安装包的教程在主_congfig.yml中进行一些代码的配置。</p>
-<h1 id="二、Hexo的个性化配置"><a href="#二、Hexo的个性化配置" class="headerlink" title="二、Hexo的个性化配置"></a>二、Hexo的个性化配置</h1><h2 id="1-数学公式mathjax引擎的配置与输入"><a href="#1-数学公式mathjax引擎的配置与输入" class="headerlink" title="1.数学公式mathjax引擎的配置与输入"></a>1.数学公式mathjax引擎的配置与输入</h2><p>&ensp;&ensp;&ensp;&ensp;Hexo貌似自带了一个数学公式渲染引擎，但我并没有使用它，而是直接安装了第三方渲染引擎Mathjax。<br>&ensp;&ensp;&ensp;&ensp;安装Mathjax大约有5个步骤。</p>
-<ol>
-<li><p>首先需要在博客文件夹中使用npm install命令卸载原始的marked渲染引擎（不支持mathjax），然后安装上hexo-renderer-kramed引擎：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更改文件配置，打开/node_modules/hexo-renderer-kramed/lib/renderer.js，将这一段代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line"><span class="keyword">function</span> formatText(text) &#123;</span><br><span class="line">    // Fit kramed<span class="string">'s rule: $$ + \1 + $$</span></span><br><span class="line"><span class="string">    return text.replace(/`\$(.*?)\$`/g, '</span>$$$$<span class="variable">$1</span>$$$$<span class="string">');</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>更改为直接返回text，直接将源代码变为注释即可：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line"><span class="keyword">function</span> formatText(text) &#123;</span><br><span class="line">    <span class="built_in">return</span> text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装hexo-renderer-mathjax 包：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>打开/node_modules/hexo-renderer-mathjax/mathjax.html，将<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这段原始代码注释掉，更改为<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>由于LaTeX与markdown的语法有语义冲突，所以 hexo 默认的转义规则会将一些字符进行转义，所以我们需要对默认的规则进行修改.<br>打开/node_modules\kramed\lib\rules\inline.js，将<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()<span class="comment">#$+\-.!_&gt;])/,</span></span><br><span class="line">更改为</span><br><span class="line">escape: /^\\([`*\[\]()<span class="comment"># +\-.!_&gt;])/,</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">更改为</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
-<ol>
-<li>在/theme/XXX主题目录下的config.yml文件中打开mathjax：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;&#96;bash</span><br><span class="line">mathjax:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
-或者<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
-注意别忘掉了空格。<br>日后每篇文章地header中加上<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>&ensp;&ensp;&ensp;&ensp;然后便可以开怀地在博客上输入公式啦~<br>&ensp;&ensp;&ensp;&ensp;数学公式示例, 它渲染出来是这样的一个效果：</p>
-<script type="math/tex; mode=display">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script><script type="math/tex; mode=display">sqrt()</script><script type="math/tex; mode=display">\hat{a}, \acute{a},\grave{a},\breve{a},\bar{a},\widetilde{A},\check{a},\tilde{a},\dot{a},\ddot{a},\vec{a},\widehat{a}, \overrightarrow{x-y-z}</script><script type="math/tex; mode=display">[\bf 转换字体]</script><script type="math/tex; mode=display">\stackrel{FT}\longleftrightarrow,箭头上加文字</script><script type="math/tex; mode=display">f(x)=
-\begin{cases}
-0& \text{x=0}\\\\
-1& \text{x!=0}
-\end{cases} 分段函数</script><script type="math/tex; mode=display">f(x)=
-\begin{cases}
-0& {x=0}\\\\
-1& {x\neq0}
-\end{cases}</script><p>等式对其：</p>
-<script type="math/tex; mode=display">\begin{align}
-x(-t+t_0)
-&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\\
-&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\\
-&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{align}</script><h1 id="三、Hexo的应用"><a href="#三、Hexo的应用" class="headerlink" title="三、Hexo的应用"></a>三、Hexo的应用</h1><h2 id="1-菜单栏的设置及新页面的创立"><a href="#1-菜单栏的设置及新页面的创立" class="headerlink" title="1.菜单栏的设置及新页面的创立"></a>1.菜单栏的设置及新页面的创立</h2><h2 id="2-Tag、Categories的设置"><a href="#2-Tag、Categories的设置" class="headerlink" title="2.Tag、Categories的设置"></a>2.Tag、Categories的设置</h2><h2 id="3-Update设置"><a href="#3-Update设置" class="headerlink" title="3.Update设置"></a>3.Update设置</h2><h2 id="4-创建一篇新文章"><a href="#4-创建一篇新文章" class="headerlink" title="4.创建一篇新文章"></a>4.创建一篇新文章</h2><p>创建新文章可直接在博客路径的cmd中执行以下代码：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt; <span class="comment">#不加方括号与尖括号</span></span><br></pre></td></tr></table></figure><br>其中layout有三种默认布局，即：post、page、draft。它们分别对应路径’sorce_posts’、’source’、’source_drafts’。</p>
-<h2 id="5-文字、数学公式、图片的插入及相关API"><a href="#5-文字、数学公式、图片的插入及相关API" class="headerlink" title="5.文字、数学公式、图片的插入及相关API"></a>5.文字、数学公式、图片的插入及相关API</h2><ul>
-<li>文字的插入、首行缩进<br>文字的插入直接在头部代码下方打字即可。一些markdown的语法如下：<br>加粗：<strong>我被加粗了</strong><br>斜体字：<em>脉动一下，找回状态</em><br>高亮：==我变亮了吗？==<br>变色：<label style="color:red">这是红色</label><br>引用：<blockquote>
-<p>我是被引用的的吗？</p>
-<blockquote>
-<p>俄罗斯套娃</p>
-<blockquote>
-<p>俄罗斯大套娃</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<p>单行代码：<code>codes</code><br>列表：直接使用数字1. 或<em> 加空格即可<br><em>*一般而言，重点用加粗，重要的解释性语言使用斜体。</em></em><br>下划线：<span style="border-bottom:2px dashed red;">为什么以太网的Frame有最小的长度要求？结构Pad是做什么用的？</span></p>
-<p>超链接：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Writing](https://hexo.io/docs/writing.html) <span class="comment">#这样便形成了一个名字为“Writing”，指向网址为https://hexo.io/docs/writing.html的超链接</span></span><br></pre></td></tr></table></figure><br>首行缩进可以使用空格的硬编码实现，只需在需要提行处输入下列代码即可：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&amp;nbsp;//这是半角空格（英文）</span><br><span class="line">&amp;emsp;//这是全角空格（中文）</span><br></pre></td></tr></table></figure><br>根据自己文章的语言需求放2个在前面即可。但似乎这种方法不太好用。<br><code>&amp;ensp; //也可以尝试这个，相当于1个中文，2字节</code></p>
-<p>换行只需输入：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;br&gt;</span><br></pre></td></tr></table></figure><br>即可。</p>
-<ul>
-<li>图片的插入<br>下面大致说一说在文章种对图片的插入。</li>
-</ul>
-<p>此处使用的是SM.MS直接生成的HTML链接插入的图片：</p>
-<p><div  align="center">
-<a href="https://sm.ms/image/CkHa1Lftqg8VI56" target="_blank"><img src="https://i.loli.net/2020/05/17/CkHa1Lftqg8VI56.png" ></a>
-</div><br>这里使用的是生成的Markdown链接插入的图片：</p>
-<p><img src="https://i.loli.net/2020/05/17/xMoGKF3edAh7Um8.png" alt="QQ截图20200516162849.png"><br>这2种插入图片的方式足够应付一般的写作了。</p>
-<ul>
-<li>插件的安装<br>插件的安装最常用的办法便是使用npm install语法。在你的hexo目录下执行这样一句话<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-这是下载安装一个可以上传本地图片的插件；npm install命令可以直接在所在目录下安装指定的插件，—save是后缀。</li>
-</ul>
-<h2 id="6-本地接口预览与上传服务器"><a href="#6-本地接口预览与上传服务器" class="headerlink" title="6.本地接口预览与上传服务器"></a>6.本地接口预览与上传服务器</h2><ul>
-<li><p>本地预览<br>本地静态网页的预览，直接可以通过cmd转到博客的文件夹中，执行代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s -p 5555 <span class="comment">#使用5555端口</span></span><br></pre></td></tr></table></figure>
-<p>然后在网址地址栏中输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">localhost：5555</span><br></pre></td></tr></table></figure>
-<p>即可访问本地静态网页。</p>
-</li>
-<li><p>上传服务器<br>此处暂时未在github中设置分支branch，而是直接推到master中。<br>在生成之前最好清理一下缓存：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment">#generate的简写</span></span><br></pre></td></tr></table></figure>
-<p>直接在已进入博客文件夹路径的cmd中执行命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g <span class="comment">#generate的简写</span></span><br></pre></td></tr></table></figure>
-<p>可以在本地执行生成静态网页，然后执行命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>即可把本地的内容推到github的仓库中，网页便上传了。</p>
-</li>
-</ul>
-<h2 id="7-换电脑怎么办"><a href="#7-换电脑怎么办" class="headerlink" title="7.换电脑怎么办"></a>7.换电脑怎么办</h2><h2 id="8-域名的申请"><a href="#8-域名的申请" class="headerlink" title="8.域名的申请"></a>8.域名的申请</h2>]]></content>
-      <categories>
-        <category>博客设置</category>
-      </categories>
-      <tags>
-        <tag>博客代码设置</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>信号与系统的梳理</title>
     <url>/2020/05/19/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A2%B3%E7%90%86/</url>
     <content><![CDATA[<blockquote>
 <p>瀑布天落，半与银河争流，腾虹奔电，潈射万壑，此宇宙之奇诡也。——李白《秋于敬亭送从侄专游庐山序》</p>
 </blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。<br>&ensp;&ensp;&ensp;&ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。<br><a id="more"></a></p>
+<p>&ensp;&ensp;&ensp;&ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。<br>&ensp;&ensp;&ensp;&ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。然后再是对后半部分进行梳理。<br><a id="more"></a></p>
 <h1 id="前3个章节的梳理"><a href="#前3个章节的梳理" class="headerlink" title="前3个章节的梳理"></a>前3个章节的梳理</h1><h2 id="一、卷积"><a href="#一、卷积" class="headerlink" title="一、卷积"></a>一、卷积</h2><p>&ensp;&ensp;&ensp;&ensp;第二章首先学习的便是求信号在时域上的卷积。求卷积又分为离散时间信号的卷积和与连续时间信号的卷积积分。</p>
 <h3 id="单位冲激信号与单位阶跃信号"><a href="#单位冲激信号与单位阶跃信号" class="headerlink" title="单位冲激信号与单位阶跃信号"></a>单位冲激信号与单位阶跃信号</h3><p>&ensp;&ensp;&ensp;&ensp;在梳理卷积计算方法前，首先要引入的便是关于单位冲激信号的计算性质：</p>
 <script type="math/tex; mode=display">x(t)\delta(t)=x(0)\delta(t)</script><script type="math/tex; mode=display">x(t)\ast\delta(t-t_0)=x(t-t_0)</script><p>&ensp;&ensp;&ensp;&ensp;即信号x(t)与单位冲激信号的乘积，相当于在单位冲激信号脉冲处的采样，与单位冲激信号的卷积相当于时间谱象、频谱上的搬移。</p>
@@ -263,27 +149,18 @@ x(t)=0& {t<T_1,t>T_2} \\\\
 </li>
 </ul>
 <p><del>同理，此处夹杂私货，这玩意考试时现场计算绝对算不出来，其单位冲激响应如下：</del></p>
-<script type="math/tex; mode=display">M=\frac{\omega_n}{2\sqrt{\xi^2-1}}</script><script type="math/tex; mode=display">h(t)=M[e^{c_1t}-e^{c_2t}]u(t)</script><h3 id="拉普拉斯变换的性质"><a href="#拉普拉斯变换的性质" class="headerlink" title="拉普拉斯变换的性质"></a>拉普拉斯变换的性质</h3><ol>
-<li><p>线性</p>
-</li>
-<li><p>时移特性</p>
-</li>
-<li><p>s域平移</p>
-</li>
-<li><p>时间尺度变换</p>
-</li>
-<li><p>共轭</p>
-</li>
-<li><p>卷积性质</p>
-</li>
-<li><p>时域微分特性</p>
-</li>
-<li><p>时域积分特性</p>
-</li>
-<li><p>s域微分特性</p>
-</li>
-<li><p>初值定理与终值定理</p>
-</li>
+<script type="math/tex; mode=display">M=\frac{\omega_n}{2\sqrt{\xi^2-1}}</script><script type="math/tex; mode=display">h(t)=M[e^{c_1t}-e^{c_2t}]u(t)</script><h3 id="拉普拉斯变换的性质"><a href="#拉普拉斯变换的性质" class="headerlink" title="拉普拉斯变换的性质"></a>拉普拉斯变换的性质</h3><p><strong>前提：对于信号$x(t)$，满足拉氏变换$x(t)\stackrel{LT}\longleftrightarrow X(s),R$</strong></p>
+<ol>
+<li>线性<br>同前面一样，拉氏变换的线性体现于3方，即如果存在线性，那么有：<script type="math/tex; mode=display">x(t)=ax_1(t)+bx_2(t)\stackrel{LT}\longleftrightarrow X(s)=aX_1(s)+bX_2(s),Re\{s\}至少\in R_1 \cap R_2</script>线性组合后ROC的兜底为交集，根据求到的因式判断。如果$R_1,R_2$的交集不存在，那么$X(s)$也不存在。</li>
+<li>时移特性<script type="math/tex; mode=display">x(t-t_0)\stackrel{LT}\longleftrightarrow e^{-st_0}X(s),R</script></li>
+<li>s域平移<script type="math/tex; mode=display">e^{s_0t}x(t)\stackrel{LT}\longleftrightarrow X(s-s_0),R+Re{s_0}</script></li>
+<li>时间尺度变换<script type="math/tex; mode=display">x(at)\stackrel{LT}\longleftrightarrow \frac{1}{|a|}X(\frac{s}{a}),aR</script></li>
+<li>共轭<script type="math/tex; mode=display">x^*(t)\stackrel{LT}\longleftrightarrow X^*(s^*),R</script>如果$x(t)$是实信号，那么在S域上还有$X(s)=X^<em>(s^</em>)$</li>
+<li>卷积性质<script type="math/tex; mode=display">x_1(t)*x_2(t)\stackrel{LT}\longleftrightarrow X_1(s)X_2(s),R_1 \cap R_2</script>同理，如果$R_1 \cap R_2$为空集，那么$X_1(s)X_2(s)$不存在。</li>
+<li>时域微分特性<script type="math/tex; mode=display">\frac{d}{dt}x(t)\stackrel{LT}\longleftrightarrow sX(s),R</script></li>
+<li>时域积分特性<script type="math/tex; mode=display">\int_{-\infty}^{t}x(\tau){\rm d}\tau\stackrel{LT}\longleftrightarrow \frac{1}{s}X(s),R\cap Re\{s\}>0</script>相当于卷了一个$u(t)$，其对应ROC&gt;0，所以积分后的拉氏变换ROC也需要交集大于0</li>
+<li>s域微分特性<script type="math/tex; mode=display">-tx(t)\stackrel{LT}\longleftrightarrow \frac{d}{ds}X(s),R</script></li>
+<li>初值定理与终值定理<br>如果在$t&lt;0$的时候$x(t)=0$，且在$t=0$时$x(t)$不包含冲激或高阶的奇异函数，那么我们可以直接从拉式变换式中计算出$x(0^+)$与终值$\lim_{t\rightarrow \infty}x(t)$，分别为：<script type="math/tex; mode=display">x(0^+)=\lim_{s\rightarrow \infty}sX(s)</script><script type="math/tex; mode=display">\lim_{t\rightarrow \infty}x(t)=\lim_{s\rightarrow 0}sX(s),{\bf 前提sX(s)包含j\omega轴}</script></li>
 </ol>
 <h3 id="常见的拉普拉斯变换对"><a href="#常见的拉普拉斯变换对" class="headerlink" title="常见的拉普拉斯变换对"></a>常见的拉普拉斯变换对</h3><ol>
 <li><strong>纯虚负指数因果信号的拉普拉斯变换</strong><script type="math/tex; mode=display">e^{-at}u(t)\stackrel{LT}\longleftrightarrow {1 \over {s+a}}, Re\{s\}>-a</script></li>
@@ -297,8 +174,8 @@ x(t)=0& {t<T_1,t>T_2} \\\\
 <li><strong>单位阶跃信号的拉普拉斯变换（由纯负虚指数因果信号$a=0$得到）</strong><script type="math/tex; mode=display">u(t)\stackrel{LT}\longleftrightarrow {1 \over s}, Re\{s\}>0</script></li>
 <li><strong>余弦信号的拉普拉斯变换</strong><script type="math/tex; mode=display">\cos(\omega_0 t)u(t)={1 \over 2}e^{j\omega_0 t}u(t)+{1 \over 2}e^{-j\omega_0 t}u(t)\stackrel{LT}\longleftrightarrow {s \over s^2+\omega_0^2},Re\{s\}>Re\{j\omega\}=0</script></li>
 <li><strong>正弦函数的拉普拉斯变换</strong><script type="math/tex; mode=display">\sin(\omega_0 t)u(t)={1 \over 2j}e^{j\omega_0 t}u(t)-{1 \over 2j}e^{-j\omega_0 t}u(t)\stackrel{LT}\longleftrightarrow {\omega_0 \over s^2+\omega_0^2},Re\{s\}>Re\{j\omega\}=0</script></li>
-<li><strong>单位冲激信号的拉普拉斯变换</strong><script type="math/tex; mode=display">\delta\stackrel{LT}\longleftrightarrow 1,-\infty<Re\{s\}<+\infty</script></li>
-<li></li>
+<li><strong>单位冲激信号的拉普拉斯变换</strong><script type="math/tex; mode=display">\delta(t)\stackrel{LT}\longleftrightarrow 1,-\infty<Re\{s\}<+\infty</script></li>
+<li><strong>单位冲激串信号的拉普拉斯变换</strong><script type="math/tex; mode=display">\sum_{n=0}^{+\infty}\delta(t-2n)\stackrel{LT}\longleftrightarrow \sum_{n=0}^{+\infty}e^{-2ns}=\frac{1}{1-e^{-2s}}</script></li>
 </ol>
 <h3 id="利用拉普拉斯变换来分析、表征线性时不变系统"><a href="#利用拉普拉斯变换来分析、表征线性时不变系统" class="headerlink" title="利用拉普拉斯变换来分析、表征线性时不变系统"></a>利用拉普拉斯变换来分析、表征线性时不变系统</h3><ul>
 <li><p>因果性</p>
@@ -314,6 +191,164 @@ x(t)=0& {t<T_1,t>T_2} \\\\
       <tags>
         <tag>信息论</tag>
         <tag>信号与系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>信号与系统Matlab笔记</title>
+    <url>/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;本文主要针对Matlab中有关信号与系统问题的函数及语法总结。</p>
+<h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><ul>
+<li><strong>产生一串数字区间</strong>：<code>n=-5:10</code>产生了从-5~10的区间整数序列</li>
+<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br>_例如1：画出$x[n]=2n,-3\leq n\leq 3$_</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">n&#x3D;-3:3;</span><br><span class="line">x&#x3D;2*n;</span><br><span class="line">stem(n, x)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+<li><p><code>subplot(m, n, P)</code>函数：该函数用来规划画布上图像放置的位置。其中，m、n用来将画布分割，m为行，n为列；而P代表取分割部分的第几块。<br>例如：<code>subplot(2,2,[1 3])</code>代表将画布分为2x2的4部分，并该函数对应的图像放在第1，3块处</p>
+</li>
+<li><code>grid on</code>函数：<code>grid on</code>为显示网格，相反，<code>grid off</code> 为关闭显示网格。</li>
+<li>点乘<code>.*</code>与一般乘法<code>*</code>：函数与函数相乘，例如$\sin(t)\sin(9t)$，一般是用点乘<code>.*</code>。点乘主要用于函数中元素的乘法（数组乘法array multiply）；而一般乘法则为矩阵乘法（Matrix multiply）。<br>_例如2：用图形表示连续调制波形$y=\sin(t)\sin(9t)$及其包络。_<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">t&#x3D;(0:pi&#x2F;100:pi)&#39; % 长 度 为 101 的 时 间 采 样 列 向 量</span><br><span class="line">y1&#x3D;sin(t)*[1,-1]; %包络线函数值，是（101x2）的矩阵</span><br><span class="line">y2&#x3D;sin(t).*sin(9*t); %长度为101的调制波列向量</span><br><span class="line">t3&#x3D;pi*(0:9)&#x2F;9%在定义域区间均匀地取10个点</span><br><span class="line">y3&#x3D;sin(t3).*sin(9*t3);%算出该十个点的值</span><br><span class="line">plot(t,y1,&#39;r:&#39;,t,y2,&#39;b&#39;,t3,y3,&#39;bo&#39;)%画出函数图像，包络线图像，取点图像</span><br><span class="line">axis([0,pi,-1,1]) %控制画出的轴范围，前2参数为横轴；后2值为纵轴</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>单位脉冲序列$\delta[n]$与单位阶跃序列$u[n]$</strong>：可以综合使用<code>ones(1,n)</code>与<code>zeros(1,n)</code>来产生单位脉冲序列与代为阶跃序列。<br>其中<code>ones(1,\ n)</code>命令产生1行n列的1值；<code>zeros(1,n)</code>命令产生1行n列的0值。<br>_例如3：_</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">n&#x3D;0: 32;</span><br><span class="line">x&#x3D;[zeros(1,5),1,zeros(1,27)];%一个x&#x3D;\delta(n-6)的单位冲激函数</span><br><span class="line">stem(n, x, &#39;fill&#39;);%以n为横坐标画出数据序列x</span><br><span class="line">filter(num ,den, x)函数：该函数主要是针对LTI系统设置。因果LTI系统的零状态响应，可以利用y&#x3D;filter(num,\ den,\ x)实现。</span><br><span class="line">&#x2F;&#x2F;其中，num为系统传递函数分子系数组成的行向量、den为系统传递函数分母系数组成的行向量、x为输入的离散序列、y为输出的离散序列且y与x的长度一样。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>syms</code>函数：用来创建一个符号表达式。可以理解为用来创建一个“变量”，创建后的变量可以直接写入函数中作为自变量使用。常用作创建连续时间信号<br>_例如4：_</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">syms t;%创建一个符号表达式，“变量t”</span><br><span class="line">syms T;</span><br><span class="line">f&#x3D;sin(2*pi*t&#x2F;T)%写出函数f，该函数包含待定变量t与T</span><br></pre></td></tr></table></figure></li>
+<li><code>x1=subs（f，T，5）</code>：该函数用于给自定义的符号表达式中的某个变量赋值，示例为将符号表达式f中的变量T赋值为5，并将该赋值后的符号表达式记为x1.</li>
+<li><code>ezplot（&lt;隐函数表达式&gt;,[x最小值，x最大值，y最小值，y最大值])</code>：该函数用来绘制只有单一自变量的symbolic expression，即直接绘制单一自变量的函数。</li>
+<li><code>int(F,x,a,b)</code>函数：该函数用来计算自己定义的符号表达式的积分。其中F为被积函数，x为自变量（可忽略），a为积分下限，b为积分上限。</li>
+</ul>
+<h1 id="Lab-2"><a href="#Lab-2" class="headerlink" title="Lab 2"></a>Lab 2</h1><ul>
+<li><strong>分段函数的写法：</strong><br>示例：表示分段函数<script type="math/tex; mode=display">x[n]=
+\begin{cases}
+2&,n=0\\
+1&,n=2\\
+-1&,n=3\\
+3&,n=4\\
+0&,otherwise
+\end{cases}</script>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></li>
+<li><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和</li>
+<li><code>filter(b_k,a_k,x)</code>函数：输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<script type="math/tex; mode=display">\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m]</script>上式在Malab中等价于：<script type="math/tex; mode=display">\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]</script>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br>&ensp;&ensp;&ensp;&ensp;<code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>专业学科</category>
+        <category>信号与系统科目</category>
+      </categories>
+      <tags>
+        <tag>-信号与系统 -Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2020520随笔</title>
+    <url>/2020/05/20/2020520%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，但回过头来对照现实又会让人不禁觉得后背一凉。杜牧在《阿房宫赋》里面写道：“秦人不暇自哀，而后人哀之；后人哀之而不鉴之，亦使后人而复哀后人也”。阿房宫当年修没修起来我们不得而知，不过以前人之鉴为自己所诫还是挺有意义的。<br><a id="more"></a><br><a href="https://sm.ms/image/la2Hhnz4SEsD6g3" target="_blank"><img src="https://i.loli.net/2020/05/21/la2Hhnz4SEsD6g3.jpg" ></a></p>
+<p>下面是其中的一个桥段：(Humphry—H, Bernard—B)<br>H：如果你想暗示某个人不太适合某个位置…<br>B：那…要诋毁他？<br>H：第一步是要表示完全的支持。<br>B：Why？<br>H：你不想留下说人坏话的记录吧，你得显得像他得朋友！说到底，先得绕到人后面才能从背后捅刀子。<br>B：可詹森是个好人…，他极其诚实，又有能力。<br>H：太好了。这就进入了第二步。你列出他所有的优点，尤其是那些让他不称职的，大肆夸奖它们，到矫枉过正的地步。这是第三步。或者，更好的办法是，你把他的观点扁平化，给他们贴标签，就像你刚才说的。<br>B：emmm…比如说廉洁先生?<br>H：对!不过我想我们能做得更好。坐下吧，伯纳德~ 他不是常去教堂吗?<br>B：对，我记得他干过业余传教士，很久以前了。<br>H：太妙了!我们就用这点来对付他。<br>B：怎么做?<br>H：“多有魅力的人啊!有生以来就没树过敌!可他真能应付金融城里那些恶棍吗?”<br>B：詹姆逊很强硬的。<br>H：那就说他强硬过头了。这是第四步，列出他所有的缺陷。但要以为他开脱的口气，就像：“哦，有什么关系，不就是不服兵役嘛，我肯定…没人当真质疑他不爱国~”，或者：“我觉得大家批评他搞垮了他上一家公司的事并不完全公平~”<br>B：噢，这样说肯定奏效。<br>H：如果不奏效，总还可以暗示有别的丑闻。如果他单身，暗示他是同性恋。<br>B：如果他结婚了呢?<br>H：那就通奸。跟一个必须避讳的女士。比如皇室成员之类。或者电视女主播。<br>B：Errr……如果他显然婚姻幸福呢?<br>H：那就说他是极端的道学先生，或者酗酒，或者他正在接受精神治疗。伯纳德你看，运用之妙，存乎一心啊。好好学着，伯纳德~<br>B：对……<br>汉弗莱在剧中也算是一个老阴阳人了。</p>
+<p><br><br>\\<br>附英文对照：(Humphry—H, Bernard—B)<br>H：When you wish to suggest that sb is not the ideal choice…<br>B：You…rubbish them?<br>H：The first stage is to express absolute support.<br>B：Why？<br>H：You don’t want to say sb’s no good, you must be seen to be their friend! After all, it is necessary to get behind someone before you can stab them in the back.<br>B：But Alexander Jameson is good, He’s honest and efficient.<br>H：Excellent. That’s the second stage. You list all his praiseworthy qualities, especially those that make him unsuitable for the job. And you praise them to the point where they become a vice. That’s the third stage. Or, better still, you over-simplify his views by labelling them, as you just did.<br>B: You mean… Mr. Clean?<br>H: Yes! But i think we can do better than that. Do sit down, Bernard~ Well, isn’t he a churchgoer?<br>B: Yes, I believe he was once a lay preacher, a long time ago.<br>H: Splendid! We can certainly use that to against him.<br>B: How?<br>H: “What a charming man! has’t an enemy in the world! But, is he really up to dealing with some of those rogous in the City（金融城）?”<br>B: Jameson’s pretty tough.<br>H: Then we’ll say he’s too tough. And’s the 4th stage, you name all his bad points by defending and excusing them. You know, “Oh, it probably doesn’t matter that he was a conscientious objector. I’m sure…nobody is really questioned his patriotism.” or “I think the criticisms of him for bankrupting his last company weren’t entirely fair~”<br>B: Well that would certainly do it.<br>H: If doesn’t, you can always hint at a hidden scandal. If he is not married, hint at homosexuality.<br>B: If he is married?<br>H: Adultery. With a lady’s who’s beyond reproach. One of the royals, for instance. Or the television newsreader.<br>B: Heen…Ah, What if he’s obviously happily married?<br>H: Well then says he’s extremely puritanical or he drinks or he’s having  psychiatric treatment. Really Bernard, the possibilities are endless. Listen and learn, Bernard~<br>B: Yeah… </p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>这一个博客的设置过程</title>
+    <url>/2020/05/16/Helloworld_%E5%8D%9A%E5%AE%A2%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。<br>下面是“阅读更多”的分页。<br><a id="more"></a></p>
+<h1 id="一、基本的安装与配置"><a href="#一、基本的安装与配置" class="headerlink" title="一、基本的安装与配置"></a>一、基本的安装与配置</h1><h2 id="1-Nodejs的安装"><a href="#1-Nodejs的安装" class="headerlink" title="1.Nodejs的安装"></a>1.Nodejs的安装</h2><h2 id="2-Git-for-windows的安装"><a href="#2-Git-for-windows的安装" class="headerlink" title="2.Git for windows的安装"></a>2.Git for windows的安装</h2><h2 id="3-Hexo的安装"><a href="#3-Hexo的安装" class="headerlink" title="3.Hexo的安装"></a>3.Hexo的安装</h2><p>Hexo的安装便需要用到npm install命令。可以在Hexo官网上看到给出了一个npm安装命令：<br><a href="https://sm.ms/image/Jn9EOMGSBUHZ2cQ" target="_blank"><img src="https://i.loli.net/2020/05/17/Jn9EOMGSBUHZ2cQ.png" ></a><br>直接把它复制到进入博客路径的cmd中执行即可。</p>
+<h2 id="4-编译器的选择与安装"><a href="#4-编译器的选择与安装" class="headerlink" title="4.编译器的选择与安装"></a>4.编译器的选择与安装</h2><p>&ensp;&ensp;&ensp;&ensp;编译hexo博客文件的编译器可以任意选择，只要你愿意，文本文档都可以被当作编译器使用，来写出自己的文档。只不干出过像这种类似于在2020年使用bp传呼机传递消息的行为，意义实则不大。现有的轻量级编译器有Sublime、Atom（好像已经凉了）以及大名鼎鼎巨硬的 VS code。我最先安装的是sublime，但在感受过VSCode的沐浴之后，我只能说大厂的产品真香。<br>&ensp;&ensp;&ensp;&ensp;具体的安装方法依葫芦画瓢便是，安装好后将hexo文件夹下的博客文件夹拖入即可。</p>
+<h2 id="5-主题的安装"><a href="#5-主题的安装" class="headerlink" title="5.主题的安装"></a>5.主题的安装</h2><p>主题的安装可以直接从github上克隆下来。当然也可以下载主题的压缩包，把它丢到路径<Hexo\blogname\themes>中即可。然后便是按照所选安装包的教程在主_congfig.yml中进行一些代码的配置。</p>
+<h1 id="二、Hexo的个性化配置"><a href="#二、Hexo的个性化配置" class="headerlink" title="二、Hexo的个性化配置"></a>二、Hexo的个性化配置</h1><h2 id="1-数学公式mathjax引擎的配置与输入"><a href="#1-数学公式mathjax引擎的配置与输入" class="headerlink" title="1.数学公式mathjax引擎的配置与输入"></a>1.数学公式mathjax引擎的配置与输入</h2><p>&ensp;&ensp;&ensp;&ensp;Hexo貌似自带了一个数学公式渲染引擎，但我并没有使用它，而是直接安装了第三方渲染引擎Mathjax。<br>&ensp;&ensp;&ensp;&ensp;安装Mathjax大约有5个步骤。</p>
+<ol>
+<li><p>首先需要在博客文件夹中使用npm install命令卸载原始的marked渲染引擎（不支持mathjax），然后安装上hexo-renderer-kramed引擎：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更改文件配置，打开/node_modules/hexo-renderer-kramed/lib/renderer.js，将这一段代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line"><span class="keyword">function</span> formatText(text) &#123;</span><br><span class="line">    // Fit kramed<span class="string">'s rule: $$ + \1 + $$</span></span><br><span class="line"><span class="string">    return text.replace(/`\$(.*?)\$`/g, '</span>$$$$<span class="variable">$1</span>$$$$<span class="string">');</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>更改为直接返回text，直接将源代码变为注释即可：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line"><span class="keyword">function</span> formatText(text) &#123;</span><br><span class="line">    <span class="built_in">return</span> text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装hexo-renderer-mathjax 包：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>打开/node_modules/hexo-renderer-mathjax/mathjax.html，将<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这段原始代码注释掉，更改为<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>由于LaTeX与markdown的语法有语义冲突，所以 hexo 默认的转义规则会将一些字符进行转义，所以我们需要对默认的规则进行修改.<br>打开/node_modules\kramed\lib\rules\inline.js，将<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()<span class="comment">#$+\-.!_&gt;])/,</span></span><br><span class="line">更改为</span><br><span class="line">escape: /^\\([`*\[\]()<span class="comment"># +\-.!_&gt;])/,</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">更改为</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在/theme/XXX主题目录下的config.yml文件中打开mathjax：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;&#96;bash</span><br><span class="line">mathjax:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
+或者<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
+注意别忘掉了空格。<br>日后每篇文章地header中加上<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>&ensp;&ensp;&ensp;&ensp;然后便可以开怀地在博客上输入公式啦~<br>&ensp;&ensp;&ensp;&ensp;数学公式示例, 它渲染出来是这样的一个效果：</p>
+<script type="math/tex; mode=display">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script><script type="math/tex; mode=display">sqrt()</script><script type="math/tex; mode=display">\hat{a}, \acute{a},\grave{a},\breve{a},\bar{a},\widetilde{A},\check{a},\tilde{a},\dot{a},\ddot{a},\vec{a},\widehat{a}, \overrightarrow{x-y-z}</script><script type="math/tex; mode=display">[\bf 转换字体]</script><script type="math/tex; mode=display">\stackrel{FT}\longleftrightarrow,箭头上加文字</script><script type="math/tex; mode=display">f(x)=
+\begin{cases}
+0& \text{x=0}\\\\
+1& \text{x!=0}
+\end{cases} 分段函数</script><script type="math/tex; mode=display">f(x)=
+\begin{cases}
+0& {x=0}\\\\
+1& {x\neq0}
+\end{cases}</script><p>等式对其：</p>
+<script type="math/tex; mode=display">\begin{align}
+x(-t+t_0)
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\\
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\\
+&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{align}</script><h1 id="三、Hexo的应用"><a href="#三、Hexo的应用" class="headerlink" title="三、Hexo的应用"></a>三、Hexo的应用</h1><h2 id="1-菜单栏的设置及新页面的创立"><a href="#1-菜单栏的设置及新页面的创立" class="headerlink" title="1.菜单栏的设置及新页面的创立"></a>1.菜单栏的设置及新页面的创立</h2><h2 id="2-Tag、Categories的设置"><a href="#2-Tag、Categories的设置" class="headerlink" title="2.Tag、Categories的设置"></a>2.Tag、Categories的设置</h2><h2 id="3-Update设置"><a href="#3-Update设置" class="headerlink" title="3.Update设置"></a>3.Update设置</h2><h2 id="4-创建一篇新文章"><a href="#4-创建一篇新文章" class="headerlink" title="4.创建一篇新文章"></a>4.创建一篇新文章</h2><p>创建新文章可直接在博客路径的cmd中执行以下代码：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt; <span class="comment">#不加方括号与尖括号</span></span><br></pre></td></tr></table></figure><br>其中layout有三种默认布局，即：post、page、draft。它们分别对应路径’sorce_posts’、’source’、’source_drafts’。</p>
+<h2 id="5-文字、数学公式、图片的插入及相关API"><a href="#5-文字、数学公式、图片的插入及相关API" class="headerlink" title="5.文字、数学公式、图片的插入及相关API"></a>5.文字、数学公式、图片的插入及相关API</h2><ul>
+<li>文字的插入、首行缩进<br>文字的插入直接在头部代码下方打字即可。一些markdown的语法如下：<br>加粗：<strong>我被加粗了</strong><br>斜体字：<em>脉动一下，找回状态</em><br>高亮：==我变亮了吗？==<br>变色：<label style="color:red">这是红色</label><br>引用：<blockquote>
+<p>我是被引用的的吗？</p>
+<blockquote>
+<p>俄罗斯套娃</p>
+<blockquote>
+<p>俄罗斯大套娃</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<p>单行代码：<code>codes</code><br>列表：直接使用数字1. 或<em> 加空格即可<br><em>*一般而言，重点用加粗，重要的解释性语言使用斜体。</em></em><br>下划线：<span style="border-bottom:2px dashed red;">为什么以太网的Frame有最小的长度要求？结构Pad是做什么用的？</span></p>
+<p>超链接：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Writing](https://hexo.io/docs/writing.html) <span class="comment">#这样便形成了一个名字为“Writing”，指向网址为https://hexo.io/docs/writing.html的超链接</span></span><br></pre></td></tr></table></figure><br>首行缩进可以使用空格的硬编码实现，只需在需要提行处输入下列代码即可：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&amp;nbsp;//这是半角空格（英文）</span><br><span class="line">&amp;emsp;//这是全角空格（中文）</span><br></pre></td></tr></table></figure><br>根据自己文章的语言需求放2个在前面即可。但似乎这种方法不太好用。<br><code>&amp;ensp; //也可以尝试这个，相当于1个中文，2字节</code></p>
+<p>换行只需输入：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;br&gt;</span><br></pre></td></tr></table></figure><br>即可。</p>
+<ul>
+<li>图片的插入<br>下面大致说一说在文章种对图片的插入。</li>
+</ul>
+<p>此处使用的是SM.MS直接生成的HTML链接插入的图片：</p>
+<p><div  align="center">
+<a href="https://sm.ms/image/CkHa1Lftqg8VI56" target="_blank"><img src="https://i.loli.net/2020/05/17/CkHa1Lftqg8VI56.png" ></a>
+</div><br>这里使用的是生成的Markdown链接插入的图片：</p>
+<p><img src="https://i.loli.net/2020/05/17/xMoGKF3edAh7Um8.png" alt="QQ截图20200516162849.png"><br>这2种插入图片的方式足够应付一般的写作了。</p>
+<ul>
+<li>插件的安装<br>插件的安装最常用的办法便是使用npm install语法。在你的hexo目录下执行这样一句话<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+这是下载安装一个可以上传本地图片的插件；npm install命令可以直接在所在目录下安装指定的插件，—save是后缀。</li>
+</ul>
+<h2 id="6-本地接口预览与上传服务器"><a href="#6-本地接口预览与上传服务器" class="headerlink" title="6.本地接口预览与上传服务器"></a>6.本地接口预览与上传服务器</h2><ul>
+<li><p>本地预览<br>本地静态网页的预览，直接可以通过cmd转到博客的文件夹中，执行代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s -p 5555 <span class="comment">#使用5555端口</span></span><br></pre></td></tr></table></figure>
+<p>然后在网址地址栏中输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">localhost：5555</span><br></pre></td></tr></table></figure>
+<p>即可访问本地静态网页。</p>
+</li>
+<li><p>上传服务器<br>此处暂时未在github中设置分支branch，而是直接推到master中。<br>在生成之前最好清理一下缓存：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment">#generate的简写</span></span><br></pre></td></tr></table></figure>
+<p>直接在已进入博客文件夹路径的cmd中执行命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g <span class="comment">#generate的简写</span></span><br></pre></td></tr></table></figure>
+<p>可以在本地执行生成静态网页，然后执行命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>即可把本地的内容推到github的仓库中，网页便上传了。</p>
+</li>
+</ul>
+<h2 id="7-换电脑怎么办"><a href="#7-换电脑怎么办" class="headerlink" title="7.换电脑怎么办"></a>7.换电脑怎么办</h2><h2 id="8-域名的申请"><a href="#8-域名的申请" class="headerlink" title="8.域名的申请"></a>8.域名的申请</h2>]]></content>
+      <categories>
+        <category>博客设置</category>
+      </categories>
+      <tags>
+        <tag>博客代码设置</tag>
       </tags>
   </entry>
   <entry>
@@ -406,50 +441,6 @@ x(t)=0& {t<T_1,t>T_2} \\\\
       </categories>
       <tags>
         <tag>通信网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>信号与系统Matlab笔记</title>
-    <url>/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;本文主要针对Matlab中有关信号与系统问题的函数及语法总结。</p>
-<h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><ul>
-<li><strong>产生一串数字区间</strong>：<code>n=-5:10</code>产生了从-5~10的区间整数序列</li>
-<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br>_例如1：画出$x[n]=2n,-3\leq n\leq 3$_</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">n&#x3D;-3:3;</span><br><span class="line">x&#x3D;2*n;</span><br><span class="line">stem(n, x)</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-</li>
-<li><p><code>subplot(m, n, P)</code>函数：该函数用来规划画布上图像放置的位置。其中，m、n用来将画布分割，m为行，n为列；而P代表取分割部分的第几块。<br>例如：<code>subplot(2,2,[1 3])</code>代表将画布分为2x2的4部分，并该函数对应的图像放在第1，3块处</p>
-</li>
-<li><code>grid on</code>函数：<code>grid on</code>为显示网格，相反，<code>grid off</code> 为关闭显示网格。</li>
-<li>点乘<code>.*</code>与一般乘法<code>*</code>：函数与函数相乘，例如$\sin(t)\sin(9t)$，一般是用点乘<code>.*</code>。点乘主要用于函数中元素的乘法（数组乘法array multiply）；而一般乘法则为矩阵乘法（Matrix multiply）。<br>_例如2：用图形表示连续调制波形$y=\sin(t)\sin(9t)$及其包络。_<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">t&#x3D;(0:pi&#x2F;100:pi)&#39; % 长 度 为 101 的 时 间 采 样 列 向 量</span><br><span class="line">y1&#x3D;sin(t)*[1,-1]; %包络线函数值，是（101x2）的矩阵</span><br><span class="line">y2&#x3D;sin(t).*sin(9*t); %长度为101的调制波列向量</span><br><span class="line">t3&#x3D;pi*(0:9)&#x2F;9%在定义域区间均匀地取10个点</span><br><span class="line">y3&#x3D;sin(t3).*sin(9*t3);%算出该十个点的值</span><br><span class="line">plot(t,y1,&#39;r:&#39;,t,y2,&#39;b&#39;,t3,y3,&#39;bo&#39;)%画出函数图像，包络线图像，取点图像</span><br><span class="line">axis([0,pi,-1,1]) %控制画出的轴范围，前2参数为横轴；后2值为纵轴</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>单位脉冲序列$\delta[n]$与单位阶跃序列$u[n]$</strong>：可以综合使用<code>ones(1,n)</code>与<code>zeros(1,n)</code>来产生单位脉冲序列与代为阶跃序列。<br>其中<code>ones(1,\ n)</code>命令产生1行n列的1值；<code>zeros(1,n)</code>命令产生1行n列的0值。<br>_例如3：_</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">n&#x3D;0: 32;</span><br><span class="line">x&#x3D;[zeros(1,5),1,zeros(1,27)];%一个x&#x3D;\delta(n-6)的单位冲激函数</span><br><span class="line">stem(n, x, &#39;fill&#39;);%以n为横坐标画出数据序列x</span><br><span class="line">filter(num ,den, x)函数：该函数主要是针对LTI系统设置。因果LTI系统的零状态响应，可以利用y&#x3D;filter(num,\ den,\ x)实现。</span><br><span class="line">&#x2F;&#x2F;其中，num为系统传递函数分子系数组成的行向量、den为系统传递函数分母系数组成的行向量、x为输入的离散序列、y为输出的离散序列且y与x的长度一样。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>syms</code>函数：用来创建一个符号表达式。可以理解为用来创建一个“变量”，创建后的变量可以直接写入函数中作为自变量使用。常用作创建连续时间信号<br>_例如4：_</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">syms t;%创建一个符号表达式，“变量t”</span><br><span class="line">syms T;</span><br><span class="line">f&#x3D;sin(2*pi*t&#x2F;T)%写出函数f，该函数包含待定变量t与T</span><br></pre></td></tr></table></figure></li>
-<li><code>x1=subs（f，T，5）</code>：该函数用于给自定义的符号表达式中的某个变量赋值，示例为将符号表达式f中的变量T赋值为5，并将该赋值后的符号表达式记为x1.</li>
-<li><code>ezplot（&lt;隐函数表达式&gt;,[x最小值，x最大值，y最小值，y最大值])</code>：该函数用来绘制只有单一自变量的symbolic expression，即直接绘制单一自变量的函数。</li>
-<li><code>int(F,x,a,b)</code>函数：该函数用来计算自己定义的符号表达式的积分。其中F为被积函数，x为自变量（可忽略），a为积分下限，b为积分上限。</li>
-</ul>
-<h1 id="Lab-2"><a href="#Lab-2" class="headerlink" title="Lab 2"></a>Lab 2</h1><ul>
-<li><strong>分段函数的写法：</strong><br>示例：表示分段函数<script type="math/tex; mode=display">x[n]=
-\begin{cases}
-2&,n=0\\
-1&,n=2\\
--1&,n=3\\
-3&,n=4\\
-0&,otherwise
-\end{cases}</script>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></li>
-<li><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和</li>
-<li><code>filter(b_k,a_k,x)</code>函数：输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<script type="math/tex; mode=display">\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m]</script>上式在Malab中等价于：<script type="math/tex; mode=display">\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]</script>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br><code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>专业学科</category>
-        <category>信号与系统科目</category>
-      </categories>
-      <tags>
-        <tag>-信号与系统 -Matlab</tag>
       </tags>
   </entry>
 </search>
