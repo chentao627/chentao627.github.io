@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.4k</span>
+            <span class="post-count">1.6k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">5 分钟</span>
+            <span class="post-count">6 分钟</span>
         </span>
     </span>
 </div>
@@ -141,13 +141,22 @@
 </ul>
 <p>-1&amp;,n=3\<br>3&amp;,n=4\<br>0&amp;,otherwise<br>\end{cases}$$<br>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></p>
 <ul>
-<li><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和</li>
-<li><code>filter(b_k,a_k,x)</code>函数：<ol>
+<li><p><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和</p>
+</li>
+<li><p><code>filter(b_k,a_k,x)</code>函数：</p>
+<ol>
 <li>输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<br>$$\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m] \ \ \ (\alpha)$$<br>上式在Malab中等价于：<br>$$\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]$$<br>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br>&ensp;&ensp;&ensp;&ensp;<code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
 <li>也可以用来求卷积。当$a_k=\delta[k],b[m]=b_m(0\leq m\leq M)$时，式子$(\alpha)$便成为了<br>$$y[n]=\sum_{m=-\infty}^{+\infty}b[m]x[n-m]$$<br>是一个标准的离散卷积和公式，此时只需输入参数<code>y=filter(b_k,1,x)</code>即可。</li>
+<li>求离散线性非常系数系统，也可以使用它，但只需要一个<code>for</code>循环即可。<br>例如：$y[n]=(\frac{3}{5})^ny_2[n-1]+x[n]$，求它的系统单位冲激响应只需如下：<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">h2=[];<span class="comment">%创建了一个数组来容纳每次取n时对应的h[n]</span></span><br><span class="line">b2=[<span class="number">1</span>];<span class="comment">%system2的输入系数</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">0</span>:<span class="number">19</span></span><br><span class="line">    a2=[<span class="number">1</span>,-(<span class="number">3</span>/<span class="number">5</span>)^<span class="built_in">i</span>];<span class="comment">%system2的输出系数</span></span><br><span class="line">    h2(<span class="built_in">i</span>+<span class="number">1</span>)=filter(b2,a2,x(<span class="built_in">i</span>+<span class="number">1</span>))<span class="comment">%每一个n(此处为计数器i)对应一个系数，一个x[n]——也就对应响应h2[n]的一个值</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 </li>
-<li><code>lsim(b,a,x,t)</code>函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：<br>$$\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b_m\frac{d^mx(t)}{dt^m}$$<br>同理，该方程在Matlab中系数需要被改写为向量形式：<br>$$\sum_{k=0}^{N}a(N+1-k)\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b(M+1-m)\frac{d^mx(t)}{dt^m}$$</li>
+<li><p><code>lsim(b,a,x,t)</code>函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：<br>$$\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b_m\frac{d^mx(t)}{dt^m}$$<br>同理，该方程在Matlab中系数需要被改写为向量形式：<br>$$\sum_{k=0}^{N}a(N+1-k)\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b(M+1-m)\frac{d^mx(t)}{dt^m}$$</p>
+</li>
+<li><p><code>step(b,a,t)</code>函数：用来计算线性常系数微分方程的step response，用于连续时间。求单位阶跃响应除了用该函数，还可以直接把$u(t)*h(t)$得到，即利用<code>conv()</code>函数，这样就可以算离散时间的阶跃响应了。</p>
+</li>
+<li><p><code>impulse(b,a,t)</code>函数：用来计算线性常系数微分方程的impulse response，用于连续时间</p>
+</li>
 </ul>
 
       

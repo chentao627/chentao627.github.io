@@ -29,49 +29,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2020520随笔</title>
-    <url>/2020/05/20/2020520%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，但回过头来对照现实又会让人不禁觉得后背一凉。杜牧在《阿房宫赋》里面写道：“秦人不暇自哀，而后人哀之；后人哀之而不鉴之，亦使后人而复哀后人也”。阿房宫当年修没修起来我们不得而知，不过以前人之鉴为自己所诫还是挺有意义的。</p>
-<a id="more"></a>
-<p><a href="https://sm.ms/image/la2Hhnz4SEsD6g3" target="_blank"><img src="https://i.loli.net/2020/05/21/la2Hhnz4SEsD6g3.jpg" ></a></p>
-<p>下面是其中的一个桥段：(Humphry–H, Bernard–B)<br>H：如果你想暗示某个人不太适合某个位置…<br>B：那…要诋毁他？<br>H：第一步是要表示完全的支持。<br>B：Why？<br>H：你不想留下说人坏话的记录吧，你得显得像他得朋友！说到底，先得绕到人后面才能从背后捅刀子。<br>B：可詹森是个好人…，他极其诚实，又有能力。<br>H：太好了。这就进入了第二步。你列出他所有的优点，尤其是那些让他不称职的，大肆夸奖它们，到矫枉过正的地步。这是第三步。或者，更好的办法是，你把他的观点扁平化，给他们贴标签，就像你刚才说的。<br>B：emmm…比如说廉洁先生?<br>H：对!不过我想我们能做得更好。坐下吧，伯纳德~ 他不是常去教堂吗?<br>B：对，我记得他干过业余传教士，很久以前了。<br>H：太妙了!我们就用这点来对付他。<br>B：怎么做?<br>H：“多有魅力的人啊!有生以来就没树过敌!可他真能应付金融城里那些恶棍吗?”<br>B：詹姆逊很强硬的。<br>H：那就说他强硬过头了。这是第四步，列出他所有的缺陷。但要以为他开脱的口气，就像：“哦，有什么关系，不就是不服兵役嘛，我肯定…没人当真质疑他不爱国<del>”，或者：“我觉得大家批评他搞垮了他上一家公司的事并不完全公平</del>”<br>B：噢，这样说肯定奏效。<br>H：如果不奏效，总还可以暗示有别的丑闻。如果他单身，暗示他是同性恋。<br>B：如果他结婚了呢?<br>H：那就通奸。跟一个必须避讳的女士。比如皇室成员之类。或者电视女主播。<br>B：Errr……如果他显然婚姻幸福呢?<br>H：那就说他是极端的道学先生，或者酗酒，或者他正在接受精神治疗。伯纳德你看，运用之妙，存乎一心啊。好好学着，伯纳德~<br>B：对……<br>汉弗莱在剧中也算是一个老阴阳人了。</p>
-<br>
-\\
-附英文对照：(Humphry--H, Bernard--B)
-H：When you wish to suggest that sb is not the ideal choice...
-B：You...rubbish them?
-H：The first stage is to express absolute support.
-B：Why？
-H：You don't want to say sb's no good, you must be seen to be their friend! After all, it is necessary to get behind someone before you can stab them in the back.
-B：But Alexander Jameson is good, He's honest and efficient.
-H：Excellent. That's the second stage. You list all his praiseworthy qualities, especially those that make him unsuitable for the job. And you praise them to the point where they become a vice. That's the third stage. Or, better still, you over-simplify his views by labelling them, as you just did.
-B: You mean... Mr. Clean?
-H: Yes! But i think we can do better than that. Do sit down, Bernard~ Well, isn't he a churchgoer?
-B: Yes, I believe he was once a lay preacher, a long time ago.
-H: Splendid! We can certainly use that to against him.
-B: How?
-H: "What a charming man! has't an enemy in the world! But, is he really up to dealing with some of those rogous in the City（金融城）?"
-B: Jameson's pretty tough.
-H: Then we'll say he's too tough. And's the 4th stage, you name all his bad points by defending and excusing them. You know, "Oh, it probably doesn't matter that he was a conscientious objector. I'm sure...nobody is really questioned his patriotism." or "I think the criticisms of him for bankrupting his last company weren't entirely fair~"
-B: Well that would certainly do it.
-H: If doesn't, you can always hint at a hidden scandal. If he is not married, hint at homosexuality.
-B: If he is married?
-H: Adultery. With a lady's who's beyond reproach. One of the royals, for instance. Or the television newsreader.
-B: Heen...Ah, What if he's obviously happily married?
-H: Well then says he's extremely puritanical or he drinks or he's having  psychiatric treatment. Really Bernard, the possibilities are endless. Listen and learn, Bernard~
-B: Yeah... 
-
-
-
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>这一个博客的设置过程</title>
     <url>/2020/05/16/Helloworld_%E5%8D%9A%E5%AE%A2%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。<br>下面是“阅读更多”的分页。</p>
@@ -122,7 +79,8 @@ B: Yeah...
 <p>$$\prod_{p=1}^N(s-s_p)$$</p>
 <p>$$f(x)=<br>\begin{cases}<br>0&amp; \text{x=0}\\<br>1&amp; \text{x!=0}<br>\end{cases} 分段函数$$</p>
 <p>$$f(x)=<br>\begin{cases}<br>0&amp; {x=0}\\<br>1&amp; {x\neq0}<br>\end{cases} $$<br>等式对其：<br>$$\begin{align}<br>x(-t+t_0)<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{align}$$</p>
-<h1 id="三、Hexo的应用"><a href="#三、Hexo的应用" class="headerlink" title="三、Hexo的应用"></a>三、Hexo的应用</h1><h2 id="1-菜单栏的设置及新页面的创立"><a href="#1-菜单栏的设置及新页面的创立" class="headerlink" title="1.菜单栏的设置及新页面的创立"></a>1.菜单栏的设置及新页面的创立</h2><h2 id="2-Tag、Categories的设置"><a href="#2-Tag、Categories的设置" class="headerlink" title="2.Tag、Categories的设置"></a>2.Tag、Categories的设置</h2><h2 id="3-Update设置"><a href="#3-Update设置" class="headerlink" title="3.Update设置"></a>3.Update设置</h2><h2 id="4-创建一篇新文章"><a href="#4-创建一篇新文章" class="headerlink" title="4.创建一篇新文章"></a>4.创建一篇新文章</h2><p>创建新文章可直接在博客路径的cmd中执行以下代码：</p>
+<h1 id="三、Hexo的应用"><a href="#三、Hexo的应用" class="headerlink" title="三、Hexo的应用"></a>三、Hexo的应用</h1><h2 id="0-命令行的打开"><a href="#0-命令行的打开" class="headerlink" title="0.命令行的打开"></a>0.命令行的打开</h2><p>一种是win+R然后cmd再转到博客文件夹下面；而更为简便的办法则是直接在VScode中按下快捷键<code>Ctrl+Shift+c</code>即可。</p>
+<h2 id="1-菜单栏的设置及新页面的创立"><a href="#1-菜单栏的设置及新页面的创立" class="headerlink" title="1.菜单栏的设置及新页面的创立"></a>1.菜单栏的设置及新页面的创立</h2><h2 id="2-Tag、Categories的设置"><a href="#2-Tag、Categories的设置" class="headerlink" title="2.Tag、Categories的设置"></a>2.Tag、Categories的设置</h2><h2 id="3-Update设置"><a href="#3-Update设置" class="headerlink" title="3.Update设置"></a>3.Update设置</h2><h2 id="4-创建一篇新文章"><a href="#4-创建一篇新文章" class="headerlink" title="4.创建一篇新文章"></a>4.创建一篇新文章</h2><p>创建新文章可直接在博客路径的cmd中执行以下代码：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt; <span class="comment">#不加方括号与尖括号</span></span><br></pre></td></tr></table></figure>
 <p>其中layout有三种默认布局，即：post、page、draft。它们分别对应路径’sorce_posts’、’source’、’source_drafts’。</p>
 <h2 id="5-文字、数学公式、图片的插入及相关API"><a href="#5-文字、数学公式、图片的插入及相关API" class="headerlink" title="5.文字、数学公式、图片的插入及相关API"></a>5.文字、数学公式、图片的插入及相关API</h2><ul>
@@ -218,13 +176,22 @@ B: Yeah...
 </ul>
 <p>-1&amp;,n=3\<br>3&amp;,n=4\<br>0&amp;,otherwise<br>\end{cases}$$<br>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></p>
 <ul>
-<li><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和</li>
-<li><code>filter(b_k,a_k,x)</code>函数：<ol>
+<li><p><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和</p>
+</li>
+<li><p><code>filter(b_k,a_k,x)</code>函数：</p>
+<ol>
 <li>输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<br>$$\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m] \ \ \ (\alpha)$$<br>上式在Malab中等价于：<br>$$\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]$$<br>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br>&ensp;&ensp;&ensp;&ensp;<code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
 <li>也可以用来求卷积。当$a_k=\delta[k],b[m]=b_m(0\leq m\leq M)$时，式子$(\alpha)$便成为了<br>$$y[n]=\sum_{m=-\infty}^{+\infty}b[m]x[n-m]$$<br>是一个标准的离散卷积和公式，此时只需输入参数<code>y=filter(b_k,1,x)</code>即可。</li>
+<li>求离散线性非常系数系统，也可以使用它，但只需要一个<code>for</code>循环即可。<br>例如：$y[n]=(\frac{3}{5})^ny_2[n-1]+x[n]$，求它的系统单位冲激响应只需如下：<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">h2=[];<span class="comment">%创建了一个数组来容纳每次取n时对应的h[n]</span></span><br><span class="line">b2=[<span class="number">1</span>];<span class="comment">%system2的输入系数</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">0</span>:<span class="number">19</span></span><br><span class="line">    a2=[<span class="number">1</span>,-(<span class="number">3</span>/<span class="number">5</span>)^<span class="built_in">i</span>];<span class="comment">%system2的输出系数</span></span><br><span class="line">    h2(<span class="built_in">i</span>+<span class="number">1</span>)=filter(b2,a2,x(<span class="built_in">i</span>+<span class="number">1</span>))<span class="comment">%每一个n(此处为计数器i)对应一个系数，一个x[n]——也就对应响应h2[n]的一个值</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 </li>
-<li><code>lsim(b,a,x,t)</code>函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：<br>$$\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b_m\frac{d^mx(t)}{dt^m}$$<br>同理，该方程在Matlab中系数需要被改写为向量形式：<br>$$\sum_{k=0}^{N}a(N+1-k)\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b(M+1-m)\frac{d^mx(t)}{dt^m}$$</li>
+<li><p><code>lsim(b,a,x,t)</code>函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：<br>$$\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b_m\frac{d^mx(t)}{dt^m}$$<br>同理，该方程在Matlab中系数需要被改写为向量形式：<br>$$\sum_{k=0}^{N}a(N+1-k)\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b(M+1-m)\frac{d^mx(t)}{dt^m}$$</p>
+</li>
+<li><p><code>step(b,a,t)</code>函数：用来计算线性常系数微分方程的step response，用于连续时间。求单位阶跃响应除了用该函数，还可以直接把$u(t)*h(t)$得到，即利用<code>conv()</code>函数，这样就可以算离散时间的阶跃响应了。</p>
+</li>
+<li><p><code>impulse(b,a,t)</code>函数：用来计算线性常系数微分方程的impulse response，用于连续时间</p>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -233,6 +200,49 @@ B: Yeah...
       </categories>
       <tags>
         <tag>-信号与系统 -Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2020520随笔</title>
+    <url>/2020/05/20/2020520%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，但回过头来对照现实又会让人不禁觉得后背一凉。杜牧在《阿房宫赋》里面写道：“秦人不暇自哀，而后人哀之；后人哀之而不鉴之，亦使后人而复哀后人也”。阿房宫当年修没修起来我们不得而知，不过以前人之鉴为自己所诫还是挺有意义的。</p>
+<a id="more"></a>
+<p><a href="https://sm.ms/image/la2Hhnz4SEsD6g3" target="_blank"><img src="https://i.loli.net/2020/05/21/la2Hhnz4SEsD6g3.jpg" ></a></p>
+<p>下面是其中的一个桥段：(Humphry–H, Bernard–B)<br>H：如果你想暗示某个人不太适合某个位置…<br>B：那…要诋毁他？<br>H：第一步是要表示完全的支持。<br>B：Why？<br>H：你不想留下说人坏话的记录吧，你得显得像他得朋友！说到底，先得绕到人后面才能从背后捅刀子。<br>B：可詹森是个好人…，他极其诚实，又有能力。<br>H：太好了。这就进入了第二步。你列出他所有的优点，尤其是那些让他不称职的，大肆夸奖它们，到矫枉过正的地步。这是第三步。或者，更好的办法是，你把他的观点扁平化，给他们贴标签，就像你刚才说的。<br>B：emmm…比如说廉洁先生?<br>H：对!不过我想我们能做得更好。坐下吧，伯纳德~ 他不是常去教堂吗?<br>B：对，我记得他干过业余传教士，很久以前了。<br>H：太妙了!我们就用这点来对付他。<br>B：怎么做?<br>H：“多有魅力的人啊!有生以来就没树过敌!可他真能应付金融城里那些恶棍吗?”<br>B：詹姆逊很强硬的。<br>H：那就说他强硬过头了。这是第四步，列出他所有的缺陷。但要以为他开脱的口气，就像：“哦，有什么关系，不就是不服兵役嘛，我肯定…没人当真质疑他不爱国<del>”，或者：“我觉得大家批评他搞垮了他上一家公司的事并不完全公平</del>”<br>B：噢，这样说肯定奏效。<br>H：如果不奏效，总还可以暗示有别的丑闻。如果他单身，暗示他是同性恋。<br>B：如果他结婚了呢?<br>H：那就通奸。跟一个必须避讳的女士。比如皇室成员之类。或者电视女主播。<br>B：Errr……如果他显然婚姻幸福呢?<br>H：那就说他是极端的道学先生，或者酗酒，或者他正在接受精神治疗。伯纳德你看，运用之妙，存乎一心啊。好好学着，伯纳德~<br>B：对……<br>汉弗莱在剧中也算是一个老阴阳人了。</p>
+<br>
+\\
+附英文对照：(Humphry--H, Bernard--B)
+H：When you wish to suggest that sb is not the ideal choice...
+B：You...rubbish them?
+H：The first stage is to express absolute support.
+B：Why？
+H：You don't want to say sb's no good, you must be seen to be their friend! After all, it is necessary to get behind someone before you can stab them in the back.
+B：But Alexander Jameson is good, He's honest and efficient.
+H：Excellent. That's the second stage. You list all his praiseworthy qualities, especially those that make him unsuitable for the job. And you praise them to the point where they become a vice. That's the third stage. Or, better still, you over-simplify his views by labelling them, as you just did.
+B: You mean... Mr. Clean?
+H: Yes! But i think we can do better than that. Do sit down, Bernard~ Well, isn't he a churchgoer?
+B: Yes, I believe he was once a lay preacher, a long time ago.
+H: Splendid! We can certainly use that to against him.
+B: How?
+H: "What a charming man! has't an enemy in the world! But, is he really up to dealing with some of those rogous in the City（金融城）?"
+B: Jameson's pretty tough.
+H: Then we'll say he's too tough. And's the 4th stage, you name all his bad points by defending and excusing them. You know, "Oh, it probably doesn't matter that he was a conscientious objector. I'm sure...nobody is really questioned his patriotism." or "I think the criticisms of him for bankrupting his last company weren't entirely fair~"
+B: Well that would certainly do it.
+H: If doesn't, you can always hint at a hidden scandal. If he is not married, hint at homosexuality.
+B: If he is married?
+H: Adultery. With a lady's who's beyond reproach. One of the royals, for instance. Or the television newsreader.
+B: Heen...Ah, What if he's obviously happily married?
+H: Well then says he's extremely puritanical or he drinks or he's having  psychiatric treatment. Really Bernard, the possibilities are endless. Listen and learn, Bernard~
+B: Yeah... 
+
+
+
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
