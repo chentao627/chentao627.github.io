@@ -112,51 +112,47 @@
       
       <p>&ensp;&ensp;&ensp;&ensp;本文主要针对Matlab中有关信号与系统问题的函数及语法总结。</p>
 <h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><ul>
-<li><p><strong>产生一串数字区间</strong>：<code>n=-5:10</code>产生了从-5~10的区间整数序列</p>
-</li>
-<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br><em>例如1：画出$x[n]=2n,-3\leq n\leq 3$</em></p>
+<li><strong>产生一串数字区间</strong>：<code>n=-5:10</code>产生了从-5~10的区间整数序列</li>
+<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br>_例如1：画出$x[n]=2n,-3\leq n\leq 3$_</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n&#x3D;-3:3;</span><br><span class="line">x&#x3D;2*n;</span><br><span class="line">stem(n, x)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 </li>
 <li><p><code>subplot(m, n, P)</code>函数：该函数用来规划画布上图像放置的位置。其中，m、n用来将画布分割，m为行，n为列；而P代表取分割部分的第几块。<br>例如：<code>subplot(2,2,[1 3])</code>代表将画布分为2x2的4部分，并该函数对应的图像放在第1，3块处</p>
 </li>
-<li><p><code>grid on</code>函数：<code>grid on</code>为显示网格，相反，<code>grid off</code> 为关闭显示网格。</p>
-</li>
-<li><p>点乘<code>.*</code>与一般乘法<code>*</code>：函数与函数相乘，例如$\sin(t)\sin(9t)$，一般是用点乘<code>.*</code>。点乘主要用于函数中元素的乘法（数组乘法array multiply）；而一般乘法则为矩阵乘法（Matrix multiply）。<br><em>例如2：用图形表示连续调制波形$y=\sin(t)\sin(9t)$及其包络。</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t&#x3D;(0:pi&#x2F;100:pi)&#39; % 长 度 为 101 的 时 间 采 样 列 向 量</span><br><span class="line">y1&#x3D;sin(t)*[1,-1]; %包络线函数值，是（101x2）的矩阵</span><br><span class="line">y2&#x3D;sin(t).*sin(9*t); %长度为101的调制波列向量</span><br><span class="line">t3&#x3D;pi*(0:9)&#x2F;9%在定义域区间均匀地取10个点</span><br><span class="line">y3&#x3D;sin(t3).*sin(9*t3);%算出该十个点的值</span><br><span class="line">plot(t,y1,&#39;r:&#39;,t,y2,&#39;b&#39;,t3,y3,&#39;bo&#39;)%画出函数图像，包络线图像，取点图像</span><br><span class="line">axis([0,pi,-1,1]) %控制画出的轴范围，前2参数为横轴；后2值为纵轴</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>单位脉冲序列$\delta[n]$与单位阶跃序列$u[n]$</strong>：可以综合使用<code>ones(1,n)</code>与<code>zeros(1,n)</code>来产生单位脉冲序列与代为阶跃序列。<br>其中<code>ones(1,n)</code>命令产生1行n列的1值；<code>zeros(1,n)</code>命令产生1行n列的0值。<br><em>例如3：</em></p>
+<li><code>grid on</code>函数：<code>grid on</code>为显示网格，相反，<code>grid off</code> 为关闭显示网格。</li>
+<li>点乘<code>.*</code>与一般乘法<code>*</code>：函数与函数相乘，例如$\sin(t)\sin(9t)$，一般是用点乘<code>.*</code>。点乘主要用于函数中元素的乘法（数组乘法array multiply）；而一般乘法则为矩阵乘法（Matrix multiply）。<br>_例如2：用图形表示连续调制波形$y=\sin(t)\sin(9t)$及其包络。_<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t&#x3D;(0:pi&#x2F;100:pi)&#39; % 长 度 为 101 的 时 间 采 样 列 向 量</span><br><span class="line">y1&#x3D;sin(t)*[1,-1]; %包络线函数值，是（101x2）的矩阵</span><br><span class="line">y2&#x3D;sin(t).*sin(9*t); %长度为101的调制波列向量</span><br><span class="line">t3&#x3D;pi*(0:9)&#x2F;9%在定义域区间均匀地取10个点</span><br><span class="line">y3&#x3D;sin(t3).*sin(9*t3);%算出该十个点的值</span><br><span class="line">plot(t,y1,&#39;r:&#39;,t,y2,&#39;b&#39;,t3,y3,&#39;bo&#39;)%画出函数图像，包络线图像，取点图像</span><br><span class="line">axis([0,pi,-1,1]) %控制画出的轴范围，前2参数为横轴；后2值为纵轴</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>单位脉冲序列$\delta[n]$与单位阶跃序列$u[n]$</strong>：可以综合使用<code>ones(1,n)</code>与<code>zeros(1,n)</code>来产生单位脉冲序列与代为阶跃序列。<br>其中<code>ones(1,n)</code>命令产生1行n列的1值；<code>zeros(1,n)</code>命令产生1行n列的0值。<br>_例如3：_</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n&#x3D;0: 32;</span><br><span class="line">x&#x3D;[zeros(1,5),1,zeros(1,27)];%一个x&#x3D;\delta(n-6)的单位冲激函数</span><br><span class="line">stem(n, x, &#39;fill&#39;);%以n为横坐标画出数据序列x</span><br><span class="line">filter(num ,den, x)函数：该函数主要是针对LTI系统设置。因果LTI系统的零状态响应，可以利用y&#x3D;filter(num,\ den,\ x)实现。</span><br><span class="line">&#x2F;&#x2F;其中，num为系统传递函数分子系数组成的行向量、den为系统传递函数分母系数组成的行向量、x为输入的离散序列、y为输出的离散序列且y与x的长度一样。</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>syms</code>函数：用来创建一个符号表达式。可以理解为用来创建一个“变量”，创建后的变量可以直接写入函数中作为自变量使用。常用作创建连续时间信号<br><em>例如4：</em></p>
+<li><p><code>syms</code>函数：用来创建一个符号表达式。可以理解为用来创建一个“变量”，创建后的变量可以直接写入函数中作为自变量使用。常用作创建连续时间信号<br>_例如4：_</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">syms t;%创建一个符号表达式，“变量t”</span><br><span class="line">syms T;</span><br><span class="line">f&#x3D;sin(2*pi*t&#x2F;T)%写出函数f，该函数包含待定变量t与T</span><br></pre></td></tr></table></figure></li>
-<li><p><code>x1=subs（f，T，5）</code>：该函数用于给自定义的符号表达式中的某个变量赋值，示例为将符号表达式f中的变量T赋值为5，并将该赋值后的符号表达式记为x1.</p>
-</li>
-<li><p><code>ezplot（&lt;隐函数表达式&gt;,[x最小值，x最大值，y最小值，y最大值])</code>：该函数用来绘制只有单一自变量的symbolic expression，即直接绘制单一自变量的函数。</p>
-</li>
-<li><p><code>int(F,x,a,b)</code>函数：该函数用来计算自己定义的符号表达式的积分。其中F为被积函数，x为自变量（可忽略），a为积分下限，b为积分上限。</p>
-</li>
+<li><code>x1=subs（f，T，5）</code>：该函数用于给自定义的符号表达式中的某个变量赋值，示例为将符号表达式f中的变量T赋值为5，并将该赋值后的符号表达式记为x1.</li>
+<li><code>ezplot（&lt;隐函数表达式&gt;,[x最小值，x最大值，y最小值，y最大值])</code>：该函数用来绘制只有单一自变量的symbolic expression，即直接绘制单一自变量的函数。</li>
+<li><code>int(F,x,a,b)</code>函数：该函数用来计算自己定义的符号表达式的积分。其中F为被积函数，x为自变量（可忽略），a为积分下限，b为积分上限。</li>
 </ul>
 <h1 id="Lab-2"><a href="#Lab-2" class="headerlink" title="Lab 2"></a>Lab 2</h1><ul>
-<li><strong>分段函数的写法：</strong><br>示例：表示分段函数<br>$$x[n]=<br>\begin{cases}<br>2&amp;,n=0\<br>1&amp;,n=2\</li>
-</ul>
-<p>-1&amp;,n=3\<br>3&amp;,n=4\<br>0&amp;,otherwise<br>\end{cases}$$<br>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></p>
-<ul>
-<li><p><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和</p>
-</li>
+<li><strong>分段函数的写法：</strong><br>示例：表示分段函数<script type="math/tex; mode=display">x[n]=
+\begin{cases}
+2&,n=0\\
+1&,n=2\\
+-1&,n=3\\
+3&,n=4\\
+0&,otherwise
+\end{cases}</script>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></li>
+<li><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和</li>
 <li><p><code>filter(b_k,a_k,x)</code>函数：</p>
 <ol>
-<li>输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<br>$$\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m] \ \ \ (\alpha)$$<br>上式在Malab中等价于：<br>$$\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]$$<br>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br>&ensp;&ensp;&ensp;&ensp;<code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
-<li>也可以用来求卷积。当$a_k=\delta[k],b[m]=b_m(0\leq m\leq M)$时，式子$(\alpha)$便成为了<br>$$y[n]=\sum_{m=-\infty}^{+\infty}b[m]x[n-m]$$<br>是一个标准的离散卷积和公式，此时只需输入参数<code>y=filter(b_k,1,x)</code>即可。</li>
+<li>输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<script type="math/tex; mode=display">\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m] \ \ \ (\alpha)</script>上式在Malab中等价于：<script type="math/tex; mode=display">\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]</script>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br>&ensp;&ensp;&ensp;&ensp;<code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
+<li>也可以用来求卷积。当$a_k=\delta[k],b[m]=b_m(0\leq m\leq M)$时，式子$(\alpha)$便成为了<script type="math/tex; mode=display">y[n]=\sum_{m=-\infty}^{+\infty}b[m]x[n-m]</script>是一个标准的离散卷积和公式，此时只需输入参数<code>y=filter(b_k,1,x)</code>即可。</li>
 <li>求离散线性非常系数系统，也可以使用它，但只需要一个<code>for</code>循环即可。<br>例如：$y[n]=(\frac{3}{5})^ny_2[n-1]+x[n]$，求它的系统单位冲激响应只需如下：<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">h2=[];<span class="comment">%创建了一个数组来容纳每次取n时对应的h[n]</span></span><br><span class="line">b2=[<span class="number">1</span>];<span class="comment">%system2的输入系数</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">0</span>:<span class="number">19</span></span><br><span class="line">    a2=[<span class="number">1</span>,-(<span class="number">3</span>/<span class="number">5</span>)^<span class="built_in">i</span>];<span class="comment">%system2的输出系数</span></span><br><span class="line">    h2(<span class="built_in">i</span>+<span class="number">1</span>)=filter(b2,a2,x(<span class="built_in">i</span>+<span class="number">1</span>))<span class="comment">%每一个n(此处为计数器i)对应一个系数，一个x[n]——也就对应响应h2[n]的一个值</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
-<li><p><code>lsim(b,a,x,t)</code>函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：<br>$$\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b_m\frac{d^mx(t)}{dt^m}$$<br>同理，该方程在Matlab中系数需要被改写为向量形式：<br>$$\sum_{k=0}^{N}a(N+1-k)\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b(M+1-m)\frac{d^mx(t)}{dt^m}$$</p>
-</li>
-<li><p><code>step(b,a,t)</code>函数：用来计算线性常系数微分方程的step response，用于连续时间。求单位阶跃响应除了用该函数，还可以直接把$u(t)*h(t)$得到，即利用<code>conv()</code>函数，这样就可以算离散时间的阶跃响应了。</p>
-</li>
-<li><p><code>impulse(b,a,t)</code>函数：用来计算线性常系数微分方程的impulse response，用于连续时间</p>
-</li>
+<li><p><code>lsim(b,a,x,t)</code>函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：</p>
+<script type="math/tex; mode=display">\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b_m\frac{d^mx(t)}{dt^m}</script><p>同理，该方程在Matlab中系数需要被改写为向量形式：</p>
+<script type="math/tex; mode=display">\sum_{k=0}^{N}a(N+1-k)\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b(M+1-m)\frac{d^mx(t)}{dt^m}</script></li>
+<li><code>step(b,a,t)</code>函数：用来计算线性常系数微分方程的step response，用于连续时间。求单位阶跃响应除了用该函数，还可以直接把$u(t)*h(t)$得到，即利用<code>conv()</code>函数，这样就可以算离散时间的阶跃响应了。</li>
+<li><code>impulse(b,a,t)</code>函数：用来计算线性常系数微分方程的impulse response，用于连续时间</li>
 </ul>
 
       
@@ -717,22 +713,6 @@
 
     
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>
