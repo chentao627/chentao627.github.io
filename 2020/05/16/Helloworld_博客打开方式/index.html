@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.9k</span>
+            <span class="post-count">2.1k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">7 分钟</span>
+            <span class="post-count">8 分钟</span>
         </span>
     </span>
 </div>
@@ -204,7 +204,8 @@ x(-t+t_0)
 <p>即可把本地的内容推到github的仓库中，网页便上传了。</p>
 </li>
 </ul>
-<h2 id="7-换电脑怎么办"><a href="#7-换电脑怎么办" class="headerlink" title="7.换电脑怎么办"></a>7.换电脑怎么办</h2><h2 id="8-域名的申请"><a href="#8-域名的申请" class="headerlink" title="8.域名的申请"></a>8.域名的申请</h2>
+<h2 id="7-换电脑怎么办"><a href="#7-换电脑怎么办" class="headerlink" title="7.换电脑怎么办"></a>7.换电脑怎么办</h2><h2 id="8-域名的申请"><a href="#8-域名的申请" class="headerlink" title="8.域名的申请"></a>8.域名的申请</h2><h2 id="9-Hexo中的markdown转存pdf"><a href="#9-Hexo中的markdown转存pdf" class="headerlink" title="9.Hexo中的markdown转存pdf"></a>9.Hexo中的markdown转存pdf</h2><p>&ensp;&ensp;&ensp;&ensp;我们写了笔记除了往网页博客上面发，很多时候还需要将笔记输出到“纸”上，便于查阅。如果使用的是VScode来编辑hexo的.md文档的话，那么输出pdf非常方便，只需要安装一个<code>Markdown PDF</code>的插件，便可以在页面中右键选择输出PDF了。<br>&ensp;&ensp;&ensp;&ensp;但倘若文中有数学公式的，则需要在.md文档尾部加上这样一段文字：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><br><span class="line">  MathJax.Hub.Config(&#123; tex2jax: &#123;inlineMath: [[<span class="string">'$'</span>, <span class="string">'$'</span>]]&#125;, messageStyle: <span class="string">"none"</span> &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><br>&ensp;&ensp;&ensp;&ensp;便可以支持数学公式的pdf输出了。</p>
+
       
       <!-- reward -->
       
@@ -758,6 +759,22 @@ x(-t+t_0)
 
     
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>

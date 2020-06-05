@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="description" content="通往远方的路" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Embed Processor课程的仿真实验笔记 |  路
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="路" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content on">
+      <section class="outer">
+  <article id="post-Embed-Processor仿真实验笔记" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Embed Processor课程的仿真实验笔记
+</h1>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/06/02/Embed-Processor%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-06-02T03:02:51.000Z" itemprop="datePublished">2020-06-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">5 分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h1 id="Lab4"><a href="#Lab4" class="headerlink" title="Lab4"></a>Lab4</h1><h2 id="Task-A：基本输入输出函数的重定向"><a href="#Task-A：基本输入输出函数的重定向" class="headerlink" title="Task A：基本输入输出函数的重定向"></a>Task A：基本输入输出函数的重定向</h2><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>&ensp;&ensp;&ensp;&ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的<code>printf()</code>、<code>fputc()</code>、<code>fgetc()</code>函数，至UART/Serial Port。</p>
+<h2 id="被printf-函数调用的低一层I-O函数"><a href="#被printf-函数调用的低一层I-O函数" class="headerlink" title="被printf()函数调用的低一层I/O函数"></a>被<code>printf()</code>函数调用的低一层I/O函数</h2><p>&ensp;&ensp;&ensp;&ensp;在基于ARM的Microcontroller上，ARM C Library和Microlib支持着C标准库的函数。在这些标准库中，常见的<code>printf()</code>函数<code>scanf()</code>函数都位于熟悉的<code>stdio.h</code>包中，这也意味着这些<strong>函数的默认定向都是默认的输入输出端口</strong>，例如键盘、显示屏。<br>&ensp;&ensp;&ensp;&ensp;其中，<code>printf()</code>函数又依赖于stream I/O函数<code>fputc()</code>，从而在目标设备上进行打印。而这一过程又取决于这取决于对<code>fputc()</code>的重定向方式；同理，类似地，<code>scanf()</code>函数也依赖于<code>fgetc()</code>来获取用户输入。</p>
+<ul>
+<li><strong><code>fputc()</code>、<code>fgetc()</code>的工作原理</strong><br>一般而言，函数<code>fputc()</code>会向<code>stream</code>（<code>FILE *</code>）传输字符。<strong>一个<code>stream</code>流表示到任一设备、文件或进程的通信通道</strong>。通常而言，当我们想要在控制台/终端中显示输出时，流要么是<code>STDOUT</code>，要么是<code>STDERR</code>。向2者中的一个流执行写入的话，将把写入的字符转移或重定向到控制台输出；同理，fgetc()从给定的流中读取字符。要通过控制台从用户获得输入，使用的流是<code>STDIN</code>。</li>
+</ul>
+<h2 id="重新实现C库函数来重定向printf"><a href="#重新实现C库函数来重定向printf" class="headerlink" title="重新实现C库函数来重定向printf()"></a>重新实现C库函数来重定向<code>printf()</code></h2><p>&ensp;&ensp;&ensp;&ensp;为了重新实现它们，我们需要两个基本的UART功能:一个用来读取字符，另一个用来编写字符。因此，我们可以定义两个函数，即<code>uartWrite()</code>和<code>uartRead()</code>。(Ps:注意，这些就像驱动程序功能，是特定于设备的，此处使用的是LPC1768)。<br>&ensp;&ensp;&ensp;&ensp;具体的函数调用关系如下图：</p>
+<script type="math/tex; mode=display">{\rm printf()\Rightarrow fputc()\Rightarrow uartWrite()}</script><script type="math/tex; mode=display">{\rm scanf()\Rightarrow fgetc()\Rightarrow uartRead()}</script><p>&ensp;&ensp;&ensp;&ensp;<em>我们只需要修改流I/O函数的调用为我们自己编译的、重定向好了的函数，即可联动printf()进行重定向了。</em></p>
+<h2 id="实验具体的题目"><a href="#实验具体的题目" class="headerlink" title="实验具体的题目"></a>实验具体的题目</h2><p>&ensp;&ensp;&ensp;&ensp;下列重定向后的代码输出有<code>*Timer*</code>干扰，修改代码，去除这个干扰。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Embedded System Lab4 interrupter&amp;timer (2019-2020)</span></span><br><span class="line"><span class="comment">shufan.yang@glasgow.ac.uk</span></span><br><span class="line"><span class="comment">License: GPL.*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lpc17xx.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; //since we use c function, standard library is needed</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"uart.h"</span>  <span class="comment">//for initUART0() and other macros</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PRESCALE (25000-1)  <span class="comment">//25000 PCLK clock cycles to increment TC by 1 </span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delayMS</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> milliseconds)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initTimer0</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> g_ts;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> __irq <span class="keyword">void</span> <span class="title">TIM3_IRQ_Handler</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">FILE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">int</span> dummyVar; <span class="comment">//Just for the sake of redefining __FILE, we won't we using it anyways ;)</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">FILE __stdout; <span class="comment">//STDOUT</span></span><br><span class="line">FILE __stdin;  <span class="comment">//STDIN</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fputc</span><span class="params">(<span class="keyword">int</span> c, FILE * stream)</span><span class="comment">//##Rewrite the fputc() to call our func:uartWrite()?##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	uartWrite(c); <span class="comment">//Transmit Character</span></span><br><span class="line">	<span class="keyword">return</span> c; <span class="comment">//return the character written to denote a successful write</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fgetc</span><span class="params">(FILE * stream)</span><span class="comment">//Rewrite the fgetc()to call our func:uartRead()?##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c = uartRead(); <span class="comment">//Receive Character</span></span><br><span class="line">	uartWrite(c); <span class="comment">//To echo Received characters back to serial Terminal</span></span><br><span class="line">	<span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">uartWrite</span><span class="params">(<span class="keyword">char</span> c)</span><span class="comment">//##To define our own func. uartWirte, receive input char 'c'##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (!(LPC_UART0-&gt;LSR &amp; THRE)); <span class="comment">// wait till the THR is empty,   ##Does it ready to write?##</span></span><br><span class="line">	<span class="keyword">if</span>( c == <span class="string">'\n'</span> ) <span class="comment">//Send &lt;CR+LF&gt;</span></span><br><span class="line">	&#123;</span><br><span class="line">		LPC_UART0-&gt;THR = CARRIAGE_RETURN;</span><br><span class="line">		<span class="keyword">while</span>(!(LPC_UART0-&gt;LSR &amp; THRE )); </span><br><span class="line">		LPC_UART0-&gt;THR = LINE_FEED;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		LPC_UART0-&gt;THR = c; <span class="comment">//##To deliver input 'c' to THR##</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">uartRead</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//##To Define Our func. uartRead?, no receive##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(!(LPC_UART0-&gt;LSR &amp; RDR)); <span class="comment">//wait for data to arrive</span></span><br><span class="line">	<span class="keyword">return</span> LPC_UART0-&gt;RBR;           <span class="comment">//##To return what has been read?##</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	initUART0(); <span class="comment">//Init UART0 at baud-rate: 115200 @ 25Mhz PLCK</span></span><br><span class="line">	initTimer0(); <span class="comment">//Initialize Timer0 </span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Hey! This is your beloved printf().\nI have been redirected here!\n Stay Home, Save Life, Save NHS\n"</span>);<span class="comment">//##These are sentences needs to be retargeted##</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Tomorrow, and tomorrow, and tomorrow, Creeps in this petty pace from day to day, To the last syllable of recorded time; \n And all our yesterdays have lighted fools The way to dusty death. Out, out, brief candle. \n Life's but a walking shadow, a poor player That struts and frets his hour upon the stage And then is heard no more. \n It is a tale Told by an idiot, full of sound and fury Signifying nothing.\n"</span> );</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"(Macbeth: Act 5, Scene 5, lines 19-28)"</span>);</span><br><span class="line">		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initTimer0</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//我自己估摸着可能是这个时钟函数出的问题</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//Assuming that PLL0 has been setup with CCLK = 100Mhz and PCLK = 25Mhz.</span></span><br><span class="line">    <span class="comment">/* #1:打开定时器0的电源(默认是打开的) */</span></span><br><span class="line">	LPC_SC-&gt;PCONP |= (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">//Power up TIM0. By default TIM0 and TIM1 are enabled.</span></span><br><span class="line">    <span class="comment">/* #2:时钟分频选择(默认00),00 四分频, 01 不分频, 10 二分频, 11 八分频 */</span></span><br><span class="line">	LPC_SC-&gt;PCLKSEL0 &amp;= ~(<span class="number">0x3</span>&lt;&lt;<span class="number">2</span>); <span class="comment">//Set PCLK for timer = CCLK/4 = 100/4 (default)</span></span><br><span class="line">    <span class="comment">/* #3:设置为定时器模式,计数模式递增 */</span></span><br><span class="line">	LPC_TIM0-&gt;CTCR = <span class="number">0x0</span>;</span><br><span class="line">    <span class="comment">/* #4:指定预分频器最大的分频值 */</span></span><br><span class="line">	LPC_TIM0-&gt;PR = PRESCALE; <span class="comment">//Increment LPC_TIM0-&gt;TC at every 24999+1 clock cycles</span></span><br><span class="line">	<span class="comment">//25000 clock cycles @25Mhz = 1 mS</span></span><br><span class="line">    <span class="comment">/* #5:设置匹配寄存器的值 */</span></span><br><span class="line">	LPC_TIM0-&gt;MR0 = <span class="number">5</span>; <span class="comment">//Toggle Time in mS</span></span><br><span class="line">    <span class="comment">/* #6:MR0与TC值匹配时将产生中断,TC复位 */</span></span><br><span class="line">	LPC_TIM0-&gt;MCR |= (<span class="number">1</span>&lt;&lt;<span class="number">0</span>) | (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">// Interrupt &amp; Reset on MR0 match</span></span><br><span class="line">    <span class="comment">/* #7:复位计数器 */</span></span><br><span class="line">	LPC_TIM0-&gt;TCR |= (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">// Reset Timer0</span></span><br><span class="line">    <span class="comment">/* #8:使能定时器中断*/</span></span><br><span class="line">	NVIC_EnableIRQ(TIMER0_IRQn); <span class="comment">//Enable timer interrupt</span></span><br><span class="line">    <span class="comment">/* #9:开启定时器 */</span></span><br><span class="line">	LPC_TIM0-&gt;TCR = <span class="number">0x01</span>; <span class="comment">//Enable timer</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong>
+              本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://chentao627.github.io/2020/06/02/Embed-Processor%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C-Keli%E4%BB%BF%E7%9C%9F-LPC1768/" rel="tag">C/C++ - Keli仿真 - LPC1768</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/05/27/%E9%80%9A%E4%BF%A1%E7%BD%91%E7%BB%9C%E6%A2%B3%E7%90%86/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">通信网络的框架梳理</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2020
+        <i class="ri-heart-fill heart_icon"></i> Chentao
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        由 <a href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
+        <span class="division">|</span>
+        主题 - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="路"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2020-about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Subtitle -->
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['天行健，君子以自强不息', '更喜岷山千里雪，三军过后尽开颜', '古今多少事，都付笑谈中'],
+      startDelay: 5,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 80,
+      showCursor: true
+    });
+  } catch (err) {
+    console.log(err)
+  }
+</script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+    
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
+</body>
+
+</html>

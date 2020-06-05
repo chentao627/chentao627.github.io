@@ -83,6 +83,85 @@
     
     
     
+    <article id="post-Embed-Processor仿真实验笔记" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/06/02/Embed-Processor%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"
+    >Embed Processor课程的仿真实验笔记</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/06/02/Embed-Processor%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-06-02T03:02:51.000Z" itemprop="datePublished">2020-06-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h1 id="Lab4"><a href="#Lab4" class="headerlink" title="Lab4"></a>Lab4</h1><h2 id="Task-A：基本输入输出函数的重定向"><a href="#Task-A：基本输入输出函数的重定向" class="headerlink" title="Task A：基本输入输出函数的重定向"></a>Task A：基本输入输出函数的重定向</h2><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>&ensp;&ensp;&ensp;&ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的<code>printf()</code>、<code>fputc()</code>、<code>fgetc()</code>函数，至UART/Serial Port。</p>
+<h2 id="被printf-函数调用的低一层I-O函数"><a href="#被printf-函数调用的低一层I-O函数" class="headerlink" title="被printf()函数调用的低一层I/O函数"></a>被<code>printf()</code>函数调用的低一层I/O函数</h2><p>&ensp;&ensp;&ensp;&ensp;在基于ARM的Microcontroller上，ARM C Library和Microlib支持着C标准库的函数。在这些标准库中，常见的<code>printf()</code>函数<code>scanf()</code>函数都位于熟悉的<code>stdio.h</code>包中，这也意味着这些<strong>函数的默认定向都是默认的输入输出端口</strong>，例如键盘、显示屏。<br>&ensp;&ensp;&ensp;&ensp;其中，<code>printf()</code>函数又依赖于stream I/O函数<code>fputc()</code>，从而在目标设备上进行打印。而这一过程又取决于这取决于对<code>fputc()</code>的重定向方式；同理，类似地，<code>scanf()</code>函数也依赖于<code>fgetc()</code>来获取用户输入。</p>
+<ul>
+<li><strong><code>fputc()</code>、<code>fgetc()</code>的工作原理</strong><br>一般而言，函数<code>fputc()</code>会向<code>stream</code>（<code>FILE *</code>）传输字符。<strong>一个<code>stream</code>流表示到任一设备、文件或进程的通信通道</strong>。通常而言，当我们想要在控制台/终端中显示输出时，流要么是<code>STDOUT</code>，要么是<code>STDERR</code>。向2者中的一个流执行写入的话，将把写入的字符转移或重定向到控制台输出；同理，fgetc()从给定的流中读取字符。要通过控制台从用户获得输入，使用的流是<code>STDIN</code>。</li>
+</ul>
+<h2 id="重新实现C库函数来重定向printf"><a href="#重新实现C库函数来重定向printf" class="headerlink" title="重新实现C库函数来重定向printf()"></a>重新实现C库函数来重定向<code>printf()</code></h2><p>&ensp;&ensp;&ensp;&ensp;为了重新实现它们，我们需要两个基本的UART功能:一个用来读取字符，另一个用来编写字符。因此，我们可以定义两个函数，即<code>uartWrite()</code>和<code>uartRead()</code>。(Ps:注意，这些就像驱动程序功能，是特定于设备的，此处使用的是LPC1768)。<br>&ensp;&ensp;&ensp;&ensp;具体的函数调用关系如下图：</p>
+<script type="math/tex; mode=display">{\rm printf()\Rightarrow fputc()\Rightarrow uartWrite()}</script><script type="math/tex; mode=display">{\rm scanf()\Rightarrow fgetc()\Rightarrow uartRead()}</script><p>&ensp;&ensp;&ensp;&ensp;<em>我们只需要修改流I/O函数的调用为我们自己编译的、重定向好了的函数，即可联动printf()进行重定向了。</em></p>
+<h2 id="实验具体的题目"><a href="#实验具体的题目" class="headerlink" title="实验具体的题目"></a>实验具体的题目</h2><p>&ensp;&ensp;&ensp;&ensp;下列重定向后的代码输出有<code>*Timer*</code>干扰，修改代码，去除这个干扰。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Embedded System Lab4 interrupter&amp;timer (2019-2020)</span></span><br><span class="line"><span class="comment">shufan.yang@glasgow.ac.uk</span></span><br><span class="line"><span class="comment">License: GPL.*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lpc17xx.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; //since we use c function, standard library is needed</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"uart.h"</span>  <span class="comment">//for initUART0() and other macros</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PRESCALE (25000-1)  <span class="comment">//25000 PCLK clock cycles to increment TC by 1 </span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delayMS</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> milliseconds)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initTimer0</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> g_ts;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> __irq <span class="keyword">void</span> <span class="title">TIM3_IRQ_Handler</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">FILE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">int</span> dummyVar; <span class="comment">//Just for the sake of redefining __FILE, we won't we using it anyways ;)</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">FILE __stdout; <span class="comment">//STDOUT</span></span><br><span class="line">FILE __stdin;  <span class="comment">//STDIN</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fputc</span><span class="params">(<span class="keyword">int</span> c, FILE * stream)</span><span class="comment">//##Rewrite the fputc() to call our func:uartWrite()?##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	uartWrite(c); <span class="comment">//Transmit Character</span></span><br><span class="line">	<span class="keyword">return</span> c; <span class="comment">//return the character written to denote a successful write</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fgetc</span><span class="params">(FILE * stream)</span><span class="comment">//Rewrite the fgetc()to call our func:uartRead()?##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c = uartRead(); <span class="comment">//Receive Character</span></span><br><span class="line">	uartWrite(c); <span class="comment">//To echo Received characters back to serial Terminal</span></span><br><span class="line">	<span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">uartWrite</span><span class="params">(<span class="keyword">char</span> c)</span><span class="comment">//##To define our own func. uartWirte, receive input char 'c'##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (!(LPC_UART0-&gt;LSR &amp; THRE)); <span class="comment">// wait till the THR is empty,   ##Does it ready to write?##</span></span><br><span class="line">	<span class="keyword">if</span>( c == <span class="string">'\n'</span> ) <span class="comment">//Send &lt;CR+LF&gt;</span></span><br><span class="line">	&#123;</span><br><span class="line">		LPC_UART0-&gt;THR = CARRIAGE_RETURN;</span><br><span class="line">		<span class="keyword">while</span>(!(LPC_UART0-&gt;LSR &amp; THRE )); </span><br><span class="line">		LPC_UART0-&gt;THR = LINE_FEED;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		LPC_UART0-&gt;THR = c; <span class="comment">//##To deliver input 'c' to THR##</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">uartRead</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//##To Define Our func. uartRead?, no receive##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(!(LPC_UART0-&gt;LSR &amp; RDR)); <span class="comment">//wait for data to arrive</span></span><br><span class="line">	<span class="keyword">return</span> LPC_UART0-&gt;RBR;           <span class="comment">//##To return what has been read?##</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	initUART0(); <span class="comment">//Init UART0 at baud-rate: 115200 @ 25Mhz PLCK</span></span><br><span class="line">	initTimer0(); <span class="comment">//Initialize Timer0 </span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Hey! This is your beloved printf().\nI have been redirected here!\n Stay Home, Save Life, Save NHS\n"</span>);<span class="comment">//##These are sentences needs to be retargeted##</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Tomorrow, and tomorrow, and tomorrow, Creeps in this petty pace from day to day, To the last syllable of recorded time; \n And all our yesterdays have lighted fools The way to dusty death. Out, out, brief candle. \n Life's but a walking shadow, a poor player That struts and frets his hour upon the stage And then is heard no more. \n It is a tale Told by an idiot, full of sound and fury Signifying nothing.\n"</span> );</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"(Macbeth: Act 5, Scene 5, lines 19-28)"</span>);</span><br><span class="line">		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initTimer0</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//我自己估摸着可能是这个时钟函数出的问题</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//Assuming that PLL0 has been setup with CCLK = 100Mhz and PCLK = 25Mhz.</span></span><br><span class="line">    <span class="comment">/* #1:打开定时器0的电源(默认是打开的) */</span></span><br><span class="line">	LPC_SC-&gt;PCONP |= (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">//Power up TIM0. By default TIM0 and TIM1 are enabled.</span></span><br><span class="line">    <span class="comment">/* #2:时钟分频选择(默认00),00 四分频, 01 不分频, 10 二分频, 11 八分频 */</span></span><br><span class="line">	LPC_SC-&gt;PCLKSEL0 &amp;= ~(<span class="number">0x3</span>&lt;&lt;<span class="number">2</span>); <span class="comment">//Set PCLK for timer = CCLK/4 = 100/4 (default)</span></span><br><span class="line">    <span class="comment">/* #3:设置为定时器模式,计数模式递增 */</span></span><br><span class="line">	LPC_TIM0-&gt;CTCR = <span class="number">0x0</span>;</span><br><span class="line">    <span class="comment">/* #4:指定预分频器最大的分频值 */</span></span><br><span class="line">	LPC_TIM0-&gt;PR = PRESCALE; <span class="comment">//Increment LPC_TIM0-&gt;TC at every 24999+1 clock cycles</span></span><br><span class="line">	<span class="comment">//25000 clock cycles @25Mhz = 1 mS</span></span><br><span class="line">    <span class="comment">/* #5:设置匹配寄存器的值 */</span></span><br><span class="line">	LPC_TIM0-&gt;MR0 = <span class="number">5</span>; <span class="comment">//Toggle Time in mS</span></span><br><span class="line">    <span class="comment">/* #6:MR0与TC值匹配时将产生中断,TC复位 */</span></span><br><span class="line">	LPC_TIM0-&gt;MCR |= (<span class="number">1</span>&lt;&lt;<span class="number">0</span>) | (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">// Interrupt &amp; Reset on MR0 match</span></span><br><span class="line">    <span class="comment">/* #7:复位计数器 */</span></span><br><span class="line">	LPC_TIM0-&gt;TCR |= (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">// Reset Timer0</span></span><br><span class="line">    <span class="comment">/* #8:使能定时器中断*/</span></span><br><span class="line">	NVIC_EnableIRQ(TIMER0_IRQn); <span class="comment">//Enable timer interrupt</span></span><br><span class="line">    <span class="comment">/* #9:开启定时器 */</span></span><br><span class="line">	LPC_TIM0-&gt;TCR = <span class="number">0x01</span>; <span class="comment">//Enable timer</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C-Keli%E4%BB%BF%E7%9C%9F-LPC1768/" rel="tag">C/C++ - Keli仿真 - LPC1768</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+  
+  
+
+</article>
+    
     <article id="post-通信网络梳理" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -922,6 +1001,22 @@
 
     
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>

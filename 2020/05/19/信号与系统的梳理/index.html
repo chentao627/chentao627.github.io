@@ -324,7 +324,10 @@ x[n]
 &=\frac{1}{2j}(\frac{1}{3}e^{j\frac{\pi}{4}})^nu[n]-\frac{1}{2j}(\frac{1}{3}e^{-j\frac{\pi}{4}})^nu[n]  \stackrel{ZT}\longleftrightarrow  X(Z)=\frac{1}{2j} \frac{1}{1-\frac{1}{3}e^{j\frac{\pi}{4}}z^{-1}}-\frac{1}{2j} \frac{1}{1-\frac{1}{3}e^{-j\frac{\pi}{4}}z^{-1}},|Z|>\frac{1}{3}
 \end{split}</script></li>
 </ol>
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
+</script>
       
       <!-- reward -->
       
@@ -883,6 +886,22 @@ x[n]
 
     
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>
