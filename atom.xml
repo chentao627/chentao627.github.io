@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chentao627.github.io/"/>
-  <updated>2020-06-05T09:12:30.660Z</updated>
+  <updated>2020-06-05T09:19:33.501Z</updated>
   <id>https://chentao627.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://chentao627.github.io/2020/06/02/Embed-Processor%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"/>
     <id>https://chentao627.github.io/2020/06/02/Embed-Processor%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</id>
     <published>2020-06-02T03:02:51.000Z</published>
-    <updated>2020-06-05T09:12:30.660Z</updated>
+    <updated>2020-06-05T09:19:33.501Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Lab4&quot;&gt;&lt;a href=&quot;#Lab4&quot; class=&quot;headerlink&quot; title=&quot;Lab4&quot;&gt;&lt;/a&gt;Lab4&lt;/h1&gt;&lt;h2 id=&quot;Task-A：基本输入输出函数的重定向&quot;&gt;&lt;a href=&quot;#Task-A：基本输入输出函数的重定向&quot; class=&quot;headerlink&quot; title=&quot;Task A：基本输入输出函数的重定向&quot;&gt;&lt;/a&gt;Task A：基本输入输出函数的重定向&lt;/h2&gt;&lt;h2 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h2&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的&lt;code&gt;printf()&lt;/code&gt;、&lt;code&gt;fputc()&lt;/code&gt;、&lt;code&gt;fgetc()&lt;/code&gt;函数，至UART/Serial Port。&lt;/p&gt;
+      &lt;h1 id=&quot;Lab4&quot;&gt;&lt;a href=&quot;#Lab4&quot; class=&quot;headerlink&quot; title=&quot;Lab4&quot;&gt;&lt;/a&gt;Lab4&lt;/h1&gt;&lt;h2 id=&quot;Task-A：基本输入输出函数的重定向&quot;&gt;&lt;a href=&quot;#Task-A：基本输入输出函数的重定向&quot; class=&quot;headerlink&quot; title=&quot;Task A：基本输入输出函数的重定向&quot;&gt;&lt;/a&gt;Task A：基本输入输出函数的重定向&lt;/h2&gt;&lt;h2 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h2&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的&lt;code&gt;printf()&lt;/code&gt;、&lt;code&gt;fputc()&lt;/code&gt;、&lt;code&gt;fgetc()&lt;/code&gt;函数，至UART/Serial Port。利用输出字符串来对系统外部中断IRQ产生更形象的认识。&lt;/p&gt;
     
     </summary>
     
