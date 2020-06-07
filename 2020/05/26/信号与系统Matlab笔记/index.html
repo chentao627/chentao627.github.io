@@ -15,7 +15,7 @@
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/star6.ico" />
   
   
 <link rel="stylesheet" href="/dist/main.css">
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.7k</span>
+            <span class="post-count">2.2k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">7 分钟</span>
+            <span class="post-count">9 分钟</span>
         </span>
     </span>
 </div>
@@ -155,11 +155,18 @@
 </li>
 <li><p><code>step(b,a,t)</code>函数：用来计算线性常系数微分方程的step response，用于连续时间。求单位阶跃响应除了用该函数，还可以直接把$u(t)*h(t)$得到，即利用<code>conv()</code>函数，这样就可以算离散时间的阶跃响应了。</p>
 </li>
-<li><p><code>impulse(b,a,t)</code>函数：用来计算线性常系数微分方程的impulse response，用于连续时间</p>
+<li><p><code>impulse(b,a,t)</code>函数：用来计算线性常系数微分方程的impulse response，用于连续时间。其中t的分度及区间可以使用<code>linspace()</code>确定。</p>
 </li>
 </ul>
 <h1 id="Lab-3"><a href="#Lab-3" class="headerlink" title="Lab 3"></a>Lab 3</h1><ul>
 <li><code>[H omega]=freqz(b,a,N)</code>：计算在0和$\pi$之间均匀间隔的N个频点（N等分）的，系数为a、b的，<strong>差分方程</strong>的频率响应$H(e^{jw})$，即$\omega_k=(\cfrac{\pi}{N})k, {\rm for}\ 0\leq k\leq N-1$。它接收的参数b，a与Lab2中的b，a一样，都是系数。如果加上‘whole’这个参数，<code>[H omega]=freqz(b,a,N,&#39;whole&#39;)</code>，它会计算出在$[0，2\pi]$上N个均分频点的频率响应，即$\omega_k=(\cfrac{2\pi}{N})k, {\rm for}\ 0\leq k\leq N-1$。</li>
+<li>特征函数的判断：一个信号，<strong>若系统对该信号的输出响应仅是一个常数（可能是复数）乘以输入，则称该信号为系统的特征函数（eigenfunction）</strong>，而幅度因子称为系统的特征值（eigenvalue）。</li>
+<li><code>fft(x)</code>：该函数可以用来计算离散傅里叶级数DTFS的系数$a_k$。其中，$a_k=(\frac{1}{N})*fft(x)$</li>
+<li><code>fftshift()</code>：该函数可以对<code>fft(x)</code>函数的输出重新排序，使样本$Y(j\omega)$在Y中从最负的频率排序到最正的频率。</li>
+<li><code>load(filename)</code> ：从 filename 加载文件变量数据至工作区。</li>
+<li><code>freqs(b,a)</code>：用来计算与绘制微分方程的频率响应$H(j\omega)$，其中<code>b,a</code>是2变量的系数们作为的向量数组，从0阶开始。当然，如果希望得到在特定频率处$\omega$的值，可以多加一个参数，例如<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">H=freqs(b,a,w)</span><br></pre></td></tr></table></figure></li>
+<li><code>[b2,a2]=butter(2,wc,&#39;s&#39;)</code>：该函数定义了一个2阶、以$\omega_c$为频率的布特沃斯滤波器。其中，<code>s</code>表示使用连续时间过滤器，而不是butter默认返回的离散时间滤波器。此处的返回值<code>b2,a2</code>都为前面的系数向量。</li>
+<li><code>[r,p]=residue(b,a)</code>：该函数用来进行分式多项式的部分分式展开，即”partial fraction expansion”。其中，<code>b,a</code>为系统微分方程2便系数向量；该函数返回的亦为向量数组<code>r,p</code>，<code>r</code>为分子的部分分式展开系数，<code>p</code>为分母的部分分式展开系数。倘若被计算的系统频率响应$H(j\omega)$的分母不包括重根，且分式有理，那么返回的形式为：<br>$$\sum_{m=1}^{N}\cfrac{r(m)}{j\omega-p(m)}=\cfrac{r_1}{j\omega-p_1}+\cfrac{r_2}{j\omega-p_2}+…$$</li>
 </ul>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
@@ -389,7 +396,7 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="路"></a>
+    <a href="/"><img src="/images/star8.svg" alt="路"></a>
   </div>
   
   <ul class="nav nav-main">
