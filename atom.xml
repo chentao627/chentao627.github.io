@@ -25,7 +25,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Lab4&quot;&gt;&lt;a href=&quot;#Lab4&quot; class=&quot;headerlink&quot; title=&quot;Lab4&quot;&gt;&lt;/a&gt;Lab4&lt;/h1&gt;&lt;h2 id=&quot;Task-A：基本输入输出函数的重定向&quot;&gt;&lt;a href=&quot;#Task-A：基本输入输出函数的重定向&quot; class=&quot;headerlink&quot; title=&quot;Task A：基本输入输出函数的重定向&quot;&gt;&lt;/a&gt;Task A：基本输入输出函数的重定向&lt;/h2&gt;&lt;h2 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h2&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的&lt;code&gt;printf()&lt;/code&gt;、&lt;code&gt;fputc()&lt;/code&gt;、&lt;code&gt;fgetc()&lt;/code&gt;函数，至UART/Serial Port。利用输出字符串来对系统外部中断IRQ产生更形象的认识。&lt;br&gt;
+      &lt;h1 id=&quot;Lab4&quot;&gt;&lt;a href=&quot;#Lab4&quot; class=&quot;headerlink&quot; title=&quot;Lab4&quot;&gt;&lt;/a&gt;Lab4&lt;/h1&gt;&lt;h2 id=&quot;Task-A：基本输入输出函数的重定向&quot;&gt;&lt;a href=&quot;#Task-A：基本输入输出函数的重定向&quot; class=&quot;headerlink&quot; title=&quot;Task A：基本输入输出函数的重定向&quot;&gt;&lt;/a&gt;Task A：基本输入输出函数的重定向&lt;/h2&gt;&lt;h2 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h2&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的&lt;code&gt;printf()&lt;/code&gt;、&lt;code&gt;fputc()&lt;/code&gt;、&lt;code&gt;fgetc()&lt;/code&gt;函数，至UART/Serial Port。利用输出字符串来对系统外部中断IRQ产生更形象的认识。&lt;/p&gt;
     
     </summary>
     
@@ -42,14 +42,14 @@
     <link href="https://chentao627.github.io/2020/05/27/%E9%80%9A%E4%BF%A1%E7%BD%91%E7%BB%9C%E6%A2%B3%E7%90%86/"/>
     <id>https://chentao627.github.io/2020/05/27/%E9%80%9A%E4%BF%A1%E7%BD%91%E7%BB%9C%E6%A2%B3%E7%90%86/</id>
     <published>2020-05-27T01:25:26.000Z</published>
-    <updated>2020-06-02T12:32:05.063Z</updated>
+    <updated>2020-06-15T03:37:10.613Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
 &lt;p&gt;嵩云秦树久离居，双鲤迢迢一纸书。——李商隐《寄令狐郎中》&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&lt;del&gt;通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。&lt;/del&gt;&lt;br&gt;
+&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&lt;del&gt;通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。&lt;/del&gt;&lt;/p&gt;
     
     </summary>
     
@@ -67,26 +67,21 @@
     <title>信号与系统Matlab笔记</title>
     <link href="https://chentao627.github.io/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/"/>
     <id>https://chentao627.github.io/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/</id>
-    <published>2020-05-26T00:58:38.000Z</published>
-    <updated>2020-06-14T08:08:49.797Z</updated>
+    <published>2020-05-26T00:58:38.230Z</published>
+    <updated>2020-06-17T09:16:19.874Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;本文主要针对Matlab中有关信号与系统问题的函数及语法总结。&lt;/p&gt;
 &lt;h1 id=&quot;Lab-1&quot;&gt;&lt;a href=&quot;#Lab-1&quot; class=&quot;headerlink&quot; title=&quot;Lab 1&quot;&gt;&lt;/a&gt;Lab 1&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;产生一串数字区间&lt;/strong&gt;：&lt;code&gt;n=-5:10&lt;/code&gt;产生了从-5~10的区间整数序列&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;stem(n, x)&lt;/code&gt;函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。&lt;br&gt;_例如1：画出$x[n]=2n,-3\leq n\leq 3$_&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;产生一串数字区间&lt;/strong&gt;：&lt;code&gt;n=-5:10&lt;/code&gt;产生了从-5~10的区间整数序列&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;stem(n, x)&lt;/code&gt;函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。&lt;br&gt;&lt;em&gt;例如1：画出$x[n]=2n,-3\leq n\leq 3$&lt;/em&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight m&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;n&lt;span class=&quot;built_in&quot;&gt;=&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;x&lt;span class=&quot;built_in&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*n;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;stem(n, x)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
     
-      <category term="专业学科" scheme="https://chentao627.github.io/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/"/>
-    
-      <category term="信号与系统科目" scheme="https://chentao627.github.io/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%A7%91%E7%9B%AE/"/>
-    
-    
-      <category term="-信号与系统 -Matlab" scheme="https://chentao627.github.io/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F-Matlab/"/>
     
   </entry>
   
@@ -99,7 +94,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，在此摘抄了精彩对话之一。&lt;br&gt;
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，在此摘抄了精彩对话之一。&lt;/p&gt;
     
     </summary>
     
@@ -116,14 +111,14 @@
     <link href="https://chentao627.github.io/2020/05/19/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A2%B3%E7%90%86/"/>
     <id>https://chentao627.github.io/2020/05/19/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A2%B3%E7%90%86/</id>
     <published>2020-05-19T10:13:04.000Z</published>
-    <updated>2020-06-10T03:49:09.935Z</updated>
+    <updated>2020-06-17T13:11:39.482Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
 &lt;p&gt;瀑布天落，半与银河争流，腾虹奔电，潈射万壑，此宇宙之奇诡也。——李白《秋于敬亭送从侄专游庐山序》&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。然后再是对后半部分进行梳理。&lt;br&gt;
+&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。然后再是对后半部分进行梳理。&lt;/p&gt;
     
     </summary>
     
@@ -148,7 +143,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h1&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。&lt;br&gt;
+      &lt;h1 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h1&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。&lt;/p&gt;
     
     </summary>
     
@@ -171,7 +166,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。&lt;br&gt;下面是“阅读更多”的分页。&lt;br&gt;
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。&lt;br&gt;下面是“阅读更多”的分页。&lt;/p&gt;
     
     </summary>
     
