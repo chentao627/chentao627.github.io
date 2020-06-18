@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">7.1k</span>
+            <span class="post-count">7.7k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">30 分钟</span>
+            <span class="post-count">33 分钟</span>
         </span>
     </span>
 </div>
@@ -236,7 +236,7 @@
 </ul>
 <p>$$x_s(t)=x(t)\cdot\delta_T(t)=\sum_{n=-\infty}^{+\infty} x(nt) \delta(t-nT) \stackrel{LT}\longleftrightarrow X_s(s)=\sum_{n=-\infty}^{+\infty} x[nT] ( e^{sT} )^{-n}$$</p>
 <p>令$z=e^{sT},T=1$，那么便得到了Z变换：<br>$$X(Z)=\sum_{n=-\infty}^{+\infty}x[n]z^{-n}$$<br>因为Z变换是拉普拉斯变换采样得到的，故专属于离散时间变换。</p>
-<h3 id="Z变换"><a href="#Z变换" class="headerlink" title="Z变换"></a>Z变换</h3><h4 id="A-Z变换公式"><a href="#A-Z变换公式" class="headerlink" title="A. Z变换公式"></a>A. Z变换公式</h4><p>$$X(z)=\sum_{n=-\infty}^{+\infty}x[n]z^{-n},ROC:使X(Z)收敛的|z|的范围 $$</p>
+<h3 id="Z变换"><a href="#Z变换" class="headerlink" title="Z变换"></a>Z变换</h3><h4 id="A-Z变换公式"><a href="#A-Z变换公式" class="headerlink" title="A. Z变换公式"></a>A. Z变换公式</h4><p>$$<br>\begin{split}<br>&amp;X(z)=\sum_{n=-\infty}^{+\infty}x[n]z^{-n},ROC:使X(Z)收敛的|z|的范围\\<br>&amp;x[n]=\frac{1}{2\pi j}\oint {X(z)z^{n-1}}{\rm d}z<br>\end{split}<br>$$</p>
 <h4 id="B-收敛域ROC及其9大性质"><a href="#B-收敛域ROC及其9大性质" class="headerlink" title="B. 收敛域ROC及其9大性质"></a>B. 收敛域ROC及其9大性质</h4><ul>
 <li>将Z变换变回指数形式，可以得到其与傅里叶变换的关系：<br>$$X(r e^{j\omega})=\sum_{n=-\infty}^{+\infty} x[n](r e^{j\omega})^{-n}= \sum_{n=-\infty}^{+\infty}{x[n]r^{-n}}e^{-j\omega n}=DTFT{x[n]r^{-n}}$$</li>
 </ul>
@@ -261,18 +261,36 @@
 <li><p><strong>性质9：如果$x[n]$的z变换$X(z)$是有理的，且$x[n]$是左边信号，那么：</strong><br>  &ensp;&ensp;&ensp;&ensp;a. 其收敛域位于z平面最内层<strong>非零极点</strong>的里面，<strong>可能包含0点</strong><br>  &ensp;&ensp;&ensp;&ensp;b. 如果它还是反因果序列，那么其ROC还会包含$z=0$</p>
 </li>
 </ul>
-<h3 id="分式有理Z变换"><a href="#分式有理Z变换" class="headerlink" title="分式有理Z变换"></a>分式有理Z变换</h3><h3 id="常见的Z变换对"><a href="#常见的Z变换对" class="headerlink" title="常见的Z变换对"></a>常见的Z变换对</h3><ol>
-<li><p>指数因果序列的Z变换（因果$\rightarrow$右边）<br>$$a^nu[n]\stackrel{ZT}\longleftrightarrow \frac{1}{1-az^{-1}},|z|&gt;|a|$$</p>
+<h3 id="常见的Z变换对"><a href="#常见的Z变换对" class="headerlink" title="常见的Z变换对"></a>常见的Z变换对</h3><p><strong>推导基础1：</strong>$\sum_{n=0}^{+\infty}(az^{-1})^n=\cfrac{1}{1-az^{-1}}$</p>
+<p><strong>推导基础2（累加错位配凑法）：</strong>$\sum_{n=n_0}^{+\infty}(az^{-1})^n=(az^{-1})^{n_0}\sum_{n=0}^{+\infty}(az^{-1})^n$</p>
+<p><strong>推导基础3（反因果信号累加反号处理）：</strong>$\sum_{n=-\infty}^{n_0}(az^{-1})^n=\sum_{n=n_0}^{+\infty}(a^{-1}z)^n=(az^{-1})^{n_0}\sum_{n=0}^{+\infty}(az^{-1})^n$</p>
+<ol>
+<li><p>指数因果序列的Z变换（因果$\rightarrow$右边）<br> $$a^nu[n]\stackrel{ZT}\longleftrightarrow \frac{1}{1-az^{-1}},|z|&gt;|a|$$</p>
 </li>
-<li><p>指数反因果序列的Z变换（反因果$\rightarrow$左边）<br>&ensp;&ensp;&ensp;&ensp;<em>那么其对应的ROC图象为半径为|a|的圆圈内部，不包括0点。</em><br>$$-a^{n}u[-n-1]\stackrel{ZT}\longleftrightarrow \frac{1}{1-az^{-1}},|z|&lt;|a|$$</p>
+<li><p>指数反因果序列的Z变换（反因果$\rightarrow$左边）<br>&ensp;&ensp;&ensp;&ensp;<em>那么其对应的ROC图象为半径为|a|的圆圈内部，不包括0点。</em><br> $$-a^{n}u[-n-1]\stackrel{ZT}\longleftrightarrow \frac{1}{1-az^{-1}},|z|&lt;|a|$$</p>
 </li>
-<li><p>单位阶跃序列的Z变换（1的特殊情况，也是右边序列）<br>$$u[n]\stackrel{ZT}\longleftrightarrow \frac{1}{1-z^{-1}},|z|&gt;1$$</p>
+<li><p>单位阶跃序列的Z变换（1的特殊情况，也是右边序列）<br> $$u[n]\stackrel{ZT}\longleftrightarrow \frac{1}{1-z^{-1}},|z|&gt;1$$</p>
 </li>
-<li><p>单位冲击信号的Z变换<br>&ensp;&ensp;&ensp;&ensp;<em>其ROC为除0点之外的整块Z平面</em><br>$$\delta[n]\stackrel{ZT}\longleftrightarrow 1,0\leq|z|\leq \infty$$</p>
+<li><p>单位冲击信号的Z变换<br>&ensp;&ensp;&ensp;&ensp;<em>其ROC为除0点之外的整块Z平面</em><br> $$\delta[n]\stackrel{ZT}\longleftrightarrow 1,0\leq|z|\leq \infty$$</p>
 </li>
-<li><p>指数因果序列加减组合的Z变换<br>$$x[n]=7(\frac{1}{3})^nu[n]-6(\frac{1}{2})^nu[n]\stackrel{ZT}\longleftrightarrow \frac{7}{1-\frac{1}{3}z^{-1}}-\frac{6}{1-\frac{1}{2}z^{-1}},|z|&gt;\frac{1}{2}$$</p>
+</ol>
+<ul>
+<li>单位冲击序列的Z变换（由幂级数展开法反Z变换系数推出）<br>$$\delta[n+n_0]\stackrel{ZT}\longleftrightarrow z^{n_0}$$ </li>
+</ul>
+<ul>
+<li><p>指数因果序列加减组合的Z变换<br>  $$x[n]=7(\frac{1}{3})^nu[n]-6(\frac{1}{2})^nu[n]\stackrel{ZT}\longleftrightarrow \frac{7}{1-\frac{1}{3}z^{-1}}-\frac{6}{1-\frac{1}{2}z^{-1}},|z|&gt;\frac{1}{2}$$</p>
 </li>
-<li><p>正弦序列的Z变换<br>$$<br>\begin{split}<br>x[n]<br>&amp;=(\frac{1}{3})^n\sin(\frac{\pi}{4}n)u[n]\\<br>&amp;=\frac{1}{2j}(\frac{1}{3}e^{j\frac{\pi}{4}})^nu[n]-\frac{1}{2j}(\frac{1}{3}e^{-j\frac{\pi}{4}})^nu[n]  \stackrel{ZT}\longleftrightarrow  X(Z)=\frac{1}{2j} \frac{1}{1-\frac{1}{3}e^{j\frac{\pi}{4}}z^{-1}}-\frac{1}{2j} \frac{1}{1-\frac{1}{3}e^{-j\frac{\pi}{4}}z^{-1}},|Z|&gt;\frac{1}{3}<br>\end{split}<br>$$</p>
+<li><p>正弦序列的Z变换<br>  $$<br>  \begin{split}<br>  x[n]<br>  &amp;=(\frac{1}{3})^n\sin(\frac{\pi}{4}n)u[n]\\<br>  &amp;=\frac{1}{2j}(\frac{1}{3}e^{j\frac{\pi}{4}})^nu[n]-\frac{1}{2j}(\frac{1}{3}e^{-j\frac{\pi}{4}})^nu[n]  \stackrel{ZT}\longleftrightarrow  X(Z)=\frac{1}{2j} \frac{1}{1-\frac{1}{3}e^{j\frac{\pi}{4}}z^{-1}}-\frac{1}{2j} \frac{1}{1-\frac{1}{3}e^{-j\frac{\pi}{4}}z^{-1}},|Z|&gt;\frac{1}{3}<br>  \end{split}<br>  $$</p>
+<h3 id="分式有理Z变换的反变换"><a href="#分式有理Z变换的反变换" class="headerlink" title="分式有理Z变换的反变换"></a>分式有理Z变换的反变换</h3><p>&ensp;&ensp;&ensp;&ensp;分式有理Z变换反变换最关键的便是部分分式分解，与判定参与该Z反变换信号的因果性。<br>&ensp;&ensp;&ensp;&ensp;下面列举了几个典型的反变换例子供参考。</p>
+</li>
+</ul>
+<ol>
+<li><p><strong>ROC为双边的反变换</strong></p>
+</li>
+<li><p><strong>幂级数展开法进行Z反变换</strong><br> $$X(z)=4z^2+2+3z^{-1},\ 0&lt;|z|&lt;\infty$$<br> 很显然，直接就满足Z正变换累加计算式，系数便对应$x[n]$结果为:<br> $$x[n]=4\delta[n+2]+2\delta[n]+3\delta[n-1]=\begin{cases}&amp;4,n=-2\&amp;2,n=0\&amp;3,n=1\&amp;0,others\end{cases}$$</p>
+</li>
+<li><p><strong>幂级数展开法进行Z反变换的变式</strong><br> 对于一个不是直接表现为幂级数展开式的Z变换有理分式，可以进行长除法将其转换成幂级数展开。<br> 例如对于$X(z)=\cfrac{1}{1-az^{-1}},|z|&gt;|a|$，可以有：<br> $$<br>\require{enclose}<br>\begin{array}{rll}<br> 1+az^{-1}+a^2z^{-2}+…                       \[-3pt]<br>1-az^{-1} \enclose{longdiv}{1\phantom{000000000000000000}}\kern-.2ex \[-3pt]<br>   \underline{1-az^{-1}\phantom{000000000000}} \[-3pt]<br>   az^{-1}\phantom{000000000000}               \[-3pt]<br>   \underline{\phantom{0}az^{-1}-a^2z^{-2}\phantom{0000}}    \[-3pt]<br>   \phantom{0}a^2z^{-2}\phantom{0000}                        \[-3pt]<br>\end{array}<br> $$<br> 那么得出来的$x[n]={1,a,a^2…}$直接就是值，而不是信号函数了。<br> 对于$|z|&lt;|a|$同理，除数只需交换顺序即可。但还是有一些需要注意的地方。例如对于$X(z)=\cfrac{1+z^{-1}}{1+\frac{1}{3}z^{-1}},|z|&gt;0$且$|z|&lt;\frac{1}{3}$而言：</p>
+<pre><code>$$</code></pre><p>\require{enclose}<br>\begin{array}{rll}<br> 3+(-6z^1)+18z^2…                       \[-3pt]<br>\frac{1}{3}z^{-1}+1 \enclose{longdiv}{1+z^{-1}\phantom{000000000000}}\kern-.2ex \[-3pt]<br>   \underline{z^{-1}+3\phantom{000000000000}} \[-3pt]<br>   -2\phantom{000000000000}               \[-3pt]<br>   \underline{\phantom{0}-2-6z^1\phantom{0000000}}    \[-3pt]<br>   \phantom{0}6z^1\phantom{0000000}                        \[-3pt]<br>   \underline{\phantom{0}6z^1+18z^2\phantom{0}}    \[-3pt]<br>   \phantom{0}-18z^2\phantom{0}                        \[-3pt]<br>\end{array}<br> $$<br> 即不一定是对位相加，应该是每行直接与下一行相减。</p>
 </li>
 </ol>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
