@@ -83,6 +83,87 @@
     
     
     
+    <article id="post-使用VScode写Latex" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/06/25/%E4%BD%BF%E7%94%A8VScode%E5%86%99Latex/"
+    >使用VScode写Latex</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/06/25/%E4%BD%BF%E7%94%A8VScode%E5%86%99Latex/" class="article-date">
+  <time datetime="2020-06-25T02:32:17.000Z" itemprop="datePublished">2020-06-25</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%96%87%E5%AD%97%E7%BC%96%E8%BE%91/">文字编辑</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <p>&ensp;&ensp;&ensp;&ensp;用Vscode写Markdown语法完美正确地输出带各种复杂数学公式的PDF并不容易。毕竟Markdown语法输出目标并非在纸上，而是网页。在心中不爽地驱使下，我决定尝试使用Vscode配置Latex编写环境，后续许多基础学科笔记整理使用Latex输出，不用像Word文档一样过分关心排版问题。<br>&ensp;&ensp;&ensp;&ensp;下面便是本人尝试配置Latex环境的步骤，步骤并非完全原创，而是在网络中四处借鉴，整理而来。此处写下，方便日后查看。</p>
+<h1 id="安装texlive"><a href="#安装texlive" class="headerlink" title="安装texlive"></a>安装texlive</h1><p><img src="https://img-blog.csdnimg.cn/20200625103753426.png" alt="在这里插入图片描述"><br>&ensp;&ensp;&ensp;&ensp;安装目录可以根据实际情况自行修改，我自己是不喜欢什么东西都往C盘塞，故专门在D盘针对Latex建了一个文件夹，下面包括texlive等等与之相关的一些其他插件。关于各种宏包，可安装可不安装，在点击进入’Advanced’页面后可以定制，自行选择。<br><img src="https://img-blog.csdnimg.cn/20200625105006865.png" alt="在这里插入图片描述"><br>&ensp;&ensp;&ensp;&ensp;而后便是漫长的等待。据说这玩意安装时间根据网络好坏在20到3小时之间不等。<del>这么吓人的嘛</del><br>&ensp;&ensp;&ensp;&ensp;事实证明，确实需要这么久，我大概是从上午10点过等到了下午1点半的样子。</p>
+<h1 id="安装SumatraPDF"><a href="#安装SumatraPDF" class="headerlink" title="安装SumatraPDF"></a>安装SumatraPDF</h1><p><img src="https://img-blog.csdnimg.cn/20200625113451762.png" alt="在这里插入图片描述"><br>&ensp;&ensp;&ensp;&ensp;安装界面颜色很鲜艳，步骤就不赘述了。</p>
+<h1 id="在VScode上安装Latex插件"><a href="#在VScode上安装Latex插件" class="headerlink" title="在VScode上安装Latex插件"></a>在VScode上安装Latex插件</h1><p>&ensp;&ensp;&ensp;&ensp;漫漫等待的过程中，我们可以先干一点其他事情。在VScod中可以找到这个Latex Workshop插件，把它安排上。<br><img src="https://img-blog.csdnimg.cn/20200625105240805.png" alt="在这里插入图片描述"><br>&ensp;&ensp;&ensp;&ensp;恕我直言，编写这些程序的我觉得都是大神们。安装好后，也许需要重新启动一下Code。之后便出现了这个标志：<br><img src="https://img-blog.csdnimg.cn/20200625110315864.png" alt="在这里插入图片描述"><br>然后随手创建一个.tex文件，写一点字，可以看到颜色标识与曾经在VS中熟悉的补全菜单：<br><img src="https://img-blog.csdnimg.cn/2020062511022012.png" alt="在这里插入图片描述"></p>
+<h1 id="配置VScode上的Latex插件"><a href="#配置VScode上的Latex插件" class="headerlink" title="配置VScode上的Latex插件"></a>配置VScode上的Latex插件</h1><p>将这一段配置代码放入VScode设置区内，将程序中的路径改为自己电脑上的路径即可：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意，配置代码需要等Texlive安装好后才编译器才可以正常识别</span></span><br><span class="line"><span class="comment">/*把这段代码放入VScode中的用户settings.json而不是workshop中；实在找不到可以左下“设置"按钮中搜索"Latex:recipes"，点击在.json中配置的超链接*/</span></span><br><span class="line"><span class="comment">/*注意是直接放在.json文件的大括号内即可*/</span></span><br><span class="line">/Latex</span><br><span class="line">    "latex-workshop.view.pdf.viewer": "external", </span><br><span class="line">    "latex-workshop.view.pdf.external.viewer.command": "D:/03--Software/34--Latex/SumatraPDF/SumatraPDF.exe", // 注意修改路径</span><br><span class="line">    "latex-workshop.view.pdf.external.viewer.args": [</span><br><span class="line">        <span class="string">"%PDF%"</span></span><br><span class="line">    ],</span><br><span class="line">    "latex-workshop.view.pdf.external.synctex.command": "D:/03--Software/34--Latex/SumatraPDF/SumatraPDF.exe", // 注意修改路径</span><br><span class="line">    "latex-workshop.view.pdf.external.synctex.args": [</span><br><span class="line">        "-forward-search",</span><br><span class="line">        "%TEX%",</span><br><span class="line">        "%LINE%",</span><br><span class="line">        "-reuse-instance",</span><br><span class="line">        "-inverse-search",</span><br><span class="line">        <span class="comment">//"\"D:\\Microsoft VS Code\\Code.exe\" -r -g \"%f:%l\"", //无cli版本，需外界启动</span></span><br><span class="line">        "\"D:/03--Software/32--VScode/Microsoft VS Code/Code.exe\" \"D:/03--Software/32--VScode/Microsoft VS Code/resources/app/out/cli.js\" -r -g \"%f:%l\"", //有cli，必须内部启动</span><br><span class="line">        <span class="string">"%PDF%"</span></span><br><span class="line">    ],</span><br><span class="line">        "latex-workshop.latex.tools": [</span><br><span class="line">        &#123;<span class="comment">// 编译工具和命令</span></span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"pdflatex"</span>,</span><br><span class="line">            <span class="attr">"command"</span>: <span class="string">"pdflatex"</span>,</span><br><span class="line">            <span class="attr">"args"</span>: [</span><br><span class="line">                <span class="string">"-synctex=1"</span>,</span><br><span class="line">                <span class="string">"-interaction=nonstopmode"</span>,</span><br><span class="line">                <span class="string">"-file-line-error"</span>,</span><br><span class="line">                <span class="string">"%DOCFILE%"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"xelatex"</span>,</span><br><span class="line">            <span class="attr">"command"</span>: <span class="string">"xelatex"</span>,</span><br><span class="line">            <span class="attr">"args"</span>: [</span><br><span class="line">                <span class="string">"-synctex=1"</span>,</span><br><span class="line">                <span class="string">"-interaction=nonstopmode"</span>,</span><br><span class="line">                <span class="string">"-file-line-error"</span>,</span><br><span class="line">                <span class="string">"-pdf"</span>,</span><br><span class="line">                <span class="string">"%DOCFILE%"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"bibtex"</span>,</span><br><span class="line">            <span class="attr">"command"</span>: <span class="string">"bibtex"</span>,</span><br><span class="line">            <span class="attr">"args"</span>: [</span><br><span class="line">                <span class="string">"%DOCFILE%"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    "latex-workshop.latex.recipes": [</span><br><span class="line">    </span><br><span class="line">        </span><br><span class="line">        &#123;<span class="comment">//编译链</span></span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"xelatex"</span>,</span><br><span class="line">            <span class="attr">"tools"</span>: [</span><br><span class="line">                <span class="string">"xelatex"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"pdflatex"</span>,</span><br><span class="line">            <span class="attr">"tools"</span>: [</span><br><span class="line">                <span class="string">"pdflatex"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"xe-&gt;bib-&gt;xe-&gt;xe"</span>,</span><br><span class="line">            <span class="attr">"tools"</span>: [</span><br><span class="line">                <span class="string">"xelatex"</span>,</span><br><span class="line">                <span class="string">"bibtex"</span>,</span><br><span class="line">                <span class="string">"xelatex"</span>,</span><br><span class="line">                <span class="string">"xelatex"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+<p>效果图：<br><img src="https://img-blog.csdnimg.cn/20200625141306820.png" alt="在这里插入图片描述"><br>&ensp;&ensp;&ensp;&ensp;然后保存，重新启动VScode，之后便可以看到左边Latex插件图表中使用的是xelatex的编辑链了。只要文章写得对，点击它即可使用SumatraPDF渲染出PDF了。</p>
+<ul>
+<li><strong>下面是本人自己在网上找的模板渲染效果：</strong><br>  <img src="https://img-blog.csdnimg.cn/20200625141620341.png" alt="在这里插入图片描述"><br>  试它一试<br>  <img src="https://img-blog.csdnimg.cn/20200625141723728.png" alt="在这里插入图片描述"><br>  <img src="https://img-blog.csdnimg.cn/20200625141805174.png" alt="在这里插入图片描述"><br>  感觉还不错。</li>
+</ul>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Latex/" rel="tag">Latex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VScode/" rel="tag">VScode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%87%E5%AD%97%E7%BC%96%E8%BE%91/" rel="tag">文字编辑</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+  
+  
+
+</article>
+    
     <article id="post-Embed-Processor仿真实验笔记" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -123,7 +204,7 @@
       
 
       
-      <h1 id="Lab4"><a href="#Lab4" class="headerlink" title="Lab4"></a>Lab4</h1><h2 id="Task-A：基本输入输出函数的重定向"><a href="#Task-A：基本输入输出函数的重定向" class="headerlink" title="Task A：基本输入输出函数的重定向"></a>Task A：基本输入输出函数的重定向</h2><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>&ensp;&ensp;&ensp;&ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的<code>printf()</code>、<code>fputc()</code>、<code>fgetc()</code>函数，至UART/Serial Port。利用输出字符串来对系统外部中断IRQ产生更形象的认识。<br>
+      <h1 id="Lab4"><a href="#Lab4" class="headerlink" title="Lab4"></a>Lab4</h1><h2 id="Task-A：基本输入输出函数的重定向"><a href="#Task-A：基本输入输出函数的重定向" class="headerlink" title="Task A：基本输入输出函数的重定向"></a>Task A：基本输入输出函数的重定向</h2><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>&ensp;&ensp;&ensp;&ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的<code>printf()</code>、<code>fputc()</code>、<code>fgetc()</code>函数，至UART/Serial Port。利用输出字符串来对系统外部中断IRQ产生更形象的认识。</p>
       
       <a class="article-more-link" href="/2020/06/02/Embed-Processor%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/">阅读更多...</a>
       
@@ -200,7 +281,7 @@
       <blockquote>
 <p>嵩云秦树久离居，双鲤迢迢一纸书。——李商隐《寄令狐郎中》</p>
 </blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;<del>通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。</del><br>
+<p>&ensp;&ensp;&ensp;&ensp;<del>通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。</del></p>
       
       <a class="article-more-link" href="/2020/05/27/%E9%80%9A%E4%BF%A1%E7%BD%91%E7%BB%9C%E6%A2%B3%E7%90%86/">阅读更多...</a>
       
@@ -272,8 +353,9 @@
       
       <p>&ensp;&ensp;&ensp;&ensp;本文主要针对Matlab中有关信号与系统问题的函数及语法总结。</p>
 <h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><ul>
-<li><strong>产生一串数字区间</strong>：<code>n=-5:10</code>产生了从-5~10的区间整数序列</li>
-<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br>_例如1：画出$x[n]=2n,-3\leq n\leq 3$_</p>
+<li><p><strong>产生一串数字区间</strong>：<code>n=-5:10</code>产生了从-5~10的区间整数序列</p>
+</li>
+<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br><em>例如1：画出$x[n]=2n,-3\leq n\leq 3$</em></p>
 <figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n<span class="built_in">=</span>-<span class="number">3</span>:<span class="number">3</span>;</span><br><span class="line">x<span class="built_in">=</span><span class="number">2</span>*n;</span><br><span class="line">stem(n, x)</span><br></pre></td></tr></table></figure>
       
       <a class="article-more-link" href="/2020/05/26/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/">阅读更多...</a>
@@ -306,7 +388,7 @@
 
 </article>
     
-    <article id="post-2020520随笔" class="article article-type-post" itemscope
+    <article id="post-20200520随笔" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -314,7 +396,7 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/2020/05/20/2020520%E9%9A%8F%E7%AC%94/"
+  <a class="article-title" href="/2020/05/20/20200520%E9%9A%8F%E7%AC%94/"
     >2020520随笔</a> 
 </h2>
  
@@ -324,7 +406,7 @@
 
     
     <div class="article-meta">
-      <a href="/2020/05/20/2020520%E9%9A%8F%E7%AC%94/" class="article-date">
+      <a href="/2020/05/20/20200520%E9%9A%8F%E7%AC%94/" class="article-date">
   <time datetime="2020-05-20T13:03:19.000Z" itemprop="datePublished">2020-05-20</time>
 </a>
       
@@ -346,9 +428,9 @@
       
 
       
-      <p>&ensp;&ensp;&ensp;&ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，在此摘抄了精彩对话之一。<br>
+      <p>&ensp;&ensp;&ensp;&ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，在此摘抄了精彩对话之一。</p>
       
-      <a class="article-more-link" href="/2020/05/20/2020520%E9%9A%8F%E7%AC%94/">阅读更多...</a>
+      <a class="article-more-link" href="/2020/05/20/20200520%E9%9A%8F%E7%AC%94/">阅读更多...</a>
       
       
       <!-- reward -->
@@ -423,7 +505,7 @@
       <blockquote>
 <p>瀑布天落，半与银河争流，腾虹奔电，潈射万壑，此宇宙之奇诡也。——李白《秋于敬亭送从侄专游庐山序》</p>
 </blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。<br>&ensp;&ensp;&ensp;&ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。然后再是对后半部分进行梳理。<br>
+<p>&ensp;&ensp;&ensp;&ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。<br>&ensp;&ensp;&ensp;&ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。然后再是对后半部分进行梳理。</p>
       
       <a class="article-more-link" href="/2020/05/19/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A2%B3%E7%90%86/">阅读更多...</a>
       
@@ -497,7 +579,7 @@
       
 
       
-      <h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>&ensp;&ensp;&ensp;&ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？<br>&ensp;&ensp;&ensp;&ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。<br>
+      <h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>&ensp;&ensp;&ensp;&ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？<br>&ensp;&ensp;&ensp;&ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。</p>
       
       <a class="article-more-link" href="/2020/05/17/C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/">阅读更多...</a>
       
@@ -571,7 +653,7 @@
       
 
       
-      <p>&ensp;&ensp;&ensp;&ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。<br>下面是“阅读更多”的分页。<br>
+      <p>&ensp;&ensp;&ensp;&ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。<br>下面是“阅读更多”的分页。</p>
       
       <a class="article-more-link" href="/2020/05/16/Helloworld_%E5%8D%9A%E5%AE%A2%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/">阅读更多...</a>
       

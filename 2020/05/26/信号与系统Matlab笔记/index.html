@@ -108,53 +108,57 @@
       
       <p>&ensp;&ensp;&ensp;&ensp;本文主要针对Matlab中有关信号与系统问题的函数及语法总结。</p>
 <h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><ul>
-<li><strong>产生一串数字区间</strong>：<code>n=-5:10</code>产生了从-5~10的区间整数序列</li>
-<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br>_例如1：画出$x[n]=2n,-3\leq n\leq 3$_</p>
+<li><p><strong>产生一串数字区间</strong>：<code>n=-5:10</code>产生了从-5~10的区间整数序列</p>
+</li>
+<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br><em>例如1：画出$x[n]=2n,-3\leq n\leq 3$</em></p>
 <figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n<span class="built_in">=</span>-<span class="number">3</span>:<span class="number">3</span>;</span><br><span class="line">x<span class="built_in">=</span><span class="number">2</span>*n;</span><br><span class="line">stem(n, x)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 </li>
 <li><p><code>subplot(m, n, P)</code>函数：该函数用来规划画布上图像放置的位置。其中，m、n用来将画布分割，m为行，n为列；而P代表取分割部分的第几块。<br>例如：<code>subplot(2,2,[1 3])</code>代表将画布分为2x2的4部分，并该函数对应的图像放在第1，3块处</p>
 </li>
-<li><code>grid on</code>函数：<code>grid on</code>为显示网格，相反，<code>grid off</code> 为关闭显示网格。</li>
-<li>点乘<code>.*</code>与一般乘法<code>*</code>：函数与函数相乘，例如$\sin(t)\sin(9t)$，一般是用点乘<code>.*</code>。点乘主要用于函数中元素的乘法（数组乘法array multiply）；而一般乘法则为矩阵乘法（Matrix multiply）。<br>_例如2：用图形表示连续调制波形$y=\sin(t)\sin(9t)$及其包络。_<figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t<span class="built_in">=</span>(<span class="number">0</span>:pi/<span class="number">100</span>:pi)<span class="string">' % 长 度 为 101 的 时 间 采 样 列 向 量</span></span><br><span class="line"><span class="string">y1=sin(t)*[1,-1]; %包络线函数值，是（101x2）的矩阵</span></span><br><span class="line"><span class="string">y2=sin(t).*sin(9*t); %长度为101的调制波列向量</span></span><br><span class="line"><span class="string">t3=pi*(0:9)/9%在定义域区间均匀地取10个点</span></span><br><span class="line"><span class="string">y3=sin(t3).*sin(9*t3);%算出该十个点的值</span></span><br><span class="line"><span class="string">plot(t,y1,'</span>r:<span class="string">',t,y2,'</span>b<span class="string">',t3,y3,'</span>bo<span class="string">')%画出函数图像，包络线图像，取点图像</span></span><br><span class="line"><span class="string">axis([0,pi,-1,1]) %控制画出的轴范围，前2参数为横轴；后2值为纵轴</span></span><br></pre></td></tr></table></figure></li>
-<li><p><strong>单位脉冲序列$\delta[n]$与单位阶跃序列$u[n]$</strong>：可以综合使用<code>ones(1,n)</code>与<code>zeros(1,n)</code>来产生单位脉冲序列与代为阶跃序列。<br>其中<code>ones(1,n)</code>命令产生1行n列的1值；<code>zeros(1,n)</code>命令产生1行n列的0值。<br>_例如3：_</p>
+<li><p><code>grid on</code>函数：<code>grid on</code>为显示网格，相反，<code>grid off</code> 为关闭显示网格。</p>
+</li>
+<li><p>点乘<code>.*</code>与一般乘法<code>*</code>：函数与函数相乘，例如$\sin(t)\sin(9t)$，一般是用点乘<code>.*</code>。点乘主要用于函数中元素的乘法（数组乘法array multiply）；而一般乘法则为矩阵乘法（Matrix multiply）。<br><em>例如2：用图形表示连续调制波形$y=\sin(t)\sin(9t)$及其包络。</em></p>
+<figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t<span class="built_in">=</span>(<span class="number">0</span>:pi/<span class="number">100</span>:pi)<span class="string">' % 长 度 为 101 的 时 间 采 样 列 向 量</span></span><br><span class="line"><span class="string">y1=sin(t)*[1,-1]; %包络线函数值，是（101x2）的矩阵</span></span><br><span class="line"><span class="string">y2=sin(t).*sin(9*t); %长度为101的调制波列向量</span></span><br><span class="line"><span class="string">t3=pi*(0:9)/9%在定义域区间均匀地取10个点</span></span><br><span class="line"><span class="string">y3=sin(t3).*sin(9*t3);%算出该十个点的值</span></span><br><span class="line"><span class="string">plot(t,y1,'</span>r:<span class="string">',t,y2,'</span>b<span class="string">',t3,y3,'</span>bo<span class="string">')%画出函数图像，包络线图像，取点图像</span></span><br><span class="line"><span class="string">axis([0,pi,-1,1]) %控制画出的轴范围，前2参数为横轴；后2值为纵轴</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>单位脉冲序列$\delta[n]$与单位阶跃序列$u[n]$</strong>：可以综合使用<code>ones(1,n)</code>与<code>zeros(1,n)</code>来产生单位脉冲序列与代为阶跃序列。<br>其中<code>ones(1,n)</code>命令产生1行n列的1值；<code>zeros(1,n)</code>命令产生1行n列的0值。<br><em>例如3：</em></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n&#x3D;0: 32;</span><br><span class="line">x&#x3D;[zeros(1,5),1,zeros(1,27)];%一个x&#x3D;\delta(n-6)的单位冲激函数</span><br><span class="line">stem(n, x, &#39;fill&#39;);%以n为横坐标画出数据序列x</span><br><span class="line">filter(num ,den, x)函数：该函数主要是针对LTI系统设置。因果LTI系统的零状态响应，可以利用y&#x3D;filter(num,\ den,\ x)实现。</span><br><span class="line">&#x2F;&#x2F;其中，num为系统传递函数分子系数组成的行向量、den为系统传递函数分母系数组成的行向量、x为输入的离散序列、y为输出的离散序列且y与x的长度一样。</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>syms</code>函数：用来创建一个符号表达式。可以理解为用来创建一个“变量”，创建后的变量可以直接写入函数中作为自变量使用。常用作创建连续时间信号<br>_例如4：_</p>
+<li><p><code>syms</code>函数：用来创建一个符号表达式。可以理解为用来创建一个“变量”，创建后的变量可以直接写入函数中作为自变量使用。常用作创建连续时间信号<br><em>例如4：</em></p>
 <figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">syms t;<span class="comment">%创建一个符号表达式，“变量t”</span></span><br><span class="line">syms T;</span><br><span class="line">f<span class="built_in">=</span>sin(<span class="number">2</span>*pi*t/T)<span class="comment">%写出函数f，该函数包含待定变量t与T</span></span><br></pre></td></tr></table></figure></li>
-<li><code>x1=subs（f，T，5）</code>：该函数用于给自定义的符号表达式中的某个变量赋值，示例为将符号表达式f中的变量T赋值为5，并将该赋值后的符号表达式记为x1.</li>
-<li><code>ezplot（&lt;隐函数表达式&gt;,[x最小值，x最大值，y最小值，y最大值])</code>：该函数用来绘制只有单一自变量的symbolic expression，即直接绘制单一自变量的函数。</li>
-<li><code>int(F,x,a,b)</code>函数：该函数用来计算自己定义的符号表达式的积分。其中F为被积函数，x为自变量（可忽略），a为积分下限，b为积分上限。</li>
+<li><p><code>x1=subs（f，T，5）</code>：该函数用于给自定义的符号表达式中的某个变量赋值，示例为将符号表达式f中的变量T赋值为5，并将该赋值后的符号表达式记为x1.</p>
+</li>
+<li><p><code>ezplot（&lt;隐函数表达式&gt;,[x最小值，x最大值，y最小值，y最大值])</code>：该函数用来绘制只有单一自变量的symbolic expression，即直接绘制单一自变量的函数。</p>
+</li>
+<li><p><code>int(F,x,a,b)</code>函数：该函数用来计算自己定义的符号表达式的积分。其中F为被积函数，x为自变量（可忽略），a为积分下限，b为积分上限。</p>
+</li>
 </ul>
 <h1 id="Lab-2"><a href="#Lab-2" class="headerlink" title="Lab 2"></a>Lab 2</h1><ul>
-<li><strong>分段函数的写法：</strong><br>示例：表示分段函数<script type="math/tex; mode=display">x[n]=
-\begin{cases}
-2&,n=0\\
-1&,n=2\\
--1&,n=3\\
-3&,n=4\\
-0&,otherwise
-\end{cases}</script>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></li>
+<li><strong>分段函数的写法：</strong><br>示例：表示分段函数<br>$$x[n]=<br>\begin{cases}<br>2&amp;,n=0\<br>1&amp;,n=2\</li>
+</ul>
+<p>-1&amp;,n=3\<br>3&amp;,n=4\<br>0&amp;,otherwise<br>\end{cases}$$<br>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></p>
+<ul>
 <li><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和。这里存在一个小技巧：<strong>卷积后输出的区间长度会发生变化，倘若仍需要对卷积输出继续计算，但matlab提示出错“矩阵维度必须一致。”怎么办？</strong>可以直接取卷积输出的某一区间再进行矩阵运算，例如：</li>
 </ul>
 <figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n<span class="built_in">=</span><span class="number">0</span>:<span class="number">64</span>;</span><br><span class="line">xh<span class="built_in">=</span>conv(h,x)<span class="comment">%h是一个1x41的矩阵向量，x是一个1x65的矩阵向量，输出xh为一个1x105的矩阵向量</span></span><br><span class="line">x2<span class="built_in">=</span>xh(<span class="number">1</span>:<span class="number">65</span>).*sin((pi/<span class="number">2</span>).*n);<span class="comment">%此处n与xh的维度不同，不能直接运算，但可以取xh的第1~65个采样进行运算</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><p><code>filter(b_k,a_k,x)</code>函数：</p>
 <ol>
-<li>输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<script type="math/tex; mode=display">\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m] \ \ \ (\alpha)</script>上式在Malab中等价于：<script type="math/tex; mode=display">\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]</script>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br>&ensp;&ensp;&ensp;&ensp;<code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
-<li>也可以用来求卷积。当$a_k=\delta[k],b[m]=b_m(0\leq m\leq M)$时，式子$(\alpha)$便成为了<script type="math/tex; mode=display">y[n]=\sum_{m=-\infty}^{+\infty}b[m]x[n-m]</script>是一个标准的离散卷积和公式，此时只需输入参数<code>y=filter(b_k,1,x)</code>即可。</li>
+<li>输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<br>$$\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m] \ \ \ (\alpha)$$<br>上式在Malab中等价于：<br>$$\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]$$<br>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br>&ensp;&ensp;&ensp;&ensp;<code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
+<li>也可以用来求卷积。当$a_k=\delta[k],b[m]=b_m(0\leq m\leq M)$时，式子$(\alpha)$便成为了<br>$$y[n]=\sum_{m=-\infty}^{+\infty}b[m]x[n-m]$$<br>是一个标准的离散卷积和公式，此时只需输入参数<code>y=filter(b_k,1,x)</code>即可。</li>
 <li>求离散线性非常系数系统，也可以使用它，但只需要一个<code>for</code>循环即可。<br>例如：$y[n]=(\frac{3}{5})^ny_2[n-1]+x[n]$，求它的系统单位冲激响应只需如下：<figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">h2<span class="built_in">=</span>[];<span class="comment">%创建了一个数组来容纳每次取n时对应的h[n]</span></span><br><span class="line">b2<span class="built_in">=</span>[<span class="number">1</span>];<span class="comment">%system2的输入系数</span></span><br><span class="line">for i<span class="built_in">=</span><span class="number">0</span>:<span class="number">19</span></span><br><span class="line">    a2<span class="built_in">=</span>[<span class="number">1</span>,-(<span class="number">3</span>/<span class="number">5</span>)^i];<span class="comment">%system2的输出系数</span></span><br><span class="line">    h2(i+<span class="number">1</span>)<span class="built_in">=</span>filter(b2,a2,x(i+<span class="number">1</span>))<span class="comment">%每一个n(此处为计数器i)对应一个系数，一个x[n]——也就对应响应h2[n]的一个值</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
-<li><p><code>lsim(b,a,x,t)</code>函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：</p>
-<script type="math/tex; mode=display">\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b_m\frac{d^mx(t)}{dt^m}</script><p>同理，该方程在Matlab中系数需要被改写为向量形式：</p>
-<script type="math/tex; mode=display">\sum_{k=0}^{N}a(N+1-k)\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b(M+1-m)\frac{d^mx(t)}{dt^m}</script></li>
-<li><code>step(b,a,t)</code>函数：用来计算线性常系数微分方程的step response，用于连续时间。求单位阶跃响应除了用该函数，还可以直接把$u(t)*h(t)$得到，即利用<code>conv()</code>函数，这样就可以算离散时间的阶跃响应了。</li>
-<li><code>impulse(b,a,t)</code>函数：用来计算线性常系数微分方程的impulse response，用于连续时间。其中t的分度及区间可以使用<code>linspace()</code>确定。</li>
+<li><p><code>lsim(b,a,x,t)</code>函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：<br>$$\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b_m\frac{d^mx(t)}{dt^m}$$<br>同理，该方程在Matlab中系数需要被改写为向量形式：<br>$$\sum_{k=0}^{N}a(N+1-k)\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b(M+1-m)\frac{d^mx(t)}{dt^m}$$</p>
+</li>
+<li><p><code>step(b,a,t)</code>函数：用来计算线性常系数微分方程的step response，用于连续时间。求单位阶跃响应除了用该函数，还可以直接把$u(t)*h(t)$得到，即利用<code>conv()</code>函数，这样就可以算离散时间的阶跃响应了。</p>
+</li>
+<li><p><code>impulse(b,a,t)</code>函数：用来计算线性常系数微分方程的impulse response，用于连续时间。其中t的分度及区间可以使用<code>linspace()</code>确定。</p>
+</li>
 </ul>
 <h1 id="Lab-3"><a href="#Lab-3" class="headerlink" title="Lab 3"></a>Lab 3</h1><ul>
-<li><code>[H omega]=freqz(b,a,N)</code>：计算在0和$\pi$之间均匀间隔的N个频点（N等分）的，系数为a、b的，<strong>差分方程</strong>的频率响应$H(e^{jw})$，即$\omega_k=(\cfrac{\pi}{N})k, {\rm for} 0\leq k\leq N-1$。它接收的参数b，a与Lab2中的b，a一样，都是系数。如果加上‘whole’这个参数，<code>[H omega]=freqz(b,a,N,&#39;whole&#39;)</code>，它会计算出在$[0，2\pi]$上N个均分频点的频率响应，即$\omega_k=(\cfrac{2\pi}{N})k, {\rm for} 0\leq k\leq N-1$。</li>
+<li><code>[H omega]=freqz(b,a,N)</code>：计算在0和$\pi$之间均匀间隔的N个频点（N等分）的，系数为a、b的，<strong>差分方程</strong>的频率响应$H(e^{jw})$，即$\omega_k=(\cfrac{\pi}{N})k, {\rm for}\ 0\leq k\leq N-1$。它接收的参数b，a与Lab2中的b，a一样，都是系数。如果加上‘whole’这个参数，<code>[H omega]=freqz(b,a,N,&#39;whole&#39;)</code>，它会计算出在$[0，2\pi]$上N个均分频点的频率响应，即$\omega_k=(\cfrac{2\pi}{N})k, {\rm for}\ 0\leq k\leq N-1$。</li>
 <li>特征函数的判断：一个信号，<strong>若系统对该信号的输出响应仅是一个常数（可能是复数）乘以输入，则称该信号为系统的特征函数（eigenfunction）</strong>，而幅度因子称为系统的特征值（eigenvalue）。</li>
 <li><code>fft(x)</code>：该函数可以用来计算离散傅里叶级数DTFS的系数$a_k$。其中，$a_k=(\frac{1}{N})*fft(x)$<br>而该函数的原本用途为执行原信号的傅里叶变换。值得注意的是，该函数有时需要设定变换后的采样点个数，故可以对原区间的步长设置从而对原区间进行分割缩放，将采样点放入原区间内：<figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n<span class="built_in">=</span><span class="number">0</span>:<span class="number">64</span>;</span><br><span class="line">n1<span class="built_in">=</span><span class="number">0</span>:<span class="number">64</span>/<span class="number">255</span>:<span class="number">64</span>;<span class="comment">%把区间[0,64]划分成256个采样点，作为傅里叶变换后的区间</span></span><br><span class="line"></span><br><span class="line">x<span class="built_in">=</span>((sin(pi.*(n-<span class="number">32</span>)./<span class="number">4</span>))./(pi.*(n-<span class="number">32</span>)./<span class="number">4</span>));<span class="comment">%原信号，注意在n=32时为极限，matlab算出来为NAN需要人工替换</span></span><br><span class="line">x(find(isnan(x)<span class="built_in">=</span><span class="built_in">=</span><span class="number">1</span>))<span class="built_in">=</span><span class="number">1</span>;<span class="comment">%替换n=32时的极限为1</span></span><br><span class="line">X<span class="built_in">=</span>fft(x,<span class="number">256</span>);<span class="comment">%傅里叶变换</span></span><br><span class="line">stem(n1,abs(X));grid on;<span class="comment">%把原区间划分为256个采样点进行作图</span></span><br></pre></td></tr></table></figure></li>
 <li><code>iffy(X)</code>：执行逆傅里叶变换。</li>
@@ -162,7 +166,7 @@
 <li><code>load(filename)</code> ：从 filename 加载文件变量数据至工作区。</li>
 <li><code>freqs(b,a)</code>：用来计算与绘制微分方程的频率响应$H(j\omega)$，其中<code>b,a</code>是2变量的系数们作为的向量数组，从高阶开始。当然，如果希望得到在特定频率处$\omega$的值，可以多加一个参数，例如<figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w<span class="built_in">=</span>linspace(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">H<span class="built_in">=</span>freqs(b,a,w)</span><br></pre></td></tr></table></figure></li>
 <li><code>[b2,a2]=butter(2,wc,&#39;s&#39;)</code>：该函数定义了一个2阶、以$\omega_c$为频率的布特沃斯滤波器。其中，<code>s</code>表示使用连续时间过滤器，而不是butter默认返回的离散时间滤波器。此处的返回值<code>b2,a2</code>都为前面的系数向量。</li>
-<li><code>[r,p]=residue(b,a)</code>：该函数用来进行分式多项式的部分分式展开，即”partial fraction expansion”。其中，<code>b,a</code>为系统微分方程2便系数向量；该函数返回的亦为向量数组<code>r,p</code>，<code>r</code>为分子的部分分式展开系数，<code>p</code>为分母的部分分式展开系数。倘若被计算的系统频率响应$H(j\omega)$的分母不包括重根，且分式有理，那么返回的形式为：<script type="math/tex; mode=display">\sum_{m=1}^{N}\cfrac{r(m)}{j\omega-p(m)}=\cfrac{r_1}{j\omega-p_1}+\cfrac{r_2}{j\omega-p_2}+...</script></li>
+<li><code>[r,p]=residue(b,a)</code>：该函数用来进行分式多项式的部分分式展开，即”partial fraction expansion”。其中，<code>b,a</code>为系统微分方程2便系数向量；该函数返回的亦为向量数组<code>r,p</code>，<code>r</code>为分子的部分分式展开系数，<code>p</code>为分母的部分分式展开系数。倘若被计算的系统频率响应$H(j\omega)$的分母不包括重根，且分式有理，那么返回的形式为：<br>$$\sum_{m=1}^{N}\cfrac{r(m)}{j\omega-p(m)}=\cfrac{r_1}{j\omega-p_1}+\cfrac{r_2}{j\omega-p_2}+…$$</li>
 </ul>
 <h1 id="Lab-4"><a href="#Lab-4" class="headerlink" title="Lab 4"></a>Lab 4</h1><ul>
 <li><code>[X,w]=ctfts(x,T)</code>：CTFTS函数用来计算周期信号x(t)的连续时间傅里叶变换(CTFT)，该周期信号由向量x中采样后的样本，利用理想带限插值重构而来。其中，它的参数，即向量x，为x(t)除以整数个周期的样本，T为采样周期；返回的参数，向量X包含储存在向量向量w中、每个频点处脉冲的面积。而w则储存了每个频点处的脉冲。<br>$\alpha,\omega$</li>
@@ -266,7 +270,7 @@
       </a>
     
     
-      <a href="/2020/05/20/2020520%E9%9A%8F%E7%AC%94/" class="article-nav-link">
+      <a href="/2020/05/20/20200520%E9%9A%8F%E7%AC%94/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
         <div class="article-nav-title">2020520随笔</div>
       </a>
