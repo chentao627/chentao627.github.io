@@ -110,7 +110,9 @@
       
 
       
-      <h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>&ensp;&ensp;&ensp;&ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？<br>&ensp;&ensp;&ensp;&ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。<br><a id="more"></a><br>&ensp;&ensp;&ensp;&ensp;本人在网上搜集到的调用matlab引擎的方法有二：</p>
+      <h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>&ensp;&ensp;&ensp;&ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？<br>&ensp;&ensp;&ensp;&ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。</p>
+<a id="more"></a>
+<p>&ensp;&ensp;&ensp;&ensp;本人在网上搜集到的调用matlab引擎的方法有二：</p>
 <ol>
 <li>一是程序运行需要完整的matlab软件进行支持；</li>
 <li>二是可以将matlab中的.m文件编译为${\rm .dll}$文件，运行时只需MCR即可。（MATLAB Component Runtime 简称 MCR，主要用于把MATLAB编写的东西打包到没装MATLAB的机器上使用。它是一组独立的共享库，通过它能够执行在MATLAB中编写的M文件。MCR支持MATLAB语言的所有功能。）</li>
@@ -703,22 +705,6 @@
 
     
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>

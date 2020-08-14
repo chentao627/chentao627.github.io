@@ -110,10 +110,12 @@
       
 
       
-      <p>&ensp;&ensp;&ensp;&ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。<br>下面是“阅读更多”的分页。<br><a id="more"></a></p>
+      <p>&ensp;&ensp;&ensp;&ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。<br>下面是“阅读更多”的分页。</p>
+<a id="more"></a>
+
 <h1 id="一、基本的安装与配置"><a href="#一、基本的安装与配置" class="headerlink" title="一、基本的安装与配置"></a>一、基本的安装与配置</h1><h2 id="1-Nodejs的安装"><a href="#1-Nodejs的安装" class="headerlink" title="1.Nodejs的安装"></a>1.Nodejs的安装</h2><h2 id="2-Git-for-windows的安装"><a href="#2-Git-for-windows的安装" class="headerlink" title="2.Git for windows的安装"></a>2.Git for windows的安装</h2><h2 id="3-Hexo的安装"><a href="#3-Hexo的安装" class="headerlink" title="3.Hexo的安装"></a>3.Hexo的安装</h2><p>Hexo的安装便需要用到npm install命令。可以在Hexo官网上看到给出了一个npm安装命令：<br><a href="https://sm.ms/image/Jn9EOMGSBUHZ2cQ" target="_blank"><img src="https://i.loli.net/2020/05/17/Jn9EOMGSBUHZ2cQ.png" ></a><br>直接把它复制到进入博客路径的cmd中执行即可。</p>
 <h2 id="4-编译器的选择与安装"><a href="#4-编译器的选择与安装" class="headerlink" title="4.编译器的选择与安装"></a>4.编译器的选择与安装</h2><p>&ensp;&ensp;&ensp;&ensp;编译hexo博客文件的编译器可以任意选择，只要你愿意，文本文档都可以被当作编译器使用，来写出自己的文档。只不干出过像这种类似于在2020年使用bp传呼机传递消息的行为，意义实则不大。现有的轻量级编译器有Sublime、Atom（好像已经凉了）以及大名鼎鼎巨硬的 VS code。我最先安装的是sublime，但在感受过VSCode的沐浴之后，我只能说大厂的产品真香。<br>&ensp;&ensp;&ensp;&ensp;具体的安装方法依葫芦画瓢便是，安装好后将hexo文件夹下的博客文件夹拖入即可。</p>
-<h2 id="5-主题的安装"><a href="#5-主题的安装" class="headerlink" title="5.主题的安装"></a>5.主题的安装</h2><p>主题的安装可以直接从github上克隆下来。当然也可以下载主题的压缩包，把它丢到路径<Hexo\blogname\themes>中即可。然后便是按照所选安装包的教程在主_congfig.yml中进行一些代码的配置。</p>
+<h2 id="5-主题的安装"><a href="#5-主题的安装" class="headerlink" title="5.主题的安装"></a>5.主题的安装</h2><p>主题的安装可以直接从github上克隆下来。当然也可以下载主题的压缩包，把它丢到路径&lt;Hexo\blogname\themes&gt;中即可。然后便是按照所选安装包的教程在主_congfig.yml中进行一些代码的配置。</p>
 <h1 id="二、Hexo的个性化配置"><a href="#二、Hexo的个性化配置" class="headerlink" title="二、Hexo的个性化配置"></a>二、Hexo的个性化配置</h1><h2 id="1-数学公式mathjax引擎的配置与输入"><a href="#1-数学公式mathjax引擎的配置与输入" class="headerlink" title="1.数学公式mathjax引擎的配置与输入"></a>1.数学公式mathjax引擎的配置与输入</h2><p>&ensp;&ensp;&ensp;&ensp;Hexo貌似自带了一个数学公式渲染引擎，但我并没有使用它，而是直接安装了第三方渲染引擎Mathjax。<br>&ensp;&ensp;&ensp;&ensp;安装Mathjax大约有5个步骤。</p>
 <ol>
 <li><p>首先需要在博客文件夹中使用npm install命令卸载原始的marked渲染引擎（不支持mathjax），然后安装上hexo-renderer-kramed引擎：</p>
@@ -126,52 +128,41 @@
 </li>
 <li><p>安装hexo-renderer-mathjax 包：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
-<p>打开/node_modules/hexo-renderer-mathjax/mathjax.html，将<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这段原始代码注释掉，更改为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<ol>
+<p>打开/node_modules/hexo-renderer-mathjax/mathjax.html，将</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这段原始代码注释掉，更改为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
 <li>由于LaTeX与markdown的语法有语义冲突，所以 hexo 默认的转义规则会将一些字符进行转义，所以我们需要对默认的规则进行修改.<br>打开/node_modules\kramed\lib\rules\inline.js，将<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()<span class="comment">#$+\-.!_&gt;])/,</span></span><br><span class="line">更改为</span><br><span class="line">escape: /^\\([`*\[\]()<span class="comment"># +\-.!_&gt;])/,</span></span><br></pre></td></tr></table></figure>
+
+
+
+
 </li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">更改为</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="5">
 <li>在/theme/XXX主题目录下的config.yml文件中打开mathjax：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;bash</span><br><span class="line">mathjax:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
 或者<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
 注意别忘掉了空格。<br>日后每篇文章地header中加上<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
-<p>&ensp;&ensp;&ensp;&ensp;然后便可以开怀地在博客上输入公式啦~<br>&ensp;&ensp;&ensp;&ensp;数学公式示例, 它渲染出来是这样的一个效果：</p>
-<script type="math/tex; mode=display">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script><script type="math/tex; mode=display">sqrt()</script><script type="math/tex; mode=display">\hat{a}, \acute{a},\grave{a},\breve{a},\bar{a},\widetilde{A},\check{a},\tilde{a},\dot{a},\ddot{a},\vec{a},\widehat{a}, \overrightarrow{x-y-z}</script><script type="math/tex; mode=display">[\bf 转换字体]</script><script type="math/tex; mode=display">\stackrel{FT}\longleftrightarrow,箭头上加文字</script><script type="math/tex; mode=display">\begin{align*}
-x(-t+t_0)
-&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\\
-&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\\
-&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{align*}</script><script type="math/tex; mode=display">\prod_{p=1}^N(s-s_p)</script><script type="math/tex; mode=display">f(x)=
-\begin{cases}
-0& \text{x=0}\\\\
-1& \text{x!=0}
-\end{cases} 分段函数</script><script type="math/tex; mode=display">f(x)=
-\begin{cases}
-0& {x=0}\\\\
-1& {x\neq0}
-\end{cases}</script><p>等式对其：</p>
-<script type="math/tex; mode=display">\begin{align}
-x(-t+t_0)
-&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\\
-&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\\
-&={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{align}</script><script type="math/tex; mode=display">
-\require{enclose}
-\begin{array}{rll}
-    125 && \hbox{(Explanations)} \\[-3pt]
-   4 \enclose{longdiv}{500}\kern-.2ex \\[-3pt]
-      \underline{4\phantom{00}} && \hbox{($4 \times 1 = 4$)} \\[-3pt]
-      10\phantom{0} && \hbox{($5 - 4 = 1$)} \\[-3pt]
-      \underline{\phantom{0}8\phantom{0}} && \hbox{($4 \times 2 = 8$)} \\[-3pt]
-      \phantom{0}20 && \hbox{($10 - 8 = 2$)} \\[-3pt]
-      \underline{\phantom{0}20} && \hbox{($4 \times 5 = 20$)} \\[-3pt]
-      \phantom{00}0
-  \end{array}</script><h1 id="三、Hexo的应用"><a href="#三、Hexo的应用" class="headerlink" title="三、Hexo的应用"></a>三、Hexo的应用</h1><h2 id="0-命令行的打开"><a href="#0-命令行的打开" class="headerlink" title="0.命令行的打开"></a>0.命令行的打开</h2><p>一种是win+R然后cmd再转到博客文件夹下面；而更为简便的办法则是直接在VScode中按下快捷键<code>Ctrl+Shift+c</code>即可。</p>
-<h2 id="1-菜单栏的设置及新页面的创立"><a href="#1-菜单栏的设置及新页面的创立" class="headerlink" title="1.菜单栏的设置及新页面的创立"></a>1.菜单栏的设置及新页面的创立</h2><h2 id="2-Tag、Categories的设置"><a href="#2-Tag、Categories的设置" class="headerlink" title="2.Tag、Categories的设置"></a>2.Tag、Categories的设置</h2><h2 id="3-Update设置"><a href="#3-Update设置" class="headerlink" title="3.Update设置"></a>3.Update设置</h2><h2 id="4-创建一篇新文章"><a href="#4-创建一篇新文章" class="headerlink" title="4.创建一篇新文章"></a>4.创建一篇新文章</h2><p>创建新文章可直接在博客路径的cmd中执行以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt; <span class="comment">#不加方括号与尖括号</span></span><br></pre></td></tr></table></figure><br>其中layout有三种默认布局，即：post、page、draft。它们分别对应路径’sorce_posts’、’source’、’source_drafts’。</p>
+<p>&ensp;&ensp;&ensp;&ensp;然后便可以开怀地在博客上输入公式啦~<br>&ensp;&ensp;&ensp;&ensp;数学公式示例, 它渲染出来是这样的一个效果：<br>$$ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} $$<br>$$ sqrt() $$<br>$$\hat{a}, \acute{a},\grave{a},\breve{a},\bar{a},\widetilde{A},\check{a},\tilde{a},\dot{a},\ddot{a},\vec{a},\widehat{a}, \overrightarrow{x-y-z}$$<br>$$[\bf 转换字体]$$<br>$$\stackrel{FT}\longleftrightarrow,箭头上加文字$$</p>
+<p>$$\begin{align<em>}<br>x(-t+t_0)<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{align</em>}$$</p>
+<p>$$\prod_{p=1}^N(s-s_p)$$</p>
+<p>$$f(x)=<br>\begin{cases}<br>0&amp; \text{x=0}\\<br>1&amp; \text{x!=0}<br>\end{cases} 分段函数$$</p>
+<p>$$f(x)=<br>\begin{cases}<br>0&amp; {x=0}\\<br>1&amp; {x\neq0}<br>\end{cases} $$<br>等式对其：<br>$$\begin{align}<br>x(-t+t_0)<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega(-t+t_0)}{\rm d}\omega\<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(j\omega) e^{j\omega t_0}e^{-j\omega t}{\rm d}\omega\<br>&amp;={1 \over 2\pi}\int_{-\infty}^{+\infty} X(-j\omega) e^{-j\omega t_0}e^{j\omega t}{\rm d}\end{align}$$</p>
+<p>$$<br>\require{enclose}<br>\begin{array}{rll}<br>    125 &amp;&amp; \hbox{(Explanations)} \[-3pt]<br>   4 \enclose{longdiv}{500}\kern-.2ex \[-3pt]<br>      \underline{4\phantom{00}} &amp;&amp; \hbox{($4 \times 1 = 4$)} \[-3pt]<br>      10\phantom{0} &amp;&amp; \hbox{($5 - 4 = 1$)} \[-3pt]<br>      \underline{\phantom{0}8\phantom{0}} &amp;&amp; \hbox{($4 \times 2 = 8$)} \[-3pt]<br>      \phantom{0}20 &amp;&amp; \hbox{($10 - 8 = 2$)} \[-3pt]<br>      \underline{\phantom{0}20} &amp;&amp; \hbox{($4 \times 5 = 20$)} \[-3pt]<br>      \phantom{00}0<br>  \end{array}<br>$$</p>
+<h1 id="三、Hexo的应用"><a href="#三、Hexo的应用" class="headerlink" title="三、Hexo的应用"></a>三、Hexo的应用</h1><h2 id="0-命令行的打开"><a href="#0-命令行的打开" class="headerlink" title="0.命令行的打开"></a>0.命令行的打开</h2><p>一种是win+R然后cmd再转到博客文件夹下面；而更为简便的办法则是直接在VScode中按下快捷键<code>Ctrl+Shift+c</code>即可。</p>
+<h2 id="1-菜单栏的设置及新页面的创立"><a href="#1-菜单栏的设置及新页面的创立" class="headerlink" title="1.菜单栏的设置及新页面的创立"></a>1.菜单栏的设置及新页面的创立</h2><h2 id="2-Tag、Categories的设置"><a href="#2-Tag、Categories的设置" class="headerlink" title="2.Tag、Categories的设置"></a>2.Tag、Categories的设置</h2><h2 id="3-Update设置"><a href="#3-Update设置" class="headerlink" title="3.Update设置"></a>3.Update设置</h2><h2 id="4-创建一篇新文章"><a href="#4-创建一篇新文章" class="headerlink" title="4.创建一篇新文章"></a>4.创建一篇新文章</h2><p>创建新文章可直接在博客路径的cmd中执行以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt; <span class="comment">#不加方括号与尖括号</span></span><br></pre></td></tr></table></figure>
+<p>其中layout有三种默认布局，即：post、page、draft。它们分别对应路径’sorce_posts’、’source’、’source_drafts’。</p>
 <h2 id="5-文字、数学公式、图片的插入及相关API"><a href="#5-文字、数学公式、图片的插入及相关API" class="headerlink" title="5.文字、数学公式、图片的插入及相关API"></a>5.文字、数学公式、图片的插入及相关API</h2><ul>
 <li>文字的插入、首行缩进<br>文字的插入直接在头部代码下方打字即可。一些markdown的语法如下：<br>加粗：<strong>我被加粗了</strong><br>斜体字：<em>脉动一下，找回状态</em><br>高亮：==我变亮了吗？==<br>变色：<label style="color:red">这是红色</label><br>引用：<blockquote>
 <p>我是被引用的的吗？</p>
@@ -184,20 +175,28 @@ x(-t+t_0)
 </blockquote>
 </li>
 </ul>
-<p>单行代码：<code>codes</code><br>列表：直接使用数字1. 或<em> 加空格即可<br><em>*一般而言，重点用加粗，重要的解释性语言使用斜体。</em></em><br>下划线：<span style="border-bottom:2px dashed red;">为什么以太网的Frame有最小的长度要求？结构Pad是做什么用的？</span></p>
-<p>超链接：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Writing](https://hexo.io/docs/writing.html) <span class="comment">#这样便形成了一个名字为“Writing”，指向网址为https://hexo.io/docs/writing.html的超链接</span></span><br></pre></td></tr></table></figure><br>首行缩进可以使用空格的硬编码实现，只需在需要提行处输入下列代码即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;nbsp;//这是半角空格（英文）</span><br><span class="line">&amp;emsp;//这是全角空格（中文）</span><br></pre></td></tr></table></figure><br>根据自己文章的语言需求放2个在前面即可。但似乎这种方法不太好用。<br><code>&amp;ensp; //也可以尝试这个，相当于1个中文，2字节</code></p>
-<p>换行只需输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;br&gt;</span><br></pre></td></tr></table></figure><br>即可。</p>
+<p>单行代码：<code>codes</code><br>列表：直接使用数字1. 或* 加空格即可<br><strong>一般而言，重点用加粗，重要的解释性语言使用斜体。</strong><br>下划线：<span style="border-bottom:2px dashed red;">为什么以太网的Frame有最小的长度要求？结构Pad是做什么用的？</span></p>
+<p>超链接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Writing](https://hexo.io/docs/writing.html) <span class="comment">#这样便形成了一个名字为“Writing”，指向网址为https://hexo.io/docs/writing.html的超链接</span></span><br></pre></td></tr></table></figure>
+<p>首行缩进可以使用空格的硬编码实现，只需在需要提行处输入下列代码即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;nbsp;//这是半角空格（英文）</span><br><span class="line">&amp;emsp;//这是全角空格（中文）</span><br></pre></td></tr></table></figure>
+<p>根据自己文章的语言需求放2个在前面即可。但似乎这种方法不太好用。<br><code>&amp;ensp; //也可以尝试这个，相当于1个中文，2字节</code></p>
+<p>换行只需输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;br&gt;</span><br></pre></td></tr></table></figure>
+<p>即可。</p>
 <ul>
 <li>图片的插入<br>下面大致说一说在文章种对图片的插入。</li>
 </ul>
 <p>此处使用的是SM.MS直接生成的HTML链接插入的图片：</p>
-<p><div  align="center">
+<div  align="center">
 <a href="https://sm.ms/image/CkHa1Lftqg8VI56" target="_blank"><img src="https://i.loli.net/2020/05/17/CkHa1Lftqg8VI56.png" ></a>
-</div><br>这里使用的是生成的Markdown链接插入的图片：</p>
+</div>
+这里使用的是生成的Markdown链接插入的图片：
+
 <p><img src="https://i.loli.net/2020/05/17/xMoGKF3edAh7Um8.png" alt="QQ截图20200516162849.png"><br>这2种插入图片的方式足够应付一般的写作了。</p>
 <ul>
 <li>插件的安装<br>插件的安装最常用的办法便是使用npm install语法。在你的hexo目录下执行这样一句话<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-这是下载安装一个可以上传本地图片的插件；npm install命令可以直接在所在目录下安装指定的插件，—save是后缀。</li>
+这是下载安装一个可以上传本地图片的插件；npm install命令可以直接在所在目录下安装指定的插件，–save是后缀。</li>
 </ul>
 <h2 id="6-本地接口预览与上传服务器"><a href="#6-本地接口预览与上传服务器" class="headerlink" title="6.本地接口预览与上传服务器"></a>6.本地接口预览与上传服务器</h2><ul>
 <li><p>本地预览<br>本地静态网页的预览，直接可以通过cmd转到博客的文件夹中，执行代码：</p>
@@ -215,7 +214,9 @@ x(-t+t_0)
 <p>即可把本地的内容推到github的仓库中，网页便上传了。</p>
 </li>
 </ul>
-<h2 id="7-换电脑怎么办"><a href="#7-换电脑怎么办" class="headerlink" title="7.换电脑怎么办"></a>7.换电脑怎么办</h2><h2 id="8-域名的申请"><a href="#8-域名的申请" class="headerlink" title="8.域名的申请"></a>8.域名的申请</h2><h2 id="9-Hexo中的markdown转存pdf"><a href="#9-Hexo中的markdown转存pdf" class="headerlink" title="9.Hexo中的markdown转存pdf"></a>9.Hexo中的markdown转存pdf</h2><p>&ensp;&ensp;&ensp;&ensp;我们写了笔记除了往网页博客上面发，很多时候还需要将笔记输出到“纸”上，便于查阅。如果使用的是VScode来编辑hexo的.md文档的话，那么输出pdf非常方便，只需要安装一个<code>Markdown PDF</code>的插件，便可以在页面中右键选择输出PDF了。<br>&ensp;&ensp;&ensp;&ensp;但倘若文中有数学公式的，则需要在.md文档尾部加上这样一段文字：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><br><span class="line">  MathJax.Hub.Config(&#123; tex2jax: &#123;inlineMath: [[<span class="string">'$'</span>, <span class="string">'$'</span>]]&#125;, messageStyle: <span class="string">"none"</span> &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><br>&ensp;&ensp;&ensp;&ensp;便可以支持数学公式的pdf输出了。</p>
+<h2 id="7-换电脑怎么办"><a href="#7-换电脑怎么办" class="headerlink" title="7.换电脑怎么办"></a>7.换电脑怎么办</h2><h2 id="8-域名的申请"><a href="#8-域名的申请" class="headerlink" title="8.域名的申请"></a>8.域名的申请</h2><h2 id="9-Hexo中的markdown转存pdf"><a href="#9-Hexo中的markdown转存pdf" class="headerlink" title="9.Hexo中的markdown转存pdf"></a>9.Hexo中的markdown转存pdf</h2><p>&ensp;&ensp;&ensp;&ensp;我们写了笔记除了往网页博客上面发，很多时候还需要将笔记输出到“纸”上，便于查阅。如果使用的是VScode来编辑hexo的.md文档的话，那么输出pdf非常方便，只需要安装一个<code>Markdown PDF</code>的插件，便可以在页面中右键选择输出PDF了。<br>&ensp;&ensp;&ensp;&ensp;但倘若文中有数学公式的，则需要在.md文档尾部加上这样一段文字：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><br><span class="line">  MathJax.Hub.Config(&#123; tex2jax: &#123;inlineMath: [[<span class="string">'$'</span>, <span class="string">'$'</span>]]&#125;, messageStyle: <span class="string">"none"</span> &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>&ensp;&ensp;&ensp;&ensp;便可以支持数学公式的pdf输出了。</p>
 
       
       <!-- reward -->
@@ -770,22 +771,6 @@ x(-t+t_0)
 
     
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>

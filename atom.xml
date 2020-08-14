@@ -50,19 +50,11 @@
     <link href="https://chentao627.github.io/2020/07/09/20200709%E9%9A%8F%E7%AC%94/"/>
     <id>https://chentao627.github.io/2020/07/09/20200709%E9%9A%8F%E7%AC%94/</id>
     <published>2020-07-09T00:48:49.000Z</published>
-    <updated>2020-08-14T01:19:11.251Z</updated>
+    <updated>2020-08-14T02:42:20.745Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;8月中旬开学就是大三学期了。恍然一回首在进入大学后这两年多来自己仿佛也没干出什么特别有意义的事情，加上对未来发展方向的迷茫，心中不免产生一丝焦虑。我也想借此随笔梳理以下心里面的焦虑点。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong
-        
-      
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;8月中旬开学就是大三学期了。恍然一回首在进入大学后这两年多来自己仿佛也没干出什么特别有意义的事情，加上对未来发展方向的迷茫，心中不免产生一丝焦虑。我也想借此随笔梳理以下心里面的焦虑点。&lt;/p&gt;
     
     </summary>
     
@@ -85,7 +77,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;用Vscode写Markdown语法完美正确地输出带各种复杂数学公式的PDF并不容易。毕竟Markdown语法输出目标并非在纸上，而是网页。在心中不爽地驱使下，我决定尝试使用Vscode配置Latex编写环境，后续许多基础学科笔记整理使用Latex输出，不用像Word文档一样过分关心排版问题。&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;下面便是本人尝试配置Latex环境的步骤，步骤并非完全原创，而是在网络中四处借鉴，整理而来。此处写下，方便日后查看。&lt;br&gt;
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;用Vscode写Markdown语法完美正确地输出带各种复杂数学公式的PDF并不容易。毕竟Markdown语法输出目标并非在纸上，而是网页。在心中不爽地驱使下，我决定尝试使用Vscode配置Latex编写环境，后续许多基础学科笔记整理使用Latex输出，不用像Word文档一样过分关心排版问题。&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;下面便是本人尝试配置Latex环境的步骤，步骤并非完全原创，而是在网络中四处借鉴，整理而来。此处写下，方便日后查看。&lt;/p&gt;
     
     </summary>
     
@@ -110,7 +102,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Lab4&quot;&gt;&lt;a href=&quot;#Lab4&quot; class=&quot;headerlink&quot; title=&quot;Lab4&quot;&gt;&lt;/a&gt;Lab4&lt;/h1&gt;&lt;h2 id=&quot;Task-A：基本输入输出函数的重定向&quot;&gt;&lt;a href=&quot;#Task-A：基本输入输出函数的重定向&quot; class=&quot;headerlink&quot; title=&quot;Task A：基本输入输出函数的重定向&quot;&gt;&lt;/a&gt;Task A：基本输入输出函数的重定向&lt;/h2&gt;&lt;h2 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h2&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的&lt;code&gt;printf()&lt;/code&gt;、&lt;code&gt;fputc()&lt;/code&gt;、&lt;code&gt;fgetc()&lt;/code&gt;函数，至UART/Serial Port。利用输出字符串来对系统外部中断IRQ产生更形象的认识。&lt;br&gt;
+      &lt;h1 id=&quot;Lab4&quot;&gt;&lt;a href=&quot;#Lab4&quot; class=&quot;headerlink&quot; title=&quot;Lab4&quot;&gt;&lt;/a&gt;Lab4&lt;/h1&gt;&lt;h2 id=&quot;Task-A：基本输入输出函数的重定向&quot;&gt;&lt;a href=&quot;#Task-A：基本输入输出函数的重定向&quot; class=&quot;headerlink&quot; title=&quot;Task A：基本输入输出函数的重定向&quot;&gt;&lt;/a&gt;Task A：基本输入输出函数的重定向&lt;/h2&gt;&lt;h2 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h2&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的&lt;code&gt;printf()&lt;/code&gt;、&lt;code&gt;fputc()&lt;/code&gt;、&lt;code&gt;fgetc()&lt;/code&gt;函数，至UART/Serial Port。利用输出字符串来对系统外部中断IRQ产生更形象的认识。&lt;/p&gt;
     
     </summary>
     
@@ -134,7 +126,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;嵩云秦树久离居，双鲤迢迢一纸书。——李商隐《寄令狐郎中》&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&lt;del&gt;通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。&lt;/del&gt;&lt;br&gt;
+&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&lt;del&gt;通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。&lt;/del&gt;&lt;/p&gt;
     
     </summary>
     
@@ -159,8 +151,9 @@
     
       &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;本文主要针对Matlab中有关信号与系统问题的函数及语法总结。&lt;/p&gt;
 &lt;h1 id=&quot;Lab-1&quot;&gt;&lt;a href=&quot;#Lab-1&quot; class=&quot;headerlink&quot; title=&quot;Lab 1&quot;&gt;&lt;/a&gt;Lab 1&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;产生一串数字区间&lt;/strong&gt;：&lt;code&gt;n=-5:10&lt;/code&gt;产生了从-5~10的区间整数序列&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;stem(n, x)&lt;/code&gt;函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。&lt;br&gt;_例如1：画出$x[n]=2n,-3\leq n\leq 3$_&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;产生一串数字区间&lt;/strong&gt;：&lt;code&gt;n=-5:10&lt;/code&gt;产生了从-5~10的区间整数序列&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;stem(n, x)&lt;/code&gt;函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。&lt;br&gt;&lt;em&gt;例如1：画出$x[n]=2n,-3\leq n\leq 3$&lt;/em&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight m&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;n&lt;span class=&quot;built_in&quot;&gt;=&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;x&lt;span class=&quot;built_in&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*n;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;stem(n, x)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
@@ -178,7 +171,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，在此摘抄了精彩对话之一。&lt;br&gt;
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，在此摘抄了精彩对话之一。&lt;/p&gt;
     
     </summary>
     
@@ -204,7 +197,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;瀑布天落，半与银河争流，腾虹奔电，潈射万壑，此宇宙之奇诡也。——李白《秋于敬亭送从侄专游庐山序》&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。然后再是对后半部分进行梳理。&lt;br&gt;
+&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;整个信号与系统由概论、介绍LTI系统及卷积、傅里叶级数、傅里叶变换、信号与系统的时域与频域特性、信号采样、通信系统（信号调制）、拉普拉斯变换等章节构成。&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;其中LTI系统及卷积、傅里叶级数、傅里叶变换是最重要的基础部分；而其余章节主要偏向于对这3个章节的应用与拔高。本文首先会对这3个章节进行串线梳理。然后再是对后半部分进行梳理。&lt;/p&gt;
     
     </summary>
     
@@ -229,7 +222,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h1&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。&lt;br&gt;
+      &lt;h1 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h1&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。&lt;/p&gt;
     
     </summary>
     
@@ -252,7 +245,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。&lt;br&gt;下面是“阅读更多”的分页。&lt;br&gt;
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;利用Hexo建立一个自己的博客还是需要一系列的步骤。为了理清思路，将博客转变成一种记录一些经历与经验的生产工具，而不是为其繁琐的代码、格式、程序所困，故梳理出一些要点。&lt;br&gt;下面是“阅读更多”的分页。&lt;/p&gt;
     
     </summary>
     
