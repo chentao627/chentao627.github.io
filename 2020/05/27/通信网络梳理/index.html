@@ -194,7 +194,7 @@
 <li>Address：6个字节</li>
 <li>Type：指示更高的层协议(主要是IP协议，但也可能支持其他协议，如Novell IPX和AppleTalk)</li>
 <li>CRC：在接收端检查，如果检测到错误，帧就会被丢弃</li>
-<li><strong>最小长度</strong>： 与传输速率有关。对于10Mbps，2500m的LAN而言为64byte（一个RTT是$50\mu sec$，以太网传输一个bit的时间为$100nsec$，那么frame最小长度为$500bits\rightarrow512bits=64byte$）</li>
+<li><strong>最小长度</strong>： 与传输速率有关。对于10Mbps，250m的LAN而言为64byte（一个RTT是$50\mu sec$，以太网传输一个bit的时间为$100nsec$，那么frame最小长度为$500bits\rightarrow512bits=64byte$）</li>
 </ul>
 </li>
 </ul>
@@ -795,22 +795,6 @@
 
     
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>

@@ -164,7 +164,7 @@
 </ol>
 <hr>
 <h1 id="后半部分的梳理"><a href="#后半部分的梳理" class="headerlink" title="后半部分的梳理"></a>后半部分的梳理</h1><h2 id="四、拉普拉斯变换"><a href="#四、拉普拉斯变换" class="headerlink" title="四、拉普拉斯变换"></a>四、拉普拉斯变换</h2><ul>
-<li>拉普拉斯变换将时域到频域的变换拓展到了针对非绝对可积信号的变换。拉普拉斯的正、逆变换公式如下：<br>$$<br>\begin{cases}<br>X(s)=\int_{-\infty}^{+\infty}x(t)e^{-st}{\rm d}t&amp; {s=\sigma+j\omega}\\<br>x(t)={1 \over 2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty}X(s)e^{st}{\rm d}s=\oint_c X(s)e^{st}{\rm d}s<br>\end{cases}<br>$$<br>正变换中，$x(t)$与$e^{-st}$由$g(t)=x(t)e^{-\sigma t}$与傅里叶正变换推导而来。<br>&ensp;&ensp;&ensp;&ensp;拉普拉斯变换同样可以记作：<br>$$x(t)\stackrel{LT}\longleftrightarrow X(s), ROC$$<br>&ensp;&ensp;&ensp;&ensp;其中，ROC(Region of convergence)即收敛域，非常重要。拉普拉斯的正逆变换公式与傅里叶变换公式几乎一致，不同之处在于$s=\sigma+j\omega$。但需要警惕的是：<strong>当且仅当拉普拉斯变换对的收敛域ROC在复平面上内含j\omega轴时，傅里叶变换才能在s=0+j\omega处与该处的拉普拉斯变换对应相等。</strong></li>
+<li>拉普拉斯变换将时域到频域的变换拓展到了针对非绝对可积信号的变换。拉普拉斯的正、逆变换公式如下：<br>$$<br>\begin{cases}<br>X(s)=\int_{-\infty}^{+\infty}x(t)e^{-st}{\rm d}t&amp; {s=\sigma+j\omega}\\<br>x(t)={1 \over 2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty}X(s)e^{st}{\rm d}s=\oint_c X(s)e^{st}{\rm d}s<br>\end{cases}<br>$$<br>正变换中，$x(t)$与$e^{-st}$由$g(t)=x(t)e^{-\sigma t}$与傅里叶正变换推导而来。<br>&ensp;&ensp;&ensp;&ensp;拉普拉斯变换同样可以记作：<br>$$x(t)\stackrel{LT}\longleftrightarrow X(s), ROC$$<br>&ensp;&ensp;&ensp;&ensp;其中，ROC(Region of convergence)即收敛域，非常重要。拉普拉斯的正逆变换公式与傅里叶变换公式几乎一致，不同之处在于$s=\sigma+j\omega$。但需要警惕的是：<strong>当且仅当拉普拉斯变换对的收敛域ROC在复平面上内含$j\omega$轴时，傅里叶变换才能在$s=0+j\omega$处与该处的拉普拉斯变换对应相等。</strong></li>
 </ul>
 <h3 id="1-ROC的八大性质"><a href="#1-ROC的八大性质" class="headerlink" title="1.ROC的八大性质"></a>1.ROC的八大性质</h3><ol>
 <li><strong>$X(s)$的ROC在S平面内，由平行于$j\omega$轴的带状区域所组成</strong></li>
@@ -206,7 +206,7 @@
 <h3 id="5-常见的拉普拉斯变换对"><a href="#5-常见的拉普拉斯变换对" class="headerlink" title="5.常见的拉普拉斯变换对"></a>5.常见的拉普拉斯变换对</h3><ol>
 <li><strong>纯虚负指数因果信号的拉普拉斯变换</strong><br>$$e^{-at}u(t)\stackrel{LT}\longleftrightarrow {1 \over {s+a}}, Re{s}&gt;-a $$</li>
 <li><strong>纯虚负指数反因果信号的拉普拉斯变换</strong><br>$$-e^{-at}u(-t)\stackrel{LT}\longleftrightarrow {1 \over {s+a}}, Re{s}&lt;-a$$</li>
-<li><strong>纯虚指数因果信号加减组合的拉普拉斯变换（ROC取交集）</strong><br>$$3e^{-2t}u(t)-2e^{-t}u(t)\stackrel{LT}\longleftrightarrow<br>\begin{cases}<br>{3 \over {s+2}}&amp; {Re{s}&gt;-2} \\<br>{2 \over {s+1}}&amp; {Re{s}&gt;-1}<br>\end{cases}<br>={s+1 \over s^2+3s+2},Re{s}&gt;-1$$</li>
+<li><strong>纯虚指数因果信号加减组合的拉普拉斯变换（ROC取交集）</strong><br>$$3e^{-2t}u(t)-2e^{-t}u(t)\stackrel{LT}\longleftrightarrow<br>\begin{cases}<br>{3 \over {s+2}}&amp; {Re{s}&gt;-2} \\<br>{2 \over {s+1}}&amp; {Re{s}&gt;-1}<br>\end{cases}<br>={s-1 \over s^2+3s+2},Re{s}&gt;-1$$</li>
 <li><strong>单位阶跃信号的拉普拉斯变换（由纯负虚指数因果信号$a=0$得到）</strong><br>$$u(t)\stackrel{LT}\longleftrightarrow {1 \over s}, Re{s}&gt;0$$</li>
 <li><strong>余弦信号的拉普拉斯变换</strong><br>$$\cos(\omega_0 t)u(t)={1 \over 2}e^{j\omega_0 t}u(t)+{1 \over 2}e^{-j\omega_0 t}u(t)\stackrel{LT}\longleftrightarrow {s \over s^2+\omega_0^2},Re{s}&gt;Re{j\omega}=0 $$</li>
 <li><strong>正弦函数的拉普拉斯变换</strong><br>$$\sin(\omega_0 t)u(t)={1 \over 2j}e^{j\omega_0 t}u(t)-{1 \over 2j}e^{-j\omega_0 t}u(t)\stackrel{LT}\longleftrightarrow {\omega_0 \over s^2+\omega_0^2},Re{s}&gt;Re{j\omega}=0$$</li>
@@ -898,22 +898,6 @@
 
     
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>
