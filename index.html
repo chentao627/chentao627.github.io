@@ -123,19 +123,10 @@
       
 
       
-      <p>&ensp;&ensp;&ensp;&ensp;最近感觉自己迷上了摄影，在路上走着走着、在自习室休息的时候，时不时灵感来了都会拿手机整一两张照片。但众所周知的是，未经过后期处理的照片大多都不是很好看的，俗称卖相不太好。故最近空余时间便拿来涉猎了一下Photoshop里面关于照片后期调色处理的内容。这里主要记录一下照片的电影调色是如何实现的。<br>&ensp;&ensp;&ensp;&ensp;总的来说分为三步：</p>
-<ol>
-<li>拍摄RAW类型照片$\rightarrow$</li>
-<li>在电脑上通过后缀为.dcp的相机色彩文件，在Photoshop中转换为LOG照片类型$\rightarrow$</li>
-<li>在Photoshop中利用下载的调色大师们配置好的3D LUTS包，加载到图片上，整个过程便算完成了。<br>&ensp;&ensp;&ensp;&ensp;我自己因为经费不足，平常用到的拍摄器材便是手机了。我的手机型号是华为的P20，一般在网上下载的.dcp相机配置文件包中是不含的。故该文件需要自己配置。其实配置这个文件说来也很简单。</li>
-</ol>
-<ul>
-<li>在手机相机设置里打开允许储存RAW类型照片的按钮，随便拍一张照片，储存为DNG格式，在属性里面把相机型号复制下来</li>
-<li>下载一个DNG_Profile_Editor，导入该照片，在base profiles里的choose external profiles选项，选择一个网上找得到的任意一个相机型号的.dcp文件，然后选择导出，重命名为VisionLOG_XXXXX(复制的相机型号)即可</li>
-<li>把该文件放到PS的…\Adobe\CameraRaw\CameraProfiles里面即可</li>
-<li>使用时即把需要调色的RAW类型图片用camera raw打开，在“相机校准”选项-“相机配置文件-名称”里选择该.dcp配置文件即可完成RAW-LOG转换，此时照片大概率会变灰色<br>&ensp;&ensp;&ensp;&ensp;然后就是在Photoshop中利用“颜色查找”载入自己下载的3D LUTS文件即可开启电影滤镜效果</li>
-</ul>
-
+      <p>&ensp;&ensp;&ensp;&ensp;最近感觉自己迷上了摄影，在路上走着走着、在自习室休息的时候，时不时灵感来了都会拿手机整一两张照片。但众所周知的是，未经过后期处理的照片大多都不是很好看的，俗称卖相不太好。故最近空余时间便拿来涉猎了一下Photoshop里面关于照片后期调色处理的内容。这里主要记录一下照片的电影调色是如何实现的。</p>
+      
+      <a class="article-more-link" href="/2020/09/19/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86-%E7%94%B5%E5%BD%B1%E8%B0%83%E8%89%B2/">阅读更多...</a>
+      
       
       <!-- reward -->
       
@@ -1231,6 +1222,22 @@
 
     
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>这行代码为原始，随时可以删除注释符号
 </body>
 
 </html>

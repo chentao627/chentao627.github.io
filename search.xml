@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>20200905随笔</title>
+    <url>/2020/09/05/20200905%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;返校后的考试周昨天便结束了，今天是周六，两天后——即下周一便正式上课了。于是便正巧空出2天的真空时间。<br>&ensp;&ensp;&ensp;&ensp;是啊，这两天我也不知道干点啥好。前段时间陆陆续续地开始给有点眼缘的导师发了邮件，表示期望去其实验室学习参与参与科研，干点活，第一位导师因为实验室传统意义上没接收过本科生婉言拒绝了；另外一位在四天前让我发了简历和自我介绍后便再无回复——也许是忙碌没看到邮件吧，我也懒得去猜其中的原因了。<br>&ensp;&ensp;&ensp;&ensp;不想出国读硕士研究生的心境下在格院读书其实还是挺难顶的，想留在国内深造便只有2条路——即保研与考研；往届还好，国际形势明朗，大家都想出国，去灯塔、去英联邦、去新加坡，保研名额还能够顺延至排名50%的位置；但如今新冠疫情一来，便不知本专业其他同学意向如何了。<br>&ensp;&ensp;&ensp;&ensp;</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【日常记录】2020520随笔</title>
     <url>/2020/05/20/20200520%E9%9A%8F%E7%AC%94/</url>
     <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，在此摘抄了精彩对话之一。</p>
@@ -44,6 +57,54 @@ B: Yeah...
       </tags>
   </entry>
   <entry>
+    <title>利用C语言调用matlab引擎</title>
+    <url>/2020/05/17/C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/</url>
+    <content><![CDATA[<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>&ensp;&ensp;&ensp;&ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？<br>&ensp;&ensp;&ensp;&ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。</p>
+<a id="more"></a>
+<p>&ensp;&ensp;&ensp;&ensp;本人在网上搜集到的调用matlab引擎的方法有二：</p>
+<ol>
+<li>一是程序运行需要完整的matlab软件进行支持；</li>
+<li>二是可以将matlab中的.m文件编译为${\rm .dll}$文件，运行时只需MCR即可。（MATLAB Component Runtime 简称 MCR，主要用于把MATLAB编写的东西打包到没装MATLAB的机器上使用。它是一组独立的共享库，通过它能够执行在MATLAB中编写的M文件。MCR支持MATLAB语言的所有功能。）</li>
+</ol>
+<p>&ensp;&ensp;&ensp;&ensp;现暂时尝试第一种方法。而调用引擎的第一步便是要配置好环境。</p>
+<h2 id="包含目录的路径配置"><a href="#包含目录的路径配置" class="headerlink" title="包含目录的路径配置"></a>包含目录的路径配置</h2><p>&ensp;&ensp;&ensp;&ensp;本人使用C语言编译环境为VS2019，所以首先是需要将VS的环境配置好。所以便打开要调用matlab的C语言工程文件，点开它的属性，找到“配置属性”中的“VC++目录”，将matlab中的相关文件路径添加进去。本人在matlab目录下找到相关文件：</p>
+<p><img src="https://img-blog.csdnimg.cn/20191003171140240.png" alt="Matlab目录下的文件夹"></p>
+<p>&ensp;&ensp;&ensp;&ensp;在extern文件夹中：</p>
+<p><img src="https://img-blog.csdnimg.cn/20191003171249440.png" alt="include文件夹"></p>
+<p>&ensp;&ensp;&ensp;&ensp;有一个让学C的人感到亲切而又熟悉的include文件夹。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191003171410778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgxMDQxMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>&ensp;&ensp;&ensp;&ensp;点开它，我们发现里面是浩瀚的.h文件海洋。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191003171456361.png" alt="在这里插入图片描述"></p>
+<p>&ensp;&ensp;&ensp;&ensp;于是我们便把这个include文件夹路径添加到VS编译器的“包含目录”中。此处“包含”指那个include目录。这里要注意系统位数，matlab与VS文件的操作位数一定要对应。本人所用电脑为64位，安装的matlab亦为64位。</p>
+<h2 id="静态数据库的目录配置"><a href="#静态数据库的目录配置" class="headerlink" title="静态数据库的目录配置"></a>静态数据库的目录配置</h2><p><img src="https://img-blog.csdnimg.cn/20191003171634592.png" alt="在这里插入图片描述"></p>
+<p>&ensp;&ensp;&ensp;&ensp;库目录的路径添加如出一辙，所添加文件夹为include文件夹下方lib文件夹中，win64中的Microsoft文件夹，里面全是.lib文件。</p>
+<h2 id="附加依赖项的添加"><a href="#附加依赖项的添加" class="headerlink" title="附加依赖项的添加"></a>附加依赖项的添加</h2><p><img src="https://img-blog.csdnimg.cn/20191003172035729.png" alt="在这里插入图片描述"></p>
+<p>&ensp;&ensp;&ensp;&ensp;然后再在链接器中的输入里，在附加依赖项中加 “libeng.lib;libmat.lib;libmex.lib;libmx.lib;”以便编译器引用所添加的.lib后缀文件们。</p>
+<h2 id="系统环境变量的配置"><a href="#系统环境变量的配置" class="headerlink" title="系统环境变量的配置"></a>系统环境变量的配置</h2><p>&ensp;&ensp;&ensp;&ensp;但这还不算完，我们最后还需要到Windows中的“高级系统设置”中找到“环境变量”来设置“系统变量”中的“Path”。</p>
+<p>&ensp;&ensp;&ensp;&ensp;环境变量是个什么东西呢？让我们运行Win+R，在其中输入环境变量path中有的一个文件目录“system32”，会发现系统自动打开了该文件夹；而输入环境变量中没有路径的文件夹名，但系统中存在该文件夹，却不能够打开成功。所以环境变量相当于是告诉系统当用户给的指令不清楚时到里面去找路径，如果有对应的便可以快速打开。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191003172349474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgxMDQxMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>将电脑上matlab的bin，win64文件夹添加进去。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191003172514749.png" alt="在这里插入图片描述"></p>
+<p>&ensp;&ensp;&ensp;&ensp;理论上配置环境就完成了。</p>
+<p>&ensp;&ensp;&ensp;&ensp;在测试的时候出现了一个小插曲，那便是本人在执行完以上步骤后发现C中还是无法打开”engine.h”文件。但最后解决了，问题出在VS配置管理器中“活动解决方案平台”用的还是x86位的，将其设置为x64位后报错即可消除。</p>
+<h1 id="遗传算法产生随机数的实现"><a href="#遗传算法产生随机数的实现" class="headerlink" title="遗传算法产生随机数的实现"></a>遗传算法产生随机数的实现</h1><p>下面是本人写的代码：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//一个在给定区间[a, b]内产生随机数的程序</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"engine.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Percise 0.001</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LBOUND 200</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> UBOUND 500</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"Loading...\n"</span>);</span><br><span class="line">	engine* ep;</span><br><span class="line">	<span class="keyword">if</span> (!(ep = engOpen(<span class="literal">NULL</span>)))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"\n无法启动MATLAB引擎\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> EXIT_FAILURE;</span><br><span class="line">	&#125;                                   <span class="comment">//判断引擎是否启动成功</span></span><br><span class="line">	<span class="keyword">double</span> L[] = &#123; LBOUND &#125;;</span><br><span class="line">	<span class="keyword">double</span> U[] = &#123; UBOUND &#125;;</span><br><span class="line">	mxArray*Low,*Up,* Num,*Realnum;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> range = UBOUND - LBOUND;</span><br><span class="line">	<span class="keyword">double</span> number[] = &#123; range/Percise &#125;;              <span class="comment">//将拥有该精度时区间内数字的个数赋给number数组,number=3</span></span><br><span class="line">	Num = mxCreateDoubleMatrix(<span class="number">1</span>, <span class="number">1</span>, mxREAL);       <span class="comment">//初始化了一个mxArray，该数组为1x1的double实数类型</span></span><br><span class="line">	Low= mxCreateDoubleMatrix(<span class="number">1</span>, <span class="number">1</span>, mxREAL);</span><br><span class="line">	Up= mxCreateDoubleMatrix(<span class="number">1</span>, <span class="number">1</span>, mxREAL);</span><br><span class="line">	Realnum = mxCreateDoubleMatrix(<span class="number">1</span>, <span class="number">1</span>, mxREAL);</span><br><span class="line">	<span class="built_in">memcpy</span>(mxGetPr(Low), L, <span class="keyword">sizeof</span>(L));</span><br><span class="line">	<span class="built_in">memcpy</span>(mxGetPr(Up), U, <span class="keyword">sizeof</span>(U));</span><br><span class="line">	<span class="built_in">memcpy</span>(mxGetPr(Num), number, <span class="keyword">sizeof</span>(number));   <span class="comment">//将number数组中的元素拷贝至matlab格式数组mxArray中,现在已有一个mxArray形式的数组了，它叫Num，储存着个数，但现在它还未被写入matlab引擎</span></span><br><span class="line">	engPutVariable(ep, <span class="string">"Num"</span>, Num);                 <span class="comment">//将mxArray格式的数组Num输入matlab引擎    </span></span><br><span class="line">	engPutVariable(ep, <span class="string">"Low"</span>, Low);</span><br><span class="line">	engPutVariable(ep, <span class="string">"Up"</span>, Up);</span><br><span class="line">	engEvalString(ep, <span class="string">"Kbits=fix(log(Num)/log(2))"</span>);<span class="comment">//让matlab计算Kbits</span></span><br><span class="line">	engEvalString(ep, <span class="string">"Vmax=2^Kbits"</span>);              <span class="comment">//给matlab输入命令字符串，让其执行</span></span><br><span class="line">	engEvalString(ep, <span class="string">"rndbin=fix(2*rand(1,Kbits))"</span>);</span><br><span class="line">	engEvalString(ep, <span class="string">"rndbin2dec=bin2dec(num2str(rndbin,'%d'))"</span>);</span><br><span class="line">	engEvalString(ep, <span class="string">"r=rndbin2dec/Vmax"</span>);</span><br><span class="line">	engEvalString(ep, <span class="string">"Realnum=Low+(Up-Low)*r"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (Realnum= engGetVariable(ep, <span class="string">"Realnum"</span>)) <span class="comment">//获取在matlab中计算的变量Vmax的值，因为在获取前Vmax在此只是一个空的储存空间</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"It can be predicted that matlab has processed our order correctly!\n"</span>);   <span class="comment">//这里准备获取答案</span></span><br><span class="line">		Num=engGetVariable(ep, <span class="string">"Num"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Num= %f\n\n"</span>, *mxGetPr(Num));<span class="comment">//为什么Num没有用获得函数“engGetVariabe”便可得到呢？因为Num的赋值是在此利用memcpy写入的</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"The random number is: %f\n "</span>, *mxGetPr(Realnum));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Too bad!"</span>);</span><br><span class="line">	mxDestroyArray(Low);</span><br><span class="line">	mxDestroyArray(Up);</span><br><span class="line">	mxDestroyArray(Num);</span><br><span class="line">	mxDestroyArray(Realnum);</span><br><span class="line">	engClose(ep);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&ensp;&ensp;&ensp;&ensp;具体的engine函数可以通过自行查看${\rm engine.h}$文件得知。</p>
+<p>&ensp;&ensp;&ensp;&ensp;有一点需要注意的是，从C传递给matlab中的数据类型都是mxArray格式的数组矩阵，这里需要注意，通常赋值的办法便是利用${\rm memcpy}$函数将具体数值拷贝至该数组中。</p>
+<p>&ensp;&ensp;&ensp;&ensp;利用engine函数很方便的一点便是，任何指令都可以通过${\rm engEvalString}$函数以字符串的形式传递给matlab让它直接执行，且算法的中间不需要提前在C中声明并传递给matlab，这也很好地保留了matlab语言简洁易用的特性。</p>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
+</script>]]></content>
+      <categories>
+        <category>C/C++语言</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【日常记录】20200709随笔</title>
     <url>/2020/07/09/20200709%E9%9A%8F%E7%AC%94/</url>
     <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;8月中旬开学就是大三学期了。恍然一回首在进入大学后这两年多来自己仿佛也没干出什么特别有意义的事情，加上对未来发展方向的迷茫，心中不免产生一丝焦虑。我也想借此随笔梳理以下心里面的焦虑点。</p>
@@ -68,79 +129,27 @@ B: Yeah...
       </tags>
   </entry>
   <entry>
-    <title>【感情往事】一段失败的经历</title>
-    <url>/2020/08/14/20200814%E6%97%A5%E8%AE%B0/</url>
-    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;她是川师的一个女孩，家住在德阳，父母都在德阳开公司。</p>
+    <title>【学科笔记】Embed Processor课程的仿真实验笔记</title>
+    <url>/2020/06/02/Embed-Processor%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Lab4"><a href="#Lab4" class="headerlink" title="Lab4"></a>Lab4</h1><h2 id="Task-A：基本输入输出函数的重定向"><a href="#Task-A：基本输入输出函数的重定向" class="headerlink" title="Task A：基本输入输出函数的重定向"></a>Task A：基本输入输出函数的重定向</h2><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>&ensp;&ensp;&ensp;&ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的<code>printf()</code>、<code>fputc()</code>、<code>fgetc()</code>函数，至UART/Serial Port。利用输出字符串来对系统外部中断IRQ产生更形象的认识。</p>
 <a id="more"></a>
-<p>&ensp;&ensp;&ensp;&ensp;从5月18日，也就是我奶奶去世的那一天到现在8月14日，认识她已经将近3个月。这三个月里我们渐渐地从相识到熟悉，从熟悉到每天晚上聊天的形影不离——大多数时候都能够陪她聊天聊到深夜。聊喜好、聊旅行、聊摄影、聊人、聊未来。<br>&ensp;&ensp;&ensp;&ensp;她是一个非常成熟的女孩（<del>？也许吧</del>），从她的外表，独立学习工作，对正事有自己的思考都可以看出来。期间她正好来成都见她的朋友，那我作为东道主，也自然而然地请她吃了一顿她想吃的火锅。离开后，她也给我承诺下次带我去吃太古里的肥肠鸡（<del>是这个东西吗？我不知道，因为她确实没请我去过</del>）。事情到这里看起来一切都还蛮正常的。</p>
-<p>&ensp;&ensp;&ensp;&ensp;我本以为我与她的关系会继续深入下去，但是事情仿佛并不如愿。在前天晚上，她回到家突然给我发来几条消息：</p>
-<blockquote>
-<p>“<strong>我今天去相亲了</strong>”<br>    “<strong>还可以</strong>”<br>    “<strong>是以前的同学</strong>”。</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;我不知道是我见识太少还是其他乱七八糟的，看到这里，我便不知道应该说什么话了。过了好久，才从停滞的大脑中找出几个文字输入到屏幕上：</p>
-<blockquote>
-<p>“<label style="color:grey"><em>那你准备深入发展了吗？</em></label>”<br>“哪有那么快”<br>“只是说他比较外向”<br>“比我更会做事情”<br>“虽然他也是技术性人才”<br>“但是”<br>“社会性挺好的”<br>“也是那种爱运动爱旅行爱摄影的”<br>“哎哟”<br>“我榆木脑袋”<br>“我今天素颜 可能可能看起来也比较….”</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;不知道一般人遇到这种事情应该怎么应对，反正这种电视剧般的情节就发生在了我的头上了，但我仍然觉得应该把自己的真实想法表达出来：</p>
-<blockquote>
-<p>“<label style="color:grey"><em>我也有点喜欢你，这可怎么办啊</em></label>”</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;在半小时后，她开始回复了</p>
-<blockquote>
-<p>“AA（<del>我的小名</del>）”<br>“啥子哦”<br>“我还是有点惊讶”<br>“因为”<br>“AA从不曾表达”<br>“天啊”</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;得嘞，寻思我天天和你互相分享生活，聊天聊到半夜，聊人生聊未来聊爱好是在做职业生涯规划。聊天仍在继续：</p>
-<blockquote>
-<p>“今天那个男生”<br>“可能是那种”<br>“让人眼前一亮”<br>“很阳光”<br>“虽然也不高，好像也不帅，但是还是很斯文”<br>“我还是有点羞的”<br>“跟我前男友一个星座”<br>“就是”<br>“很有人格魅力吧”<br>“很斯文”<br>“但是我又还是比较谨慎嘛”<br>“不能以貌取人”<br>“反正还是有点好感了”</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;对嘛，他很好。反正认定了他很好就对了。她继续发言：</p>
-<blockquote>
-<p>“如果遇到一个和我很像的”<br>“会吵起来吧”<br>“AA”<br>“我也不知道”<br>“是不是我的错觉”<br>“我感觉AA跟我很像”<br>“就是”<br>“很像”<br>“AA反而比我稳重得多”<br>“比我更有大局观”<br>“而且”<br>“AA很被动，更内敛”</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;这话锋一转，开始评价起我来了。我很疑惑“有大局观”、“稳重”什么时候成为了缺点了。她最后一句话也许是客观的。但吵架这件事情在我们相处的这三个月内确实没发生过：</p>
-<blockquote>
-<p>“<label style="color:grey"><em>那我们从五月份到现在吵过没有嘛</em></label>”<br>“没有！”<br>“我平时就比较稳了”<br>“比较安静了”<br>“就很向往稍微热烈一点的生活”<br>“激情一点”<br>“然后再自己的可控范围内”<br>“<label style="color:grey"><em>唉，既然你都这样说了</em></label>”<br>“啊啊啊啊啊啊”<br>“我开始犹豫了”</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;哈哈，反正喜欢一个人是不需要理由的，还犹豫什么呢。继续聆听她的发言：</p>
-<blockquote>
-<p>“其实”<br>“见得多了”<br>“越来越清晰自己想要的是什么样的”<br>“也越来越有自己的定位”<br>“我就喜欢所谓“奶狗”【微信红脸表情】”<br>“反而”<br>“很稳重优秀的”<br>“只能做朋友了”</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;这还表扬起我来了，男同胞们，这种手段杀伤效果太大了。继续：</p>
-<blockquote>
-<p>“现在这个男生就是”<br>“没事就问你在干嘛”<br>“每天都想见你”<br>“让你看人家打球”<br>“让你一起跑步”<br>“支持你学习”<br>“做你的“贤妻良母”那种”<br>“今天”<br>“人家见面”<br>“还带了一大堆枣子”<br>“说是老家的”<br>“喊带给我妈”<br>“天那”<br>“哪个遭得住”</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;本以为上面的杀伤效果已经挺大了，想不到还有劲更大的。从聊天记录来看搞半天你和这位男生已经相处了不是一两天了嘛，又是看打球又是跑步的。第一次吃个饭连给你妈妈的枣子都提上了，我记得当时我请你吃火锅的时候问她“买一束花之类的”，她说“不好拿”的嘛。经验告诉我这人可能耍朋友不止一两次了，我要提问：</p>
-<blockquote>
-<p>“<label style="color:grey"><em>他耍过几次朋友</em></label>”<br>“他”<br>“<strong>初恋</strong>”<br>“以前就是很有闪光点的，<strong>但是别人不谈恋爱</strong>”<br>“现在就是逮住我了嘛”<br>“就是跟你发”<br>“啥子耳环”<br>“甜品店”<br>“拍照好看的地方”<br>“简直”<br>“就是把我的爱好抓得死死的”<br>“AA啊！”<br>“啊啊啊啊”</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;啊个五金店，朋友们，你们说你们信吗？反正我初恋的时候别说提枣子和聊耳环甜品店了，就是和初恋聊天都很生疏。</p>
-<blockquote>
-<p>“其实“<br>“相亲是说着玩的”<br>“本来就认识”<br>“相亲是我朋友说的”<br>“喊我相亲”<br>“其实她们也是开玩笑”<br>“但是”<br>“反正就这样了”<br>“他”<br>“在南昌”<br>“他家是成都的”<br>“好像也是在川大那边”<br>“但是他在我们学习读到大的”<br>“在这边也有家”<br>“我妈”<br>“看见枣子”<br>“只会夸人家男孩子懂事”<br>“枣子甜”</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;什么叫作“杀人，还要诛心”。<br>&ensp;&ensp;&ensp;&ensp;我感觉这篇文章写到这里我写不下去了，实在是不想再去翻那天的聊天记录了。只能说我运气背，遇到了这种神段位的人，结局确实太令人伤心了。</p>
-<p>&ensp;&ensp;&ensp;&ensp;第二天，也就是昨天，那位“同学”又约着她晚上出去吃烤肉。我正好没有什么事情，就订了一张高铁票，去了德阳玩。<br>&ensp;&ensp;&ensp;&ensp;在高铁上她对我说：“<strong>作为东道主，自然是有朋自远方来，我今天中午就不跟老爸吃饭就可以了~你也不要有心理压力。</strong>”<br>&ensp;&ensp;&ensp;&ensp;到了中午，她发来一句：“<strong>我爸爸喊我跟哥哥吃午饭，我看吃了饭，行不行</strong>”<br>&ensp;&ensp;&ensp;&ensp;到了下午，德阳下起了雨，她发来一句：“<strong>要去公司，搬东西，人不够，我妈给我打电话</strong>”</p>
-<p>&ensp;&ensp;&ensp;&ensp;就这样吧。</p>
+
+<h2 id="被printf-函数调用的低一层I-O函数"><a href="#被printf-函数调用的低一层I-O函数" class="headerlink" title="被printf()函数调用的低一层I/O函数"></a>被<code>printf()</code>函数调用的低一层I/O函数</h2><p>&ensp;&ensp;&ensp;&ensp;在基于ARM的Microcontroller上，ARM C Library和Microlib支持着C标准库的函数。在这些标准库中，常见的<code>printf()</code>函数<code>scanf()</code>函数都位于熟悉的<code>stdio.h</code>包中，这也意味着这些<strong>函数的默认定向都是默认的输入输出端口</strong>，例如键盘、显示屏。<br>&ensp;&ensp;&ensp;&ensp;其中，<code>printf()</code>函数又依赖于stream I/O函数<code>fputc()</code>，从而在目标设备上进行打印。而这一过程又取决于这取决于对<code>fputc()</code>的重定向方式；同理，类似地，<code>scanf()</code>函数也依赖于<code>fgetc()</code>来获取用户输入。</p>
+<ul>
+<li><strong><code>fputc()</code>、<code>fgetc()</code>的工作原理</strong><br>一般而言，函数<code>fputc()</code>会向<code>stream</code>（<code>FILE *</code>）传输字符。<strong>一个<code>stream</code>流表示到任一设备、文件或进程的通信通道</strong>。通常而言，当我们想要在控制台/终端中显示输出时，流要么是<code>STDOUT</code>，要么是<code>STDERR</code>。向2者中的一个流执行写入的话，将把写入的字符转移或重定向到控制台输出；同理，fgetc()从给定的流中读取字符。要通过控制台从用户获得输入，使用的流是<code>STDIN</code>。</li>
+</ul>
+<h2 id="重新实现C库函数来重定向printf"><a href="#重新实现C库函数来重定向printf" class="headerlink" title="重新实现C库函数来重定向printf()"></a>重新实现C库函数来重定向<code>printf()</code></h2><p>&ensp;&ensp;&ensp;&ensp;为了重新实现它们，我们需要两个基本的UART功能:一个用来读取字符，另一个用来编写字符。因此，我们可以定义两个函数，即<code>uartWrite()</code>和<code>uartRead()</code>。(Ps:注意，这些就像驱动程序功能，是特定于设备的，此处使用的是LPC1768)。<br>&ensp;&ensp;&ensp;&ensp;具体的函数调用关系如下图：<br>$${\rm printf()\Rightarrow fputc()\Rightarrow uartWrite()}$$<br>$${\rm scanf()\Rightarrow fgetc()\Rightarrow uartRead()}$$<br>&ensp;&ensp;&ensp;&ensp;<em>我们只需要修改流I/O函数的调用为我们自己编译的、重定向好了的函数，即可联动printf()进行重定向了。</em></p>
+<h2 id="实验具体的题目"><a href="#实验具体的题目" class="headerlink" title="实验具体的题目"></a>实验具体的题目</h2><p>&ensp;&ensp;&ensp;&ensp;下列重定向后的代码输出有<code>*Timer*</code>干扰，修改代码，去除这个干扰。<br>这是主程序</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Embedded System Lab4 interrupter&amp;timer (2019-2020)</span></span><br><span class="line"><span class="comment">shufan.yang@glasgow.ac.uk</span></span><br><span class="line"><span class="comment">License: GPL.*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lpc17xx.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; //since we use c function, standard library is needed</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"uart.h"</span>  <span class="comment">//for initUART0() and other macros</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PRESCALE (25000-1)  <span class="comment">//25000 PCLK clock cycles to increment TC by 1 </span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delayMS</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> milliseconds)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initTimer0</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> g_ts;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> __irq <span class="keyword">void</span> <span class="title">TIM3_IRQ_Handler</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">FILE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">int</span> dummyVar; <span class="comment">//Just for the sake of redefining __FILE, we won't we using it anyways ;)</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">FILE __stdout; <span class="comment">//STDOUT</span></span><br><span class="line">FILE __stdin;  <span class="comment">//STDIN</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fputc</span><span class="params">(<span class="keyword">int</span> c, FILE * stream)</span><span class="comment">//##Rewrite the fputc() to call our func:uartWrite()?##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	uartWrite(c); <span class="comment">//Transmit Character</span></span><br><span class="line">	<span class="keyword">return</span> c; <span class="comment">//return the character written to denote a successful write</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fgetc</span><span class="params">(FILE * stream)</span><span class="comment">//Rewrite the fgetc()to call our func:uartRead()?##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c = uartRead(); <span class="comment">//Receive Character</span></span><br><span class="line">	uartWrite(c); <span class="comment">//To echo Received characters back to serial Terminal</span></span><br><span class="line">	<span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">uartWrite</span><span class="params">(<span class="keyword">char</span> c)</span><span class="comment">//##To define our own func. uartWirte, receive input char 'c'##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (!(LPC_UART0-&gt;LSR &amp; THRE)); <span class="comment">// wait till the THR is empty,   ##Does it ready to write?##</span></span><br><span class="line">	<span class="keyword">if</span>( c == <span class="string">'\n'</span> ) <span class="comment">//Send &lt;CR+LF&gt;</span></span><br><span class="line">	&#123;</span><br><span class="line">		LPC_UART0-&gt;THR = CARRIAGE_RETURN;</span><br><span class="line">		<span class="keyword">while</span>(!(LPC_UART0-&gt;LSR &amp; THRE )); </span><br><span class="line">		LPC_UART0-&gt;THR = LINE_FEED;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		LPC_UART0-&gt;THR = c; <span class="comment">//##To deliver input 'c' to THR##</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">uartRead</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//##To Define Our func. uartRead?, no receive##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(!(LPC_UART0-&gt;LSR &amp; RDR)); <span class="comment">//wait for data to arrive</span></span><br><span class="line">	<span class="keyword">return</span> LPC_UART0-&gt;RBR;           <span class="comment">//##To return what has been read?##</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	initUART0(); <span class="comment">//Init UART0 at baud-rate: 115200 @ 25Mhz PLCK</span></span><br><span class="line">	initTimer0(); <span class="comment">//Initialize Timer0 </span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Hey! This is your beloved printf().\nI have been redirected here!\n Stay Home, Save Life, Save NHS\n"</span>);<span class="comment">//##These are sentences needs to be retargeted##</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Tomorrow, and tomorrow, and tomorrow, Creeps in this petty pace from day to day, To the last syllable of recorded time; \n And all our yesterdays have lighted fools The way to dusty death. Out, out, brief candle. \n Life's but a walking shadow, a poor player That struts and frets his hour upon the stage And then is heard no more. \n It is a tale Told by an idiot, full of sound and fury Signifying nothing.\n"</span> );</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"(Macbeth: Act 5, Scene 5, lines 19-28)"</span>);</span><br><span class="line">		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initTimer0</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//我自己估摸着可能是这个时钟函数出的问题</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//Assuming that PLL0 has been setup with CCLK = 100Mhz and PCLK = 25Mhz.</span></span><br><span class="line">    <span class="comment">/* #1:打开定时器0的电源(默认是打开的) */</span></span><br><span class="line">	LPC_SC-&gt;PCONP |= (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">//Power up TIM0. By default TIM0 and TIM1 are enabled.</span></span><br><span class="line">    <span class="comment">/* #2:时钟分频选择(默认00),00 四分频, 01 不分频, 10 二分频, 11 八分频 */</span></span><br><span class="line">	LPC_SC-&gt;PCLKSEL0 &amp;= ~(<span class="number">0x3</span>&lt;&lt;<span class="number">2</span>); <span class="comment">//Set PCLK for timer = CCLK/4 = 100/4 (default)</span></span><br><span class="line">    <span class="comment">/* #3:设置为定时器模式,计数模式递增 */</span></span><br><span class="line">	LPC_TIM0-&gt;CTCR = <span class="number">0x0</span>;</span><br><span class="line">    <span class="comment">/* #4:指定预分频器最大的分频值 */</span></span><br><span class="line">	LPC_TIM0-&gt;PR = PRESCALE; <span class="comment">//Increment LPC_TIM0-&gt;TC at every 24999+1 clock cycles</span></span><br><span class="line">	<span class="comment">//25000 clock cycles @25Mhz = 1 mS</span></span><br><span class="line">    <span class="comment">/* #5:设置匹配寄存器的值 */</span></span><br><span class="line">	LPC_TIM0-&gt;MR0 = <span class="number">5</span>; <span class="comment">//Toggle Time in mS</span></span><br><span class="line">    <span class="comment">/* #6:MR0与TC值匹配时将产生中断,TC复位 */</span></span><br><span class="line">	LPC_TIM0-&gt;MCR |= (<span class="number">1</span>&lt;&lt;<span class="number">0</span>) | (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">// Interrupt &amp; Reset on MR0 match</span></span><br><span class="line">    <span class="comment">/* #7:复位计数器 */</span></span><br><span class="line">	LPC_TIM0-&gt;TCR |= (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">// Reset Timer0</span></span><br><span class="line">    <span class="comment">/* #8:使能定时器中断*/</span></span><br><span class="line">	NVIC_EnableIRQ(TIMER0_IRQn); <span class="comment">//Enable timer interrupt</span></span><br><span class="line">    <span class="comment">/* #9:开启定时器 */</span></span><br><span class="line">	LPC_TIM0-&gt;TCR = <span class="number">0x01</span>; <span class="comment">//Enable timer</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>IRQ文件：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lpc17xx.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">/* Global variable to be used in main program */</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> g_ts = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">__irq <span class="keyword">void</span> <span class="title">TIMER0_IRQHandler</span> <span class="params">(<span class="keyword">void</span>)</span> <span class="comment">/* TIM0 timer interrupt routine       */</span></span></span><br><span class="line"><span class="function"></span>&#123;    </span><br><span class="line">	LPC_TIM0-&gt;IR |= (<span class="number">1</span>&lt;&lt;<span class="number">0</span>); <span class="comment">//Clear MR0 Interrupt flag, in case the interrupt finish, but system can't detect.</span></span><br><span class="line">	++g_ts;</span><br><span class="line">  	<span class="keyword">if</span> (g_ts% <span class="number">10</span>)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"*Timer*"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>随笔</category>
+        <category>单片机</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
-        <tag>日记</tag>
-        <tag>情感</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>20200905随笔</title>
-    <url>/2020/09/05/20200905%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;返校后的考试周昨天便结束了，今天是周六，两天后——即下周一便正式上课了。于是便正巧空出2天的真空时间。<br>&ensp;&ensp;&ensp;&ensp;是啊，这两天我也不知道干点啥好。前段时间陆陆续续地开始给有点眼缘的导师发了邮件，表示期望去其实验室学习参与参与科研，干点活，第一位导师因为实验室传统意义上没接收过本科生婉言拒绝了；另外一位在四天前让我发了简历和自我介绍后便再无回复——也许是忙碌没看到邮件吧，我也懒得去猜其中的原因了。<br>&ensp;&ensp;&ensp;&ensp;不想出国读硕士研究生的心境下在格院读书其实还是挺难顶的，想留在国内深造便只有2条路——即保研与考研；往届还好，国际形势明朗，大家都想出国，去灯塔、去英联邦、去新加坡，保研名额还能够顺延至排名50%的位置；但如今新冠疫情一来，便不知本专业其他同学意向如何了。<br>&ensp;&ensp;&ensp;&ensp;</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>日记</tag>
+        <tag>C/C++ - Keli仿真 - LPC1768</tag>
       </tags>
   </entry>
   <entry>
@@ -262,6 +271,156 @@ B: Yeah...
       </tags>
   </entry>
   <entry>
+    <title>【学科笔记】信号与系统Matlab笔记</title>
+    <url>/2020/06/01/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;本文主要针对Matlab中有关信号与系统问题的函数及语法总结。</p>
+<h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><ul>
+<li><p><strong>产生一串数字区间</strong>：<code>n=-5:10</code>产生了从-5~10的区间整数序列</p>
+</li>
+<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br><em>例如1：画出$x[n]=2n,-3\leq n\leq 3$</em></p>
+<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">n<span class="built_in">=</span>-<span class="number">3</span>:<span class="number">3</span>;</span><br><span class="line">x<span class="built_in">=</span><span class="number">2</span>*n;</span><br><span class="line">stem(n, x)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+<li><p><code>subplot(m, n, P)</code>函数：该函数用来规划画布上图像放置的位置。其中，m、n用来将画布分割，m为行，n为列；而P代表取分割部分的第几块。<br>例如：<code>subplot(2,2,[1 3])</code>代表将画布分为2x2的4部分，并该函数对应的图像放在第1，3块处</p>
+</li>
+<li><p><code>grid on</code>函数：<code>grid on</code>为显示网格，相反，<code>grid off</code> 为关闭显示网格。</p>
+</li>
+<li><p>点乘<code>.*</code>与一般乘法<code>*</code>：函数与函数相乘，例如$\sin(t)\sin(9t)$，一般是用点乘<code>.*</code>。点乘主要用于函数中元素的乘法（数组乘法array multiply）；而一般乘法则为矩阵乘法（Matrix multiply）。<br><em>例如2：用图形表示连续调制波形$y=\sin(t)\sin(9t)$及其包络。</em></p>
+<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">t<span class="built_in">=</span>(<span class="number">0</span>:pi/<span class="number">100</span>:pi)<span class="string">' % 长 度 为 101 的 时 间 采 样 列 向 量</span></span><br><span class="line"><span class="string">y1=sin(t)*[1,-1]; %包络线函数值，是（101x2）的矩阵</span></span><br><span class="line"><span class="string">y2=sin(t).*sin(9*t); %长度为101的调制波列向量</span></span><br><span class="line"><span class="string">t3=pi*(0:9)/9%在定义域区间均匀地取10个点</span></span><br><span class="line"><span class="string">y3=sin(t3).*sin(9*t3);%算出该十个点的值</span></span><br><span class="line"><span class="string">plot(t,y1,'</span>r:<span class="string">',t,y2,'</span>b<span class="string">',t3,y3,'</span>bo<span class="string">')%画出函数图像，包络线图像，取点图像</span></span><br><span class="line"><span class="string">axis([0,pi,-1,1]) %控制画出的轴范围，前2参数为横轴；后2值为纵轴</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>单位脉冲序列$\delta[n]$与单位阶跃序列$u[n]$</strong>：可以综合使用<code>ones(1,n)</code>与<code>zeros(1,n)</code>来产生单位脉冲序列与代为阶跃序列。<br>其中<code>ones(1,n)</code>命令产生1行n列的1值；<code>zeros(1,n)</code>命令产生1行n列的0值。<br><em>例如3：</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">n&#x3D;0: 32;</span><br><span class="line">x&#x3D;[zeros(1,5),1,zeros(1,27)];%一个x&#x3D;\delta(n-6)的单位冲激函数</span><br><span class="line">stem(n, x, &#39;fill&#39;);%以n为横坐标画出数据序列x</span><br><span class="line">filter(num ,den, x)函数：该函数主要是针对LTI系统设置。因果LTI系统的零状态响应，可以利用y&#x3D;filter(num,\ den,\ x)实现。</span><br><span class="line">&#x2F;&#x2F;其中，num为系统传递函数分子系数组成的行向量、den为系统传递函数分母系数组成的行向量、x为输入的离散序列、y为输出的离散序列且y与x的长度一样。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>syms</code>函数：用来创建一个符号表达式。可以理解为用来创建一个“变量”，创建后的变量可以直接写入函数中作为自变量使用。常用作创建连续时间信号<br><em>例如4：</em></p>
+<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">syms t;<span class="comment">%创建一个符号表达式，“变量t”</span></span><br><span class="line">syms T;</span><br><span class="line">f<span class="built_in">=</span>sin(<span class="number">2</span>*pi*t/T)<span class="comment">%写出函数f，该函数包含待定变量t与T</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>x1=subs（f，T，5）</code>：该函数用于给自定义的符号表达式中的某个变量赋值，示例为将符号表达式f中的变量T赋值为5，并将该赋值后的符号表达式记为x1.</p>
+</li>
+<li><p><code>ezplot（&lt;隐函数表达式&gt;,[x最小值，x最大值，y最小值，y最大值])</code>：该函数用来绘制只有单一自变量的symbolic expression，即直接绘制单一自变量的函数。</p>
+</li>
+<li><p><code>int(F,x,a,b)</code>函数：该函数用来计算自己定义的符号表达式的积分。其中F为被积函数，x为自变量（可忽略），a为积分下限，b为积分上限。</p>
+</li>
+</ul>
+<h1 id="Lab-2"><a href="#Lab-2" class="headerlink" title="Lab 2"></a>Lab 2</h1><ul>
+<li><strong>分段函数的写法：</strong><br>示例：表示分段函数<br>$$x[n]=<br>\begin{cases}<br>2&amp;,n=0\<br>1&amp;,n=2\</li>
+</ul>
+<p>-1&amp;,n=3\<br>3&amp;,n=4\<br>0&amp;,otherwise<br>\end{cases}$$<br>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></p>
+<ul>
+<li><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和。这里存在一个小技巧：<strong>卷积后输出的区间长度会发生变化，倘若仍需要对卷积输出继续计算，但matlab提示出错“矩阵维度必须一致。”怎么办？</strong>可以直接取卷积输出的某一区间再进行矩阵运算，例如：</li>
+</ul>
+<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">n<span class="built_in">=</span><span class="number">0</span>:<span class="number">64</span>;</span><br><span class="line">xh<span class="built_in">=</span>conv(h,x)<span class="comment">%h是一个1x41的矩阵向量，x是一个1x65的矩阵向量，输出xh为一个1x105的矩阵向量</span></span><br><span class="line">x2<span class="built_in">=</span>xh(<span class="number">1</span>:<span class="number">65</span>).*sin((pi/<span class="number">2</span>).*n);<span class="comment">%此处n与xh的维度不同，不能直接运算，但可以取xh的第1~65个采样进行运算</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>filter(b_k,a_k,x)</code>函数：</p>
+<ol>
+<li>输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<br>$$\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m] \ \ \ (\alpha)$$<br>上式在Malab中等价于：<br>$$\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]$$<br>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br>&ensp;&ensp;&ensp;&ensp;<code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
+<li>也可以用来求卷积。当$a_k=\delta[k],b[m]=b_m(0\leq m\leq M)$时，式子$(\alpha)$便成为了<br>$$y[n]=\sum_{m=-\infty}^{+\infty}b[m]x[n-m]$$<br>是一个标准的离散卷积和公式，此时只需输入参数<code>y=filter(b_k,1,x)</code>即可。</li>
+<li>求离散线性非常系数系统，也可以使用它，但只需要一个<code>for</code>循环即可。<br>例如：$y[n]=(\frac{3}{5})^ny_2[n-1]+x[n]$，求它的系统单位冲激响应只需如下：<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">h2<span class="built_in">=</span>[];<span class="comment">%创建了一个数组来容纳每次取n时对应的h[n]</span></span><br><span class="line">b2<span class="built_in">=</span>[<span class="number">1</span>];<span class="comment">%system2的输入系数</span></span><br><span class="line">for i<span class="built_in">=</span><span class="number">0</span>:<span class="number">19</span></span><br><span class="line">    a2<span class="built_in">=</span>[<span class="number">1</span>,-(<span class="number">3</span>/<span class="number">5</span>)^i];<span class="comment">%system2的输出系数</span></span><br><span class="line">    h2(i+<span class="number">1</span>)<span class="built_in">=</span>filter(b2,a2,x(i+<span class="number">1</span>))<span class="comment">%每一个n(此处为计数器i)对应一个系数，一个x[n]——也就对应响应h2[n]的一个值</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p><code>lsim(b,a,x,t)</code>函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：<br>$$\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b_m\frac{d^mx(t)}{dt^m}$$<br>同理，该方程在Matlab中系数需要被改写为向量形式：<br>$$\sum_{k=0}^{N}a(N+1-k)\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b(M+1-m)\frac{d^mx(t)}{dt^m}$$</p>
+</li>
+<li><p><code>step(b,a,t)</code>函数：用来计算线性常系数微分方程的step response，用于连续时间。求单位阶跃响应除了用该函数，还可以直接把$u(t)*h(t)$得到，即利用<code>conv()</code>函数，这样就可以算离散时间的阶跃响应了。</p>
+</li>
+<li><p><code>impulse(b,a,t)</code>函数：用来计算线性常系数微分方程的impulse response，用于连续时间。其中t的分度及区间可以使用<code>linspace()</code>确定。</p>
+</li>
+</ul>
+<h1 id="Lab-3"><a href="#Lab-3" class="headerlink" title="Lab 3"></a>Lab 3</h1><ul>
+<li><code>[H omega]=freqz(b,a,N)</code>：计算在0和$\pi$之间均匀间隔的N个频点（N等分）的，系数为a、b的，<strong>差分方程</strong>的频率响应$H(e^{jw})$，即$\omega_k=(\cfrac{\pi}{N})k, {\rm for}\ 0\leq k\leq N-1$。它接收的参数b，a与Lab2中的b，a一样，都是系数。如果加上‘whole’这个参数，<code>[H omega]=freqz(b,a,N,&#39;whole&#39;)</code>，它会计算出在$[0，2\pi]$上N个均分频点的频率响应，即$\omega_k=(\cfrac{2\pi}{N})k, {\rm for}\ 0\leq k\leq N-1$。</li>
+<li>特征函数的判断：一个信号，<strong>若系统对该信号的输出响应仅是一个常数（可能是复数）乘以输入，则称该信号为系统的特征函数（eigenfunction）</strong>，而幅度因子称为系统的特征值（eigenvalue）。</li>
+<li><code>fft(x)</code>：该函数可以用来计算离散傅里叶级数DTFS的系数$a_k$。其中，$a_k=(\frac{1}{N})*fft(x)$<br>而该函数的原本用途为执行原信号的傅里叶变换。值得注意的是，该函数有时需要设定变换后的采样点个数，故可以对原区间的步长设置从而对原区间进行分割缩放，将采样点放入原区间内：<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">n<span class="built_in">=</span><span class="number">0</span>:<span class="number">64</span>;</span><br><span class="line">n1<span class="built_in">=</span><span class="number">0</span>:<span class="number">64</span>/<span class="number">255</span>:<span class="number">64</span>;<span class="comment">%把区间[0,64]划分成256个采样点，作为傅里叶变换后的区间</span></span><br><span class="line"></span><br><span class="line">x<span class="built_in">=</span>((sin(pi.*(n-<span class="number">32</span>)./<span class="number">4</span>))./(pi.*(n-<span class="number">32</span>)./<span class="number">4</span>));<span class="comment">%原信号，注意在n=32时为极限，matlab算出来为NAN需要人工替换</span></span><br><span class="line">x(find(isnan(x)<span class="built_in">=</span><span class="built_in">=</span><span class="number">1</span>))<span class="built_in">=</span><span class="number">1</span>;<span class="comment">%替换n=32时的极限为1</span></span><br><span class="line">X<span class="built_in">=</span>fft(x,<span class="number">256</span>);<span class="comment">%傅里叶变换</span></span><br><span class="line">stem(n1,abs(X));grid on;<span class="comment">%把原区间划分为256个采样点进行作图</span></span><br></pre></td></tr></table></figure></li>
+<li><code>iffy(X)</code>：执行逆傅里叶变换。</li>
+<li><code>fftshift()</code>：该函数可以对<code>fft(x)</code>函数的输出重新排序，使样本$Y(j\omega)$在Y中从最负的频率排序到最正的频率。</li>
+<li><code>load(filename)</code> ：从 filename 加载文件变量数据至工作区。</li>
+<li><code>freqs(b,a)</code>：用来计算与绘制微分方程的频率响应$H(j\omega)$，其中<code>b,a</code>是2变量的系数们作为的向量数组，从高阶开始。当然，如果希望得到在特定频率处$\omega$的值，可以多加一个参数，例如<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">w<span class="built_in">=</span>linspace(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">H<span class="built_in">=</span>freqs(b,a,w)</span><br></pre></td></tr></table></figure></li>
+<li><code>[b2,a2]=butter(2,wc,&#39;s&#39;)</code>：该函数定义了一个2阶、以$\omega_c$为频率的布特沃斯滤波器。其中，<code>s</code>表示使用连续时间过滤器，而不是butter默认返回的离散时间滤波器。此处的返回值<code>b2,a2</code>都为前面的系数向量。</li>
+<li><code>[r,p]=residue(b,a)</code>：该函数用来进行分式多项式的部分分式展开，即”partial fraction expansion”。其中，<code>b,a</code>为系统微分方程2便系数向量；该函数返回的亦为向量数组<code>r,p</code>，<code>r</code>为分子的部分分式展开系数，<code>p</code>为分母的部分分式展开系数。倘若被计算的系统频率响应$H(j\omega)$的分母不包括重根，且分式有理，那么返回的形式为：<br>$$\sum_{m=1}^{N}\cfrac{r(m)}{j\omega-p(m)}=\cfrac{r_1}{j\omega-p_1}+\cfrac{r_2}{j\omega-p_2}+…$$</li>
+</ul>
+<h1 id="Lab-4"><a href="#Lab-4" class="headerlink" title="Lab 4"></a>Lab 4</h1><ul>
+<li><code>[X,w]=ctfts(x,T)</code>：CTFTS函数用来计算周期信号x(t)的连续时间傅里叶变换(CTFT)，该周期信号由向量x中采样后的样本，利用理想带限插值重构而来。其中，它的参数，即向量x，为x(t)除以整数个周期的样本，T为采样周期；返回的参数，向量X包含储存在向量向量w中、每个频点处脉冲的面积。而w则储存了每个频点处的脉冲。<br>$\alpha,\omega$</li>
+<li><strong>画连续时间微分方程对应有理分式的零极点图</strong>：对于一个有理分式例如$H(s)=\cfrac{s-1}{s^2+3s+2}$，首先需要用<code>roots()</code>函数求出其零极点：<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">b<span class="built_in">=</span>[<span class="number">1</span>,-<span class="number">1</span>];</span><br><span class="line">a<span class="built_in">=</span>[<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>];</span><br><span class="line">zs<span class="built_in">=</span>roots(b);</span><br><span class="line">ps<span class="built_in">=</span>roots(a);</span><br></pre></td></tr></table></figure>
+&ensp;&ensp;&ensp;&ensp;然后便是利用画图函数作图：<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">plot(real(zs),imag(zs),<span class="string">'o'</span>);hold on;</span><br><span class="line">plot(real(ps),imag(ps),<span class="string">'x'</span>); </span><br><span class="line">grid</span><br><span class="line">axis([-<span class="number">3</span>,<span class="number">3</span>,-<span class="number">3</span>,<span class="number">3</span>]);</span><br></pre></td></tr></table></figure></li>
+<li><strong>画离散时间差分方程对应有理分式的零极点图</strong>：需要使用到<code>dpzplot(b,a)</code>函数，它也是接收向量b，a作为实参，Matlab可能不会自带该函数的源代码，故写于此：<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">function dpzplot(b,a)</span><br><span class="line"><span class="comment">%DPZPLOT plots the poles and zeros of a discrete-time LTI system.</span></span><br><span class="line"><span class="comment">%</span></span><br><span class="line"><span class="comment">% Usage:  dpzplot(b,a) </span></span><br><span class="line"><span class="comment">%</span></span><br><span class="line"><span class="comment">% The LTI system is defined by the coefficients in 'b' and 'a', which</span></span><br><span class="line"><span class="comment">% are in the form required by the MATLAB function 'filter'. Namely,</span></span><br><span class="line"><span class="comment">% the system function has a numerator polynomial given by the</span></span><br><span class="line"><span class="comment">% coefficients in 'b' and a denominator polynomial given by the</span></span><br><span class="line"><span class="comment">% coefficients in 'a'.  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">%---------------------------------------------------------------</span></span><br><span class="line"><span class="comment">% copyright 1996, 2001, by John Buck, Michael Daniel, and Andrew Singer.</span></span><br><span class="line"><span class="comment">% For use with the textbook "Computer Explorations in Signals and</span></span><br><span class="line"><span class="comment">% Systems using MATLAB", Prentice Hall, 1997, 2002.</span></span><br><span class="line"><span class="comment">%---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">la<span class="built_in">=</span>length(a);</span><br><span class="line">lb<span class="built_in">=</span>length(b);</span><br><span class="line"><span class="built_in">if</span> (la&gt;lb),</span><br><span class="line">  b<span class="built_in">=</span>[b zeros(<span class="number">1</span>,la-lb)];</span><br><span class="line">elseif (lb&gt;la),</span><br><span class="line">  a<span class="built_in">=</span>[a zeros(<span class="number">1</span>,lb-la)];</span><br><span class="line">end</span><br><span class="line">ps <span class="built_in">=</span> roots(a);</span><br><span class="line">zs <span class="built_in">=</span> roots(b);</span><br><span class="line">mx <span class="built_in">=</span> max( abs([ps<span class="string">' zs'</span> .<span class="number">95</span>]) ) + .<span class="number">05</span>;</span><br><span class="line">clf;</span><br><span class="line">axis([-mx mx -mx mx]);</span><br><span class="line">axis(<span class="string">'equal'</span>);</span><br><span class="line">hold on</span><br><span class="line">w <span class="built_in">=</span> [<span class="number">0</span>:.<span class="number">01</span>:<span class="number">2</span>*pi];</span><br><span class="line">plot(cos(w),sin(w),<span class="string">'.'</span>);</span><br><span class="line">plot([-mx mx],[<span class="number">0</span> <span class="number">0</span>]);</span><br><span class="line">plot([<span class="number">0</span> <span class="number">0</span>],[-mx mx]);</span><br><span class="line">text(<span class="number">0.1</span>,<span class="number">1.1</span>,<span class="string">'Im'</span>,<span class="string">'sc'</span>);</span><br><span class="line">text(<span class="number">1.1</span>,.<span class="number">1</span>,<span class="string">'Re'</span>,<span class="string">'sc'</span>);</span><br><span class="line">plot(real(ps),imag(ps),<span class="string">'rx'</span>);</span><br><span class="line">plot(real(zs),imag(zs),<span class="string">'go'</span>);</span><br><span class="line">numz<span class="built_in">=</span>sum(abs(zs)<span class="built_in">=</span><span class="built_in">=</span><span class="number">0</span>);</span><br><span class="line">nump<span class="built_in">=</span>sum(abs(ps)<span class="built_in">=</span><span class="built_in">=</span><span class="number">0</span>);</span><br><span class="line"><span class="built_in">if</span> numz&gt;<span class="number">1</span>,</span><br><span class="line">  text(-.<span class="number">1</span>,-.<span class="number">1</span>,num2str(numz));</span><br><span class="line">elseif nump&gt;<span class="number">1</span>,</span><br><span class="line">  text(-.<span class="number">1</span>,-.<span class="number">1</span>,num2str(nump));</span><br><span class="line">end</span><br><span class="line">hold off;</span><br></pre></td></tr></table></figure>
+该函数的原代码需要被放在一个.m文件中作为库放在matlab任务栏中，它便可以自己检测到了。</li>
+</ul>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
+</script>
+
+]]></content>
+      <categories>
+        <category>专业学科</category>
+        <category>信号与系统科目</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+        <tag>信号与系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【感情往事】一段失败的经历</title>
+    <url>/2020/08/14/20200814%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;她是川师的一个女孩，家住在德阳，父母都在德阳开公司。</p>
+<a id="more"></a>
+<p>&ensp;&ensp;&ensp;&ensp;从5月18日，也就是我奶奶去世的那一天到现在8月14日，认识她已经将近3个月。这三个月里我们渐渐地从相识到熟悉，从熟悉到每天晚上聊天的形影不离——大多数时候都能够陪她聊天聊到深夜。聊喜好、聊旅行、聊摄影、聊人、聊未来。<br>&ensp;&ensp;&ensp;&ensp;她是一个非常成熟的女孩（<del>？也许吧</del>），从她的外表，独立学习工作，对正事有自己的思考都可以看出来。期间她正好来成都见她的朋友，那我作为东道主，也自然而然地请她吃了一顿她想吃的火锅。离开后，她也给我承诺下次带我去吃太古里的肥肠鸡（<del>是这个东西吗？我不知道，因为她确实没请我去过</del>）。事情到这里看起来一切都还蛮正常的。</p>
+<p>&ensp;&ensp;&ensp;&ensp;我本以为我与她的关系会继续深入下去，但是事情仿佛并不如愿。在前天晚上，她回到家突然给我发来几条消息：</p>
+<blockquote>
+<p>“<strong>我今天去相亲了</strong>”<br>    “<strong>还可以</strong>”<br>    “<strong>是以前的同学</strong>”。</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;我不知道是我见识太少还是其他乱七八糟的，看到这里，我便不知道应该说什么话了。过了好久，才从停滞的大脑中找出几个文字输入到屏幕上：</p>
+<blockquote>
+<p>“<label style="color:grey"><em>那你准备深入发展了吗？</em></label>”<br>“哪有那么快”<br>“只是说他比较外向”<br>“比我更会做事情”<br>“虽然他也是技术性人才”<br>“但是”<br>“社会性挺好的”<br>“也是那种爱运动爱旅行爱摄影的”<br>“哎哟”<br>“我榆木脑袋”<br>“我今天素颜 可能可能看起来也比较….”</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;不知道一般人遇到这种事情应该怎么应对，反正这种电视剧般的情节就发生在了我的头上了，但我仍然觉得应该把自己的真实想法表达出来：</p>
+<blockquote>
+<p>“<label style="color:grey"><em>我也有点喜欢你，这可怎么办啊</em></label>”</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;在半小时后，她开始回复了</p>
+<blockquote>
+<p>“AA（<del>我的小名</del>）”<br>“啥子哦”<br>“我还是有点惊讶”<br>“因为”<br>“AA从不曾表达”<br>“天啊”</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;得嘞，寻思我天天和你互相分享生活，聊天聊到半夜，聊人生聊未来聊爱好是在做职业生涯规划。聊天仍在继续：</p>
+<blockquote>
+<p>“今天那个男生”<br>“可能是那种”<br>“让人眼前一亮”<br>“很阳光”<br>“虽然也不高，好像也不帅，但是还是很斯文”<br>“我还是有点羞的”<br>“跟我前男友一个星座”<br>“就是”<br>“很有人格魅力吧”<br>“很斯文”<br>“但是我又还是比较谨慎嘛”<br>“不能以貌取人”<br>“反正还是有点好感了”</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;对嘛，他很好。反正认定了他很好就对了。她继续发言：</p>
+<blockquote>
+<p>“如果遇到一个和我很像的”<br>“会吵起来吧”<br>“AA”<br>“我也不知道”<br>“是不是我的错觉”<br>“我感觉AA跟我很像”<br>“就是”<br>“很像”<br>“AA反而比我稳重得多”<br>“比我更有大局观”<br>“而且”<br>“AA很被动，更内敛”</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;这话锋一转，开始评价起我来了。我很疑惑“有大局观”、“稳重”什么时候成为了缺点了。她最后一句话也许是客观的。但吵架这件事情在我们相处的这三个月内确实没发生过：</p>
+<blockquote>
+<p>“<label style="color:grey"><em>那我们从五月份到现在吵过没有嘛</em></label>”<br>“没有！”<br>“我平时就比较稳了”<br>“比较安静了”<br>“就很向往稍微热烈一点的生活”<br>“激情一点”<br>“然后再自己的可控范围内”<br>“<label style="color:grey"><em>唉，既然你都这样说了</em></label>”<br>“啊啊啊啊啊啊”<br>“我开始犹豫了”</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;哈哈，反正喜欢一个人是不需要理由的，还犹豫什么呢。继续聆听她的发言：</p>
+<blockquote>
+<p>“其实”<br>“见得多了”<br>“越来越清晰自己想要的是什么样的”<br>“也越来越有自己的定位”<br>“我就喜欢所谓“奶狗”【微信红脸表情】”<br>“反而”<br>“很稳重优秀的”<br>“只能做朋友了”</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;这还表扬起我来了，男同胞们，这种手段杀伤效果太大了。继续：</p>
+<blockquote>
+<p>“现在这个男生就是”<br>“没事就问你在干嘛”<br>“每天都想见你”<br>“让你看人家打球”<br>“让你一起跑步”<br>“支持你学习”<br>“做你的“贤妻良母”那种”<br>“今天”<br>“人家见面”<br>“还带了一大堆枣子”<br>“说是老家的”<br>“喊带给我妈”<br>“天那”<br>“哪个遭得住”</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;本以为上面的杀伤效果已经挺大了，想不到还有劲更大的。从聊天记录来看搞半天你和这位男生已经相处了不是一两天了嘛，又是看打球又是跑步的。第一次吃个饭连给你妈妈的枣子都提上了，我记得当时我请你吃火锅的时候问她“买一束花之类的”，她说“不好拿”的嘛。经验告诉我这人可能耍朋友不止一两次了，我要提问：</p>
+<blockquote>
+<p>“<label style="color:grey"><em>他耍过几次朋友</em></label>”<br>“他”<br>“<strong>初恋</strong>”<br>“以前就是很有闪光点的，<strong>但是别人不谈恋爱</strong>”<br>“现在就是逮住我了嘛”<br>“就是跟你发”<br>“啥子耳环”<br>“甜品店”<br>“拍照好看的地方”<br>“简直”<br>“就是把我的爱好抓得死死的”<br>“AA啊！”<br>“啊啊啊啊”</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;啊个五金店，朋友们，你们说你们信吗？反正我初恋的时候别说提枣子和聊耳环甜品店了，就是和初恋聊天都很生疏。</p>
+<blockquote>
+<p>“其实“<br>“相亲是说着玩的”<br>“本来就认识”<br>“相亲是我朋友说的”<br>“喊我相亲”<br>“其实她们也是开玩笑”<br>“但是”<br>“反正就这样了”<br>“他”<br>“在南昌”<br>“他家是成都的”<br>“好像也是在川大那边”<br>“但是他在我们学习读到大的”<br>“在这边也有家”<br>“我妈”<br>“看见枣子”<br>“只会夸人家男孩子懂事”<br>“枣子甜”</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;什么叫作“杀人，还要诛心”。<br>&ensp;&ensp;&ensp;&ensp;我感觉这篇文章写到这里我写不下去了，实在是不想再去翻那天的聊天记录了。只能说我运气背，遇到了这种神段位的人，结局确实太令人伤心了。</p>
+<p>&ensp;&ensp;&ensp;&ensp;第二天，也就是昨天，那位“同学”又约着她晚上出去吃烤肉。我正好没有什么事情，就订了一张高铁票，去了德阳玩。<br>&ensp;&ensp;&ensp;&ensp;在高铁上她对我说：“<strong>作为东道主，自然是有朋自远方来，我今天中午就不跟老爸吃饭就可以了~你也不要有心理压力。</strong>”<br>&ensp;&ensp;&ensp;&ensp;到了中午，她发来一句：“<strong>我爸爸喊我跟哥哥吃午饭，我看吃了饭，行不行</strong>”<br>&ensp;&ensp;&ensp;&ensp;到了下午，德阳下起了雨，她发来一句：“<strong>要去公司，搬东西，人不够，我妈给我打电话</strong>”</p>
+<p>&ensp;&ensp;&ensp;&ensp;就这样吧。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>日记</tag>
+        <tag>情感</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用VScode写Latex</title>
     <url>/2020/06/25/%E4%BD%BF%E7%94%A8VScode%E5%86%99Latex/</url>
     <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;用Vscode写Markdown语法完美正确地输出带各种复杂数学公式的PDF并不容易。毕竟Markdown语法输出目标并非在纸上，而是网页。在心中不爽地驱使下，我决定尝试使用Vscode配置Latex编写环境，后续许多基础学科笔记整理使用Latex输出，不用像Word文档一样过分关心排版问题。<br>&ensp;&ensp;&ensp;&ensp;下面便是本人尝试配置Latex环境的步骤，步骤并非完全原创，而是在网络中四处借鉴，整理而来。此处写下，方便日后查看。</p>
@@ -284,6 +443,177 @@ B: Yeah...
         <tag>VScode</tag>
         <tag>Latex</tag>
         <tag>文字编辑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【摄影心得】摄影后期处理-电影调色</title>
+    <url>/2020/09/19/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86-%E7%94%B5%E5%BD%B1%E8%B0%83%E8%89%B2/</url>
+    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;最近感觉自己迷上了摄影，在路上走着走着、在自习室休息的时候，时不时灵感来了都会拿手机整一两张照片。但众所周知的是，未经过后期处理的照片大多都不是很好看的，俗称卖相不太好。故最近空余时间便拿来涉猎了一下Photoshop里面关于照片后期调色处理的内容。这里主要记录一下照片的电影调色是如何实现的。</p>
+<a id="more"></a>
+<p>&ensp;&ensp;&ensp;&ensp;总的来说分为三步：</p>
+<ol>
+<li>拍摄RAW类型照片$\rightarrow$</li>
+<li>在电脑上通过后缀为.dcp的相机色彩文件，在Photoshop中转换为LOG照片类型$\rightarrow$</li>
+<li>在Photoshop中利用下载的调色大师们配置好的3D LUTS包，加载到图片上，整个过程便算完成了。</li>
+</ol>
+<p>&ensp;&ensp;&ensp;&ensp;我自己因为经费不足，平常用到的拍摄器材便是手机了。我的手机型号是华为的P20，一般在网上下载的.dcp相机配置文件包中是不含的。故该文件需要自己配置。其实配置这个文件说来也很简单：</p>
+<ol>
+<li>在手机相机设置里打开允许储存RAW类型照片的按钮，随便拍一张照片，储存为DNG格式，在属性里面把相机型号复制下来</li>
+<li>下载一个DNG_Profile_Editor，导入该照片，在base profiles里的choose external profiles选项，选择一个网上找得到的任意一个相机型号的.dcp文件，然后选择导出，重命名为VisionLOG_XXXXX(复制的相机型号)即可</li>
+<li>把该文件放到PS的…\Adobe\CameraRaw\CameraProfiles里面即可</li>
+<li>使用时即把需要调色的RAW类型图片用camera raw打开，在“相机校准”选项-“相机配置文件-名称”里选择该.dcp配置文件即可完成RAW-LOG转换，此时照片大概率会变灰色</li>
+</ol>
+<p>&ensp;&ensp;&ensp;&ensp;然后就是在Photoshop中利用“颜色查找”载入自己下载的3D LUTS文件即可开启电影滤镜效果。至于3D LUTS的资源嘛……淘宝上多得是，几块钱几千个随便找。<br>&ensp;&ensp;&ensp;&ensp;整点前后效果对比图：</p>
+<ul>
+<li><strong>西岭雪山</strong><br>处理前<br><img src="https://img-blog.csdnimg.cn/20200919194429357.jpg" alt="在这里插入图片描述"><br>处理后<br><img src="https://img-blog.csdnimg.cn/20200919194429832.jpg" alt="在这里插入图片描述"></li>
+<li><strong>新宿街头</strong><br>处理前<br><img src="https://img-blog.csdnimg.cn/20200919201246285.jpg" alt="在这里插入图片描述"><br>处理后<br><img src="https://img-blog.csdnimg.cn/20200919201640675.JPG" alt="在这里插入图片描述"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>摄影</category>
+      </categories>
+      <tags>
+        <tag>摄影</tag>
+        <tag>调色</tag>
+        <tag>艺术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【学科笔记】通信网络的框架梳理</title>
+    <url>/2020/05/27/%E9%80%9A%E4%BF%A1%E7%BD%91%E7%BB%9C%E6%A2%B3%E7%90%86/</url>
+    <content><![CDATA[<blockquote>
+<p>嵩云秦树久离居，双鲤迢迢一纸书。——李商隐《寄令狐郎中》</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;<del>通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。</del></p>
+<a id="more"></a>
+<p>&ensp;&ensp;&ensp;&ensp;好了不开玩笑了。整个通信网络体系自顶向下由5个层级构成：<strong>应用层、运输层、网络层、链路层、物理层</strong>。每一个layer里面都有各自对应的结构构造、数据包结构、通信协议、拥塞控制机制、甚至是错误错误控制机制。其中数据包单位（PDU，protocol data unit）自定向下分别为：<strong>Message、Segment（报文段）、datagram（数据报）、Frame（帧）、Bit（比特）</strong>；每一层的常见协议/传输方式自顶向下有：HTTP、FTP、DNS； TCP\UDP；VC、datagram(IP)；（Stop-and-Wait protocol、Sliding-Window Protocal、Piggybacking）流量控制协议、多路访问协议等等。<br>&ensp;&ensp;&ensp;&ensp;本文主要是以梳理串线为主，将通信网络中学到的内容整理起来，以供日后使用。</p>
+<h1 id="一、应用层"><a href="#一、应用层" class="headerlink" title="一、应用层"></a>一、应用层</h1><h1 id="二、运输层"><a href="#二、运输层" class="headerlink" title="二、运输层"></a>二、运输层</h1><h1 id="三、网络层"><a href="#三、网络层" class="headerlink" title="三、网络层"></a>三、网络层</h1><h2 id="路由算法"><a href="#路由算法" class="headerlink" title="路由算法"></a>路由算法</h2><h3 id="链路状态选路算法"><a href="#链路状态选路算法" class="headerlink" title="链路状态选路算法"></a>链路状态选路算法</h3><p>&ensp;&ensp;&ensp;&ensp;链路状态选路算法可以用来计算从某节点（源节点，u）到网络中所有其它节点的最低费用路径。它是一种迭代算法，即经第k次迭代后，可以知道k个目的节点的最低费用路径。</p>
+<ul>
+<li><strong>链路状态选路算法中的变量</strong><br>  $D(v)$：本次迭代从源节点到目的节点v的最低费用路径所需的费用<br>  $p(v)$：延当前选路N’点中从源点到达v的邻居节点 (predecessor node along path from source to v)<br>  $N’$：最低费用<strong>绝对已知</strong>的节点集合，包括v本身</li>
+<li><strong>具体算法</strong><br>  对于一个如下连接的网络：<br>  <img src="https://img-blog.csdnimg.cn/20200622212418869.png" alt="在这里插入图片描述"><br>  伪代码如下：<br>  <img src="https://img-blog.csdnimg.cn/20200622212205187.png" alt="在这里插入图片描述"><br>  &ensp;&ensp;&ensp;&ensp;初始化阶段。从源头u到其直连邻居vxw的当前已知最低费用初始化为2、1、5（举例）；到非直连路由y、z的费用设为无穷大；<br>  &ensp;&ensp;&ensp;&ensp;<strong>而后是多个变量的操作：</strong><br>  &ensp;&ensp;&ensp;&ensp;N’：第一次迭代。第一次迭代结束时具有最低费用的节点为x，因此x被加入集合N’；<br>  &ensp;&ensp;&ensp;&ensp;D(w)：执行LS算法中第12行，更新所有节点的D()，产生表步骤1结果；<br>  &ensp;&ensp;&ensp;&ensp;p(w)：沿从uk开始最短路径上w’的前一个节点被设为x<br>  &ensp;&ensp;&ensp;&ensp;类似的，y的费用也会更新<br>  &ensp;&ensp;&ensp;&ensp;N’：第二次迭代，节点v与y被发现有最低费用路径，任意选择如y加入集合N’，其余更新类似，以此类推<br>  最终的图表如下：<br>  <img src="https://img-blog.csdnimg.cn/202006222122352.png" alt="在这里插入图片描述"></li>
+</ul>
+<h3 id="距离矢量选路算法"><a href="#距离矢量选路算法" class="headerlink" title="距离矢量选路算法"></a>距离矢量选路算法</h3><p>&ensp;&ensp;&ensp;&ensp;距离矢量选路算法是一种<strong>分布式</strong>的算法，每个节点都要从一个或多个直接相连的邻居接收某些信息、执行计算、然后将计算结果发送给邻居；该算法的<strong>迭代</strong>需要一直持续到邻居间没有更多信息要交换为止，此算法为自我终结；它是<strong>异步</strong>的，不要求所有节点相互之间步伐一致的操作。</p>
+<ul>
+<li><strong>Bellman-Ford方程</strong><br>  &ensp;&ensp;&ensp;&ensp;在说明其具体算法实现之前，需要了解<strong>Bellman-Ford方程</strong>：<br>  $$d_x(y)=min{c(x,v)+d_v(y)}$$<br>  &ensp;&ensp;&ensp;&ensp;其中，$d_x(y)$表示从节点x到y的<strong>最低费用路径</strong>所需的费用；而该公式中的$min$代表着取遍x的所有邻居。其更准确的写法应该为：<br>  $$min{c(x,a)+d_a(y), c(x,b)+d_b(y), …}$$<br>  &ensp;&ensp;&ensp;&ensp;其中a，b…都为x的邻居，y为目的地；即从x到y的最低费用是对所有邻居$v$的$c(x,v)+dv(y)$的最小值.</li>
+<li><strong>具体算法</strong><br>  &ensp;&ensp;&ensp;&ensp;距离矢量选路算法中从节点x到y的最低费用使用$D_x(y)$表示，在自然状态下$D_x(y)$会收敛为$d_x(y)$<br>  &ensp;&ensp;&ensp;&ensp;该算法开始作用后，每个节点都会自动开始测试<strong>自己到直接邻居节点的费用</strong>，然后每个节点也会周期性地发送 <strong>自己的测量到的距离信息向量DV(Distance Vector)</strong> 至其直接邻居。例如当节点x从邻居处接收到新的DV信息，它会利用B-F公式更新自己的DV。<br>  <img src="https://img-blog.csdnimg.cn/20200622150022587.png" alt="在这里插入图片描述"><br>  节点x更新后<br>  <img src="https://img-blog.csdnimg.cn/20200622150111543.png" alt="在这里插入图片描述"></li>
+</ul>
+<h1 id="四、链路层、局域网"><a href="#四、链路层、局域网" class="headerlink" title="四、链路层、局域网"></a>四、链路层、局域网</h1><h2 id="1-链路层的错误检测修复机制（Error-detection-amp-correction）"><a href="#1-链路层的错误检测修复机制（Error-detection-amp-correction）" class="headerlink" title="1.链路层的错误检测修复机制（Error detection &amp; correction）"></a>1.链路层的错误检测修复机制（Error detection &amp; correction）</h2><h3 id="ensp-ensp-ensp-ensp-错误检测"><a href="#ensp-ensp-ensp-ensp-错误检测" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;错误检测"></a>&ensp;&ensp;&ensp;&ensp;错误检测</h3><h3 id="ensp-ensp-ensp-ensp-错误纠正（Automatic-repeat-request，ARQ）"><a href="#ensp-ensp-ensp-ensp-错误纠正（Automatic-repeat-request，ARQ）" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;错误纠正（Automatic repeat request，ARQ）"></a>&ensp;&ensp;&ensp;&ensp;错误纠正（Automatic repeat request，ARQ）</h3><h2 id="2-多路访问协议（Multiple-access-protocol，MAC-protocal）"><a href="#2-多路访问协议（Multiple-access-protocol，MAC-protocal）" class="headerlink" title="2.多路访问协议（Multiple access protocol，MAC protocal）"></a>2.多路访问协议（Multiple access protocol，MAC protocal）</h2><p>&ensp;&ensp;&ensp;&ensp;一般而言，网络连接有2种方式：即<strong>点对点（point-to-point）、以及广播（broadcast）</strong>。不同以往的拨号上网，现在的网络连接通常都是broadcast（shared medium）方式，例如shared wire（eg：以太网）、shared wireless（eg：Wavelan）。使用广播手段便需要解决一个问题，因为任何时候只能接入一个用户，此时其余用户只能等待，如果两个及以上的用户同时进入，相当于2个及以上的节点同时传输帧，那么所有的节点都会同时接收到多个帧，那么此时传输的帧便在所有的接收方处发生<strong>碰撞（collide）</strong>。而多个用户都想同时接入进来，如何协调接入到单个信道中的用户？如何保证公平性？<br>&ensp;&ensp;&ensp;&ensp;MAC便是<strong>一种决定节点如何分享频道的分布式算法，例如节点何时可以传输。</strong></p>
+<ul>
+<li>理想MAC下的一些变量及先前假设（完全不可能做到，但就像数学建模一样，下面分析模型需要基于它）</li>
+</ul>
+<p>-$R$：节点的传输速率<br>-$\frac{R}{M}$：M个节点的平均传输速率<br>-假设没有特殊节点来协调传输<br>-假设没有时钟同步</p>
+<h3 id="ensp-ensp-ensp-ensp-信道划分协议（Channel-partitioning）"><a href="#ensp-ensp-ensp-ensp-信道划分协议（Channel-partitioning）" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;信道划分协议（Channel partitioning）"></a>&ensp;&ensp;&ensp;&ensp;信道划分协议（Channel partitioning）</h3><p>&ensp;&ensp;&ensp;&ensp;基本原理为将带宽划分为许多子信道，每个子信道分给许多用户来使用。这是现有基站常用的方法。常见有：时分复用（time slots）、频分复用（frequency slots）、码分复用（code slots）、正交码分复用，空分复用。</p>
+<ul>
+<li><p><strong>时分复用多路访问（Time Division Multiple Access，TDMA）</strong><br>缺点：有可能浪费子信道，因为信道对应的用户已经划分好；需要全网同步，难度极大</p>
+</li>
+<li><p><strong>频分复用多路访问（Frequency Division Multiple Access，FDMA）</strong><br>从频域上划分为多个信道。困难在于难以划分干净，因为实际滤波器有衰减带，可能发生码间干扰。广播电台通常用此法。</p>
+</li>
+<li><p><strong>码分复用多路访问（Code Division Multiple Access， CDMA）</strong><br>码分复用进行的相当于是对original signal的扩频：<br>$$encoded\ signal=(original\ data) \times (chipping\ sequence)$$<br>相当于把原始信号给掩盖了，属于抗干扰加密通信。在无线网络通信章节会更详细说明。</p>
+</li>
+</ul>
+<h3 id="ensp-ensp-ensp-ensp-随机接入协议（Random-access-protocol）"><a href="#ensp-ensp-ensp-ensp-随机接入协议（Random-access-protocol）" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;随机接入协议（Random access protocol）"></a>&ensp;&ensp;&ensp;&ensp;随机接入协议（Random access protocol）</h3><p>&ensp;&ensp;&ensp;&ensp;随机接入协议不分子信道，允许冲突，但有一个从冲突中恢复的机制。该协议的主要研究点在于如何检测是否发生冲突、以及如何从冲突中恢复。</p>
+<ul>
+<li><p><strong>Slotted ALOHA</strong></p>
+<ul>
+<li><p>前提假设<br>假设所有帧都是相同大小<br>1个frame刚好花一个单元的时间传送<br>节点都被同步了<br>每次传输的概率为p</p>
+</li>
+<li><p>操作<br>当一个节点得到一个帧，它会向下一个节点传输。当发生冲突时，节点会基于重传概率$p$向下一个节点进行重传，直到成功。因为如果同时全部重传，会再一次在接收端产生冲突，类似于对向骑自行车你往左我往右这样错误的避让方式一样。</p>
+</li>
+<li><p>效率<br>1个节点成功传输的概率为：$p(1-p)^{N-1}$，类似于伯努利分布<br>任何一个节点成功传输的概率：$Np(1-p)^{N-1}$<br>许多个节点的最大效率为$0.368\approx 37%$</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Pure ALOHA(没有p，检测到前一个time frame、后一个time frame没有传输便可以传)</strong></p>
+<ul>
+<li>效率<br>1个节点成功传输的概率：$p(1-p)^{N-1}(1-p)^{N-1}=p(1-p)^{2(N-1)}$<br>许多个节点最大效率为$0.18$</li>
+</ul>
+<p>  <em>为什么吞吐量/Traffic Load图会随G增大而先大后小？刚开始负载小，信道空闲碰撞机会小成功机会大；一定程度后资源饱和，再增加反而会降低</em></p>
+</li>
+<li><p><strong>CSMA(Carrier Sense Multiple Access)</strong><br>在传输之前会感知链路上的传输情况，链路idle便传输、busy便推迟。<br>—— <strong>1-persistent CSMA</strong><br>&ensp;&ensp;&ensp;&ensp;其会在传输一个帧之前对频道进行监听，<strong>当频道忙时，等待直到idle</strong>；如果idle，则传输。如果冲突发生了，它会等待一个random time后重复该算法。<br>&ensp;&ensp;&ensp;&ensp;<strong>缺点</strong>：冲突依然可能发生，因为传播监听会有时延，一节点发送帧以后busy信号可能还没有传播到另一节点，另一节点检测到idle便也发送帧造成冲突；2个节点都可能同时发现频道idle，同时发送数据。<br/><br>—— <strong>Non-persistent CSMA</strong><br>&ensp;&ensp;&ensp;&ensp;其会在传输一个帧之前对频道进行监听，<strong>当频道忙时，等待一个random time然后重复该算法</strong>；如果idle，则传输。如果冲突发生了，它会等待一个random time后重复该算法。该算法结果是更高的频道利用率，但通常比1-persistent的时延更长。<br/><br>—— <strong>P-persistent CSMA</strong><br>&ensp;&ensp;&ensp;&ensp;其会在传输一个帧之前对频道进行监听，<strong>如果idle，则以概率$p$的几率传输，$1-p$的概率等待到下一个slot</strong>。如果冲突发生了、或频道忙，它会等待下一个slot然后重复该算法。概率$p$可以取不同值，$p$越小，理论利用率越强，但延时更高。<br>下面是不同随机接入协议吞吐量-Traffic load关系图<br><img src="https://i.loli.net/2020/05/27/o6HzAVWaODkhYjF.jpg" alt="图片1.jpg"></p>
+<!--https://sm.ms/delete/glFdeEsMSoCjOUyp5WQ6RNTuLt--><br/>
+</li>
+<li><p><strong>CSMA/CD(Collision Detection)</strong></p>
+<ul>
+<li>工作原理<br>如果medium是idle的，传输；如果是busy的，监听直到idle然后再传输；<strong>如果冲突发生，jam then cease transmission（发送一个48比特、能量很强的干扰阻塞信号，通知大家发生了冲突，停止发送）</strong>；jam发送后，等待一个random time再重复算法。<br>这样可以在发生冲突后立马停止传输，避免继续传输冲突帧导致信道资源浪费。</li>
+</ul>
+</li>
+</ul>
+<p>_<span style="border-bottom:2px dashed pink;">CSMA/CD为什么用于以太网而不能用于无线通信网络？</span>由于无线收发报机为半双工模式，不能同时手收发。_</p>
+<h3 id="ensp-ensp-ensp-ensp-轮流协议（Taking-turns-protocol）"><a href="#ensp-ensp-ensp-ensp-轮流协议（Taking-turns-protocol）" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;轮流协议（Taking-turns protocol）"></a>&ensp;&ensp;&ensp;&ensp;轮流协议（Taking-turns protocol）</h3><p>&ensp;&ensp;&ensp;&ensp;即节点轮流传输</p>
+<ul>
+<li>“Taking Turns” MAC protocal（环网，拿到token的节点可以进行传输。传完了token给下一个）<br>两边讨好，结果不好用。</li>
+</ul>
+<h2 id="3-链路层编址（Link-layer-addressing）"><a href="#3-链路层编址（Link-layer-addressing）" class="headerlink" title="3.链路层编址（Link layer addressing）"></a>3.链路层编址（Link layer addressing）</h2><p>&ensp;&ensp;&ensp;&ensp;运输层有端口号，网络层有IP地址（只负责送到对应的IP子网，IP地址相当于住址，可以改变）。到了子网中则需要<strong>48bits的链路层编址MAC地址</strong>进行“最后一公里”的传输，MAC地址相当于身份证号，不变的。<br><br></p>
+<p><em>为什么MAC地址与IP地址都是必须的？因为IP地址相当于城市+地区+街道+门牌号，没有IP地址不能够确定主机的大致位置。而MAC地址主要用于局域网子网内精确寻找目标。</em></p>
+<ul>
+<li><p><strong>ARP：Address Resolution Protocol</strong><br>  <em>在知道一节点的IP地址情况下，如何判断其MAC地址呢？—每一个LAN上的IP节点都有一个<strong>ARP table</strong>，里面有IP地址及对应的MAC地址，以及TTL。<strong>类似于DNS，DNS建立了应用层URL与IP的关系，而ARP建立了IP与MAC的关系</strong></em></p>
+<ul>
+<li><strong>ARP-table的建立（实时更新，soft state，即插即用）</strong><br>如果A要向B送一个datagram，而B的MAC地址不在A的ARP表中。在A通过DNS知晓B的IP地址后，A便会向自身LAN中广播一个包含B的IP地址的ARP query packet。B收到后，通过unicast回复A自己的MAC地址。如果B不在该LAN中，则会通过路由器根据IP地址传输该query packet到B所在的LAN中。</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-局域网之以太网"><a href="#4-局域网之以太网" class="headerlink" title="4.局域网之以太网"></a>4.局域网之以太网</h2><p>&ensp;&ensp;&ensp;&ensp;局域网的标准IEEE 802 Standards基本是上都是美国人定下的。在此主要梳理一下802.2（逻辑链路控制）、802.3（以太网）、802.4（消失了）、802.5（快死掉了）协议。其中，<strong>以太网就是上述各类协议实际使用的一个典型例子</strong>。</p>
+<ul>
+<li>802.2：Logic Link Control<br>在LLC中，数据链路层（Data link layer）被分为2个子层，一层为LLC层，连接网络层（Network layer）；另一层为MAC层，连接物理层(Physical layer).<h3 id="ensp-ensp-ensp-ensp-802-3：以太网"><a href="#ensp-ensp-ensp-ensp-802-3：以太网" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;802.3：以太网"></a>&ensp;&ensp;&ensp;&ensp;802.3：以太网</h3></li>
+<li><strong>特点</strong>：Unreliable，connectionless service</li>
+<li><strong>Ethernet Cabling</strong>：多种物理媒介</li>
+<li><strong>最佳的连接形式</strong>：Star topology+hub<br>中间的hub只执行信号放大的功能，并不执行任何协议，称它是layer 1 device。相对的，Ethernet就是一个layer 2 devices，它要检查MAC地址。</li>
+<li><strong>曼彻斯特编码</strong>：1变成$[10]_2$；0变成$[01]_2$</li>
+<li>为什么以太网通信不传递原始信号（带宽比曼彻斯特编码小一倍）而传递曼彻斯特编码？曼彻斯特编码具有自同步能力和良好的抗干扰性能，*</li>
+<li><strong>以太网帧（Frame）结构</strong><br><img src="https://i.loli.net/2020/05/28/g6hls3A9xPBKpWi.png" alt="QQ截图20200528151843.png"><!--https://sm.ms/delete/t25HxBWIN9J4hG3QeCfglbMzOy--><br><img src="https://i.loli.net/2020/05/28/RoG21bNB35YhsJT.png" alt="QQ截图20200528153332.png"><!--https://sm.ms/delete/LgZm5w6TCn4JBb9MHWQR2sV8vh--><ul>
+<li>Preamble（序言）：7个字节，模式为10101010，然后是一个字节，模式为10101011；主要用于同步接收方，发送clock rate</li>
+<li>Address：6个字节</li>
+<li>Type：指示更高的层协议(主要是IP协议，但也可能支持其他协议，如Novell IPX和AppleTalk)</li>
+<li>CRC：在接收端检查，如果检测到错误，帧就会被丢弃</li>
+<li><strong>最小长度</strong>： 与传输速率有关。对于10Mbps，250m的LAN而言为64byte（一个RTT是$50\mu sec$，以太网传输一个bit的时间为$100nsec$，那么frame最小长度为$500bits\rightarrow512bits=64byte$）</li>
+</ul>
+</li>
+</ul>
+<p><span style="border-bottom:2px dashed pink;"><em>为什么以太网的Frame有最小的长度要求？结构Pad是做什么用的？</em></span>以太网中的帧过小将导致发生冲突时数据已经传输完毕（<strong>一旦传输完成没有冲突报告就不管了</strong>），无法检测到是否发生了冲突，故以太网中的帧有一个最小长度，使包头到达下一节点时包尾还未传输。pad主要是用于填充长度，使其达到最小长度</p>
+<ul>
+<li><strong>以太网使用CSMA/CD协议</strong><ul>
+<li>以太网使用的是CSMA/CD多路访问协议。其中大部分都与原生CSMA/CD协议的算法相同，不同之处在于<strong>发生冲突丢弃帧之后的操作，它明确了等待的random time</strong>，它会进入一个“Exponential backoff”：即在发生第m次冲突之后，会从${0,1,2,…,2^{m}-1}$中随机选择一个数作为K，来等待$K\times 512$个bit times，然后重新开始回到感知频道状态。</li>
+<li>Exponential backoff的目的：调整重传，尝试估计当前负载</li>
+<li>CSMA/CD的效率<br>$$Efficiency=\cfrac{1}{1+(\cfrac{5t_{prop}}{t_{trans}})}$$</li>
+</ul>
+</li>
+<li><strong>Switched Ethernet</strong><br>使用Switch直接点到点与用户相连。由于CSMA/CD便宜速度不错，没有必要单独开发点对点的协议，故点对点也使用的CSMA/CD。</li>
+<li><strong>Fast Ethernet</strong><br>物理层的传送采用MLT-3.</li>
+</ul>
+<h2 id="5-互联：Hubs-and-switches"><a href="#5-互联：Hubs-and-switches" class="headerlink" title="5.互联：Hubs and switches"></a>5.互联：Hubs and switches</h2><h1 id="五、无线移动网络"><a href="#五、无线移动网络" class="headerlink" title="五、无线移动网络"></a>五、无线移动网络</h1><h2 id="1-无线网络的组成元素"><a href="#1-无线网络的组成元素" class="headerlink" title="1. 无线网络的组成元素"></a>1. 无线网络的组成元素</h2><p>&ensp;&ensp;&ensp;&ensp;无线网络分为<strong>Infrastructure mode（传统模式）</strong>与<strong>Ad hoc mod（自组织模式）</strong>。</p>
+<h3 id="ensp-ensp-ensp-ensp-传统模式的无线基础网络"><a href="#ensp-ensp-ensp-ensp-传统模式的无线基础网络" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;传统模式的无线基础网络"></a>&ensp;&ensp;&ensp;&ensp;传统模式的无线基础网络</h3><p>&ensp;&ensp;&ensp;&ensp;一个传统无线网络的核心便是 <strong>“无线网络基础”（network infrastructure）</strong>，即其无线核心网/传输网。与该无线核心网相连的是一定数量的 <strong>“接入网”</strong>，它的另一端连接着<strong>基站（base station）</strong>，而因为目前基站形态日趋多变，现在更倾向于叫其 <strong>“接入点”（access point）</strong>。连接移动设备与接入点的是 <strong>“无线链路”（wireless link）</strong>。无线链路也可以用作回传链路（大多数是拉光纤）。移动设备与无线链路的连接也需要遵从协议，例如4G的协议使用了OFDMA，而WiFi接入便使用了CSMA/CA。<br>&ensp;&ensp;&ensp;&ensp;<span style="border-bottom:2px dashed pink;"><em>为什么基站在城市中的覆盖范围很小，在农村旷野上覆盖面很大？</em></span><em>1.农村用户密度低，traffic load业务负载比较轻，而城市用户密度大，需要更多基站来分摊业务量；2.频率复用问题。范围小了，辐射范围有限，非相邻区域间隔更远，可以使用相同的频点而不发生干扰。（频率复用：如果相邻区域使用相同频点，会发生冲突，故不能够复用；而间隔可以）</em></p>
+<ul>
+<li>Hand off的解决<h3 id="ensp-ensp-ensp-ensp-自组织模式的无线网络"><a href="#ensp-ensp-ensp-ensp-自组织模式的无线网络" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;自组织模式的无线网络"></a>&ensp;&ensp;&ensp;&ensp;自组织模式的无线网络</h3>&ensp;&ensp;&ensp;&ensp;自组织模式主要运用在军事网络上。<h2 id="2-无线网络链路的特点"><a href="#2-无线网络链路的特点" class="headerlink" title="2. 无线网络链路的特点"></a>2. 无线网络链路的特点</h2></li>
+<li>衰减快</li>
+<li>外源干扰多</li>
+<li>多径传播，晚到信号对早到信号的干扰——MIMO技术变废为宝</li>
+</ul>
+<h3 id="ensp-ensp-ensp-ensp-CDMA（Code-Division-Multiple-Access）"><a href="#ensp-ensp-ensp-ensp-CDMA（Code-Division-Multiple-Access）" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;CDMA（Code Division Multiple Access）"></a>&ensp;&ensp;&ensp;&ensp;CDMA（Code Division Multiple Access）</h3><p>&ensp;&ensp;&ensp;&ensp;将有用的信号扩频到一个很宽的频率中。即用原始信号乘以一个高速的扩频序列，频带就扩宽了。具体处理流程图如下：<br><img src="https://img-blog.csdnimg.cn/20200615101706133.png" alt="在这里插入图片描述"><br>其中，发送端的$d_1,d_0$为原始信号，乘以下方的高频信号后进行传输。而接收方则对处理后的信号再乘以相同的高频信号，处理后恢复原信号。</p>
+<h2 id="3-IEEE-802-11-Wireless-LAN"><a href="#3-IEEE-802-11-Wireless-LAN" class="headerlink" title="3. IEEE 802.11 Wireless LAN"></a>3. IEEE 802.11 Wireless LAN</h2><p>&ensp;&ensp;&ensp;&ensp;常见的802.11协议有</p>
+<ul>
+<li>802.11b，其频域为2.4-5GHz，不需要无线电申报。使用直接序列扩频（DSSS）来抗干扰，所有终端使用相同chipping code</li>
+<li>802.11a</li>
+<li>802.11g</li>
+</ul>
+<p>&ensp;&ensp;&ensp;&ensp;802.11 LAN的一个重要结构便是<strong>BSS基本服务集（Basic Service Set）</strong>，也叫一个cell。一个BSS是由许多客户终端与一个AP（access point）组成的。相邻AP频段不同，自行配置。每一个Host要想接入网络，必须先连接一个AP，AP会一直不停地向周围发送包括AP地名字（SSID）与MAC地址的becon（信标信号）。那么用户便可以选择一个AP来连接（例如隔壁老王的WIFI），该连接过程可能需要authentication（密码验证）。</p>
+<h3 id="ensp-ensp-ensp-ensp-CSMA-CA的冲突解决"><a href="#ensp-ensp-ensp-ensp-CSMA-CA的冲突解决" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;CSMA/CA的冲突解决"></a>&ensp;&ensp;&ensp;&ensp;CSMA/CA的冲突解决</h3><p>&ensp;&ensp;&ensp;&ensp;<span style="border-bottom:2px dashed pink;"><em>为什么802.11没有冲突检测？</em></span><em>因为CSMA/CA是半双工的，在同一时刻只能单独接收或发送；以太网使用的CSMA/CD为全双工，它可以检测。故使用CSMA/CA要想避免冲突，除了本地处理，就只能依靠上一子层LLC（logic link control）或运输层TCP来实现。</em></p>
+<ul>
+<li><p><strong>为了解决冲突问题，第一便是从收发机制上解决：</strong><br>  &ensp;&ensp;&ensp;&ensp;<strong>802.11发送方：</strong> 在检测到链路idle时，发送数据之前，会进行较长时间的监听 <strong>[即一个DIFS（distributed interframe space，分布式帧间间隔）间隔]</strong> 再进行传输来避免冲突；如果检测到链路busy，那么其会开始随机回退一个时间，直到在此检测到idle。；传输后便会开始等待ACK。<br>  &ensp;&ensp;&ensp;&ensp;<strong>802.11接收方：</strong> 在接收到数据包后，不会马上传输ACK，而是等待一个SIFS（short interframe space，短帧间间隔）后再进行传输。具体示意图如下：<br><img src="https://img-blog.csdnimg.cn/20200615105815270.png?" alt="在这里插入图片描述"></p>
+</li>
+<li><p><strong>尝试发送RTS包</strong><br>  &ensp;&ensp;&ensp;&ensp;在正式发送数据之前，发送方会基于CSMA/CA向BS基站发送一个很小的RTS（request-to-send）包（所有节点都会收到，收到后保持静默）。在收到RTS包后，基站会广播一个CTS（clear-to-send）包来回应RTS，然后便正式传输。<br>  &ensp;&ensp;&ensp;&ensp;这样一来，虽然RTS也可能发生冲突，但它规格小，浪费的时间很少。</p>
+<h3 id="ensp-ensp-ensp-ensp-802-11的寻址问题"><a href="#ensp-ensp-ensp-ensp-802-11的寻址问题" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;802.11的寻址问题"></a>&ensp;&ensp;&ensp;&ensp;802.11的寻址问题</h3><p>&ensp;&ensp;&ensp;&ensp;802.11帧的结构如下：<br><img src="https://img-blog.csdnimg.cn/20200615111246301.png" alt="在这里插入图片描述"></p>
+</li>
+<li><p><strong>同一子网中的移动问题</strong><br><img src="https://img-blog.csdnimg.cn/20200615112641403.png" alt="在这里插入图片描述"><br>  &ensp;&ensp;&ensp;&ensp;例如一个H1从BSS1移动到BSS2中，该子网会采取自我学习的模式，switch会得到来自H1的帧，并“记住”使用哪个switch端口可以到达H1。一旦H1不能被检测到，便开始广播。</p>
+</li>
+</ul>
+<h2 id="4-蜂窝移动网（cellular-network）"><a href="#4-蜂窝移动网（cellular-network）" class="headerlink" title="4.蜂窝移动网（cellular network）"></a>4.蜂窝移动网（cellular network）</h2><p>&ensp;&ensp;&ensp;&ensp;在AP中，一次只允许一个连接通信；而移动蜂窝网将整个频段划分为上百个信道可以同时使用，情况更加复杂。</p>
+<h2 id="5-移动性（Mobility）"><a href="#5-移动性（Mobility）" class="headerlink" title="5.移动性（Mobility）"></a>5.移动性（Mobility）</h2>]]></content>
+      <categories>
+        <category>专业学科</category>
+        <category>通信网络</category>
+      </categories>
+      <tags>
+        <tag>通信网络</tag>
       </tags>
   </entry>
   <entry>
@@ -524,330 +854,8 @@ B: Yeah...
         <category>信号与系统科目</category>
       </categories>
       <tags>
+        <tag>信号与系统</tag>
         <tag>信息论</tag>
-        <tag>信号与系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【学科笔记】通信网络的框架梳理</title>
-    <url>/2020/05/27/%E9%80%9A%E4%BF%A1%E7%BD%91%E7%BB%9C%E6%A2%B3%E7%90%86/</url>
-    <content><![CDATA[<blockquote>
-<p>嵩云秦树久离居，双鲤迢迢一纸书。——李商隐《寄令狐郎中》</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;<del>通信网络框架是怎么回事呢？因特网相信大家都很熟悉，但是通信网络框架是怎么回事呢，下面就让小编带大家一起了解吧。</del></p>
-<a id="more"></a>
-<p>&ensp;&ensp;&ensp;&ensp;好了不开玩笑了。整个通信网络体系自顶向下由5个层级构成：<strong>应用层、运输层、网络层、链路层、物理层</strong>。每一个layer里面都有各自对应的结构构造、数据包结构、通信协议、拥塞控制机制、甚至是错误错误控制机制。其中数据包单位（PDU，protocol data unit）自定向下分别为：<strong>Message、Segment（报文段）、datagram（数据报）、Frame（帧）、Bit（比特）</strong>；每一层的常见协议/传输方式自顶向下有：HTTP、FTP、DNS； TCP\UDP；VC、datagram(IP)；（Stop-and-Wait protocol、Sliding-Window Protocal、Piggybacking）流量控制协议、多路访问协议等等。<br>&ensp;&ensp;&ensp;&ensp;本文主要是以梳理串线为主，将通信网络中学到的内容整理起来，以供日后使用。</p>
-<h1 id="一、应用层"><a href="#一、应用层" class="headerlink" title="一、应用层"></a>一、应用层</h1><h1 id="二、运输层"><a href="#二、运输层" class="headerlink" title="二、运输层"></a>二、运输层</h1><h1 id="三、网络层"><a href="#三、网络层" class="headerlink" title="三、网络层"></a>三、网络层</h1><h2 id="路由算法"><a href="#路由算法" class="headerlink" title="路由算法"></a>路由算法</h2><h3 id="链路状态选路算法"><a href="#链路状态选路算法" class="headerlink" title="链路状态选路算法"></a>链路状态选路算法</h3><p>&ensp;&ensp;&ensp;&ensp;链路状态选路算法可以用来计算从某节点（源节点，u）到网络中所有其它节点的最低费用路径。它是一种迭代算法，即经第k次迭代后，可以知道k个目的节点的最低费用路径。</p>
-<ul>
-<li><strong>链路状态选路算法中的变量</strong><br>  $D(v)$：本次迭代从源节点到目的节点v的最低费用路径所需的费用<br>  $p(v)$：延当前选路N’点中从源点到达v的邻居节点 (predecessor node along path from source to v)<br>  $N’$：最低费用<strong>绝对已知</strong>的节点集合，包括v本身</li>
-<li><strong>具体算法</strong><br>  对于一个如下连接的网络：<br>  <img src="https://img-blog.csdnimg.cn/20200622212418869.png" alt="在这里插入图片描述"><br>  伪代码如下：<br>  <img src="https://img-blog.csdnimg.cn/20200622212205187.png" alt="在这里插入图片描述"><br>  &ensp;&ensp;&ensp;&ensp;初始化阶段。从源头u到其直连邻居vxw的当前已知最低费用初始化为2、1、5（举例）；到非直连路由y、z的费用设为无穷大；<br>  &ensp;&ensp;&ensp;&ensp;<strong>而后是多个变量的操作：</strong><br>  &ensp;&ensp;&ensp;&ensp;N’：第一次迭代。第一次迭代结束时具有最低费用的节点为x，因此x被加入集合N’；<br>  &ensp;&ensp;&ensp;&ensp;D(w)：执行LS算法中第12行，更新所有节点的D()，产生表步骤1结果；<br>  &ensp;&ensp;&ensp;&ensp;p(w)：沿从uk开始最短路径上w’的前一个节点被设为x<br>  &ensp;&ensp;&ensp;&ensp;类似的，y的费用也会更新<br>  &ensp;&ensp;&ensp;&ensp;N’：第二次迭代，节点v与y被发现有最低费用路径，任意选择如y加入集合N’，其余更新类似，以此类推<br>  最终的图表如下：<br>  <img src="https://img-blog.csdnimg.cn/202006222122352.png" alt="在这里插入图片描述"></li>
-</ul>
-<h3 id="距离矢量选路算法"><a href="#距离矢量选路算法" class="headerlink" title="距离矢量选路算法"></a>距离矢量选路算法</h3><p>&ensp;&ensp;&ensp;&ensp;距离矢量选路算法是一种<strong>分布式</strong>的算法，每个节点都要从一个或多个直接相连的邻居接收某些信息、执行计算、然后将计算结果发送给邻居；该算法的<strong>迭代</strong>需要一直持续到邻居间没有更多信息要交换为止，此算法为自我终结；它是<strong>异步</strong>的，不要求所有节点相互之间步伐一致的操作。</p>
-<ul>
-<li><strong>Bellman-Ford方程</strong><br>  &ensp;&ensp;&ensp;&ensp;在说明其具体算法实现之前，需要了解<strong>Bellman-Ford方程</strong>：<br>  $$d_x(y)=min{c(x,v)+d_v(y)}$$<br>  &ensp;&ensp;&ensp;&ensp;其中，$d_x(y)$表示从节点x到y的<strong>最低费用路径</strong>所需的费用；而该公式中的$min$代表着取遍x的所有邻居。其更准确的写法应该为：<br>  $$min{c(x,a)+d_a(y), c(x,b)+d_b(y), …}$$<br>  &ensp;&ensp;&ensp;&ensp;其中a，b…都为x的邻居，y为目的地；即从x到y的最低费用是对所有邻居$v$的$c(x,v)+dv(y)$的最小值.</li>
-<li><strong>具体算法</strong><br>  &ensp;&ensp;&ensp;&ensp;距离矢量选路算法中从节点x到y的最低费用使用$D_x(y)$表示，在自然状态下$D_x(y)$会收敛为$d_x(y)$<br>  &ensp;&ensp;&ensp;&ensp;该算法开始作用后，每个节点都会自动开始测试<strong>自己到直接邻居节点的费用</strong>，然后每个节点也会周期性地发送 <strong>自己的测量到的距离信息向量DV(Distance Vector)</strong> 至其直接邻居。例如当节点x从邻居处接收到新的DV信息，它会利用B-F公式更新自己的DV。<br>  <img src="https://img-blog.csdnimg.cn/20200622150022587.png" alt="在这里插入图片描述"><br>  节点x更新后<br>  <img src="https://img-blog.csdnimg.cn/20200622150111543.png" alt="在这里插入图片描述"></li>
-</ul>
-<h1 id="四、链路层、局域网"><a href="#四、链路层、局域网" class="headerlink" title="四、链路层、局域网"></a>四、链路层、局域网</h1><h2 id="1-链路层的错误检测修复机制（Error-detection-amp-correction）"><a href="#1-链路层的错误检测修复机制（Error-detection-amp-correction）" class="headerlink" title="1.链路层的错误检测修复机制（Error detection &amp; correction）"></a>1.链路层的错误检测修复机制（Error detection &amp; correction）</h2><h3 id="ensp-ensp-ensp-ensp-错误检测"><a href="#ensp-ensp-ensp-ensp-错误检测" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;错误检测"></a>&ensp;&ensp;&ensp;&ensp;错误检测</h3><h3 id="ensp-ensp-ensp-ensp-错误纠正（Automatic-repeat-request，ARQ）"><a href="#ensp-ensp-ensp-ensp-错误纠正（Automatic-repeat-request，ARQ）" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;错误纠正（Automatic repeat request，ARQ）"></a>&ensp;&ensp;&ensp;&ensp;错误纠正（Automatic repeat request，ARQ）</h3><h2 id="2-多路访问协议（Multiple-access-protocol，MAC-protocal）"><a href="#2-多路访问协议（Multiple-access-protocol，MAC-protocal）" class="headerlink" title="2.多路访问协议（Multiple access protocol，MAC protocal）"></a>2.多路访问协议（Multiple access protocol，MAC protocal）</h2><p>&ensp;&ensp;&ensp;&ensp;一般而言，网络连接有2种方式：即<strong>点对点（point-to-point）、以及广播（broadcast）</strong>。不同以往的拨号上网，现在的网络连接通常都是broadcast（shared medium）方式，例如shared wire（eg：以太网）、shared wireless（eg：Wavelan）。使用广播手段便需要解决一个问题，因为任何时候只能接入一个用户，此时其余用户只能等待，如果两个及以上的用户同时进入，相当于2个及以上的节点同时传输帧，那么所有的节点都会同时接收到多个帧，那么此时传输的帧便在所有的接收方处发生<strong>碰撞（collide）</strong>。而多个用户都想同时接入进来，如何协调接入到单个信道中的用户？如何保证公平性？<br>&ensp;&ensp;&ensp;&ensp;MAC便是<strong>一种决定节点如何分享频道的分布式算法，例如节点何时可以传输。</strong></p>
-<ul>
-<li>理想MAC下的一些变量及先前假设（完全不可能做到，但就像数学建模一样，下面分析模型需要基于它）</li>
-</ul>
-<p>-$R$：节点的传输速率<br>-$\frac{R}{M}$：M个节点的平均传输速率<br>-假设没有特殊节点来协调传输<br>-假设没有时钟同步</p>
-<h3 id="ensp-ensp-ensp-ensp-信道划分协议（Channel-partitioning）"><a href="#ensp-ensp-ensp-ensp-信道划分协议（Channel-partitioning）" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;信道划分协议（Channel partitioning）"></a>&ensp;&ensp;&ensp;&ensp;信道划分协议（Channel partitioning）</h3><p>&ensp;&ensp;&ensp;&ensp;基本原理为将带宽划分为许多子信道，每个子信道分给许多用户来使用。这是现有基站常用的方法。常见有：时分复用（time slots）、频分复用（frequency slots）、码分复用（code slots）、正交码分复用，空分复用。</p>
-<ul>
-<li><p><strong>时分复用多路访问（Time Division Multiple Access，TDMA）</strong><br>缺点：有可能浪费子信道，因为信道对应的用户已经划分好；需要全网同步，难度极大</p>
-</li>
-<li><p><strong>频分复用多路访问（Frequency Division Multiple Access，FDMA）</strong><br>从频域上划分为多个信道。困难在于难以划分干净，因为实际滤波器有衰减带，可能发生码间干扰。广播电台通常用此法。</p>
-</li>
-<li><p><strong>码分复用多路访问（Code Division Multiple Access， CDMA）</strong><br>码分复用进行的相当于是对original signal的扩频：<br>$$encoded\ signal=(original\ data) \times (chipping\ sequence)$$<br>相当于把原始信号给掩盖了，属于抗干扰加密通信。在无线网络通信章节会更详细说明。</p>
-</li>
-</ul>
-<h3 id="ensp-ensp-ensp-ensp-随机接入协议（Random-access-protocol）"><a href="#ensp-ensp-ensp-ensp-随机接入协议（Random-access-protocol）" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;随机接入协议（Random access protocol）"></a>&ensp;&ensp;&ensp;&ensp;随机接入协议（Random access protocol）</h3><p>&ensp;&ensp;&ensp;&ensp;随机接入协议不分子信道，允许冲突，但有一个从冲突中恢复的机制。该协议的主要研究点在于如何检测是否发生冲突、以及如何从冲突中恢复。</p>
-<ul>
-<li><p><strong>Slotted ALOHA</strong></p>
-<ul>
-<li><p>前提假设<br>假设所有帧都是相同大小<br>1个frame刚好花一个单元的时间传送<br>节点都被同步了<br>每次传输的概率为p</p>
-</li>
-<li><p>操作<br>当一个节点得到一个帧，它会向下一个节点传输。当发生冲突时，节点会基于重传概率$p$向下一个节点进行重传，直到成功。因为如果同时全部重传，会再一次在接收端产生冲突，类似于对向骑自行车你往左我往右这样错误的避让方式一样。</p>
-</li>
-<li><p>效率<br>1个节点成功传输的概率为：$p(1-p)^{N-1}$，类似于伯努利分布<br>任何一个节点成功传输的概率：$Np(1-p)^{N-1}$<br>许多个节点的最大效率为$0.368\approx 37%$</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Pure ALOHA(没有p，检测到前一个time frame、后一个time frame没有传输便可以传)</strong></p>
-<ul>
-<li>效率<br>1个节点成功传输的概率：$p(1-p)^{N-1}(1-p)^{N-1}=p(1-p)^{2(N-1)}$<br>许多个节点最大效率为$0.18$</li>
-</ul>
-<p>  <em>为什么吞吐量/Traffic Load图会随G增大而先大后小？刚开始负载小，信道空闲碰撞机会小成功机会大；一定程度后资源饱和，再增加反而会降低</em></p>
-</li>
-<li><p><strong>CSMA(Carrier Sense Multiple Access)</strong><br>在传输之前会感知链路上的传输情况，链路idle便传输、busy便推迟。<br>—— <strong>1-persistent CSMA</strong><br>&ensp;&ensp;&ensp;&ensp;其会在传输一个帧之前对频道进行监听，<strong>当频道忙时，等待直到idle</strong>；如果idle，则传输。如果冲突发生了，它会等待一个random time后重复该算法。<br>&ensp;&ensp;&ensp;&ensp;<strong>缺点</strong>：冲突依然可能发生，因为传播监听会有时延，一节点发送帧以后busy信号可能还没有传播到另一节点，另一节点检测到idle便也发送帧造成冲突；2个节点都可能同时发现频道idle，同时发送数据。<br/><br>—— <strong>Non-persistent CSMA</strong><br>&ensp;&ensp;&ensp;&ensp;其会在传输一个帧之前对频道进行监听，<strong>当频道忙时，等待一个random time然后重复该算法</strong>；如果idle，则传输。如果冲突发生了，它会等待一个random time后重复该算法。该算法结果是更高的频道利用率，但通常比1-persistent的时延更长。<br/><br>—— <strong>P-persistent CSMA</strong><br>&ensp;&ensp;&ensp;&ensp;其会在传输一个帧之前对频道进行监听，<strong>如果idle，则以概率$p$的几率传输，$1-p$的概率等待到下一个slot</strong>。如果冲突发生了、或频道忙，它会等待下一个slot然后重复该算法。概率$p$可以取不同值，$p$越小，理论利用率越强，但延时更高。<br>下面是不同随机接入协议吞吐量-Traffic load关系图<br><img src="https://i.loli.net/2020/05/27/o6HzAVWaODkhYjF.jpg" alt="图片1.jpg"></p>
-<!--https://sm.ms/delete/glFdeEsMSoCjOUyp5WQ6RNTuLt--><br/>
-</li>
-<li><p><strong>CSMA/CD(Collision Detection)</strong></p>
-<ul>
-<li>工作原理<br>如果medium是idle的，传输；如果是busy的，监听直到idle然后再传输；<strong>如果冲突发生，jam then cease transmission（发送一个48比特、能量很强的干扰阻塞信号，通知大家发生了冲突，停止发送）</strong>；jam发送后，等待一个random time再重复算法。<br>这样可以在发生冲突后立马停止传输，避免继续传输冲突帧导致信道资源浪费。</li>
-</ul>
-</li>
-</ul>
-<p>_<span style="border-bottom:2px dashed pink;">CSMA/CD为什么用于以太网而不能用于无线通信网络？</span>由于无线收发报机为半双工模式，不能同时手收发。_</p>
-<h3 id="ensp-ensp-ensp-ensp-轮流协议（Taking-turns-protocol）"><a href="#ensp-ensp-ensp-ensp-轮流协议（Taking-turns-protocol）" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;轮流协议（Taking-turns protocol）"></a>&ensp;&ensp;&ensp;&ensp;轮流协议（Taking-turns protocol）</h3><p>&ensp;&ensp;&ensp;&ensp;即节点轮流传输</p>
-<ul>
-<li>“Taking Turns” MAC protocal（环网，拿到token的节点可以进行传输。传完了token给下一个）<br>两边讨好，结果不好用。</li>
-</ul>
-<h2 id="3-链路层编址（Link-layer-addressing）"><a href="#3-链路层编址（Link-layer-addressing）" class="headerlink" title="3.链路层编址（Link layer addressing）"></a>3.链路层编址（Link layer addressing）</h2><p>&ensp;&ensp;&ensp;&ensp;运输层有端口号，网络层有IP地址（只负责送到对应的IP子网，IP地址相当于住址，可以改变）。到了子网中则需要<strong>48bits的链路层编址MAC地址</strong>进行“最后一公里”的传输，MAC地址相当于身份证号，不变的。<br><br></p>
-<p><em>为什么MAC地址与IP地址都是必须的？因为IP地址相当于城市+地区+街道+门牌号，没有IP地址不能够确定主机的大致位置。而MAC地址主要用于局域网子网内精确寻找目标。</em></p>
-<ul>
-<li><p><strong>ARP：Address Resolution Protocol</strong><br>  <em>在知道一节点的IP地址情况下，如何判断其MAC地址呢？—每一个LAN上的IP节点都有一个<strong>ARP table</strong>，里面有IP地址及对应的MAC地址，以及TTL。<strong>类似于DNS，DNS建立了应用层URL与IP的关系，而ARP建立了IP与MAC的关系</strong></em></p>
-<ul>
-<li><strong>ARP-table的建立（实时更新，soft state，即插即用）</strong><br>如果A要向B送一个datagram，而B的MAC地址不在A的ARP表中。在A通过DNS知晓B的IP地址后，A便会向自身LAN中广播一个包含B的IP地址的ARP query packet。B收到后，通过unicast回复A自己的MAC地址。如果B不在该LAN中，则会通过路由器根据IP地址传输该query packet到B所在的LAN中。</li>
-</ul>
-</li>
-</ul>
-<h2 id="4-局域网之以太网"><a href="#4-局域网之以太网" class="headerlink" title="4.局域网之以太网"></a>4.局域网之以太网</h2><p>&ensp;&ensp;&ensp;&ensp;局域网的标准IEEE 802 Standards基本是上都是美国人定下的。在此主要梳理一下802.2（逻辑链路控制）、802.3（以太网）、802.4（消失了）、802.5（快死掉了）协议。其中，<strong>以太网就是上述各类协议实际使用的一个典型例子</strong>。</p>
-<ul>
-<li>802.2：Logic Link Control<br>在LLC中，数据链路层（Data link layer）被分为2个子层，一层为LLC层，连接网络层（Network layer）；另一层为MAC层，连接物理层(Physical layer).<h3 id="ensp-ensp-ensp-ensp-802-3：以太网"><a href="#ensp-ensp-ensp-ensp-802-3：以太网" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;802.3：以太网"></a>&ensp;&ensp;&ensp;&ensp;802.3：以太网</h3></li>
-<li><strong>特点</strong>：Unreliable，connectionless service</li>
-<li><strong>Ethernet Cabling</strong>：多种物理媒介</li>
-<li><strong>最佳的连接形式</strong>：Star topology+hub<br>中间的hub只执行信号放大的功能，并不执行任何协议，称它是layer 1 device。相对的，Ethernet就是一个layer 2 devices，它要检查MAC地址。</li>
-<li><strong>曼彻斯特编码</strong>：1变成$[10]_2$；0变成$[01]_2$</li>
-<li>为什么以太网通信不传递原始信号（带宽比曼彻斯特编码小一倍）而传递曼彻斯特编码？曼彻斯特编码具有自同步能力和良好的抗干扰性能，*</li>
-<li><strong>以太网帧（Frame）结构</strong><br><img src="https://i.loli.net/2020/05/28/g6hls3A9xPBKpWi.png" alt="QQ截图20200528151843.png"><!--https://sm.ms/delete/t25HxBWIN9J4hG3QeCfglbMzOy--><br><img src="https://i.loli.net/2020/05/28/RoG21bNB35YhsJT.png" alt="QQ截图20200528153332.png"><!--https://sm.ms/delete/LgZm5w6TCn4JBb9MHWQR2sV8vh--><ul>
-<li>Preamble（序言）：7个字节，模式为10101010，然后是一个字节，模式为10101011；主要用于同步接收方，发送clock rate</li>
-<li>Address：6个字节</li>
-<li>Type：指示更高的层协议(主要是IP协议，但也可能支持其他协议，如Novell IPX和AppleTalk)</li>
-<li>CRC：在接收端检查，如果检测到错误，帧就会被丢弃</li>
-<li><strong>最小长度</strong>： 与传输速率有关。对于10Mbps，250m的LAN而言为64byte（一个RTT是$50\mu sec$，以太网传输一个bit的时间为$100nsec$，那么frame最小长度为$500bits\rightarrow512bits=64byte$）</li>
-</ul>
-</li>
-</ul>
-<p><span style="border-bottom:2px dashed pink;"><em>为什么以太网的Frame有最小的长度要求？结构Pad是做什么用的？</em></span>以太网中的帧过小将导致发生冲突时数据已经传输完毕（<strong>一旦传输完成没有冲突报告就不管了</strong>），无法检测到是否发生了冲突，故以太网中的帧有一个最小长度，使包头到达下一节点时包尾还未传输。pad主要是用于填充长度，使其达到最小长度</p>
-<ul>
-<li><strong>以太网使用CSMA/CD协议</strong><ul>
-<li>以太网使用的是CSMA/CD多路访问协议。其中大部分都与原生CSMA/CD协议的算法相同，不同之处在于<strong>发生冲突丢弃帧之后的操作，它明确了等待的random time</strong>，它会进入一个“Exponential backoff”：即在发生第m次冲突之后，会从${0,1,2,…,2^{m}-1}$中随机选择一个数作为K，来等待$K\times 512$个bit times，然后重新开始回到感知频道状态。</li>
-<li>Exponential backoff的目的：调整重传，尝试估计当前负载</li>
-<li>CSMA/CD的效率<br>$$Efficiency=\cfrac{1}{1+(\cfrac{5t_{prop}}{t_{trans}})}$$</li>
-</ul>
-</li>
-<li><strong>Switched Ethernet</strong><br>使用Switch直接点到点与用户相连。由于CSMA/CD便宜速度不错，没有必要单独开发点对点的协议，故点对点也使用的CSMA/CD。</li>
-<li><strong>Fast Ethernet</strong><br>物理层的传送采用MLT-3.</li>
-</ul>
-<h2 id="5-互联：Hubs-and-switches"><a href="#5-互联：Hubs-and-switches" class="headerlink" title="5.互联：Hubs and switches"></a>5.互联：Hubs and switches</h2><h1 id="五、无线移动网络"><a href="#五、无线移动网络" class="headerlink" title="五、无线移动网络"></a>五、无线移动网络</h1><h2 id="1-无线网络的组成元素"><a href="#1-无线网络的组成元素" class="headerlink" title="1. 无线网络的组成元素"></a>1. 无线网络的组成元素</h2><p>&ensp;&ensp;&ensp;&ensp;无线网络分为<strong>Infrastructure mode（传统模式）</strong>与<strong>Ad hoc mod（自组织模式）</strong>。</p>
-<h3 id="ensp-ensp-ensp-ensp-传统模式的无线基础网络"><a href="#ensp-ensp-ensp-ensp-传统模式的无线基础网络" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;传统模式的无线基础网络"></a>&ensp;&ensp;&ensp;&ensp;传统模式的无线基础网络</h3><p>&ensp;&ensp;&ensp;&ensp;一个传统无线网络的核心便是 <strong>“无线网络基础”（network infrastructure）</strong>，即其无线核心网/传输网。与该无线核心网相连的是一定数量的 <strong>“接入网”</strong>，它的另一端连接着<strong>基站（base station）</strong>，而因为目前基站形态日趋多变，现在更倾向于叫其 <strong>“接入点”（access point）</strong>。连接移动设备与接入点的是 <strong>“无线链路”（wireless link）</strong>。无线链路也可以用作回传链路（大多数是拉光纤）。移动设备与无线链路的连接也需要遵从协议，例如4G的协议使用了OFDMA，而WiFi接入便使用了CSMA/CA。<br>&ensp;&ensp;&ensp;&ensp;<span style="border-bottom:2px dashed pink;"><em>为什么基站在城市中的覆盖范围很小，在农村旷野上覆盖面很大？</em></span><em>1.农村用户密度低，traffic load业务负载比较轻，而城市用户密度大，需要更多基站来分摊业务量；2.频率复用问题。范围小了，辐射范围有限，非相邻区域间隔更远，可以使用相同的频点而不发生干扰。（频率复用：如果相邻区域使用相同频点，会发生冲突，故不能够复用；而间隔可以）</em></p>
-<ul>
-<li>Hand off的解决<h3 id="ensp-ensp-ensp-ensp-自组织模式的无线网络"><a href="#ensp-ensp-ensp-ensp-自组织模式的无线网络" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;自组织模式的无线网络"></a>&ensp;&ensp;&ensp;&ensp;自组织模式的无线网络</h3>&ensp;&ensp;&ensp;&ensp;自组织模式主要运用在军事网络上。<h2 id="2-无线网络链路的特点"><a href="#2-无线网络链路的特点" class="headerlink" title="2. 无线网络链路的特点"></a>2. 无线网络链路的特点</h2></li>
-<li>衰减快</li>
-<li>外源干扰多</li>
-<li>多径传播，晚到信号对早到信号的干扰——MIMO技术变废为宝</li>
-</ul>
-<h3 id="ensp-ensp-ensp-ensp-CDMA（Code-Division-Multiple-Access）"><a href="#ensp-ensp-ensp-ensp-CDMA（Code-Division-Multiple-Access）" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;CDMA（Code Division Multiple Access）"></a>&ensp;&ensp;&ensp;&ensp;CDMA（Code Division Multiple Access）</h3><p>&ensp;&ensp;&ensp;&ensp;将有用的信号扩频到一个很宽的频率中。即用原始信号乘以一个高速的扩频序列，频带就扩宽了。具体处理流程图如下：<br><img src="https://img-blog.csdnimg.cn/20200615101706133.png" alt="在这里插入图片描述"><br>其中，发送端的$d_1,d_0$为原始信号，乘以下方的高频信号后进行传输。而接收方则对处理后的信号再乘以相同的高频信号，处理后恢复原信号。</p>
-<h2 id="3-IEEE-802-11-Wireless-LAN"><a href="#3-IEEE-802-11-Wireless-LAN" class="headerlink" title="3. IEEE 802.11 Wireless LAN"></a>3. IEEE 802.11 Wireless LAN</h2><p>&ensp;&ensp;&ensp;&ensp;常见的802.11协议有</p>
-<ul>
-<li>802.11b，其频域为2.4-5GHz，不需要无线电申报。使用直接序列扩频（DSSS）来抗干扰，所有终端使用相同chipping code</li>
-<li>802.11a</li>
-<li>802.11g</li>
-</ul>
-<p>&ensp;&ensp;&ensp;&ensp;802.11 LAN的一个重要结构便是<strong>BSS基本服务集（Basic Service Set）</strong>，也叫一个cell。一个BSS是由许多客户终端与一个AP（access point）组成的。相邻AP频段不同，自行配置。每一个Host要想接入网络，必须先连接一个AP，AP会一直不停地向周围发送包括AP地名字（SSID）与MAC地址的becon（信标信号）。那么用户便可以选择一个AP来连接（例如隔壁老王的WIFI），该连接过程可能需要authentication（密码验证）。</p>
-<h3 id="ensp-ensp-ensp-ensp-CSMA-CA的冲突解决"><a href="#ensp-ensp-ensp-ensp-CSMA-CA的冲突解决" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;CSMA/CA的冲突解决"></a>&ensp;&ensp;&ensp;&ensp;CSMA/CA的冲突解决</h3><p>&ensp;&ensp;&ensp;&ensp;<span style="border-bottom:2px dashed pink;"><em>为什么802.11没有冲突检测？</em></span><em>因为CSMA/CA是半双工的，在同一时刻只能单独接收或发送；以太网使用的CSMA/CD为全双工，它可以检测。故使用CSMA/CA要想避免冲突，除了本地处理，就只能依靠上一子层LLC（logic link control）或运输层TCP来实现。</em></p>
-<ul>
-<li><p><strong>为了解决冲突问题，第一便是从收发机制上解决：</strong><br>  &ensp;&ensp;&ensp;&ensp;<strong>802.11发送方：</strong> 在检测到链路idle时，发送数据之前，会进行较长时间的监听 <strong>[即一个DIFS（distributed interframe space，分布式帧间间隔）间隔]</strong> 再进行传输来避免冲突；如果检测到链路busy，那么其会开始随机回退一个时间，直到在此检测到idle。；传输后便会开始等待ACK。<br>  &ensp;&ensp;&ensp;&ensp;<strong>802.11接收方：</strong> 在接收到数据包后，不会马上传输ACK，而是等待一个SIFS（short interframe space，短帧间间隔）后再进行传输。具体示意图如下：<br><img src="https://img-blog.csdnimg.cn/20200615105815270.png?" alt="在这里插入图片描述"></p>
-</li>
-<li><p><strong>尝试发送RTS包</strong><br>  &ensp;&ensp;&ensp;&ensp;在正式发送数据之前，发送方会基于CSMA/CA向BS基站发送一个很小的RTS（request-to-send）包（所有节点都会收到，收到后保持静默）。在收到RTS包后，基站会广播一个CTS（clear-to-send）包来回应RTS，然后便正式传输。<br>  &ensp;&ensp;&ensp;&ensp;这样一来，虽然RTS也可能发生冲突，但它规格小，浪费的时间很少。</p>
-<h3 id="ensp-ensp-ensp-ensp-802-11的寻址问题"><a href="#ensp-ensp-ensp-ensp-802-11的寻址问题" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;802.11的寻址问题"></a>&ensp;&ensp;&ensp;&ensp;802.11的寻址问题</h3><p>&ensp;&ensp;&ensp;&ensp;802.11帧的结构如下：<br><img src="https://img-blog.csdnimg.cn/20200615111246301.png" alt="在这里插入图片描述"></p>
-</li>
-<li><p><strong>同一子网中的移动问题</strong><br><img src="https://img-blog.csdnimg.cn/20200615112641403.png" alt="在这里插入图片描述"><br>  &ensp;&ensp;&ensp;&ensp;例如一个H1从BSS1移动到BSS2中，该子网会采取自我学习的模式，switch会得到来自H1的帧，并“记住”使用哪个switch端口可以到达H1。一旦H1不能被检测到，便开始广播。</p>
-</li>
-</ul>
-<h2 id="4-蜂窝移动网（cellular-network）"><a href="#4-蜂窝移动网（cellular-network）" class="headerlink" title="4.蜂窝移动网（cellular network）"></a>4.蜂窝移动网（cellular network）</h2><p>&ensp;&ensp;&ensp;&ensp;在AP中，一次只允许一个连接通信；而移动蜂窝网将整个频段划分为上百个信道可以同时使用，情况更加复杂。</p>
-<h2 id="5-移动性（Mobility）"><a href="#5-移动性（Mobility）" class="headerlink" title="5.移动性（Mobility）"></a>5.移动性（Mobility）</h2>]]></content>
-      <categories>
-        <category>专业学科</category>
-        <category>通信网络</category>
-      </categories>
-      <tags>
-        <tag>通信网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【摄影心得】摄影后期处理-电影调色</title>
-    <url>/2020/09/19/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86-%E7%94%B5%E5%BD%B1%E8%B0%83%E8%89%B2/</url>
-    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;最近感觉自己迷上了摄影，在路上走着走着、在自习室休息的时候，时不时灵感来了都会拿手机整一两张照片。但众所周知的是，未经过后期处理的照片大多都不是很好看的，俗称卖相不太好。故最近空余时间便拿来涉猎了一下Photoshop里面关于照片后期调色处理的内容。这里主要记录一下照片的电影调色是如何实现的。<br>&ensp;&ensp;&ensp;&ensp;总的来说分为三步：</p>
-<ol>
-<li>拍摄RAW类型照片$\rightarrow$</li>
-<li>在电脑上通过后缀为.dcp的相机色彩文件，在Photoshop中转换为LOG照片类型$\rightarrow$</li>
-<li>在Photoshop中利用下载的调色大师们配置好的3D LUTS包，加载到图片上，整个过程便算完成了。<br>&ensp;&ensp;&ensp;&ensp;我自己因为经费不足，平常用到的拍摄器材便是手机了。我的手机型号是华为的P20，一般在网上下载的.dcp相机配置文件包中是不含的。故该文件需要自己配置。其实配置这个文件说来也很简单。</li>
-</ol>
-<ul>
-<li>在手机相机设置里打开允许储存RAW类型照片的按钮，随便拍一张照片，储存为DNG格式，在属性里面把相机型号复制下来</li>
-<li>下载一个DNG_Profile_Editor，导入该照片，在base profiles里的choose external profiles选项，选择一个网上找得到的任意一个相机型号的.dcp文件，然后选择导出，重命名为VisionLOG_XXXXX(复制的相机型号)即可</li>
-<li>把该文件放到PS的…\Adobe\CameraRaw\CameraProfiles里面即可</li>
-<li>使用时即把需要调色的RAW类型图片用camera raw打开，在“相机校准”选项-“相机配置文件-名称”里选择该.dcp配置文件即可完成RAW-LOG转换，此时照片大概率会变灰色<br>&ensp;&ensp;&ensp;&ensp;然后就是在Photoshop中利用“颜色查找”载入自己下载的3D LUTS文件即可开启电影滤镜效果</li>
-</ul>
-]]></content>
-      <categories>
-        <category>摄影</category>
-      </categories>
-      <tags>
-        <tag>摄影</tag>
-        <tag>调色</tag>
-        <tag>艺术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>利用C语言调用matlab引擎</title>
-    <url>/2020/05/17/C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/</url>
-    <content><![CDATA[<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>&ensp;&ensp;&ensp;&ensp;在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？<br>&ensp;&ensp;&ensp;&ensp;于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。</p>
-<a id="more"></a>
-<p>&ensp;&ensp;&ensp;&ensp;本人在网上搜集到的调用matlab引擎的方法有二：</p>
-<ol>
-<li>一是程序运行需要完整的matlab软件进行支持；</li>
-<li>二是可以将matlab中的.m文件编译为${\rm .dll}$文件，运行时只需MCR即可。（MATLAB Component Runtime 简称 MCR，主要用于把MATLAB编写的东西打包到没装MATLAB的机器上使用。它是一组独立的共享库，通过它能够执行在MATLAB中编写的M文件。MCR支持MATLAB语言的所有功能。）</li>
-</ol>
-<p>&ensp;&ensp;&ensp;&ensp;现暂时尝试第一种方法。而调用引擎的第一步便是要配置好环境。</p>
-<h2 id="包含目录的路径配置"><a href="#包含目录的路径配置" class="headerlink" title="包含目录的路径配置"></a>包含目录的路径配置</h2><p>&ensp;&ensp;&ensp;&ensp;本人使用C语言编译环境为VS2019，所以首先是需要将VS的环境配置好。所以便打开要调用matlab的C语言工程文件，点开它的属性，找到“配置属性”中的“VC++目录”，将matlab中的相关文件路径添加进去。本人在matlab目录下找到相关文件：</p>
-<p><img src="https://img-blog.csdnimg.cn/20191003171140240.png" alt="Matlab目录下的文件夹"></p>
-<p>&ensp;&ensp;&ensp;&ensp;在extern文件夹中：</p>
-<p><img src="https://img-blog.csdnimg.cn/20191003171249440.png" alt="include文件夹"></p>
-<p>&ensp;&ensp;&ensp;&ensp;有一个让学C的人感到亲切而又熟悉的include文件夹。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191003171410778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgxMDQxMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>&ensp;&ensp;&ensp;&ensp;点开它，我们发现里面是浩瀚的.h文件海洋。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191003171456361.png" alt="在这里插入图片描述"></p>
-<p>&ensp;&ensp;&ensp;&ensp;于是我们便把这个include文件夹路径添加到VS编译器的“包含目录”中。此处“包含”指那个include目录。这里要注意系统位数，matlab与VS文件的操作位数一定要对应。本人所用电脑为64位，安装的matlab亦为64位。</p>
-<h2 id="静态数据库的目录配置"><a href="#静态数据库的目录配置" class="headerlink" title="静态数据库的目录配置"></a>静态数据库的目录配置</h2><p><img src="https://img-blog.csdnimg.cn/20191003171634592.png" alt="在这里插入图片描述"></p>
-<p>&ensp;&ensp;&ensp;&ensp;库目录的路径添加如出一辙，所添加文件夹为include文件夹下方lib文件夹中，win64中的Microsoft文件夹，里面全是.lib文件。</p>
-<h2 id="附加依赖项的添加"><a href="#附加依赖项的添加" class="headerlink" title="附加依赖项的添加"></a>附加依赖项的添加</h2><p><img src="https://img-blog.csdnimg.cn/20191003172035729.png" alt="在这里插入图片描述"></p>
-<p>&ensp;&ensp;&ensp;&ensp;然后再在链接器中的输入里，在附加依赖项中加 “libeng.lib;libmat.lib;libmex.lib;libmx.lib;”以便编译器引用所添加的.lib后缀文件们。</p>
-<h2 id="系统环境变量的配置"><a href="#系统环境变量的配置" class="headerlink" title="系统环境变量的配置"></a>系统环境变量的配置</h2><p>&ensp;&ensp;&ensp;&ensp;但这还不算完，我们最后还需要到Windows中的“高级系统设置”中找到“环境变量”来设置“系统变量”中的“Path”。</p>
-<p>&ensp;&ensp;&ensp;&ensp;环境变量是个什么东西呢？让我们运行Win+R，在其中输入环境变量path中有的一个文件目录“system32”，会发现系统自动打开了该文件夹；而输入环境变量中没有路径的文件夹名，但系统中存在该文件夹，却不能够打开成功。所以环境变量相当于是告诉系统当用户给的指令不清楚时到里面去找路径，如果有对应的便可以快速打开。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191003172349474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgxMDQxMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>将电脑上matlab的bin，win64文件夹添加进去。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191003172514749.png" alt="在这里插入图片描述"></p>
-<p>&ensp;&ensp;&ensp;&ensp;理论上配置环境就完成了。</p>
-<p>&ensp;&ensp;&ensp;&ensp;在测试的时候出现了一个小插曲，那便是本人在执行完以上步骤后发现C中还是无法打开”engine.h”文件。但最后解决了，问题出在VS配置管理器中“活动解决方案平台”用的还是x86位的，将其设置为x64位后报错即可消除。</p>
-<h1 id="遗传算法产生随机数的实现"><a href="#遗传算法产生随机数的实现" class="headerlink" title="遗传算法产生随机数的实现"></a>遗传算法产生随机数的实现</h1><p>下面是本人写的代码：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//一个在给定区间[a, b]内产生随机数的程序</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"engine.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Percise 0.001</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LBOUND 200</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> UBOUND 500</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"Loading...\n"</span>);</span><br><span class="line">	engine* ep;</span><br><span class="line">	<span class="keyword">if</span> (!(ep = engOpen(<span class="literal">NULL</span>)))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"\n无法启动MATLAB引擎\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> EXIT_FAILURE;</span><br><span class="line">	&#125;                                   <span class="comment">//判断引擎是否启动成功</span></span><br><span class="line">	<span class="keyword">double</span> L[] = &#123; LBOUND &#125;;</span><br><span class="line">	<span class="keyword">double</span> U[] = &#123; UBOUND &#125;;</span><br><span class="line">	mxArray*Low,*Up,* Num,*Realnum;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> range = UBOUND - LBOUND;</span><br><span class="line">	<span class="keyword">double</span> number[] = &#123; range/Percise &#125;;              <span class="comment">//将拥有该精度时区间内数字的个数赋给number数组,number=3</span></span><br><span class="line">	Num = mxCreateDoubleMatrix(<span class="number">1</span>, <span class="number">1</span>, mxREAL);       <span class="comment">//初始化了一个mxArray，该数组为1x1的double实数类型</span></span><br><span class="line">	Low= mxCreateDoubleMatrix(<span class="number">1</span>, <span class="number">1</span>, mxREAL);</span><br><span class="line">	Up= mxCreateDoubleMatrix(<span class="number">1</span>, <span class="number">1</span>, mxREAL);</span><br><span class="line">	Realnum = mxCreateDoubleMatrix(<span class="number">1</span>, <span class="number">1</span>, mxREAL);</span><br><span class="line">	<span class="built_in">memcpy</span>(mxGetPr(Low), L, <span class="keyword">sizeof</span>(L));</span><br><span class="line">	<span class="built_in">memcpy</span>(mxGetPr(Up), U, <span class="keyword">sizeof</span>(U));</span><br><span class="line">	<span class="built_in">memcpy</span>(mxGetPr(Num), number, <span class="keyword">sizeof</span>(number));   <span class="comment">//将number数组中的元素拷贝至matlab格式数组mxArray中,现在已有一个mxArray形式的数组了，它叫Num，储存着个数，但现在它还未被写入matlab引擎</span></span><br><span class="line">	engPutVariable(ep, <span class="string">"Num"</span>, Num);                 <span class="comment">//将mxArray格式的数组Num输入matlab引擎    </span></span><br><span class="line">	engPutVariable(ep, <span class="string">"Low"</span>, Low);</span><br><span class="line">	engPutVariable(ep, <span class="string">"Up"</span>, Up);</span><br><span class="line">	engEvalString(ep, <span class="string">"Kbits=fix(log(Num)/log(2))"</span>);<span class="comment">//让matlab计算Kbits</span></span><br><span class="line">	engEvalString(ep, <span class="string">"Vmax=2^Kbits"</span>);              <span class="comment">//给matlab输入命令字符串，让其执行</span></span><br><span class="line">	engEvalString(ep, <span class="string">"rndbin=fix(2*rand(1,Kbits))"</span>);</span><br><span class="line">	engEvalString(ep, <span class="string">"rndbin2dec=bin2dec(num2str(rndbin,'%d'))"</span>);</span><br><span class="line">	engEvalString(ep, <span class="string">"r=rndbin2dec/Vmax"</span>);</span><br><span class="line">	engEvalString(ep, <span class="string">"Realnum=Low+(Up-Low)*r"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (Realnum= engGetVariable(ep, <span class="string">"Realnum"</span>)) <span class="comment">//获取在matlab中计算的变量Vmax的值，因为在获取前Vmax在此只是一个空的储存空间</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"It can be predicted that matlab has processed our order correctly!\n"</span>);   <span class="comment">//这里准备获取答案</span></span><br><span class="line">		Num=engGetVariable(ep, <span class="string">"Num"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Num= %f\n\n"</span>, *mxGetPr(Num));<span class="comment">//为什么Num没有用获得函数“engGetVariabe”便可得到呢？因为Num的赋值是在此利用memcpy写入的</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"The random number is: %f\n "</span>, *mxGetPr(Realnum));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Too bad!"</span>);</span><br><span class="line">	mxDestroyArray(Low);</span><br><span class="line">	mxDestroyArray(Up);</span><br><span class="line">	mxDestroyArray(Num);</span><br><span class="line">	mxDestroyArray(Realnum);</span><br><span class="line">	engClose(ep);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&ensp;&ensp;&ensp;&ensp;具体的engine函数可以通过自行查看${\rm engine.h}$文件得知。</p>
-<p>&ensp;&ensp;&ensp;&ensp;有一点需要注意的是，从C传递给matlab中的数据类型都是mxArray格式的数组矩阵，这里需要注意，通常赋值的办法便是利用${\rm memcpy}$函数将具体数值拷贝至该数组中。</p>
-<p>&ensp;&ensp;&ensp;&ensp;利用engine函数很方便的一点便是，任何指令都可以通过${\rm engEvalString}$函数以字符串的形式传递给matlab让它直接执行，且算法的中间不需要提前在C中声明并传递给matlab，这也很好地保留了matlab语言简洁易用的特性。</p>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
-</script>]]></content>
-      <categories>
-        <category>C/C++语言</category>
-      </categories>
-      <tags>
-        <tag>C/C++</tag>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【学科笔记】Embed Processor课程的仿真实验笔记</title>
-    <url>/2020/06/02/Embed-Processor%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="Lab4"><a href="#Lab4" class="headerlink" title="Lab4"></a>Lab4</h1><h2 id="Task-A：基本输入输出函数的重定向"><a href="#Task-A：基本输入输出函数的重定向" class="headerlink" title="Task A：基本输入输出函数的重定向"></a>Task A：基本输入输出函数的重定向</h2><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>&ensp;&ensp;&ensp;&ensp;该实验的目的是在Keli的仿真软件中重定向C语言库中的<code>printf()</code>、<code>fputc()</code>、<code>fgetc()</code>函数，至UART/Serial Port。利用输出字符串来对系统外部中断IRQ产生更形象的认识。</p>
-<a id="more"></a>
-
-<h2 id="被printf-函数调用的低一层I-O函数"><a href="#被printf-函数调用的低一层I-O函数" class="headerlink" title="被printf()函数调用的低一层I/O函数"></a>被<code>printf()</code>函数调用的低一层I/O函数</h2><p>&ensp;&ensp;&ensp;&ensp;在基于ARM的Microcontroller上，ARM C Library和Microlib支持着C标准库的函数。在这些标准库中，常见的<code>printf()</code>函数<code>scanf()</code>函数都位于熟悉的<code>stdio.h</code>包中，这也意味着这些<strong>函数的默认定向都是默认的输入输出端口</strong>，例如键盘、显示屏。<br>&ensp;&ensp;&ensp;&ensp;其中，<code>printf()</code>函数又依赖于stream I/O函数<code>fputc()</code>，从而在目标设备上进行打印。而这一过程又取决于这取决于对<code>fputc()</code>的重定向方式；同理，类似地，<code>scanf()</code>函数也依赖于<code>fgetc()</code>来获取用户输入。</p>
-<ul>
-<li><strong><code>fputc()</code>、<code>fgetc()</code>的工作原理</strong><br>一般而言，函数<code>fputc()</code>会向<code>stream</code>（<code>FILE *</code>）传输字符。<strong>一个<code>stream</code>流表示到任一设备、文件或进程的通信通道</strong>。通常而言，当我们想要在控制台/终端中显示输出时，流要么是<code>STDOUT</code>，要么是<code>STDERR</code>。向2者中的一个流执行写入的话，将把写入的字符转移或重定向到控制台输出；同理，fgetc()从给定的流中读取字符。要通过控制台从用户获得输入，使用的流是<code>STDIN</code>。</li>
-</ul>
-<h2 id="重新实现C库函数来重定向printf"><a href="#重新实现C库函数来重定向printf" class="headerlink" title="重新实现C库函数来重定向printf()"></a>重新实现C库函数来重定向<code>printf()</code></h2><p>&ensp;&ensp;&ensp;&ensp;为了重新实现它们，我们需要两个基本的UART功能:一个用来读取字符，另一个用来编写字符。因此，我们可以定义两个函数，即<code>uartWrite()</code>和<code>uartRead()</code>。(Ps:注意，这些就像驱动程序功能，是特定于设备的，此处使用的是LPC1768)。<br>&ensp;&ensp;&ensp;&ensp;具体的函数调用关系如下图：<br>$${\rm printf()\Rightarrow fputc()\Rightarrow uartWrite()}$$<br>$${\rm scanf()\Rightarrow fgetc()\Rightarrow uartRead()}$$<br>&ensp;&ensp;&ensp;&ensp;<em>我们只需要修改流I/O函数的调用为我们自己编译的、重定向好了的函数，即可联动printf()进行重定向了。</em></p>
-<h2 id="实验具体的题目"><a href="#实验具体的题目" class="headerlink" title="实验具体的题目"></a>实验具体的题目</h2><p>&ensp;&ensp;&ensp;&ensp;下列重定向后的代码输出有<code>*Timer*</code>干扰，修改代码，去除这个干扰。<br>这是主程序</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Embedded System Lab4 interrupter&amp;timer (2019-2020)</span></span><br><span class="line"><span class="comment">shufan.yang@glasgow.ac.uk</span></span><br><span class="line"><span class="comment">License: GPL.*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lpc17xx.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; //since we use c function, standard library is needed</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"uart.h"</span>  <span class="comment">//for initUART0() and other macros</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PRESCALE (25000-1)  <span class="comment">//25000 PCLK clock cycles to increment TC by 1 </span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delayMS</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> milliseconds)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initTimer0</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> g_ts;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> __irq <span class="keyword">void</span> <span class="title">TIM3_IRQ_Handler</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">FILE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">int</span> dummyVar; <span class="comment">//Just for the sake of redefining __FILE, we won't we using it anyways ;)</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">FILE __stdout; <span class="comment">//STDOUT</span></span><br><span class="line">FILE __stdin;  <span class="comment">//STDIN</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fputc</span><span class="params">(<span class="keyword">int</span> c, FILE * stream)</span><span class="comment">//##Rewrite the fputc() to call our func:uartWrite()?##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	uartWrite(c); <span class="comment">//Transmit Character</span></span><br><span class="line">	<span class="keyword">return</span> c; <span class="comment">//return the character written to denote a successful write</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fgetc</span><span class="params">(FILE * stream)</span><span class="comment">//Rewrite the fgetc()to call our func:uartRead()?##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c = uartRead(); <span class="comment">//Receive Character</span></span><br><span class="line">	uartWrite(c); <span class="comment">//To echo Received characters back to serial Terminal</span></span><br><span class="line">	<span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">uartWrite</span><span class="params">(<span class="keyword">char</span> c)</span><span class="comment">//##To define our own func. uartWirte, receive input char 'c'##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (!(LPC_UART0-&gt;LSR &amp; THRE)); <span class="comment">// wait till the THR is empty,   ##Does it ready to write?##</span></span><br><span class="line">	<span class="keyword">if</span>( c == <span class="string">'\n'</span> ) <span class="comment">//Send &lt;CR+LF&gt;</span></span><br><span class="line">	&#123;</span><br><span class="line">		LPC_UART0-&gt;THR = CARRIAGE_RETURN;</span><br><span class="line">		<span class="keyword">while</span>(!(LPC_UART0-&gt;LSR &amp; THRE )); </span><br><span class="line">		LPC_UART0-&gt;THR = LINE_FEED;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		LPC_UART0-&gt;THR = c; <span class="comment">//##To deliver input 'c' to THR##</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">uartRead</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//##To Define Our func. uartRead?, no receive##</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(!(LPC_UART0-&gt;LSR &amp; RDR)); <span class="comment">//wait for data to arrive</span></span><br><span class="line">	<span class="keyword">return</span> LPC_UART0-&gt;RBR;           <span class="comment">//##To return what has been read?##</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	initUART0(); <span class="comment">//Init UART0 at baud-rate: 115200 @ 25Mhz PLCK</span></span><br><span class="line">	initTimer0(); <span class="comment">//Initialize Timer0 </span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Hey! This is your beloved printf().\nI have been redirected here!\n Stay Home, Save Life, Save NHS\n"</span>);<span class="comment">//##These are sentences needs to be retargeted##</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Tomorrow, and tomorrow, and tomorrow, Creeps in this petty pace from day to day, To the last syllable of recorded time; \n And all our yesterdays have lighted fools The way to dusty death. Out, out, brief candle. \n Life's but a walking shadow, a poor player That struts and frets his hour upon the stage And then is heard no more. \n It is a tale Told by an idiot, full of sound and fury Signifying nothing.\n"</span> );</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"(Macbeth: Act 5, Scene 5, lines 19-28)"</span>);</span><br><span class="line">		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initTimer0</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//我自己估摸着可能是这个时钟函数出的问题</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//Assuming that PLL0 has been setup with CCLK = 100Mhz and PCLK = 25Mhz.</span></span><br><span class="line">    <span class="comment">/* #1:打开定时器0的电源(默认是打开的) */</span></span><br><span class="line">	LPC_SC-&gt;PCONP |= (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">//Power up TIM0. By default TIM0 and TIM1 are enabled.</span></span><br><span class="line">    <span class="comment">/* #2:时钟分频选择(默认00),00 四分频, 01 不分频, 10 二分频, 11 八分频 */</span></span><br><span class="line">	LPC_SC-&gt;PCLKSEL0 &amp;= ~(<span class="number">0x3</span>&lt;&lt;<span class="number">2</span>); <span class="comment">//Set PCLK for timer = CCLK/4 = 100/4 (default)</span></span><br><span class="line">    <span class="comment">/* #3:设置为定时器模式,计数模式递增 */</span></span><br><span class="line">	LPC_TIM0-&gt;CTCR = <span class="number">0x0</span>;</span><br><span class="line">    <span class="comment">/* #4:指定预分频器最大的分频值 */</span></span><br><span class="line">	LPC_TIM0-&gt;PR = PRESCALE; <span class="comment">//Increment LPC_TIM0-&gt;TC at every 24999+1 clock cycles</span></span><br><span class="line">	<span class="comment">//25000 clock cycles @25Mhz = 1 mS</span></span><br><span class="line">    <span class="comment">/* #5:设置匹配寄存器的值 */</span></span><br><span class="line">	LPC_TIM0-&gt;MR0 = <span class="number">5</span>; <span class="comment">//Toggle Time in mS</span></span><br><span class="line">    <span class="comment">/* #6:MR0与TC值匹配时将产生中断,TC复位 */</span></span><br><span class="line">	LPC_TIM0-&gt;MCR |= (<span class="number">1</span>&lt;&lt;<span class="number">0</span>) | (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">// Interrupt &amp; Reset on MR0 match</span></span><br><span class="line">    <span class="comment">/* #7:复位计数器 */</span></span><br><span class="line">	LPC_TIM0-&gt;TCR |= (<span class="number">1</span>&lt;&lt;<span class="number">1</span>); <span class="comment">// Reset Timer0</span></span><br><span class="line">    <span class="comment">/* #8:使能定时器中断*/</span></span><br><span class="line">	NVIC_EnableIRQ(TIMER0_IRQn); <span class="comment">//Enable timer interrupt</span></span><br><span class="line">    <span class="comment">/* #9:开启定时器 */</span></span><br><span class="line">	LPC_TIM0-&gt;TCR = <span class="number">0x01</span>; <span class="comment">//Enable timer</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>IRQ文件：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lpc17xx.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">/* Global variable to be used in main program */</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> g_ts = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">__irq <span class="keyword">void</span> <span class="title">TIMER0_IRQHandler</span> <span class="params">(<span class="keyword">void</span>)</span> <span class="comment">/* TIM0 timer interrupt routine       */</span></span></span><br><span class="line"><span class="function"></span>&#123;    </span><br><span class="line">	LPC_TIM0-&gt;IR |= (<span class="number">1</span>&lt;&lt;<span class="number">0</span>); <span class="comment">//Clear MR0 Interrupt flag, in case the interrupt finish, but system can't detect.</span></span><br><span class="line">	++g_ts;</span><br><span class="line">  	<span class="keyword">if</span> (g_ts% <span class="number">10</span>)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"*Timer*"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>单片机</category>
-      </categories>
-      <tags>
-        <tag>C/C++ - Keli仿真 - LPC1768</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【学科笔记】信号与系统Matlab笔记</title>
-    <url>/2020/06/01/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;本文主要针对Matlab中有关信号与系统问题的函数及语法总结。</p>
-<h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><ul>
-<li><p><strong>产生一串数字区间</strong>：<code>n=-5:10</code>产生了从-5~10的区间整数序列</p>
-</li>
-<li><p><code>stem(n, x)</code>函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br><em>例如1：画出$x[n]=2n,-3\leq n\leq 3$</em></p>
-<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">n<span class="built_in">=</span>-<span class="number">3</span>:<span class="number">3</span>;</span><br><span class="line">x<span class="built_in">=</span><span class="number">2</span>*n;</span><br><span class="line">stem(n, x)</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-</li>
-<li><p><code>subplot(m, n, P)</code>函数：该函数用来规划画布上图像放置的位置。其中，m、n用来将画布分割，m为行，n为列；而P代表取分割部分的第几块。<br>例如：<code>subplot(2,2,[1 3])</code>代表将画布分为2x2的4部分，并该函数对应的图像放在第1，3块处</p>
-</li>
-<li><p><code>grid on</code>函数：<code>grid on</code>为显示网格，相反，<code>grid off</code> 为关闭显示网格。</p>
-</li>
-<li><p>点乘<code>.*</code>与一般乘法<code>*</code>：函数与函数相乘，例如$\sin(t)\sin(9t)$，一般是用点乘<code>.*</code>。点乘主要用于函数中元素的乘法（数组乘法array multiply）；而一般乘法则为矩阵乘法（Matrix multiply）。<br><em>例如2：用图形表示连续调制波形$y=\sin(t)\sin(9t)$及其包络。</em></p>
-<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">t<span class="built_in">=</span>(<span class="number">0</span>:pi/<span class="number">100</span>:pi)<span class="string">' % 长 度 为 101 的 时 间 采 样 列 向 量</span></span><br><span class="line"><span class="string">y1=sin(t)*[1,-1]; %包络线函数值，是（101x2）的矩阵</span></span><br><span class="line"><span class="string">y2=sin(t).*sin(9*t); %长度为101的调制波列向量</span></span><br><span class="line"><span class="string">t3=pi*(0:9)/9%在定义域区间均匀地取10个点</span></span><br><span class="line"><span class="string">y3=sin(t3).*sin(9*t3);%算出该十个点的值</span></span><br><span class="line"><span class="string">plot(t,y1,'</span>r:<span class="string">',t,y2,'</span>b<span class="string">',t3,y3,'</span>bo<span class="string">')%画出函数图像，包络线图像，取点图像</span></span><br><span class="line"><span class="string">axis([0,pi,-1,1]) %控制画出的轴范围，前2参数为横轴；后2值为纵轴</span></span><br></pre></td></tr></table></figure></li>
-<li><p><strong>单位脉冲序列$\delta[n]$与单位阶跃序列$u[n]$</strong>：可以综合使用<code>ones(1,n)</code>与<code>zeros(1,n)</code>来产生单位脉冲序列与代为阶跃序列。<br>其中<code>ones(1,n)</code>命令产生1行n列的1值；<code>zeros(1,n)</code>命令产生1行n列的0值。<br><em>例如3：</em></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">n&#x3D;0: 32;</span><br><span class="line">x&#x3D;[zeros(1,5),1,zeros(1,27)];%一个x&#x3D;\delta(n-6)的单位冲激函数</span><br><span class="line">stem(n, x, &#39;fill&#39;);%以n为横坐标画出数据序列x</span><br><span class="line">filter(num ,den, x)函数：该函数主要是针对LTI系统设置。因果LTI系统的零状态响应，可以利用y&#x3D;filter(num,\ den,\ x)实现。</span><br><span class="line">&#x2F;&#x2F;其中，num为系统传递函数分子系数组成的行向量、den为系统传递函数分母系数组成的行向量、x为输入的离散序列、y为输出的离散序列且y与x的长度一样。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>syms</code>函数：用来创建一个符号表达式。可以理解为用来创建一个“变量”，创建后的变量可以直接写入函数中作为自变量使用。常用作创建连续时间信号<br><em>例如4：</em></p>
-<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">syms t;<span class="comment">%创建一个符号表达式，“变量t”</span></span><br><span class="line">syms T;</span><br><span class="line">f<span class="built_in">=</span>sin(<span class="number">2</span>*pi*t/T)<span class="comment">%写出函数f，该函数包含待定变量t与T</span></span><br></pre></td></tr></table></figure></li>
-<li><p><code>x1=subs（f，T，5）</code>：该函数用于给自定义的符号表达式中的某个变量赋值，示例为将符号表达式f中的变量T赋值为5，并将该赋值后的符号表达式记为x1.</p>
-</li>
-<li><p><code>ezplot（&lt;隐函数表达式&gt;,[x最小值，x最大值，y最小值，y最大值])</code>：该函数用来绘制只有单一自变量的symbolic expression，即直接绘制单一自变量的函数。</p>
-</li>
-<li><p><code>int(F,x,a,b)</code>函数：该函数用来计算自己定义的符号表达式的积分。其中F为被积函数，x为自变量（可忽略），a为积分下限，b为积分上限。</p>
-</li>
-</ul>
-<h1 id="Lab-2"><a href="#Lab-2" class="headerlink" title="Lab 2"></a>Lab 2</h1><ul>
-<li><strong>分段函数的写法：</strong><br>示例：表示分段函数<br>$$x[n]=<br>\begin{cases}<br>2&amp;,n=0\<br>1&amp;,n=2\</li>
-</ul>
-<p>-1&amp;,n=3\<br>3&amp;,n=4\<br>0&amp;,otherwise<br>\end{cases}$$<br>其Matlab代码为<br><code>x=(0).*(n&lt;0|n==1|n&gt;4)+(2).*(n==0)+(1).*(n==2)+(-1).*(n==3)+(3).*(n==4)</code></p>
-<ul>
-<li><code>conv(x,h)</code>函数：计算离散序列x与h的卷积和。这里存在一个小技巧：<strong>卷积后输出的区间长度会发生变化，倘若仍需要对卷积输出继续计算，但matlab提示出错“矩阵维度必须一致。”怎么办？</strong>可以直接取卷积输出的某一区间再进行矩阵运算，例如：</li>
-</ul>
-<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">n<span class="built_in">=</span><span class="number">0</span>:<span class="number">64</span>;</span><br><span class="line">xh<span class="built_in">=</span>conv(h,x)<span class="comment">%h是一个1x41的矩阵向量，x是一个1x65的矩阵向量，输出xh为一个1x105的矩阵向量</span></span><br><span class="line">x2<span class="built_in">=</span>xh(<span class="number">1</span>:<span class="number">65</span>).*sin((pi/<span class="number">2</span>).*n);<span class="comment">%此处n与xh的维度不同，不能直接运算，但可以取xh的第1~65个采样进行运算</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><code>filter(b_k,a_k,x)</code>函数：</p>
-<ol>
-<li>输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<br>$$\sum_{k=0}^{K}a_k y[n-k]=\sum_{m=0}^{M}b_m x[n-m] \ \ \ (\alpha)$$<br>上式在Malab中等价于：<br>$$\sum_{k=0}^{K}a(k+1) y[n-k]=\sum_{m=0}^{M}b(m+1) x[n-m]$$<br>其实需要输入的参数<code>b_k,a_k</code>在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n-1]+2x[n-2]$的<code>a_k</code>与<code>b_k</code><br>&ensp;&ensp;&ensp;&ensp;<code>a_k=[1]</code>,<code>b_k=[0.5,1,2]</code>即可。</li>
-<li>也可以用来求卷积。当$a_k=\delta[k],b[m]=b_m(0\leq m\leq M)$时，式子$(\alpha)$便成为了<br>$$y[n]=\sum_{m=-\infty}^{+\infty}b[m]x[n-m]$$<br>是一个标准的离散卷积和公式，此时只需输入参数<code>y=filter(b_k,1,x)</code>即可。</li>
-<li>求离散线性非常系数系统，也可以使用它，但只需要一个<code>for</code>循环即可。<br>例如：$y[n]=(\frac{3}{5})^ny_2[n-1]+x[n]$，求它的系统单位冲激响应只需如下：<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">h2<span class="built_in">=</span>[];<span class="comment">%创建了一个数组来容纳每次取n时对应的h[n]</span></span><br><span class="line">b2<span class="built_in">=</span>[<span class="number">1</span>];<span class="comment">%system2的输入系数</span></span><br><span class="line">for i<span class="built_in">=</span><span class="number">0</span>:<span class="number">19</span></span><br><span class="line">    a2<span class="built_in">=</span>[<span class="number">1</span>,-(<span class="number">3</span>/<span class="number">5</span>)^i];<span class="comment">%system2的输出系数</span></span><br><span class="line">    h2(i+<span class="number">1</span>)<span class="built_in">=</span>filter(b2,a2,x(i+<span class="number">1</span>))<span class="comment">%每一个n(此处为计数器i)对应一个系数，一个x[n]——也就对应响应h2[n]的一个值</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p><code>lsim(b,a,x,t)</code>函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：<br>$$\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b_m\frac{d^mx(t)}{dt^m}$$<br>同理，该方程在Matlab中系数需要被改写为向量形式：<br>$$\sum_{k=0}^{N}a(N+1-k)\frac{d^ky(t)}{dt^k}=\sum_{m=0}^{M}b(M+1-m)\frac{d^mx(t)}{dt^m}$$</p>
-</li>
-<li><p><code>step(b,a,t)</code>函数：用来计算线性常系数微分方程的step response，用于连续时间。求单位阶跃响应除了用该函数，还可以直接把$u(t)*h(t)$得到，即利用<code>conv()</code>函数，这样就可以算离散时间的阶跃响应了。</p>
-</li>
-<li><p><code>impulse(b,a,t)</code>函数：用来计算线性常系数微分方程的impulse response，用于连续时间。其中t的分度及区间可以使用<code>linspace()</code>确定。</p>
-</li>
-</ul>
-<h1 id="Lab-3"><a href="#Lab-3" class="headerlink" title="Lab 3"></a>Lab 3</h1><ul>
-<li><code>[H omega]=freqz(b,a,N)</code>：计算在0和$\pi$之间均匀间隔的N个频点（N等分）的，系数为a、b的，<strong>差分方程</strong>的频率响应$H(e^{jw})$，即$\omega_k=(\cfrac{\pi}{N})k, {\rm for}\ 0\leq k\leq N-1$。它接收的参数b，a与Lab2中的b，a一样，都是系数。如果加上‘whole’这个参数，<code>[H omega]=freqz(b,a,N,&#39;whole&#39;)</code>，它会计算出在$[0，2\pi]$上N个均分频点的频率响应，即$\omega_k=(\cfrac{2\pi}{N})k, {\rm for}\ 0\leq k\leq N-1$。</li>
-<li>特征函数的判断：一个信号，<strong>若系统对该信号的输出响应仅是一个常数（可能是复数）乘以输入，则称该信号为系统的特征函数（eigenfunction）</strong>，而幅度因子称为系统的特征值（eigenvalue）。</li>
-<li><code>fft(x)</code>：该函数可以用来计算离散傅里叶级数DTFS的系数$a_k$。其中，$a_k=(\frac{1}{N})*fft(x)$<br>而该函数的原本用途为执行原信号的傅里叶变换。值得注意的是，该函数有时需要设定变换后的采样点个数，故可以对原区间的步长设置从而对原区间进行分割缩放，将采样点放入原区间内：<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">n<span class="built_in">=</span><span class="number">0</span>:<span class="number">64</span>;</span><br><span class="line">n1<span class="built_in">=</span><span class="number">0</span>:<span class="number">64</span>/<span class="number">255</span>:<span class="number">64</span>;<span class="comment">%把区间[0,64]划分成256个采样点，作为傅里叶变换后的区间</span></span><br><span class="line"></span><br><span class="line">x<span class="built_in">=</span>((sin(pi.*(n-<span class="number">32</span>)./<span class="number">4</span>))./(pi.*(n-<span class="number">32</span>)./<span class="number">4</span>));<span class="comment">%原信号，注意在n=32时为极限，matlab算出来为NAN需要人工替换</span></span><br><span class="line">x(find(isnan(x)<span class="built_in">=</span><span class="built_in">=</span><span class="number">1</span>))<span class="built_in">=</span><span class="number">1</span>;<span class="comment">%替换n=32时的极限为1</span></span><br><span class="line">X<span class="built_in">=</span>fft(x,<span class="number">256</span>);<span class="comment">%傅里叶变换</span></span><br><span class="line">stem(n1,abs(X));grid on;<span class="comment">%把原区间划分为256个采样点进行作图</span></span><br></pre></td></tr></table></figure></li>
-<li><code>iffy(X)</code>：执行逆傅里叶变换。</li>
-<li><code>fftshift()</code>：该函数可以对<code>fft(x)</code>函数的输出重新排序，使样本$Y(j\omega)$在Y中从最负的频率排序到最正的频率。</li>
-<li><code>load(filename)</code> ：从 filename 加载文件变量数据至工作区。</li>
-<li><code>freqs(b,a)</code>：用来计算与绘制微分方程的频率响应$H(j\omega)$，其中<code>b,a</code>是2变量的系数们作为的向量数组，从高阶开始。当然，如果希望得到在特定频率处$\omega$的值，可以多加一个参数，例如<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">w<span class="built_in">=</span>linspace(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">H<span class="built_in">=</span>freqs(b,a,w)</span><br></pre></td></tr></table></figure></li>
-<li><code>[b2,a2]=butter(2,wc,&#39;s&#39;)</code>：该函数定义了一个2阶、以$\omega_c$为频率的布特沃斯滤波器。其中，<code>s</code>表示使用连续时间过滤器，而不是butter默认返回的离散时间滤波器。此处的返回值<code>b2,a2</code>都为前面的系数向量。</li>
-<li><code>[r,p]=residue(b,a)</code>：该函数用来进行分式多项式的部分分式展开，即”partial fraction expansion”。其中，<code>b,a</code>为系统微分方程2便系数向量；该函数返回的亦为向量数组<code>r,p</code>，<code>r</code>为分子的部分分式展开系数，<code>p</code>为分母的部分分式展开系数。倘若被计算的系统频率响应$H(j\omega)$的分母不包括重根，且分式有理，那么返回的形式为：<br>$$\sum_{m=1}^{N}\cfrac{r(m)}{j\omega-p(m)}=\cfrac{r_1}{j\omega-p_1}+\cfrac{r_2}{j\omega-p_2}+…$$</li>
-</ul>
-<h1 id="Lab-4"><a href="#Lab-4" class="headerlink" title="Lab 4"></a>Lab 4</h1><ul>
-<li><code>[X,w]=ctfts(x,T)</code>：CTFTS函数用来计算周期信号x(t)的连续时间傅里叶变换(CTFT)，该周期信号由向量x中采样后的样本，利用理想带限插值重构而来。其中，它的参数，即向量x，为x(t)除以整数个周期的样本，T为采样周期；返回的参数，向量X包含储存在向量向量w中、每个频点处脉冲的面积。而w则储存了每个频点处的脉冲。<br>$\alpha,\omega$</li>
-<li><strong>画连续时间微分方程对应有理分式的零极点图</strong>：对于一个有理分式例如$H(s)=\cfrac{s-1}{s^2+3s+2}$，首先需要用<code>roots()</code>函数求出其零极点：<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">b<span class="built_in">=</span>[<span class="number">1</span>,-<span class="number">1</span>];</span><br><span class="line">a<span class="built_in">=</span>[<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>];</span><br><span class="line">zs<span class="built_in">=</span>roots(b);</span><br><span class="line">ps<span class="built_in">=</span>roots(a);</span><br></pre></td></tr></table></figure>
-&ensp;&ensp;&ensp;&ensp;然后便是利用画图函数作图：<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">plot(real(zs),imag(zs),<span class="string">'o'</span>);hold on;</span><br><span class="line">plot(real(ps),imag(ps),<span class="string">'x'</span>); </span><br><span class="line">grid</span><br><span class="line">axis([-<span class="number">3</span>,<span class="number">3</span>,-<span class="number">3</span>,<span class="number">3</span>]);</span><br></pre></td></tr></table></figure></li>
-<li><strong>画离散时间差分方程对应有理分式的零极点图</strong>：需要使用到<code>dpzplot(b,a)</code>函数，它也是接收向量b，a作为实参，Matlab可能不会自带该函数的源代码，故写于此：<figure class="highlight m"><table><tr><td class="code"><pre><span class="line">function dpzplot(b,a)</span><br><span class="line"><span class="comment">%DPZPLOT plots the poles and zeros of a discrete-time LTI system.</span></span><br><span class="line"><span class="comment">%</span></span><br><span class="line"><span class="comment">% Usage:  dpzplot(b,a) </span></span><br><span class="line"><span class="comment">%</span></span><br><span class="line"><span class="comment">% The LTI system is defined by the coefficients in 'b' and 'a', which</span></span><br><span class="line"><span class="comment">% are in the form required by the MATLAB function 'filter'. Namely,</span></span><br><span class="line"><span class="comment">% the system function has a numerator polynomial given by the</span></span><br><span class="line"><span class="comment">% coefficients in 'b' and a denominator polynomial given by the</span></span><br><span class="line"><span class="comment">% coefficients in 'a'.  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">%---------------------------------------------------------------</span></span><br><span class="line"><span class="comment">% copyright 1996, 2001, by John Buck, Michael Daniel, and Andrew Singer.</span></span><br><span class="line"><span class="comment">% For use with the textbook "Computer Explorations in Signals and</span></span><br><span class="line"><span class="comment">% Systems using MATLAB", Prentice Hall, 1997, 2002.</span></span><br><span class="line"><span class="comment">%---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">la<span class="built_in">=</span>length(a);</span><br><span class="line">lb<span class="built_in">=</span>length(b);</span><br><span class="line"><span class="built_in">if</span> (la&gt;lb),</span><br><span class="line">  b<span class="built_in">=</span>[b zeros(<span class="number">1</span>,la-lb)];</span><br><span class="line">elseif (lb&gt;la),</span><br><span class="line">  a<span class="built_in">=</span>[a zeros(<span class="number">1</span>,lb-la)];</span><br><span class="line">end</span><br><span class="line">ps <span class="built_in">=</span> roots(a);</span><br><span class="line">zs <span class="built_in">=</span> roots(b);</span><br><span class="line">mx <span class="built_in">=</span> max( abs([ps<span class="string">' zs'</span> .<span class="number">95</span>]) ) + .<span class="number">05</span>;</span><br><span class="line">clf;</span><br><span class="line">axis([-mx mx -mx mx]);</span><br><span class="line">axis(<span class="string">'equal'</span>);</span><br><span class="line">hold on</span><br><span class="line">w <span class="built_in">=</span> [<span class="number">0</span>:.<span class="number">01</span>:<span class="number">2</span>*pi];</span><br><span class="line">plot(cos(w),sin(w),<span class="string">'.'</span>);</span><br><span class="line">plot([-mx mx],[<span class="number">0</span> <span class="number">0</span>]);</span><br><span class="line">plot([<span class="number">0</span> <span class="number">0</span>],[-mx mx]);</span><br><span class="line">text(<span class="number">0.1</span>,<span class="number">1.1</span>,<span class="string">'Im'</span>,<span class="string">'sc'</span>);</span><br><span class="line">text(<span class="number">1.1</span>,.<span class="number">1</span>,<span class="string">'Re'</span>,<span class="string">'sc'</span>);</span><br><span class="line">plot(real(ps),imag(ps),<span class="string">'rx'</span>);</span><br><span class="line">plot(real(zs),imag(zs),<span class="string">'go'</span>);</span><br><span class="line">numz<span class="built_in">=</span>sum(abs(zs)<span class="built_in">=</span><span class="built_in">=</span><span class="number">0</span>);</span><br><span class="line">nump<span class="built_in">=</span>sum(abs(ps)<span class="built_in">=</span><span class="built_in">=</span><span class="number">0</span>);</span><br><span class="line"><span class="built_in">if</span> numz&gt;<span class="number">1</span>,</span><br><span class="line">  text(-.<span class="number">1</span>,-.<span class="number">1</span>,num2str(numz));</span><br><span class="line">elseif nump&gt;<span class="number">1</span>,</span><br><span class="line">  text(-.<span class="number">1</span>,-.<span class="number">1</span>,num2str(nump));</span><br><span class="line">end</span><br><span class="line">hold off;</span><br></pre></td></tr></table></figure>
-该函数的原代码需要被放在一个.m文件中作为库放在matlab任务栏中，它便可以自己检测到了。</li>
-</ul>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
-</script>
-
-]]></content>
-      <categories>
-        <category>专业学科</category>
-        <category>信号与系统科目</category>
-      </categories>
-      <tags>
-        <tag>信号与系统</tag>
-        <tag>Matlab</tag>
       </tags>
   </entry>
 </search>

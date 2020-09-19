@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chentao627.github.io/"/>
-  <updated>2020-09-19T09:27:06.419Z</updated>
+  <updated>2020-09-19T12:17:11.148Z</updated>
   <id>https://chentao627.github.io/</id>
   
   <author>
@@ -21,17 +21,11 @@
     <link href="https://chentao627.github.io/2020/09/19/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86-%E7%94%B5%E5%BD%B1%E8%B0%83%E8%89%B2/"/>
     <id>https://chentao627.github.io/2020/09/19/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86-%E7%94%B5%E5%BD%B1%E8%B0%83%E8%89%B2/</id>
     <published>2020-09-19T09:06:49.000Z</published>
-    <updated>2020-09-19T09:27:06.419Z</updated>
+    <updated>2020-09-19T12:17:11.148Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;最近感觉自己迷上了摄影，在路上走着走着、在自习室休息的时候，时不时灵感来了都会拿手机整一两张照片。但众所周知的是，未经过后期处理的照片大多都不是很好看的，俗称卖相不太好。故最近空余时间便拿来涉猎了一下Photoshop里面关于
-        
-      
+      &lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;最近感觉自己迷上了摄影，在路上走着走着、在自习室休息的时候，时不时灵感来了都会拿手机整一两张照片。但众所周知的是，未经过后期处理的照片大多都不是很好看的，俗称卖相不太好。故最近空余时间便拿来涉猎了一下Photoshop里面关于照片后期调色处理的内容。这里主要记录一下照片的电影调色是如何实现的。&lt;/p&gt;
     
     </summary>
     
@@ -194,9 +188,9 @@
       <category term="信号与系统科目" scheme="https://chentao627.github.io/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%A7%91%E7%9B%AE/"/>
     
     
-      <category term="信号与系统" scheme="https://chentao627.github.io/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/"/>
-    
       <category term="Matlab" scheme="https://chentao627.github.io/tags/Matlab/"/>
+    
+      <category term="信号与系统" scheme="https://chentao627.github.io/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -271,9 +265,9 @@
       <category term="信号与系统科目" scheme="https://chentao627.github.io/categories/%E4%B8%93%E4%B8%9A%E5%AD%A6%E7%A7%91/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%A7%91%E7%9B%AE/"/>
     
     
-      <category term="信息论" scheme="https://chentao627.github.io/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/"/>
-    
       <category term="信号与系统" scheme="https://chentao627.github.io/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="信息论" scheme="https://chentao627.github.io/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/"/>
     
   </entry>
   
