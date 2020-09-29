@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chentao627.github.io/"/>
-  <updated>2020-09-19T12:17:11.148Z</updated>
+  <updated>2020-09-29T04:45:09.617Z</updated>
   <id>https://chentao627.github.io/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置GPU版本Pytorch环境</title>
+    <link href="https://chentao627.github.io/2020/09/29/%E9%85%8D%E7%BD%AEPytorch%E7%8E%AF%E5%A2%83/"/>
+    <id>https://chentao627.github.io/2020/09/29/%E9%85%8D%E7%BD%AEPytorch%E7%8E%AF%E5%A2%83/</id>
+    <published>2020-09-28T16:00:23.000Z</published>
+    <updated>2020-09-29T04:45:09.617Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;编译器的安装&quot;&gt;&lt;a href=&quot;#编译器的安装&quot; class=&quot;headerlink&quot; title=&quot;编译器的安装&quot;&gt;&lt;/a&gt;编译器的安装&lt;/h1&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;首先是安装Anaconda，直接去官网上下载安装即可。具体安装教程网上太多了。但需要注意的是安装完成后想要在cmd界面快速打开conda、python程序则必须在windows环境变量中添加path。路径的添加在&lt;code&gt;此电脑-右键—高级系统设置—环境变量—系统变量—双击path—新建路径&lt;/code&gt;。一共有3个需要添加的path：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="https://chentao627.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Pytorch" scheme="https://chentao627.github.io/tags/Pytorch/"/>
+    
+      <category term="Python" scheme="https://chentao627.github.io/tags/Python/"/>
+    
+      <category term="Anaconda" scheme="https://chentao627.github.io/tags/Anaconda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>摄影调色笔记</title>
+    <link href="https://chentao627.github.io/2020/09/26/%E6%91%84%E5%BD%B1%E8%B0%83%E8%89%B2%E7%AC%94%E8%AE%B0/"/>
+    <id>https://chentao627.github.io/2020/09/26/%E6%91%84%E5%BD%B1%E8%B0%83%E8%89%B2%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-09-26T14:44:37.000Z</published>
+    <updated>2020-09-27T14:27:35.697Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;光和色的关系&quot;&gt;&lt;a href=&quot;#光和色的关系&quot; class=&quot;headerlink&quot; title=&quot;光和色的关系&quot;&gt;&lt;/a&gt;光和色的关系&lt;/h1&gt;&lt;h2 id=&quot;光&quot;&gt;&lt;a href=&quot;#光&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="摄影" scheme="https://chentao627.github.io/categories/%E6%91%84%E5%BD%B1/"/>
+    
+    
+      <category term="摄影" scheme="https://chentao627.github.io/tags/%E6%91%84%E5%BD%B1/"/>
+    
+      <category term="调色" scheme="https://chentao627.github.io/tags/%E8%B0%83%E8%89%B2/"/>
+    
+      <category term="艺术" scheme="https://chentao627.github.io/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>【摄影心得】摄影后期处理-电影调色</title>
@@ -169,7 +225,7 @@
     <link href="https://chentao627.github.io/2020/06/01/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/"/>
     <id>https://chentao627.github.io/2020/06/01/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/</id>
     <published>2020-06-01T10:13:04.000Z</published>
-    <updated>2020-08-15T11:56:59.448Z</updated>
+    <updated>2020-09-24T14:07:19.035Z</updated>
     
     <summary type="html">
     

@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">3.1k</span>
+            <span class="post-count">3.2k</span>
         </span>
     </span>
 
@@ -184,6 +184,11 @@
   MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
 </script>
 
+<h1 id="通信原理与系统中的Matlab使用积累"><a href="#通信原理与系统中的Matlab使用积累" class="headerlink" title="通信原理与系统中的Matlab使用积累"></a>通信原理与系统中的Matlab使用积累</h1><h2 id="Lab-1-1"><a href="#Lab-1-1" class="headerlink" title="Lab 1"></a>Lab 1</h2><ul>
+<li><code>t=linspace(-6,6);</code>：均分计算指令的意思，用于产生“x1,x2”之间的“N”点行线性的矢量，与<code>t=-6:0.01:6</code>有异曲同工之处。可以搭配<code>syms t</code>作自变量范围使用。</li>
+<li><code>w=ceil(z)</code>：朝正无穷大方向取整;函数将输入z中的元素取整，值w为不小于本身的最小整数。对于复数B，分别对实部和虚部取整。</li>
+<li><code>a=nextpow2(A)</code>：用来求数A的指数a；a值满足$2^a&gt;A; 2^{a-1}&lt; A$</li>
+</ul>
 
       
       <!-- reward -->
