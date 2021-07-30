@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>利用C语言调用matlab引擎 | THE ROAD</title><meta name="keywords" content="C/C++,Matlab,编程语言"><meta name="author" content="Ashlaie Chen"><meta name="copyright" content="Ashlaie Chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="配置环境    在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？    于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用C语言调用matlab引擎">
+<meta property="og:url" content="http://example.com/2020/05/17/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/index.html">
+<meta property="og:site_name" content="THE ROAD">
+<meta property="og:description" content="配置环境    在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？    于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/science.jpg">
+<meta property="article:published_time" content="2020-05-17T08:04:32.000Z">
+<meta property="article:modified_time" content="2021-07-30T12:12:06.097Z">
+<meta property="article:author" content="Ashlaie Chen">
+<meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="Matlab">
+<meta property="article:tag" content="编程语言">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/science.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/05/17/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '利用C语言调用matlab引擎',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-07-30 20:12:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/science.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">THE ROAD</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">利用C语言调用matlab引擎</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-05-17T08:04:32.000Z" title="Created 2020-05-17 16:04:32">2020-05-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-07-30T12:12:06.097Z" title="Updated 2021-07-30 20:12:06">2021-07-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8E%A2%E7%B4%A2%E8%AE%B0%E5%BD%95/">探索记录</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="利用C语言调用matlab引擎"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>    在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？<br>    于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。本人在网上搜集到的调用matlab引擎的方法有二：<br>一是程序运行需要完整的matlab软件进行支持；<br>二是可以将matlab中的.m文件编译为.dll文件，运行时只需MCR即可。（MATLAB Component Runtime 简称 MCR，主要用于把MATLAB编写的东西打包到没装MATLAB的机器上使用。它是一组独立的共享库，通过它能够执行在MATLAB中编写的M文件。MCR支持MATLAB语言的所有功能。）<br>    现暂时尝试第一种方法。而调用引擎的第一步便是要配置好环境。</p>
+<h2 id="包含目录的路径配置"><a href="#包含目录的路径配置" class="headerlink" title="包含目录的路径配置"></a>包含目录的路径配置</h2><p>    本人使用C语言编译环境为VS2019，所以首先是需要将VS的环境配置好。所以便打开要调用matlab的C语言工程文件，点开它的属性，找到“配置属性”中的“VC++目录”，将matlab中的相关文件路径添加进去。本人在matlab目录下找到相关文件：<br><img src="https://img-blog.csdnimg.cn/20191003171140240.png" alt="Matlab目录下的文件夹"><br>在extern文件夹中：<br><img src="https://img-blog.csdnimg.cn/20191003171249440.png" alt="include文件夹"><br>有一个让学C的人感到亲切而又熟悉的include文件夹。<br><img src="https://img-blog.csdnimg.cn/20191003171410778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgxMDQxMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点开它，我们发现里面是浩瀚的.h文件海洋。<br><img src="https://img-blog.csdnimg.cn/20191003171456361.png" alt="在这里插入图片描述"><br>于是我们便把这个include文件夹路径添加到VS编译器的“包含目录”中。此处“包含”指那个include目录。这里要注意系统位数，matlab与VS文件的操作位数一定要对应。本人所用电脑为64位，安装的matlab亦为64位。</p>
+<h2 id="静态数据库的目录配置"><a href="#静态数据库的目录配置" class="headerlink" title="静态数据库的目录配置"></a>静态数据库的目录配置</h2><img src="https://img-blog.csdnimg.cn/20191003171634592.png" alt="在这里插入图片描述">
+    库目录的路径添加如出一辙，所添加文件夹为include文件夹下方lib文件夹中，win64中的Microsoft文件夹，里面全是.lib文件。
+
+<h2 id="附加依赖项的添加"><a href="#附加依赖项的添加" class="headerlink" title="附加依赖项的添加"></a>附加依赖项的添加</h2><img src="https://img-blog.csdnimg.cn/20191003172035729.png" alt="在这里插入图片描述">
+    然后再在链接器中的输入里，在附加依赖项中加 “libeng.lib;libmat.lib;libmex.lib;libmx.lib;”以便编译器引用所添加的.lib后缀文件们。
+
+<h2 id="系统环境变量的配置"><a href="#系统环境变量的配置" class="headerlink" title="系统环境变量的配置"></a>系统环境变量的配置</h2><p>    但这还不算完，我们最后还需要到Windows中的“高级系统设置”中找到“环境变量”来设置“系统变量”中的“Path”。<br>    环境变量是个什么东西呢？让我们运行Win+R，在其中输入环境变量path中有的一个文件目录“system32”，会发现系统自动打开了该文件夹；而输入环境变量中没有路径的文件夹名，但系统中存在该文件夹，却不能够打开成功。所以环境变量相当于是告诉系统当用户给的指令不清楚时到里面去找路径，如果有对应的便可以快速打开。<br><img src="https://img-blog.csdnimg.cn/20191003172349474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgxMDQxMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>将电脑上matlab的bin，win64文件夹添加进去。<br><img src="https://img-blog.csdnimg.cn/20191003172514749.png" alt="在这里插入图片描述"><br>    理论上配置环境就完成了。<br>    在测试的时候出现了一个小插曲，那便是本人在执行完以上步骤后发现C中还是无法打开”engine.h”文件。但最后解决了，问题出在VS配置管理器中“活动解决方案平台”用的还是x86位的，将其设置为x64位后报错即可消除。</p>
+<h1 id="遗传算法产生随机数的实现"><a href="#遗传算法产生随机数的实现" class="headerlink" title="遗传算法产生随机数的实现"></a>遗传算法产生随机数的实现</h1><p>下面是本人写的代码：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">//一个在给定区间[a, b]内产生随机数的程序</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include"engine.h"</span><br><span class="line">#define Percise 0.001</span><br><span class="line">#define LBOUND 200</span><br><span class="line">#define UBOUND 500</span><br><span class="line"></span><br><span class="line">int main(void)</span><br><span class="line">{</span><br><span class="line">	puts("Loading...\n");</span><br><span class="line">	engine* ep;</span><br><span class="line">	if (!(ep = engOpen(NULL)))</span><br><span class="line">	{</span><br><span class="line">		fprintf(stderr, "\n无法启动MATLAB引擎\n");</span><br><span class="line">		return EXIT_FAILURE;</span><br><span class="line">	}                                   //判断引擎是否启动成功</span><br><span class="line">	double L[] = { LBOUND };</span><br><span class="line">	double U[] = { UBOUND };</span><br><span class="line">	mxArray*Low,*Up,* Num,*Realnum;</span><br><span class="line"></span><br><span class="line">	int range = UBOUND - LBOUND;</span><br><span class="line">	double number[] = { range/Percise };              //将拥有该精度时区间内数字的个数赋给number数组,number=3</span><br><span class="line">	Num = mxCreateDoubleMatrix(1, 1, mxREAL);       //初始化了一个mxArray，该数组为1x1的double实数类型</span><br><span class="line">	Low= mxCreateDoubleMatrix(1, 1, mxREAL);</span><br><span class="line">	Up= mxCreateDoubleMatrix(1, 1, mxREAL);</span><br><span class="line">	Realnum = mxCreateDoubleMatrix(1, 1, mxREAL);</span><br><span class="line">	memcpy(mxGetPr(Low), L, sizeof(L));</span><br><span class="line">	memcpy(mxGetPr(Up), U, sizeof(U));</span><br><span class="line">	memcpy(mxGetPr(Num), number, sizeof(number));   //将number数组中的元素拷贝至matlab格式数组mxArray中,现在已有一个mxArray形式的数组了，它叫Num，储存着个数，但现在它还未被写入matlab引擎</span><br><span class="line">	engPutVariable(ep, "Num", Num);                 //将mxArray格式的数组Num输入matlab引擎    </span><br><span class="line">	engPutVariable(ep, "Low", Low);</span><br><span class="line">	engPutVariable(ep, "Up", Up);</span><br><span class="line">	engEvalString(ep, "Kbits=fix(log(Num)/log(2))");//让matlab计算Kbits</span><br><span class="line">	engEvalString(ep, "Vmax=2^Kbits");              //给matlab输入命令字符串，让其执行</span><br><span class="line">	engEvalString(ep, "rndbin=fix(2*rand(1,Kbits))");</span><br><span class="line">	engEvalString(ep, "rndbin2dec=bin2dec(num2str(rndbin,'%d'))");</span><br><span class="line">	engEvalString(ep, "r=rndbin2dec/Vmax");</span><br><span class="line">	engEvalString(ep, "Realnum=Low+(Up-Low)*r");</span><br><span class="line"></span><br><span class="line">	if (Realnum= engGetVariable(ep, "Realnum")) //获取在matlab中计算的变量Vmax的值，因为在获取前Vmax在此只是一个空的储存空间</span><br><span class="line">	{</span><br><span class="line">		printf("It can be predicted that matlab has processed our order correctly!\n");   //这里准备获取答案</span><br><span class="line">		Num=engGetVariable(ep, "Num");</span><br><span class="line">		printf("Num= %f\n\n", *mxGetPr(Num));//为什么Num没有用获得函数“engGetVariabe”便可得到呢？因为Num的赋值是在此利用memcpy写入的</span><br><span class="line">		printf("The random number is: %f\n ", *mxGetPr(Realnum));</span><br><span class="line">	}</span><br><span class="line">	else</span><br><span class="line">		printf("Too bad!");</span><br><span class="line">	mxDestroyArray(Low);</span><br><span class="line">	mxDestroyArray(Up);</span><br><span class="line">	mxDestroyArray(Num);</span><br><span class="line">	mxDestroyArray(Realnum);</span><br><span class="line">	engClose(ep);</span><br><span class="line"></span><br><span class="line">	system("pause");</span><br><span class="line">	return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>    具体的engine函数可以通过自行查看engine.h文件得知。<br>    有一点需要注意的是，从C传递给matlab中的数据类型都是mxArray格式的数组矩阵，这里需要注意，通常赋值的办法便是利用memcpy函数将具体数值拷贝至该数组中。<br>    利用engine函数很方便的一点便是，任何指令都可以通过engEvalString函数以字符串的形式传递给matlab让它直接执行，且算法的中间不需要提前在C中声明并传递给matlab，这也很好地保留了matlab语言简洁易用的特性。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Ashlaie Chen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2020/05/17/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/">http://example.com/2020/05/17/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C-C/">C/C++</a><a class="post-meta__tags" href="/tags/Matlab/">Matlab</a><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a></div><div class="post_share"><div class="social-share" data-image="/img/science.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2020/05/20/%E3%80%90%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95%E3%80%912020520%E9%9A%8F%E7%AC%94/"><img class="prev-cover" src="https://i.loli.net/2020/05/21/la2Hhnz4SEsD6g3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">【日常记录】2020520随笔</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2020/06/01/【学科笔记】信号与系统Matlab笔记/" title="【学科笔记】信号与系统Matlab笔记"><img class="cover" src="/img/science.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-01</div><div class="title">【学科笔记】信号与系统Matlab笔记</div></div></a></div><div><a href="/2020/06/02/Processor课程的仿真实验笔记/" title="【学科笔记】Embed Processor课程的仿真实验笔记"><img class="cover" src="/img/science.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-02</div><div class="title">【学科笔记】Embed Processor课程的仿真实验笔记</div></div></a></div><div><a href="/2020/09/29/配置GPU版本Pytorch环境/" title="配置GPU版本Pytorch环境"><img class="cover" src="/img/123.jfif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-29</div><div class="title">配置GPU版本Pytorch环境</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ashlaie Chen</div><div class="author-info__description">A student of UESTC and UoG, majoring in CE.</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chentao627"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/chentao627" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/610074045@QQ.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">配置环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E7%9B%AE%E5%BD%95%E7%9A%84%E8%B7%AF%E5%BE%84%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">包含目录的路径配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">静态数据库的目录配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%8A%A0%E4%BE%9D%E8%B5%96%E9%A1%B9%E7%9A%84%E6%B7%BB%E5%8A%A0"><span class="toc-number">1.3.</span> <span class="toc-text">附加依赖项的添加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.</span> <span class="toc-text">系统环境变量的配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E4%BA%A7%E7%94%9F%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.</span> <span class="toc-text">遗传算法产生随机数的实现</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/07/30/20210730%E9%9A%8F%E7%AC%94/" title="记录有关于她的点滴"><img src="/img/Caffe.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记录有关于她的点滴"/></a><div class="content"><a class="title" href="/2021/07/30/20210730%E9%9A%8F%E7%AC%94/" title="记录有关于她的点滴">记录有关于她的点滴</a><time datetime="2021-07-30T12:56:58.000Z" title="Created 2021-07-30 20:56:58">2021-07-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/30/hello-world/" title="Hello World——这个博客的重生"><img src="/img/Firewatch.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World——这个博客的重生"/></a><div class="content"><a class="title" href="/2021/07/30/hello-world/" title="Hello World——这个博客的重生">Hello World——这个博客的重生</a><time datetime="2021-07-30T07:56:58.000Z" title="Created 2021-07-30 15:56:58">2021-07-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/09/29/%E9%85%8D%E7%BD%AEGPU%E7%89%88%E6%9C%ACPytorch%E7%8E%AF%E5%A2%83/" title="配置GPU版本Pytorch环境"><img src="/img/123.jfif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="配置GPU版本Pytorch环境"/></a><div class="content"><a class="title" href="/2020/09/29/%E9%85%8D%E7%BD%AEGPU%E7%89%88%E6%9C%ACPytorch%E7%8E%AF%E5%A2%83/" title="配置GPU版本Pytorch环境">配置GPU版本Pytorch环境</a><time datetime="2020-09-29T12:10:11.000Z" title="Created 2020-09-29 20:10:11">2020-09-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/09/26/%E6%91%84%E5%BD%B1%E8%B0%83%E8%89%B2%E7%AC%94%E8%AE%B0/" title="摄影调色笔记"><img src="/img/tumblr_d49bb4562eeffa7deee27617ea2a6632_448e59ec_400.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="摄影调色笔记"/></a><div class="content"><a class="title" href="/2020/09/26/%E6%91%84%E5%BD%B1%E8%B0%83%E8%89%B2%E7%AC%94%E8%AE%B0/" title="摄影调色笔记">摄影调色笔记</a><time datetime="2020-09-26T11:18:38.000Z" title="Created 2020-09-26 19:18:38">2020-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/09/19/%E3%80%90%E6%91%84%E5%BD%B1%E5%BF%83%E5%BE%97%E3%80%91%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86-%E7%94%B5%E5%BD%B1%E8%B0%83%E8%89%B2/" title="【摄影心得】摄影后期处理-电影调色"><img src="/img/tumblr_e32f7b32e8e34a0106c339d1ca009017_d4300b5f_2048.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【摄影心得】摄影后期处理-电影调色"/></a><div class="content"><a class="title" href="/2020/09/19/%E3%80%90%E6%91%84%E5%BD%B1%E5%BF%83%E5%BE%97%E3%80%91%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86-%E7%94%B5%E5%BD%B1%E8%B0%83%E8%89%B2/" title="【摄影心得】摄影后期处理-电影调色">【摄影心得】摄影后期处理-电影调色</a><time datetime="2020-09-19T09:03:21.000Z" title="Created 2020-09-19 17:03:21">2020-09-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Ashlaie Chen</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

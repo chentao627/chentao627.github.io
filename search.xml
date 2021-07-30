@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>记录有关于她的点滴</title>
+      <link href="/2021/07/30/20210730%E9%9A%8F%E7%AC%94/"/>
+      <url>/2021/07/30/20210730%E9%9A%8F%E7%AC%94/</url>
+      
+        <content type="html"><![CDATA[<h2 id="2021-7-20"><a href="#2021-7-20" class="headerlink" title="2021.7.20"></a>2021.7.20</h2><p>    给她点了一份小龙虾，看她健完身只吃了那点蔬菜沙拉饿得可怜，实在不忍心看她受饿哈哈哈哈哈哈哈哈哈哈哈，等会儿把肚子都饿bia了就不好向叔叔阿姨交代了；某些人嘴上说着不要点，实际小龙虾到了之后吃得笑容满面，果然女人都是口是心非的</p><h2 id="2021-7-22夜"><a href="#2021-7-22夜" class="headerlink" title="2021.7.22夜"></a>2021.7.22夜</h2><p>    半夜三更才被憨憨拉去看电影——平生第一次在夜半将近12点开始看一场2个多小时的电影，叫时空恋旅人。电影还是多温暖的，当然和憨憨一起看的感觉就更不用说了，就是有点费头发，第二天起来巨困。<br>还发生了一个小插曲——看完电影在和憨憨语音即兴发挥的时候这批手机自己重启开始更新系统了，搞得我话都没说完微信语音就断了，angry！！</p><h2 id="2021-7-30"><a href="#2021-7-30" class="headerlink" title="2021.7.30"></a>2021.7.30</h2><p>    昨天下午她兴冲冲地约我出去吃饭，说是特别想吃烤肉了，那我肯定也就义不容辞、当仁不让地大踏步坐地铁走过去了。不过万万没料到，以前坐地铁+公交将近一个小时的车程这次用了半小时不到就到达目的地电子科技大学建设北路站——简直开玩笑，我到站了她都还没下课。成都这七月下旬的天犹如密封的锅炉房，刚从地铁站中出来时还好，走在街上待身上挂出来的冷气消散后，这锅炉房的威力就开始显现了，也许蒸笼里面的包子就是我当时的感觉吧！转了一会儿，看见街边有一红旗连锁，想着一会儿她紧赶慢赶地到了很有可能会口渴，便进去买了瓶她上次连连称赞的东方树叶，柑橘口味的；不过貌似我可能是来得太早了，在烤肉店里等了半个小时她才赶到——没能在地铁口接到她；<br>    在她家楼下，我把手工完成的音乐小房子送给了她。也许是我想多了吧，反正她那个时候的眼神我是忘不掉的，不知为啥，感觉总有那么一丝柔情和眷念在里面，有水。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
+            
+            <tag> 情感 </tag>
+            
+            <tag> 心情 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World——这个博客的重生</title>
+      <link href="/2021/07/30/hello-world/"/>
+      <url>/2021/07/30/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>    自从大三上期期末那段做科研的时间里这电脑的系统C盘硬件出了问题，整个笔记本被送回原厂修理后，这个博客在这之前的内容便全部丢失了。从那些日子到现在将近一年的时间里，它就像漂浮在太空中的空间站一样，与地球失去了联系。这里好不容易才将博客重新进行了部署，在之前的网页缓存的破碎废墟中抢救出一些文字，重新简单地整理了出来。吃一堑，长一智，这之后自己要做好备份工作，就算电脑从一百层楼丢下去之后也能快速恢复才行。</p><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>配置GPU版本Pytorch环境</title>
+      <link href="/2020/09/29/%E9%85%8D%E7%BD%AEGPU%E7%89%88%E6%9C%ACPytorch%E7%8E%AF%E5%A2%83/"/>
+      <url>/2020/09/29/%E9%85%8D%E7%BD%AEGPU%E7%89%88%E6%9C%ACPytorch%E7%8E%AF%E5%A2%83/</url>
+      
+        <content type="html"><![CDATA[<h1 id="编译器的安装"><a href="#编译器的安装" class="headerlink" title="编译器的安装"></a>编译器的安装</h1><p>    首先是安装Anaconda，直接去官网上下载安装即可。具体安装教程网上太多了。但需要注意的是安装完成后想要在cmd界面快速打开conda、python程序则必须在windows环境变量中添加path。路径的添加在此电脑-右键—高级系统设置—环境变量—系统变量—双击path—新建路径。一共有3个需要添加的path：</p><ul><li>Anaconda安装路径（为了Python检查正常）：我的是D:\03–Software\38–Anaconda</li><li>安装路径\Scripts（为了conda检查正常）：只需在上述路径中找到Scripts，然后复制路径即可，我的路径是D:\03–Software\38–Anaconda\Scripts</li><li>Library路径：即安装路径\Library\bin，如我的是D:\03–Software\38–Anaconda\Library\bin<br>    接着是在cmd中检查安装情况，在初始界面（C盘路径）下分别输入Python,conda即可。百度很多，不多赘述。<h1 id="Pytorch库的配置"><a href="#Pytorch库的配置" class="headerlink" title="Pytorch库的配置"></a>Pytorch库的配置</h1>    打开C:\Users\用户名，找到.condarc文件，修改内容为<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ssl_verify: true</span><br><span class="line">show_channel_urls: true</span><br><span class="line">channels:</span><br><span class="line">//使用清华源镜像网站下载，也许会快一点。</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br></pre></td></tr></tbody></table></figure>    然后打开清华源下的pytorch库<br><a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/win-64/%EF%BC%8C">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/win-64/，</a> 找到自己合适的版本，比如我需要GPU版本的并且支持cuda10，找到文件pytorch-1.6.0-py3.8_cuda102_cudnn7_0.tar.bz2，将其下载下来，我喜欢把文件归类，便把该文件放在Anaconda的安装目录下，建了个子文件夹名曰GPU_Pytorch_Files，放在里面。<br>    再然后便是利用cmd-conda对其进行安装。（请把cmd文件夹路径改成自己放pytorch库的文件夹！），命令效果为<br>D:\03–Software\38–Anaconda\GPU_Pytorch_Files&gt;conda install –offline pytorch-1.6.0-py3.8_cuda102_cudnn7_0.tar.bz2<br>就等他安装吧。<br>    安装完后，在相同路径下输入conda install torchvision，它会自动安装依赖的包。如果遇见以下情况：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">D:\03--Software\38--Anaconda\GPU_Pytorch_Files&gt;conda install torchvision</span><br><span class="line">Collecting package metadata (current_repodata.json): failed</span><br><span class="line"></span><br><span class="line">CondaHTTPError: HTTP 000 CONNECTION FAILED for url &lt;https://mirrors.ustc.edu.cn/anaconda/pkgs/main/win-64/current_repodata.json&gt;</span><br><span class="line">Elapsed: -</span><br><span class="line"></span><br><span class="line">An HTTP error occurred when trying to retrieve this URL.</span><br><span class="line">HTTP errors are often intermittent, and a simple retry will get you on your way.</span><br><span class="line">'https://mirrors.ustc.edu.cn/anaconda/pkgs/main/win-64'</span><br></pre></td></tr></tbody></table></figure>请把上面.condarc文件里的下载网址的https改为http，然后再试一次。成功后系统问你“Processed？”回复它y就行了，开始安装。<br>    安装好后，在Anaconda的python程序中运行下面的代码<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Python 3.8.3 (default, Jul  2 2020, 17:30:36) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32</span><br><span class="line">Type "help", "copyright", "credits" or "license" for more information.</span><br><span class="line">&gt;&gt;&gt; import torch</span><br><span class="line">&gt;&gt;&gt; print(torch.cuda.is_available())</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; print(torch.version.cuda)</span><br><span class="line">10.2</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></tbody></table></figure>如此便安装成功了。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 探索记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 编程语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>摄影调色笔记</title>
+      <link href="/2020/09/26/%E6%91%84%E5%BD%B1%E8%B0%83%E8%89%B2%E7%AC%94%E8%AE%B0/"/>
+      <url>/2020/09/26/%E6%91%84%E5%BD%B1%E8%B0%83%E8%89%B2%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="光和色的关系"><a href="#光和色的关系" class="headerlink" title="光和色的关系"></a>光和色的关系</h1><h2 id="光"><a href="#光" class="headerlink" title="光"></a>光</h2><p>    光的三原色指：红，绿，蓝。一种颜色的属性分为色调、饱和度。变换色调即变换颜色，例如从红色到绿色的转变；变换饱和度即该种颜色的饱和程度，例如浅红与深红的区别。<br>    RGB颜色在电脑中一般以数字的形式呈现，针对于发光物体。谁的数值大谁就占主导。例如R：255 G：3 B：3 那么该颜色大概率为红色；白色是RGB均为255（房间内什么光都照射眼睛就是一片白）；黑色是RGB都为0（房间内啥光线都没有就是黑色）；RGB三种颜色等值时也没有色相，属于灰值。<br>    RGB三种颜色都到了最大值，这种模式叫作加色模式（RGB三个值到了白色）。</p><h2 id="色"><a href="#色" class="headerlink" title="色"></a>色</h2><p>    色的三原色指：青，品，黄（C，M，Y）。但在实际印刷中这三种颜色得到的黑色不纯，故单独生产第四种颜色叫做黑色油墨，记为’k’。<br>    CMY属于减色模式。两个加色得到一个减色。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 探索记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 摄影 </tag>
+            
+            <tag> 艺术 </tag>
+            
+            <tag> 调色 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【摄影心得】摄影后期处理-电影调色</title>
+      <link href="/2020/09/19/%E3%80%90%E6%91%84%E5%BD%B1%E5%BF%83%E5%BE%97%E3%80%91%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86-%E7%94%B5%E5%BD%B1%E8%B0%83%E8%89%B2/"/>
+      <url>/2020/09/19/%E3%80%90%E6%91%84%E5%BD%B1%E5%BF%83%E5%BE%97%E3%80%91%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86-%E7%94%B5%E5%BD%B1%E8%B0%83%E8%89%B2/</url>
+      
+        <content type="html"><![CDATA[<p>最近感觉自己喜欢上了摄影，在路上走着走着、在自习室休息的时候，时不时灵感来了都会拿手机整一两张照片。但众所周知的是，未经过后期处理的照片大多都不是很好看的，俗称卖相不太好。故最近空余时间便拿来涉猎了一下Photoshop里面关于照片后期调色处理的内容。这里主要记录一下照片的电影调色是如何实现的。<br>总的来说分为三步：<br>拍摄RAW类型照片→在电脑上通过后缀为.dcp的相机色彩文件，在Photoshop中转换为LOG照片类型→在Photoshop中利用下载的调色大师们配置好的3D LUTS包，加载到图片上，整个过程便算完成了。<br>    我自己因为经费不足，平常用到的拍摄器材便是手机了。我的手机型号是华为的P20，一般在网上下载的.dcp相机配置文件包中是不含的。故该文件需要自己配置。其实配置这个文件说来也很简单：<br>    1. 在手机相机设置里打开允许储存RAW类型照片的按钮，随便拍一张照片，储存为DNG格式，在属性里面把相机型号复制下来<br>    2. 下载一个DNG_Profile_Editor，导入该照片，在base profiles里的choose external profiles选项，选择一个网上找得到的任意一个相机型号的.dcp文件，然后选择导出，重命名为VisionLOG_XXXXX(复制的相机型号)<br>    3. 把该文件放到PS的…\Adobe\CameraRaw\CameraProfiles里面即可<br>使用时即把需要调色的RAW类型图片用camera raw打开，在“相机校准”选项-“相机配置文件-名称”里选择该.dcp配置文件即可完成RAW-LOG转换，此时照片大概率会变灰色<br>    然后就是在Photoshop中利用“颜色查找”载入自己下载的3D LUTS文件即可开启电影滤镜效果。至于3D LUTS的资源嘛……淘宝上多得是，几块钱几千个随便找。<br>    整点前后效果对比图：</p><h1 id="西岭雪山"><a href="#西岭雪山" class="headerlink" title="西岭雪山"></a>西岭雪山</h1><p>处理前<br><img src="https://img-blog.csdnimg.cn/20200919194429357.jpg" alt="在这里插入图片描述"><br>处理后<br><img src="https://img-blog.csdnimg.cn/20200919194429832.jpg" alt="在这里插入图片描述"></p><h1 id="新宿街头"><a href="#新宿街头" class="headerlink" title="新宿街头"></a>新宿街头</h1><p>处理前<br><img src="https://img-blog.csdnimg.cn/20200919201246285.jpg" alt="在这里插入图片描述"><br>处理后<br><img src="https://img-blog.csdnimg.cn/20200919201640675.JPG" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 探索记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 摄影 </tag>
+            
+            <tag> 艺术 </tag>
+            
+            <tag> 调色 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>20200905随笔</title>
+      <link href="/2020/09/05/20200905%E9%9A%8F%E7%AC%94/"/>
+      <url>/2020/09/05/20200905%E9%9A%8F%E7%AC%94/</url>
+      
+        <content type="html"><![CDATA[<p>    返校后的考试周昨天便结束了，今天是周六，两天后——即下周一便正式上课了。于是便正巧空出2天的真空时间。<br>    是啊，这两天我也不知道干点啥好。前段时间陆陆续续地开始给有点眼缘的导师发了邮件，表示期望去其实验室学习参与参与科研，干点活，第一位导师因为实验室传统意义上没接收过本科生婉言拒绝了；另外一位在四天前让我发了简历和自我介绍后便再无回复——也许是忙碌没看到邮件吧，我也懒得去猜其中的原因了。<br>    不想出国读硕士研究生的心境下在格院读书其实还是挺难顶的，想留在国内深造便只有2条路——即保研与考研；往届还好，国际形势明朗，大家都想出国，去灯塔、去英联邦、去新加坡，保研名额还能够顺延至排名50%的位置；但如今新冠疫情一来，便不知本专业其他同学意向如何了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+            <tag> 心情 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【感情往事】一段失败的经历</title>
+      <link href="/2020/08/14/%E3%80%90%E6%84%9F%E6%83%85%E5%BE%80%E4%BA%8B%E3%80%91%E4%B8%80%E6%AE%B5%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
+      <url>/2020/08/14/%E3%80%90%E6%84%9F%E6%83%85%E5%BE%80%E4%BA%8B%E3%80%91%E4%B8%80%E6%AE%B5%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%BB%8F%E5%8E%86/</url>
+      
+        <content type="html"><![CDATA[<pre><code>她是川师的一个女孩，家住在德阳，父母都在德阳开公司。</code></pre><p>    从5月18日，也就是我奶奶去世的那一天到现在8月14日，认识她已经将近3个月。这三个月里我们渐渐地从相识到熟悉，从熟悉到每天晚上聊天的形影不离——大多数时候都能够陪她聊天聊到深夜。聊喜好、聊旅行、聊摄影、聊人、聊未来。<br>    她是一个非常成熟的女孩（？也许吧），从她的外表，独立学习工作，对正事有自己的思考都可以看出来。期间她正好来成都见她的朋友，那我作为东道主，也自然而然地请她吃了一顿她想吃的火锅。离开后，她也给我承诺下次带我去吃太古里的肥肠鸡（是这个东西吗？我不知道，因为她确实没请我去过）。事情到这里看起来一切都还蛮正常的。<br>    我本以为我与她的关系会继续深入下去，但是事情仿佛并不如愿。在前天晚上，她回到家突然给我发来几条消息：</p><p>“我今天去相亲了”<br>“还可以”<br>“是以前的同学”。</p><p>    我不知道是我见识太少还是其他乱七八糟的，看到这里，我便不知道应该说什么话了。过了好久，才从停滞的大脑中找出几个文字输入到屏幕上：</p><p>“那你准备深入发展了吗？”<br>“哪有那么快”<br>“只是说他比较外向”<br>“比我更会做事情”<br>“虽然他也是技术性人才”<br>“但是”<br>“社会性挺好的”<br>“也是那种爱运动爱旅行爱摄影的”<br>“哎哟”<br>“我榆木脑袋”<br>“我今天素颜 可能可能看起来也比较….”</p><p>    不知道一般人遇到这种事情应该怎么应对，反正这种电视剧般的情节就发生在了我的头上了，但我仍然觉得应该把自己的真实想法表达出来：</p><p>“我也有点喜欢你，这可怎么办啊”</p><p>    在半小时后，她开始回复了</p><p>“AA（我的小名）”<br>“啥子哦”<br>“我还是有点惊讶”<br>“因为”<br>“AA从不曾表达”<br>“天啊”</p><p>    得嘞，寻思我天天和你互相分享生活，聊天聊到半夜，聊人生聊未来聊爱好是在做职业生涯规划。聊天仍在继续：</p><p>“今天那个男生”<br>“可能是那种”<br>“让人眼前一亮”<br>“很阳光”<br>“虽然也不高，好像也不帅，但是还是很斯文”<br>“我还是有点羞的”<br>“跟我前男友一个星座”<br>“就是”<br>“很有人格魅力吧”<br>“很斯文”<br>“但是我又还是比较谨慎嘛”<br>“不能以貌取人”<br>“反正还是有点好感了”</p><p>    对嘛，他很好。反正认定了他很好就对了。她继续发言：</p><p>“如果遇到一个和我很像的”<br>“会吵起来吧”<br>“AA”<br>“我也不知道”<br>“是不是我的错觉”<br>“我感觉AA跟我很像”<br>“就是”<br>“很像”<br>“AA反而比我稳重得多”<br>“比我更有大局观”<br>“而且”<br>“AA很被动，更内敛”</p><p>    这话锋一转，开始评价起我来了。我很疑惑“有大局观”、“稳重”什么时候成为了缺点了。她最后一句话也许是客观的。但吵架这件事情在我们相处的这三个月内确实没发生过：</p><p>“那我们从五月份到现在吵过没有嘛”<br>“没有！”<br>“我平时就比较稳了”<br>“比较安静了”<br>“就很向往稍微热烈一点的生活”<br>“激情一点”<br>“然后再自己的可控范围内”<br>“唉，既然你都这样说了”<br>“啊啊啊啊啊啊”<br>“我开始犹豫了”</p><p>    哈哈，反正喜欢一个人是不需要理由的，还犹豫什么呢。继续聆听她的发言：</p><p>“其实”<br>“见得多了”<br>“越来越清晰自己想要的是什么样的”<br>“也越来越有自己的定位”<br>“我就喜欢所谓“奶狗”【微信红脸表情】”<br>“反而”<br>“很稳重优秀的”<br>“只能做朋友了”</p><p>    这还表扬起我来了，男同胞们，这种手段杀伤效果太大了。继续：</p><p>“现在这个男生就是”<br>“没事就问你在干嘛”<br>“每天都想见你”<br>“让你看人家打球”<br>“让你一起跑步”<br>“支持你学习”<br>“做你的“贤妻良母”那种”<br>“今天”<br>“人家见面”<br>“还带了一大堆枣子”<br>“说是老家的”<br>“喊带给我妈”<br>“天那”<br>“哪个遭得住”</p><p>    本以为上面的杀伤效果已经挺大了，想不到还有劲更大的。从聊天记录来看搞半天你和这位男生已经相处了不是一两天了嘛，又是看打球又是跑步的。第一次吃个饭连给你妈妈的枣子都提上了，我记得当时我请你吃火锅的时候问她“买一束花之类的”，她说“不好拿”的嘛。经验告诉我这人可能耍朋友不止一两次了，我要提问：</p><p>“他耍过几次朋友”<br>“他”<br>“初恋”<br>“以前就是很有闪光点的，但是别人不谈恋爱”<br>“现在就是逮住我了嘛”<br>“就是跟你发”<br>“啥子耳环”<br>“甜品店”<br>“拍照好看的地方”<br>“简直”<br>“就是把我的爱好抓得死死的”<br>“AA啊！”<br>“啊啊啊啊”</p><p>    啊个五金店，朋友们，你们说你们信吗？反正我初恋的时候别说提枣子和聊耳环甜品店了，就是和初恋聊天都很生疏。</p><p>“其实“<br>“相亲是说着玩的”<br>“本来就认识”<br>“相亲是我朋友说的”<br>“喊我相亲”<br>“其实她们也是开玩笑”<br>“但是”<br>“反正就这样了”<br>“他”<br>“在南昌”<br>“他家是成都的”<br>“好像也是在川大那边”<br>“但是他在我们学习读到大的”<br>“在这边也有家”<br>“我妈”<br>“看见枣子”<br>“只会夸人家男孩子懂事”<br>“枣子甜”</p><p>    什么叫作“杀人，还要诛心”。<br>    我感觉这篇文章写到这里我写不下去了，实在是不想再去翻那天的聊天记录了。只能说我运气背，有些话没说出口人家就当不知道，这一点确实是自己的问题。</p><p>    第二天，也就是昨天，那位“同学”又约着她晚上出去吃烤肉。我正好没有什么事情，就订了一张高铁票，去了德阳玩。<br>    在高铁上她对我说：“作为东道主，自然是有朋自远方来，我今天中午就不跟老爸吃饭就可以了~你也不要有心理压力。”<br>    到了中午，她发来一句：“我爸爸喊我跟哥哥吃午饭，我看吃了饭，行不行”<br>    到了下午，德阳下起了雨，她发来一句：“要去公司，搬东西，人不够，我妈给我打电话”</p><p>    就这样吧。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+            <tag> 日记 </tag>
+            
+            <tag> 情感 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【学科笔记】Embed Processor课程的仿真实验笔记</title>
+      <link href="/2020/06/02/Processor%E8%AF%BE%E7%A8%8B%E7%9A%84%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"/>
+      <url>/2020/06/02/Processor%E8%AF%BE%E7%A8%8B%E7%9A%84%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Lab4"><a href="#Lab4" class="headerlink" title="Lab4"></a>Lab4</h1><h2 id="Task-A：基本输入输出函数的重定向"><a href="#Task-A：基本输入输出函数的重定向" class="headerlink" title="Task A：基本输入输出函数的重定向"></a>Task A：基本输入输出函数的重定向</h2><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><p>    该实验的目的是在Keli的仿真软件中重定向C语言库中的printf()、fputc()、fgetc()函数，至UART/Serial Port。利用输出字符串来对系统外部中断IRQ产生更形象的认识。</p><p>被printf()函数调用的低一层I/O函数<br>    在基于ARM的Microcontroller上，ARM C Library和Microlib支持着C标准库的函数。在这些标准库中，常见的printf()函数scanf()函数都位于熟悉的stdio.h包中，这也意味着这些函数的默认定向都是默认的输入输出端口，例如键盘、显示屏。<br>    其中，printf()函数又依赖于stream I/O函数fputc()，从而在目标设备上进行打印。而这一过程又取决于这取决于对fputc()的重定向方式；同理，类似地，scanf()函数也依赖于fgetc()来获取用户输入。</p><h3 id="fputc-、fgetc-的工作原理"><a href="#fputc-、fgetc-的工作原理" class="headerlink" title="fputc()、fgetc()的工作原理"></a>fputc()、fgetc()的工作原理</h3><p>一般而言，函数fputc()会向stream（FILE *）传输字符。一个stream流表示到任一设备、文件或进程的通信通道。通常而言，当我们想要在控制台/终端中显示输出时，流要么是STDOUT，要么是STDERR。向2者中的一个流执行写入的话，将把写入的字符转移或重定向到控制台输出；同理，fgetc()从给定的流中读取字符。要通过控制台从用户获得输入，使用的流是STDIN。<br>重新实现C库函数来重定向printf()<br>    为了重新实现它们，我们需要两个基本的UART功能:一个用来读取字符，另一个用来编写字符。因此，我们可以定义两个函数，即uartWrite()和uartRead()。(Ps:注意，这些就像驱动程序功能，是特定于设备的，此处使用的是LPC1768)。<br>    具体的函数调用关系如下图：<br>printf()⇒fputc()⇒uartWrite()</p><p>scanf()⇒fgetc()⇒uartRead()</p><p>    我们只需要修改流I/O函数的调用为我们自己编译的、重定向好了的函数，即可联动printf()进行重定向了。</p><h3 id="实验具体的题目"><a href="#实验具体的题目" class="headerlink" title="实验具体的题目"></a>实验具体的题目</h3><p>    下列重定向后的代码输出有<em>Timer</em>干扰，修改代码，去除这个干扰。<br>这是主程序</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">/* Embedded System Lab4 interrupter&amp;timer (2019-2020)</span><br><span class="line">shufan.yang@glasgow.ac.uk</span><br><span class="line">License: GPL.*/</span><br><span class="line"></span><br><span class="line">#include &lt;lpc17xx.h&gt;</span><br><span class="line">#include &lt;stdio.h&gt; //since we use c function, standard library is needed</span><br><span class="line">#include "uart.h"  //for initUART0() and other macros</span><br><span class="line">#define PRESCALE (25000-1)  //25000 PCLK clock cycles to increment TC by 1 </span><br><span class="line"></span><br><span class="line">void delayMS(unsigned int milliseconds);</span><br><span class="line">void initTimer0(void);</span><br><span class="line">extern unsigned int g_ts;</span><br><span class="line">extern __irq void TIM3_IRQ_Handler(void);</span><br><span class="line"></span><br><span class="line">struct __FILE</span><br><span class="line">{</span><br><span class="line">  int dummyVar; //Just for the sake of redefining __FILE, we won't we using it anyways ;)</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line">FILE __stdout; //STDOUT</span><br><span class="line">FILE __stdin;  //STDIN</span><br><span class="line"></span><br><span class="line">int fputc(int c, FILE * stream)//##Rewrite the fputc() to call our func:uartWrite()?##</span><br><span class="line">{</span><br><span class="line">uartWrite(c); //Transmit Character</span><br><span class="line">return c; //return the character written to denote a successful write</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">int fgetc(FILE * stream)//Rewrite the fgetc()to call our func:uartRead()?##</span><br><span class="line">{</span><br><span class="line">char c = uartRead(); //Receive Character</span><br><span class="line">uartWrite(c); //To echo Received characters back to serial Terminal</span><br><span class="line">return c;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">void uartWrite(char c)//##To define our own func. uartWirte, receive input char 'c'##</span><br><span class="line">{</span><br><span class="line">while (!(LPC_UART0-&gt;LSR &amp; THRE)); // wait till the THR is empty,   ##Does it ready to write?##</span><br><span class="line">if( c == '\n' ) //Send &lt;CR+LF&gt;</span><br><span class="line">{</span><br><span class="line">LPC_UART0-&gt;THR = CARRIAGE_RETURN;</span><br><span class="line">while(!(LPC_UART0-&gt;LSR &amp; THRE )); </span><br><span class="line">LPC_UART0-&gt;THR = LINE_FEED;</span><br><span class="line">}</span><br><span class="line">else</span><br><span class="line">{</span><br><span class="line">LPC_UART0-&gt;THR = c; //##To deliver input 'c' to THR##</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">char uartRead(void)//##To Define Our func. uartRead?, no receive##</span><br><span class="line">{</span><br><span class="line">while(!(LPC_UART0-&gt;LSR &amp; RDR)); //wait for data to arrive</span><br><span class="line">return LPC_UART0-&gt;RBR;           //##To return what has been read?##</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">int main(void)</span><br><span class="line">{</span><br><span class="line">initUART0(); //Init UART0 at baud-rate: 115200 @ 25Mhz PLCK</span><br><span class="line">initTimer0(); //Initialize Timer0 </span><br><span class="line"></span><br><span class="line">        printf("Hey! This is your beloved printf().\nI have been redirected here!\n Stay Home, Save Life, Save NHS\n");//##These are sentences needs to be retargeted##</span><br><span class="line">printf("Tomorrow, and tomorrow, and tomorrow, Creeps in this petty pace from day to day, To the last syllable of recorded time; \n And all our yesterdays have lighted fools The way to dusty death. Out, out, brief candle. \n Life's but a walking shadow, a poor player That struts and frets his hour upon the stage And then is heard no more. \n It is a tale Told by an idiot, full of sound and fury Signifying nothing.\n" );</span><br><span class="line">printf ("(Macbeth: Act 5, Scene 5, lines 19-28)");</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">void initTimer0(void)//我自己估摸着可能是这个时钟函数出的问题</span><br><span class="line">{</span><br><span class="line">//Assuming that PLL0 has been setup with CCLK = 100Mhz and PCLK = 25Mhz.</span><br><span class="line">    /* #1:打开定时器0的电源(默认是打开的) */</span><br><span class="line">LPC_SC-&gt;PCONP |= (1&lt;&lt;1); //Power up TIM0. By default TIM0 and TIM1 are enabled.</span><br><span class="line">    /* #2:时钟分频选择(默认00),00 四分频, 01 不分频, 10 二分频, 11 八分频 */</span><br><span class="line">LPC_SC-&gt;PCLKSEL0 &amp;= ~(0x3&lt;&lt;2); //Set PCLK for timer = CCLK/4 = 100/4 (default)</span><br><span class="line">    /* #3:设置为定时器模式,计数模式递增 */</span><br><span class="line">LPC_TIM0-&gt;CTCR = 0x0;</span><br><span class="line">    /* #4:指定预分频器最大的分频值 */</span><br><span class="line">LPC_TIM0-&gt;PR = PRESCALE; //Increment LPC_TIM0-&gt;TC at every 24999+1 clock cycles</span><br><span class="line">//25000 clock cycles @25Mhz = 1 mS</span><br><span class="line">    /* #5:设置匹配寄存器的值 */</span><br><span class="line">LPC_TIM0-&gt;MR0 = 5; //Toggle Time in mS</span><br><span class="line">    /* #6:MR0与TC值匹配时将产生中断,TC复位 */</span><br><span class="line">LPC_TIM0-&gt;MCR |= (1&lt;&lt;0) | (1&lt;&lt;1); // Interrupt &amp; Reset on MR0 match</span><br><span class="line">    /* #7:复位计数器 */</span><br><span class="line">LPC_TIM0-&gt;TCR |= (1&lt;&lt;1); // Reset Timer0</span><br><span class="line">    /* #8:使能定时器中断*/</span><br><span class="line">NVIC_EnableIRQ(TIMER0_IRQn); //Enable timer interrupt</span><br><span class="line">    /* #9:开启定时器 */</span><br><span class="line">LPC_TIM0-&gt;TCR = 0x01; //Enable timer</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>IRQ文件：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;lpc17xx.h&gt;</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">/* Global variable to be used in main program */</span><br><span class="line">unsigned int g_ts = 0;</span><br><span class="line"></span><br><span class="line">__irq void TIMER0_IRQHandler (void) /* TIM0 timer interrupt routine       */</span><br><span class="line">{    </span><br><span class="line">LPC_TIM0-&gt;IR |= (1&lt;&lt;0); //Clear MR0 Interrupt flag, in case the interrupt finish, but system can't detect.</span><br><span class="line">++g_ts;</span><br><span class="line">  if (g_ts% 10)</span><br><span class="line">printf("*Timer*");</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 探索记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Matlab </tag>
+            
+            <tag> 编程语言 </tag>
+            
+            <tag> 嵌入式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【学科笔记】信号与系统Matlab笔记</title>
+      <link href="/2020/06/01/%E3%80%90%E5%AD%A6%E7%A7%91%E7%AC%94%E8%AE%B0%E3%80%91%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/"/>
+      <url>/2020/06/01/%E3%80%90%E5%AD%A6%E7%A7%91%E7%AC%94%E8%AE%B0%E3%80%91%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9FMatlab%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><p>产生一串数字区间：n=-5:10产生了从-5~10的区间整数序列</p><p>stem(n, x)函数：在n的指定点处画出数据序列x。n可以作为一个数组传递。专门用来画离散时间信号。<br>例如1：画出x[n]=2n,−3≤n≤3</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n=-3:3;</span><br><span class="line">x=2*n;</span><br><span class="line">stem(n, x)</span><br></pre></td></tr></tbody></table></figure><p>subplot(m, n, P)函数：该函数用来规划画布上图像放置的位置。其中，m、n用来将画布分割，m为行，n为列；而P代表取分割部分的第几块。<br>例如：subplot(2,2,[1 3])代表将画布分为2x2的4部分，并该函数对应的图像放在第1，3块处</p><p>grid on函数：grid on为显示网格，相反，grid off 为关闭显示网格。</p><p>点乘.<em>与一般乘法</em>：函数与函数相乘，例如sin(t)sin(9t)，一般是用点乘.*。点乘主要用于函数中元素的乘法（数组乘法array multiply）；而一般乘法则为矩阵乘法（Matrix multiply）。<br>例如2：用图形表示连续调制波形y=sin(t)sin(9t)及其包络。</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t=(0:pi/100:pi)' % 长 度 为 101 的 时 间 采 样 列 向 量</span><br><span class="line">y1=sin(t)*[1,-1]; %包络线函数值，是（101x2）的矩阵</span><br><span class="line">y2=sin(t).*sin(9*t); %长度为101的调制波列向量</span><br><span class="line">t3=pi*(0:9)/9%在定义域区间均匀地取10个点</span><br><span class="line">y3=sin(t3).*sin(9*t3);%算出该十个点的值</span><br><span class="line">plot(t,y1,'r:',t,y2,'b',t3,y3,'bo')%画出函数图像，包络线图像，取点图像</span><br><span class="line">axis([0,pi,-1,1]) %控制画出的轴范围，前2参数为横轴；后2值为纵轴</span><br></pre></td></tr></tbody></table></figure><p>单位脉冲序列δ[n]与单位阶跃序列u[n]：可以综合使用ones(1,n)与zeros(1,n)来产生单位脉冲序列与代为阶跃序列。<br>其中ones(1,n)命令产生1行n列的1值；zeros(1,n)命令产生1行n列的0值。<br>例如3：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n=0: 32;</span><br><span class="line">x=[zeros(1,5),1,zeros(1,27)];%一个x=\delta(n-6)的单位冲激函数</span><br><span class="line">stem(n, x, 'fill');%以n为横坐标画出数据序列x</span><br><span class="line">filter(num ,den, x)函数：该函数主要是针对LTI系统设置。因果LTI系统的零状态响应，可以利用y=filter(num,\ den,\ x)实现。</span><br><span class="line">//其中，num为系统传递函数分子系数组成的行向量、den为系统传递函数分母系数组成的行向量、x为输入的离散序列、y为输出的离散序列且y与x的长度一样。</span><br></pre></td></tr></tbody></table></figure><p>syms函数：用来创建一个符号表达式。可以理解为用来创建一个“变量”，创建后的变量可以直接写入函数中作为自变量使用。常用作创建连续时间信号<br>例如4：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">syms t;%创建一个符号表达式，“变量t”</span><br><span class="line">syms T;</span><br><span class="line">f=sin(2*pi*t/T)%写出函数f，该函数包含待定变量t与T</span><br><span class="line">x1=subs（f，T，5）：该函数用于给自定义的符号表达式中的某个变量赋值，示例为将符号表达式f中的变量T赋值为5，并将该赋值后的符号表达式记为x1.</span><br></pre></td></tr></tbody></table></figure><p>ezplot（&lt;隐函数表达式&gt;,[x最小值，x最大值，y最小值，y最大值])：该函数用来绘制只有单一自变量的symbolic expression，即直接绘制单一自变量的函数。</p><p>int(F,x,a,b)函数：该函数用来计算自己定义的符号表达式的积分。其中F为被积函数，x为自变量（可忽略），a为积分下限，b为积分上限。</p><h1 id="Lab-2"><a href="#Lab-2" class="headerlink" title="Lab 2"></a>Lab 2</h1><p>分段函数的写法：<br>示例：表示分段函数<br>$$x[n]=<br>\begin{cases}<br>2&amp;,n=0<br>1&amp;,n=2<br>-1&amp;,n=3<br>3&amp;,n=4<br>0&amp;,otherwise<br>\end{cases}$$<br>其Matlab代码为<br>``x=(0).<em>(n&lt;0|n==1|n&gt;4)+(2).</em>(n==0)+(1).<em>(n==2)+(-1).</em>(n==3)+(3).*(n==4)</p><p>conv(x,h)函数：计算离散序列x与h的卷积和。这里存在一个小技巧：卷积后输出的区间长度会发生变化，倘若仍需要对卷积输出继续计算，但matlab提示出错“矩阵维度必须一致。”怎么办？可以直接取卷积输出的某一区间再进行矩阵运算，例如：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n=0:64;</span><br><span class="line">xh=conv(h,x)%h是一个1x41的矩阵向量，x是一个1x65的矩阵向量，输出xh为一个1x105的矩阵向量</span><br><span class="line">x2=xh(1:65).*sin((pi/2).*n);%此处n与xh的维度不同，不能直接运算，但可以取xh的第1~65个采样进行运算</span><br></pre></td></tr></tbody></table></figure><p>filter(b_k,a_k,x)函数：</p><p>输入系数，返回一个输入系数满足以下因果LTI系统关系的输出<br>∑k=0Kaky[n−k]=∑m=0Mbmx[n−m]   (α)</p><p>上式在Malab中等价于：<br>$∑k=0Ka(k+1)y[n−k]=∑m=0Mb(m+1)x[n−m]$</p><p>其实需要输入的参数b_k,a_k在Matlab中是以数组的形式输入的。<br>示例1：定义出LTI系统$y[n]=0.5x[n]+x[n−1]+2x[n−2]$的$a_k$与$b_k$<br>    $a_k=[1],b_k=[0.5,1,2]$即可。<br>也可以用来求卷积。当ak=δ[k],b[m]=bm(0≤m≤M)时，式子(α)便成为了<br>y[n]=∑m=−∞+∞b[m]x[n−m]</p><p>是一个标准的离散卷积和公式，此时只需输入参数y=filter(b_k,1,x)即可。<br>求离散线性非常系数系统，也可以使用它，但只需要一个for循环即可。<br>例如：y[n]=(35)ny2[n−1]+x[n]，求它的系统单位冲激响应只需如下：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">h2=[];%创建了一个数组来容纳每次取n时对应的h[n]</span><br><span class="line">b2=[1];%system2的输入系数</span><br><span class="line">for i=0:19</span><br><span class="line">    a2=[1,-(3/5)^i];%system2的输出系数</span><br><span class="line">    h2(i+1)=filter(b2,a2,x(i+1))%每一个n(此处为计数器i)对应一个系数，一个x[n]——也就对应响应h2[n]的一个值</span><br><span class="line">end</span><br></pre></td></tr></tbody></table></figure><p>lsim(b,a,x,t)函数：它可以模拟一个线性常系数微分方程描述的连续时间因果LTI系统，微分方程的形式如下：<br>$$∑k=0Nakdky(t)dtk=∑m=0Mbmdmx(t)dtm$$</p><p>同理，该方程在Matlab中系数需要被改写为向量形式：<br>∑k=0Na(N+1−k)dky(t)dtk=∑m=0Mb(M+1−m)dmx(t)dtm<br>step(b,a,t)函数：用来计算线性常系数微分方程的step response，用于连续时间。求单位阶跃响应除了用该函数，还可以直接把u(t)∗h(t)得到，即利用conv()函数，这样就可以算离散时间的阶跃响应了。</p><p>impulse(b,a,t)函数：用来计算线性常系数微分方程的impulse response，用于连续时间。其中t的分度及区间可以使用linspace()确定。</p><h1 id="Lab-3"><a href="#Lab-3" class="headerlink" title="Lab 3"></a>Lab 3</h1><p>[H omega]=freqz(b,a,N)：计算在0和π之间均匀间隔的N个频点（N等分）的，系数为a、b的，差分方程的频率响应H(ejw)，即ωk=(πN)k,for 0≤k≤N−1。它接收的参数b，a与Lab2中的b，a一样，都是系数。如果加上‘whole’这个参数，[H omega]=freqz(b,a,N,’whole’)，它会计算出在[0，2π]上N个均分频点的频率响应，即ωk=(2πN)k,for 0≤k≤N−1。<br>特征函数的判断：一个信号，若系统对该信号的输出响应仅是一个常数（可能是复数）乘以输入，则称该信号为系统的特征函数（eigenfunction），而幅度因子称为系统的特征值（eigenvalue）。<br>fft(x)：该函数可以用来计算离散傅里叶级数DTFS的系数ak。其中，ak=(1N)∗fft(x)<br>而该函数的原本用途为执行原信号的傅里叶变换。值得注意的是，该函数有时需要设定变换后的采样点个数，故可以对原区间的步长设置从而对原区间进行分割缩放，将采样点放入原区间内：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n=0:64;</span><br><span class="line">n1=0:64/255:64;%把区间[0,64]划分成256个采样点，作为傅里叶变换后的区间</span><br><span class="line"></span><br><span class="line">x=((sin(pi.*(n-32)./4))./(pi.*(n-32)./4));%原信号，注意在n=32时为极限，matlab算出来为NAN需要人工替换</span><br><span class="line">x(find(isnan(x)==1))=1;%替换n=32时的极限为1</span><br><span class="line">X=fft(x,256);%傅里叶变换</span><br><span class="line">stem(n1,abs(X));grid on;%把原区间划分为256个采样点进行作图</span><br></pre></td></tr></tbody></table></figure><p>iffy(X)：执行逆傅里叶变换。<br>fftshift()：该函数可以对fft(x)函数的输出重新排序，使样本Y(jω)在Y中从最负的频率排序到最正的频率。<br>load(filename) ：从 filename 加载文件变量数据至工作区。<br>freqs(b,a)：用来计算与绘制微分方程的频率响应H(jω)，其中b,a是2变量的系数们作为的向量数组，从高阶开始。当然，如果希望得到在特定频率处ω的值，可以多加一个参数，例如</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w=linspace(0,10)</span><br><span class="line">H=freqs(b,a,w)</span><br></pre></td></tr></tbody></table></figure><p>[b2,a2]=butter(2,wc,’s’)：该函数定义了一个2阶、以ωc为频率的布特沃斯滤波器。其中，s表示使用连续时间过滤器，而不是butter默认返回的离散时间滤波器。此处的返回值b2,a2都为前面的系数向量。<br>[r,p]=residue(b,a)：该函数用来进行分式多项式的部分分式展开，即”partial fraction expansion”。其中，b,a为系统微分方程2便系数向量；该函数返回的亦为向量数组r,p，r为分子的部分分式展开系数，p为分母的部分分式展开系数。倘若被计算的系统频率响应H(jω)的分母不包括重根，且分式有理，那么返回的形式为：</p><p>$$∑m=1Nr(m)jω−p(m)=r1jω−p1+r2jω−p2+…$$</p><h1 id="Lab-4"><a href="#Lab-4" class="headerlink" title="Lab 4"></a>Lab 4</h1><p>[X,w]=ctfts(x,T)：CTFTS函数用来计算周期信号x(t)的连续时间傅里叶变换(CTFT)，该周期信号由向量x中采样后的样本，利用理想带限插值重构而来。其中，它的参数，即向量x，为x(t)除以整数个周期的样本，T为采样周期；返回的参数，向量X包含储存在向量向量w中、每个频点处脉冲的面积。而w则储存了每个频点处的脉冲。<br>α,ω<br>画连续时间微分方程对应有理分式的零极点图：对于一个有理分式例如H(s)=s−1s2+3s+2，首先需要用roots()函数求出其零极点：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b=[1,-1];</span><br><span class="line">a=[1,3,2];</span><br><span class="line">zs=roots(b);</span><br><span class="line">ps=roots(a);</span><br></pre></td></tr></tbody></table></figure><p>    然后便是利用画图函数作图：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plot(real(zs),imag(zs),'o');hold on;</span><br><span class="line">plot(real(ps),imag(ps),'x'); </span><br><span class="line">grid</span><br><span class="line">axis([-3,3,-3,3]);</span><br></pre></td></tr></tbody></table></figure><p>画离散时间差分方程对应有理分式的零极点图：需要使用到dpzplot(b,a)函数，它也是接收向量b，a作为实参，Matlab可能不会自带该函数的源代码，故写于此：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">function dpzplot(b,a)</span><br><span class="line">%DPZPLOT plots the poles and zeros of a discrete-time LTI system.</span><br><span class="line">%</span><br><span class="line">% Usage:  dpzplot(b,a) </span><br><span class="line">%</span><br><span class="line">% The LTI system is defined by the coefficients in 'b' and 'a', which</span><br><span class="line">% are in the form required by the MATLAB function 'filter'. Namely,</span><br><span class="line">% the system function has a numerator polynomial given by the</span><br><span class="line">% coefficients in 'b' and a denominator polynomial given by the</span><br><span class="line">% coefficients in 'a'.  </span><br><span class="line">%---------------------------------------------------------------</span><br><span class="line">% copyright 1996, 2001, by John Buck, Michael Daniel, and Andrew Singer.</span><br><span class="line">% For use with the textbook "Computer Explorations in Signals and</span><br><span class="line">% Systems using MATLAB", Prentice Hall, 1997, 2002.</span><br><span class="line">%---------------------------------------------------------------</span><br><span class="line">la=length(a);</span><br><span class="line">lb=length(b);</span><br><span class="line">if (la&gt;lb),</span><br><span class="line">  b=[b zeros(1,la-lb)];</span><br><span class="line">elseif (lb&gt;la),</span><br><span class="line">  a=[a zeros(1,lb-la)];</span><br><span class="line">end</span><br><span class="line">ps = roots(a);</span><br><span class="line">zs = roots(b);</span><br><span class="line">mx = max( abs([ps' zs' .95]) ) + .05;</span><br><span class="line">clf;</span><br><span class="line">axis([-mx mx -mx mx]);</span><br><span class="line">axis('equal');</span><br><span class="line">hold on</span><br><span class="line">w = [0:.01:2*pi];</span><br><span class="line">plot(cos(w),sin(w),'.');</span><br><span class="line">plot([-mx mx],[0 0]);</span><br><span class="line">plot([0 0],[-mx mx]);</span><br><span class="line">text(0.1,1.1,'Im','sc');</span><br><span class="line">text(1.1,.1,'Re','sc');</span><br><span class="line">plot(real(ps),imag(ps),'rx');</span><br><span class="line">plot(real(zs),imag(zs),'go');</span><br><span class="line">numz=sum(abs(zs)==0);</span><br><span class="line">nump=sum(abs(ps)==0);</span><br><span class="line">if numz&gt;1,</span><br><span class="line">  text(-.1,-.1,num2str(numz));</span><br><span class="line">elseif nump&gt;1,</span><br><span class="line">  text(-.1,-.1,num2str(nump));</span><br><span class="line">end</span><br><span class="line">hold off;</span><br></pre></td></tr></tbody></table></figure><p>该函数的原代码需要被放在一个.m文件中作为库放在matlab任务栏中，它便可以自己检测到了。</p><h1 id="通信原理与系统中的Matlab使用积累"><a href="#通信原理与系统中的Matlab使用积累" class="headerlink" title="通信原理与系统中的Matlab使用积累"></a>通信原理与系统中的Matlab使用积累</h1><h2 id="Lab-1-1"><a href="#Lab-1-1" class="headerlink" title="Lab 1"></a>Lab 1</h2><p>t=linspace(-6,6);：均分计算指令的意思，用于产生“x1,x2”之间的“N”点行线性的矢量，与t=-6:0.01:6有异曲同工之处。可以搭配syms t作自变量范围使用。<br>w=ceil(z)：朝正无穷大方向取整;函数将输入z中的元素取整，值w为不小于本身的最小整数。对于复数B，分别对实部和虚部取整。<br>a=nextpow2(A)：用来求数A的指数a；a值满足$ 2a&gt;A;2a−1&lt;A $</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 探索记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Matlab </tag>
+            
+            <tag> 编程语言 </tag>
+            
+            <tag> 信号与系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【日常记录】2020520随笔</title>
+      <link href="/2020/05/20/%E3%80%90%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95%E3%80%912020520%E9%9A%8F%E7%AC%94/"/>
+      <url>/2020/05/20/%E3%80%90%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95%E3%80%912020520%E9%9A%8F%E7%AC%94/</url>
+      
+        <content type="html"><![CDATA[<p> 近来在看一部老英剧《是，首相》，里面有不少桥段让人捧腹大笑，在此摘抄了精彩对话之一。</p><p>下面是其中的一个桥段：(Humphry–H, Bernard–B)<br>H：如果你想暗示某个人不太适合某个位置…<br>B：那…要诋毁他？<br>H：第一步是要表示完全的支持。<br>B：Why？<br>H：你不想留下说人坏话的记录吧，你得显得像他得朋友！说到底，先得绕到人后面才能从背后捅刀子。<br>B：可詹森是个好人…，他极其诚实，又有能力。<br>H：太好了。这就进入了第二步。你列出他所有的优点，尤其是那些让他不称职的，大肆夸奖它们，到矫枉过正的地步。这是第三步。或者，更好的办法是，你把他的观点扁平化，给他们贴标签，就像你刚才说的。<br>B：emmm…比如说廉洁先生?<br>H：对!不过我想我们能做得更好。坐下吧，伯纳德~ 他不是常去教堂吗?<br>B：对，我记得他干过业余传教士，很久以前了。<br>H：太妙了!我们就用这点来对付他。<br>B：怎么做?<br>H：“多有魅力的人啊!有生以来就没树过敌!可他真能应付金融城里那些恶棍吗?”<br>B：詹姆逊很强硬的。<br>H：那就说他强硬过头了。这是第四步，列出他所有的缺陷。但要以为他开脱的口气，就像：“哦，有什么关系，不就是不服兵役嘛，我肯定…没人当真质疑他不爱国”，或者：“我觉得大家批评他搞垮了他上一家公司的事并不完全公平”<br>B：噢，这样说肯定奏效。<br>H：如果不奏效，总还可以暗示有别的丑闻。如果他单身，暗示他是同性恋。<br>B：如果他结婚了呢?<br>H：那就通奸。跟一个必须避讳的女士。比如皇室成员之类。或者电视女主播。<br>B：Errr……如果他显然婚姻幸福呢?<br>H：那就说他是极端的道学先生，或者酗酒，或者他正在接受精神治疗。伯纳德你看，运用之妙，存乎一心啊。好好学着，伯纳德~<br>B：对……<br>汉弗莱在剧中也算是一个老阴阳人了。</p><p>\ 附英文对照：(Humphry–H, Bernard–B)<br>H：When you wish to suggest that sb is not the ideal choice… B：You…rubbish them?<br>H：The first stage is to express absolute support.<br>B：Why？<br>H：You don’t want to say sb’s no good, you must be seen to be their friend! After all, it is necessary to get behind someone before you can stab them in the back.<br>B：But Alexander Jameson is good, He’s honest and efficient. H：Excellent. That’s the second stage. You list all his praiseworthy qualities, especially those that make him unsuitable for the job. And you praise them to the point where they become a vice. That’s the third stage. Or, better still, you over-simplify his views by labelling them, as you just did. B: You mean… Mr. Clean?<br>H: Yes! But i think we can do better than that. Do sit down, Bernard~ Well, isn’t he a churchgoer?<br>B: Yes, I believe he was once a lay preacher, a long time ago. H: Splendid! We can certainly use that to against him.<br>B: How?<br>H: “What a charming man! has’t an enemy in the world! But, is he really up to dealing with some of those rogous in the City（金融城）?” B: Jameson’s pretty tough.<br>H: Then we’ll say he’s too tough. And’s the 4th stage, you name all his bad points by defending and excusing them. You know, “Oh, it probably doesn’t matter that he was a conscientious objector. I’m sure…nobody is really questioned his patriotism.” or “I think the criticisms of him for bankrupting his last company weren’t entirely fair<del>“<br>B: Well that would certainly do it.<br>H: If doesn’t, you can always hint at a hidden scandal. If he is not married, hint at homosexuality.<br>B: If he is married?<br>H: Adultery. With a lady’s who’s beyond reproach. One of the royals, for instance. Or the television newsreader.<br>B: Heen…Ah, What if he’s obviously happily married?<br>H: Well then says he’s extremely puritanical or he drinks or he’s having psychiatric treatment. Really Bernard, the possibilities are endless. Listen and learn, Bernard</del><br>B: Yeah…</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+            <tag> 电视剧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>利用C语言调用matlab引擎</title>
+      <link href="/2020/05/17/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/"/>
+      <url>/2020/05/17/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E8%B0%83%E7%94%A8matlab%E5%BC%95%E6%93%8E/</url>
+      
+        <content type="html"><![CDATA[<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>    在大二上期旁听完一节数学实验课后，对matlab上利用遗传算法编写的产生随机数的代码感到了兴趣，这也使我感受到了matlab丰富且强大的函数功能。但随之而来的也是好奇——能否实现在C语言环境下编写出这一套利用遗传算法产生随机数的程序呢？<br>    于是本人上网搜集了相关资料，很遗憾地发现matlab函数库是属于不被公开的商业机密。但是matlab公司却提供了相关引擎接口，来对接C语言，所以理论上可以通过C语言调用matlab的引擎来执行matlab中的算法。本人在网上搜集到的调用matlab引擎的方法有二：<br>一是程序运行需要完整的matlab软件进行支持；<br>二是可以将matlab中的.m文件编译为.dll文件，运行时只需MCR即可。（MATLAB Component Runtime 简称 MCR，主要用于把MATLAB编写的东西打包到没装MATLAB的机器上使用。它是一组独立的共享库，通过它能够执行在MATLAB中编写的M文件。MCR支持MATLAB语言的所有功能。）<br>    现暂时尝试第一种方法。而调用引擎的第一步便是要配置好环境。</p><h2 id="包含目录的路径配置"><a href="#包含目录的路径配置" class="headerlink" title="包含目录的路径配置"></a>包含目录的路径配置</h2><p>    本人使用C语言编译环境为VS2019，所以首先是需要将VS的环境配置好。所以便打开要调用matlab的C语言工程文件，点开它的属性，找到“配置属性”中的“VC++目录”，将matlab中的相关文件路径添加进去。本人在matlab目录下找到相关文件：<br><img src="https://img-blog.csdnimg.cn/20191003171140240.png" alt="Matlab目录下的文件夹"><br>在extern文件夹中：<br><img src="https://img-blog.csdnimg.cn/20191003171249440.png" alt="include文件夹"><br>有一个让学C的人感到亲切而又熟悉的include文件夹。<br><img src="https://img-blog.csdnimg.cn/20191003171410778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgxMDQxMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点开它，我们发现里面是浩瀚的.h文件海洋。<br><img src="https://img-blog.csdnimg.cn/20191003171456361.png" alt="在这里插入图片描述"><br>于是我们便把这个include文件夹路径添加到VS编译器的“包含目录”中。此处“包含”指那个include目录。这里要注意系统位数，matlab与VS文件的操作位数一定要对应。本人所用电脑为64位，安装的matlab亦为64位。</p><h2 id="静态数据库的目录配置"><a href="#静态数据库的目录配置" class="headerlink" title="静态数据库的目录配置"></a>静态数据库的目录配置</h2><img src="https://img-blog.csdnimg.cn/20191003171634592.png" alt="在这里插入图片描述">    库目录的路径添加如出一辙，所添加文件夹为include文件夹下方lib文件夹中，win64中的Microsoft文件夹，里面全是.lib文件。<h2 id="附加依赖项的添加"><a href="#附加依赖项的添加" class="headerlink" title="附加依赖项的添加"></a>附加依赖项的添加</h2><img src="https://img-blog.csdnimg.cn/20191003172035729.png" alt="在这里插入图片描述">    然后再在链接器中的输入里，在附加依赖项中加 “libeng.lib;libmat.lib;libmex.lib;libmx.lib;”以便编译器引用所添加的.lib后缀文件们。<h2 id="系统环境变量的配置"><a href="#系统环境变量的配置" class="headerlink" title="系统环境变量的配置"></a>系统环境变量的配置</h2><p>    但这还不算完，我们最后还需要到Windows中的“高级系统设置”中找到“环境变量”来设置“系统变量”中的“Path”。<br>    环境变量是个什么东西呢？让我们运行Win+R，在其中输入环境变量path中有的一个文件目录“system32”，会发现系统自动打开了该文件夹；而输入环境变量中没有路径的文件夹名，但系统中存在该文件夹，却不能够打开成功。所以环境变量相当于是告诉系统当用户给的指令不清楚时到里面去找路径，如果有对应的便可以快速打开。<br><img src="https://img-blog.csdnimg.cn/20191003172349474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgxMDQxMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>将电脑上matlab的bin，win64文件夹添加进去。<br><img src="https://img-blog.csdnimg.cn/20191003172514749.png" alt="在这里插入图片描述"><br>    理论上配置环境就完成了。<br>    在测试的时候出现了一个小插曲，那便是本人在执行完以上步骤后发现C中还是无法打开”engine.h”文件。但最后解决了，问题出在VS配置管理器中“活动解决方案平台”用的还是x86位的，将其设置为x64位后报错即可消除。</p><h1 id="遗传算法产生随机数的实现"><a href="#遗传算法产生随机数的实现" class="headerlink" title="遗传算法产生随机数的实现"></a>遗传算法产生随机数的实现</h1><p>下面是本人写的代码：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">//一个在给定区间[a, b]内产生随机数的程序</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include"engine.h"</span><br><span class="line">#define Percise 0.001</span><br><span class="line">#define LBOUND 200</span><br><span class="line">#define UBOUND 500</span><br><span class="line"></span><br><span class="line">int main(void)</span><br><span class="line">{</span><br><span class="line">puts("Loading...\n");</span><br><span class="line">engine* ep;</span><br><span class="line">if (!(ep = engOpen(NULL)))</span><br><span class="line">{</span><br><span class="line">fprintf(stderr, "\n无法启动MATLAB引擎\n");</span><br><span class="line">return EXIT_FAILURE;</span><br><span class="line">}                                   //判断引擎是否启动成功</span><br><span class="line">double L[] = { LBOUND };</span><br><span class="line">double U[] = { UBOUND };</span><br><span class="line">mxArray*Low,*Up,* Num,*Realnum;</span><br><span class="line"></span><br><span class="line">int range = UBOUND - LBOUND;</span><br><span class="line">double number[] = { range/Percise };              //将拥有该精度时区间内数字的个数赋给number数组,number=3</span><br><span class="line">Num = mxCreateDoubleMatrix(1, 1, mxREAL);       //初始化了一个mxArray，该数组为1x1的double实数类型</span><br><span class="line">Low= mxCreateDoubleMatrix(1, 1, mxREAL);</span><br><span class="line">Up= mxCreateDoubleMatrix(1, 1, mxREAL);</span><br><span class="line">Realnum = mxCreateDoubleMatrix(1, 1, mxREAL);</span><br><span class="line">memcpy(mxGetPr(Low), L, sizeof(L));</span><br><span class="line">memcpy(mxGetPr(Up), U, sizeof(U));</span><br><span class="line">memcpy(mxGetPr(Num), number, sizeof(number));   //将number数组中的元素拷贝至matlab格式数组mxArray中,现在已有一个mxArray形式的数组了，它叫Num，储存着个数，但现在它还未被写入matlab引擎</span><br><span class="line">engPutVariable(ep, "Num", Num);                 //将mxArray格式的数组Num输入matlab引擎    </span><br><span class="line">engPutVariable(ep, "Low", Low);</span><br><span class="line">engPutVariable(ep, "Up", Up);</span><br><span class="line">engEvalString(ep, "Kbits=fix(log(Num)/log(2))");//让matlab计算Kbits</span><br><span class="line">engEvalString(ep, "Vmax=2^Kbits");              //给matlab输入命令字符串，让其执行</span><br><span class="line">engEvalString(ep, "rndbin=fix(2*rand(1,Kbits))");</span><br><span class="line">engEvalString(ep, "rndbin2dec=bin2dec(num2str(rndbin,'%d'))");</span><br><span class="line">engEvalString(ep, "r=rndbin2dec/Vmax");</span><br><span class="line">engEvalString(ep, "Realnum=Low+(Up-Low)*r");</span><br><span class="line"></span><br><span class="line">if (Realnum= engGetVariable(ep, "Realnum")) //获取在matlab中计算的变量Vmax的值，因为在获取前Vmax在此只是一个空的储存空间</span><br><span class="line">{</span><br><span class="line">printf("It can be predicted that matlab has processed our order correctly!\n");   //这里准备获取答案</span><br><span class="line">Num=engGetVariable(ep, "Num");</span><br><span class="line">printf("Num= %f\n\n", *mxGetPr(Num));//为什么Num没有用获得函数“engGetVariabe”便可得到呢？因为Num的赋值是在此利用memcpy写入的</span><br><span class="line">printf("The random number is: %f\n ", *mxGetPr(Realnum));</span><br><span class="line">}</span><br><span class="line">else</span><br><span class="line">printf("Too bad!");</span><br><span class="line">mxDestroyArray(Low);</span><br><span class="line">mxDestroyArray(Up);</span><br><span class="line">mxDestroyArray(Num);</span><br><span class="line">mxDestroyArray(Realnum);</span><br><span class="line">engClose(ep);</span><br><span class="line"></span><br><span class="line">system("pause");</span><br><span class="line">return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>    具体的engine函数可以通过自行查看engine.h文件得知。<br>    有一点需要注意的是，从C传递给matlab中的数据类型都是mxArray格式的数组矩阵，这里需要注意，通常赋值的办法便是利用memcpy函数将具体数值拷贝至该数组中。<br>    利用engine函数很方便的一点便是，任何指令都可以通过engEvalString函数以字符串的形式传递给matlab让它直接执行，且算法的中间不需要提前在C中声明并传递给matlab，这也很好地保留了matlab语言简洁易用的特性。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 探索记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> Matlab </tag>
+            
+            <tag> 编程语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
